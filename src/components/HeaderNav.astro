@@ -1,0 +1,35 @@
+---
+import Link from "./HeaderNavLink.astro";
+---
+
+<nav>
+  <ul>
+    <li>
+      <Link to="/problems" title="문제 해결" icon="List">Problems</Link>
+    </li>
+    <li>
+      <Link to="/algorithms" title="알고리즘" icon="Loop" size="24">
+        Algorithms
+      </Link>
+    </li>
+    <li>
+      <Link to="/data-structures" title="자료구조" icon="Tree" size="24">
+        DataStructures
+      </Link>
+    </li>
+    <li>
+      <Link to="/guides" title="시험 가이드" icon="Map" size="24">Guides</Link>
+    </li>
+
+    <!-- <li>
+			<a href="/patterns/skills" title="풀이 유형">Skills/Patterns</a>
+		</li> -->
+  </ul>
+</nav>
+
+<style>
+  ul {
+    display: flex;
+    align-items: center;
+  }
+</style>

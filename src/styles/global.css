@@ -1,67 +1,161 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
-body {
-	font-family: Verdana, sans-serif;
-	margin: auto;
-	padding: 20px;
-	max-width: 65ch;
-	text-align: left;
-	background-color: #fff;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	line-height: 1.5;
-	color: #444;
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+@font-face {
+  font-family: "Spoqa Han Sans Neo";
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+  src: url("/fonts/SpoqaHanSansNeo-Regular.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "Spoqa Han Sans Neo";
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+  src: url("/fonts/SpoqaHanSansNeo-Bold.woff2") format("woff2");
+}
+
+:root {
+  --color-background: hsl(210deg 18% 96%);
+  --color-background-secondary: hsl(60deg 100% 100%);
+  --color-text: hsl(214deg 100% 15%);
+  --color-headline: hsl(214deg 100% 15%);
+  --color-paragraph: hsl(214deg 44% 19%);
+  --color-primary: hsl(171deg 100% 46%);
+  --color-secondary: hsl(350deg 100% 66%);
+  --color-tertiary: hsl(51deg 98% 65%);
+  --color-gray: hsl(225deg, 12%, 40%);
+  --color-gray-1000: hsl(225deg, 15%, 15%);
+  --color-overlay: hsl(220deg 5% 40% / 0.8);
+
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+  --spacing-13: 52px;
+  --spacing-14: 56px;
+  --spacing-15: 60px;
+  --spacing-16: 64px;
+
+  --font-size-1: 0.25rem;
+  --font-size-2: 0.5rem;
+  --font-size-3: 0.75rem;
+  --font-size-3-5: 0.875rem;
+  --font-size-4: 1rem;
+  --font-size-4-5: 1.125rem;
+  --font-size-5: 1.25rem;
+  --font-size-6: 1.5rem;
+  --font-size-7: 1.75rem;
+  --font-size-8: 2rem;
+  --font-size-9: 2.25rem;
+  --font-size-10: 2.5rem;
+  --font-size-p: 1.125rem;
+  --font-size-h6: 0.875rem;
+  --font-size-h5: 1rem;
+  --font-size-h4: 1.2rem;
+  --font-size-h3: 1.5rem;
+  --font-size-h2: 1.8rem;
+  --font-size-h1: 2.1rem;
+
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  --font-family-sans: "Spoqa Han Sans Neo", -apple-system, BlinkMacSystemFont,
+    avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto,
+    noto, arial, sans-serif;
+  --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+    monospace;
+  --font-family-serif: Iowan Old Style, Apple Garamond, Baskerville,
+    Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+body.dark-mode {
+  --color-background: hsl(216deg 6% 15%);
+  --color-background-secondary: hsl(240deg 8% 9%);
+  --color-text: hsl(60deg 100% 100%);
+  --color-headline: hsl(60deg 100% 100%);
+  --color-paragraph: hsl(214deg 16% 64%);
+  --color-primary: hsl(255deg 83% 65%);
+  --color-secondary: hsl(155deg 61% 44%);
+  --color-tertiary: hsl(225deg 5% 47%);
+  --color-gray: hsl(210deg, 14%, 66%);
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-regular);
+  line-height: 1.6;
+}
+
+p {
+  color: var(--color-paragraph);
+  font-size: var(--font-size-p);
+}
+
+strong {
+  font-weight: var(--font-weight-bold);
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
-strong,
-b {
-	color: #222;
+h6 {
+  color: var(--color-headline);
+  font-weight: var(--font-weight-bold);
 }
+
+h1 {
+  font-size: var(--font-size-h1);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+}
+
 a {
-	color: #3273dc;
+  color: inherit;
+  text-decoration: none;
 }
-nav a {
-	margin-right: 10px;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-content {
-	line-height: 1.6;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-}
-code {
-	padding: 2px 5px;
-	background-color: #f2f2f2;
-}
-pre {
-	padding: 1rem;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border: 1px solid #999;
-	color: #222;
-	padding: 2px 0px 2px 20px;
-	margin: 0px;
-	font-style: italic;
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
 }

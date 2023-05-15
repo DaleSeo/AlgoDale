@@ -1,0 +1,16 @@
+<div>
+  <slot />
+</div>
+
+<style>
+  div {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-4);
+
+    @media (min-width: 34.375rem) {
+      padding: 0 var(--spacing-8);
+    }
+  }
+</style>

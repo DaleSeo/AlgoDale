@@ -1,24 +1,38 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+import MaxWidthWrapper from "./MaxWidthWrapper.astro";
+import Logo from "./HeaderLogo.astro";
+import Nav from "./HeaderNav.astro";
 ---
 
-<header>
-  <h2>
-    {SITE_TITLE}
-  </h2>
-  <nav>
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/problems">Problmes</HeaderLink>
-    <HeaderLink href="/about">About</HeaderLink>
-  </nav>
-</header>
+<div>
+  <MaxWidthWrapper>
+    <header>
+      <Logo />
+      <Nav />
+    </header>
+  </MaxWidthWrapper>
+</div>
+
 <style>
-  header {
-    margin: 0em 0 2em;
+  div {
+    position: sticky;
+    z-index: 1;
+    top: -16px;
+    padding-top: var(--spacing-4);
+    transition: background 350ms ease 0s;
+    background: var(--color-background);
+    opacity: 0.85;
+    backdrop-filter: blur(10px);
   }
-  h2 {
-    margin: 0.5em 0;
+
+  header {
+    display: flex;
+    /* flex-direction: column; */
+    gap: var(--spacing-4);
+    align-items: center;
+    padding: 16px 0;
+    @media (min-width: 34.375rem) {
+      flex-direction: row;
+    }
   }
 </style>

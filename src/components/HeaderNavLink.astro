@@ -1,0 +1,32 @@
+---
+const { to, title } = Astro.props;
+---
+
+<a href={to} title={title}>
+  <slot />
+</a>
+
+<style>
+  a {
+    display: flex;
+    gap: var(--spacing-1);
+    align-items: center;
+
+    padding: var(--spacing-1) var(--spacing-2);
+
+    color: var(--color-text);
+
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-regular);
+
+    &:focus {
+      outline-offset: 2px;
+    }
+  }
+
+  span {
+    @media (min-width: 34.375rem) {
+      display: revert;
+    }
+  }
+</style>

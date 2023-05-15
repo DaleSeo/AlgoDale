@@ -1,0 +1,41 @@
+---
+export interface Props {
+  href: string;
+  slug: string;
+  title: string;
+  tags: string[];
+}
+
+const { href, slug, title, tags } = Astro.props;
+---
+
+<article>
+  <header>
+    <h3>
+      <a href={href}>{title}</a>
+    </h3>
+  </header>
+  <!-- <footer>
+    <Tags {tags} />
+  </footer> -->
+</article>
+
+<style>
+  article {
+    background: var(--color-background-secondary);
+    border-radius: var(--spacing-4);
+    padding: var(--spacing-8);
+    display: flex;
+    gap: var(--spacing-8);
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  h3 {
+    font-size: var(--font-size-h4);
+  }
+
+  footer {
+    align-self: flex-end;
+  }
+</style>
