@@ -1,5 +1,5 @@
 ---
-title: 'Two Sum'
+title: "Two Sum"
 tags:
   - LeetCode
   - Python
@@ -7,6 +7,7 @@ tags:
   - JavaScript
   - hashTable
 date: 2021-01-05
+draft: true
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zH7F-qnTi74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -180,15 +181,15 @@ class Solution {
 
 ```ts
 function twoSum(nums: number[], target: number): number[] {
-	const indices = {};
-	for (let i = 0; i < nums.length; i++) {
-		const complement = target - nums[i];
-		if (complement in indices) {
-			const j = indices[complement];
-			return [j, i];
-		}
-		indices[nums[i]] = i;
-	}
+  const indices = {};
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+    if (complement in indices) {
+      const j = indices[complement];
+      return [j, i];
+    }
+    indices[nums[i]] = i;
+  }
 }
 ```
 

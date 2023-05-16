@@ -23,6 +23,7 @@ const problems = defineCollection({
     title: z.string(),
     tags: z.array(z.string()),
     date: z.date(),
+    draft: z.boolean().optional().default(false),
   }),
 });
 

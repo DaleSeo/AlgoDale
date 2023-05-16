@@ -3,19 +3,20 @@ import { CollectionEntry, getCollection } from "astro:content";
 import Problem from "../../layouts/Problem.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("problems");
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: post,
-  }));
+  const problems = await getCollection("problems");
+  return problems
+    .filter((problem) => !problem.data.draft)
+    .map((problem) => ({
+      params: { slug: problem.slug },
+      props: problem,
+    }));
 }
 type Props = CollectionEntry<"problems">;
 
-const post = Astro.props;
-const { Content } = await post.render();
+const problem = Astro.props;
+const { Content } = await problem.render();
 ---
 
-<Problem {...post.data}>
-  <h1>{post.data.title}</h1>
+<Problem {...problem.data}>
   <Content />
 </Problem>
