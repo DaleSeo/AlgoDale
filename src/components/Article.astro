@@ -1,21 +1,20 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import Article from "../components/Article.astro";
-import MaxWidthWrapper from "../components/MaxWidthWrapper.astro";
-import BaseLayout from "./BaseLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 
-type Props = CollectionEntry<"problems">["data"];
+interface Props {
+  title: string;
+  date: Date;
+  tags: string[];
+}
 
 const { title, tags, date } = Astro.props;
 ---
 
-<BaseLayout>
-  <MaxWidthWrapper>
-    <Article title={title} tags={tags} date={date}>
-      <slot />
-    </Article>
-  </MaxWidthWrapper>
-</BaseLayout>
+<article class="prose max-w-3xl mx-auto">
+  <h1 class="text-center px-8 py-16 break-words">{title}</h1>
+  <slot />
+  <FormattedDate date={date} />
+</article>
 
 <style>
   article {

@@ -1,5 +1,5 @@
 ---
-title: 'Two Sum II - Input Array Is Sorted'
+title: "Two Sum II - Input Array Is Sorted"
 tags:
   - LeetCode
   - Python
@@ -8,7 +8,7 @@ tags:
 date: 2021-01-12
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fkez8mF_HYk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/fkez8mF_HYk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 LeetCode의 [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) 문제를 함께 풀어보도록 하겠습니다.
 
@@ -84,7 +84,6 @@ target = 9
 `2`가 선택된 상태에서, 우측에 있는 4개의 정렬된 수를 대상으로 이진 검색을 이용해서 `7`을 찾으면 될 것 같네요.
 
 ```
-
 1 2 [4 6 7 9 10 11 12]
   👆
 ```

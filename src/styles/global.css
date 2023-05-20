@@ -110,7 +110,6 @@ body {
 
 p {
   color: var(--color-paragraph);
-  font-size: var(--font-size-p);
 }
 
 strong {
@@ -125,22 +124,6 @@ h5,
 h6 {
   color: var(--color-headline);
   font-weight: var(--font-weight-bold);
-}
-
-h1 {
-  font-size: var(--font-size-h1);
-}
-
-h2 {
-  font-size: var(--font-size-h2);
-}
-
-h3 {
-  font-size: var(--font-size-h3);
-}
-
-h4 {
-  font-size: var(--font-size-h4);
 }
 
 a {
