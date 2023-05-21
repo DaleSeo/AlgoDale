@@ -1,4 +1,23 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection, reference, z } from "astro:content";
+
+const tags = defineCollection({
+  type: "data",
+  schema: z.object({
+    title: z.string().optional(),
+    icon: z.string().optional(),
+    ko: z.array(z.string()),
+  }),
+});
+
+const problems = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(reference("tags")),
+    date: z.date(),
+    draft: z.boolean().optional().default(false),
+  }),
+});
 
 const blog = defineCollection({
   // Type-check frontmatter using a schema
@@ -18,13 +37,4 @@ const blog = defineCollection({
   }),
 });
 
-const problems = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    tags: z.array(z.string()),
-    date: z.date(),
-    draft: z.boolean().optional().default(false),
-  }),
-});
-
-export const collections = { blog, problems };
+export const collections = { tags, problems, blog };

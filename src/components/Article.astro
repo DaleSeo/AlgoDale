@@ -1,19 +1,33 @@
 ---
+import { CollectionEntry, getEntries } from "astro:content";
+import { Icon } from "astro-icon";
 import FormattedDate from "../components/FormattedDate.astro";
+import Tags from "../components/Tags.astro";
 
-interface Props {
-  title: string;
-  date: Date;
-  tags: string[];
-}
+type Props = CollectionEntry<"problems">["data"];
 
 const { title, tags, date } = Astro.props;
+const fullTags = await getEntries(tags);
 ---
 
-<article class="prose max-w-3xl mx-auto">
-  <h1 class="text-center px-8 py-16 break-words">{title}</h1>
+<article class="prose mx-auto max-w-3xl">
+  <header class="px-8 py-16 text-center">
+    <h1 class="break-words">{title}</h1>
+  </header>
   <slot />
-  <FormattedDate date={date} />
+  <footer class="not-prose flex flex-wrap justify-between gap-4 py-12">
+    <section>
+      <Icon
+        class="inline align-middle"
+        pack="feather"
+        name="clock"
+        width="24px"
+        height="24px"
+      />
+      <FormattedDate class="align-middle" date={date} />
+    </section>
+    <Tags tags={fullTags} />
+  </footer>
 </article>
 
 <style>

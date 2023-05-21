@@ -1,5 +1,5 @@
 ---
-title: 'Add Two Numbers'
+title: "Add Two Numbers"
 tags:
   - LeetCode
   - Python
@@ -8,7 +8,7 @@ tags:
 date: 2021-03-02
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oRVhdwpTbdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/oRVhdwpTbdU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 LeetCode의 [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/) 문제를 함께 풀어보도록 하겠습니다.
 

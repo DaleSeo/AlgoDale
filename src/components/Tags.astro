@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon";
+
+interface Props {
+  collection?: string;
+  tags: Array<CollectionEntry<"tags">>;
+}
+
+const { tags } = Astro.props;
+---
+
+<div class="flex flex-wrap gap-1">
+  {
+    tags.map(({ id, data: { title, icon } }) => (
+      <a
+        href={`/?tag=${id}`}
+        title={title || id}
+        class="flex items-center gap-1 rounded-s bg-[--color-background] px-2 py-1 text-xs text-[--color-text] opacity-70"
+      >
+        {icon && <Icon name={icon} width="12px" height="12px" />}
+        {title || id}
+      </a>
+    ))
+  }
+</div>
