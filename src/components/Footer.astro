@@ -1,5 +1,7 @@
 ---
 import MaxWidthWrapper from "./MaxWidthWrapper.astro";
+import Logo from "./FooterLogo.astro";
+import Social from "./Social.astro";
 
 const today = new Date();
 ---
@@ -7,6 +9,10 @@ const today = new Date();
 <div>
   <MaxWidthWrapper>
     <footer>
+      <section class="flex flex-wrap items-center justify-around gap-4">
+        <Logo />
+        <Social />
+      </section>
       <scetion>
         <p>
           &copy; 2021-{today.getFullYear()} AlgoDale. All rights reserved.
