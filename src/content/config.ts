@@ -3,7 +3,7 @@ import { defineCollection, reference, z } from "astro:content";
 const tags = defineCollection({
   type: "data",
   schema: z.object({
-    title: z.string().optional(),
+    name: z.string().optional(),
     icon: z.string().optional(),
     ko: z.array(z.string()),
   }),
@@ -13,7 +13,7 @@ const problems = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    tags: z.array(reference("tags")),
+    tags: z.array(z.string()),
     date: z.date(),
     draft: z.boolean().optional().default(false),
   }),

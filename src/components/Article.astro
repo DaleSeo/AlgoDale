@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getEntries } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon";
 import FormattedDate from "../components/FormattedDate.astro";
 import Tags from "../components/Tags.astro";
@@ -7,7 +7,6 @@ import Tags from "../components/Tags.astro";
 type Props = CollectionEntry<"problems">["data"];
 
 const { title, tags, date } = Astro.props;
-const fullTags = await getEntries(tags);
 ---
 
 <article class="prose mx-auto max-w-3xl">
@@ -26,7 +25,7 @@ const fullTags = await getEntries(tags);
       />
       <FormattedDate class="align-middle" date={date} />
     </section>
-    <Tags tags={fullTags} />
+    <Tags tags={tags} />
   </footer>
 </article>
 

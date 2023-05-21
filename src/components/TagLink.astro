@@ -1,0 +1,24 @@
+---
+import { getEntry } from "astro:content";
+import { Icon } from "astro-icon";
+
+interface Props {
+  tag: string;
+}
+
+const { tag: tagId } = Astro.props;
+
+const { data } = (await getEntry("tags", tagId)) || {
+  data: { name: undefined, icon: undefined },
+};
+const { name = tagId, icon = "fe:hash" } = data;
+---
+
+<a
+  href={`/tags/${tagId}`}
+  title={name || tagId}
+  class="flex items-center gap-1 rounded-s bg-[--color-background] px-2 py-1 text-xs text-[--color-text] opacity-70"
+>
+  {icon && <Icon name={icon} width="12px" height="12px" />}
+  {name || tagId}
+</a>

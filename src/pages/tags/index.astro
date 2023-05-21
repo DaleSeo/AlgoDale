@@ -1,8 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 
-const allPosts = await getCollection("problems");
-const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+const tags = await getCollection("tags");
 ---
 
 <div class="tags">
@@ -10,7 +9,7 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
   {
     tags.map((tag) => (
       <p class="tag">
-        <a href={`/tags/${tag}`}>{tag}</a>
+        <a href={`/tags/${tag.id}`}>{tag.id}</a>
       </p>
     ))
   }
