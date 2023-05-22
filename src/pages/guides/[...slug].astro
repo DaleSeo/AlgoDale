@@ -1,0 +1,22 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import Guide from "../../layouts/Guide.astro";
+
+export async function getStaticPaths() {
+  const guides = await getCollection("guides");
+  return guides
+    .filter((guide) => !guide.data.draft)
+    .map((guide) => ({
+      params: { slug: guide.slug },
+      props: guide,
+    }));
+}
+type Props = CollectionEntry<"guides">;
+
+const guide = Astro.props;
+const { Content } = await guide.render();
+---
+
+<Guide {...guide.data}>
+  <Content />
+</Guide>

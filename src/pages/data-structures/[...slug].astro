@@ -1,0 +1,22 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import DataStructure from "../../layouts/DataStructure.astro";
+
+export async function getStaticPaths() {
+  const dataStructures = await getCollection("data-structure");
+  return dataStructures
+    .filter((guide) => !guide.data.draft)
+    .map((guide) => ({
+      params: { slug: guide.slug },
+      props: guide,
+    }));
+}
+type Props = CollectionEntry<"data-structure">;
+
+const guide = Astro.props;
+const { Content } = await guide.render();
+---
+
+<DataStructure {...guide.data}>
+  <Content />
+</DataStructure>

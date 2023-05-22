@@ -1,0 +1,64 @@
+---
+const nums = [5, 7, 3];
+---
+
+<figure>
+  <div class="head">head</div>
+  <div class="edge">--&gt;</div>
+  {
+    nums.map((num) => (
+      <>
+        <div class="node">
+          <div class="val">{num}</div>
+          <div class="next">&nbsp;&nbsp;</div>
+        </div>
+        <div class="edge">--&gt;</div>
+      </>
+    ))
+  }
+  <div class="null">null</div>
+</figure>
+
+<style lang="postcss">
+	figure {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: var(--spacing-8) 0;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+
+	div {
+		padding: var(--spacing-1) var(--spacing-2);
+		font-size: var(--font-size-8);
+	}
+
+	div.node {
+		display: flex;
+		border: 2px solid var(--color-text);
+		border-radius: var(--spacing-2);
+		color: var(--color-primary);
+
+		& div.val {
+		}
+
+		& div.next {
+			border-left: 2px solid var(--color-text);
+		}
+	}
+
+	div.head,
+	div.null {
+		font-size: var(--font-size-6);
+		padding: var(--spacing-4);
+		color: var(--color-text);
+		background: var(--color-background);
+		border-radius: 50%;
+	}
+
+	div.edge {
+		transform: translateX(-24px);
+		margin-right: -24px;
+	}
+</style>

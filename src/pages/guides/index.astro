@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+import CardList from "../../components/CardList.astro";
+import MaxWidthWrapper from "../../components/MaxWidthWrapper.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const guides = await getCollection("guides");
+const articles = guides
+  .filter((problem) => !problem.data.draft)
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
+  .map(({ collection, slug, data: { title, description } }) => ({
+    href: `/${collection}/${slug}`,
+    slug,
+    title,
+    description,
+  }));
+---
+
+<BaseLayout>
+  <MaxWidthWrapper>
+    <CardList articles={articles} />
+  </MaxWidthWrapper>
+</BaseLayout>

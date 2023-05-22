@@ -1,10 +1,13 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon";
 import FormattedDate from "../components/FormattedDate.astro";
 import Tags from "../components/Tags.astro";
 
-type Props = CollectionEntry<"problems">["data"];
+interface Props {
+  title: string;
+  tags?: string[];
+  date: Date;
+}
 
 const { title, tags, date } = Astro.props;
 ---
@@ -25,7 +28,7 @@ const { title, tags, date } = Astro.props;
       />
       <FormattedDate class="align-middle" date={date} />
     </section>
-    <Tags tags={tags} />
+    {tags && <Tags tags={tags} />}
   </footer>
 </article>
 
