@@ -5,15 +5,15 @@ import MaxWidthWrapper from "../../components/MaxWidthWrapper.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const dataStructures = await getCollection("data-structures");
-  return dataStructures
-    .filter((dataStructure) => !dataStructure.data.draft)
-    .map((guide) => ({
-      params: { slug: guide.slug },
-      props: guide,
+  const algorithms = await getCollection("algorithms");
+  return algorithms
+    .filter((algorithm) => !algorithm.data.draft)
+    .map((algorithm) => ({
+      params: { slug: algorithm.slug },
+      props: algorithm,
     }));
 }
-type Props = CollectionEntry<"data-structures">;
+type Props = CollectionEntry<"algorithms">;
 
 const dataStructure = Astro.props;
 const {

@@ -20,6 +20,17 @@ const problems = defineCollection({
   }),
 });
 
+const algorithms = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    tags: z.array(z.string()).optional(),
+    date: z.date(),
+    draft: z.boolean().optional().default(false),
+  }),
+});
+
 const dataStructures = defineCollection({
   type: "content",
   schema: z.object({
@@ -59,4 +70,11 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { tags, problems, dataStructures, guides, blog };
+export const collections = {
+  tags,
+  problems,
+  algorithms,
+  dataStructures,
+  guides,
+  blog,
+};

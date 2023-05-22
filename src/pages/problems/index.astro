@@ -1,8 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import CardList from "../../components/CardList.astro";
-import MaxWidthWrapper from "../../components/MaxWidthWrapper.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import ListLayout from "~/layouts/ListLayout.astro";
 
 const problems = await getCollection("problems");
 const articles = problems
@@ -16,8 +14,4 @@ const articles = problems
   }));
 ---
 
-<BaseLayout>
-  <MaxWidthWrapper>
-    <CardList articles={articles} />
-  </MaxWidthWrapper>
-</BaseLayout>
+<ListLayout articles={articles} />

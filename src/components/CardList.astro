@@ -2,13 +2,21 @@
 import Card, { Props as CardProps } from "./Card.astro";
 
 interface Props {
+  title: string;
   articles: Array<CardProps>;
 }
 
-const { articles } = Astro.props;
+const { title, articles } = Astro.props;
 ---
 
 <div class="wrapper">
+  {
+    title && (
+      <header>
+        <h1>{title}</h1>
+      </header>
+    )
+  }
   <div class="grid">
     {articles.map((article) => <Card {...article} />)}
   </div>

@@ -1,0 +1,13 @@
+---
+import CardList from "~/components/CardList.astro";
+import MaxWidthWrapper from "~/components/MaxWidthWrapper.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+const { title, description, articles } = Astro.props;
+---
+
+<BaseLayout>
+  <MaxWidthWrapper>
+    <CardList title={title} articles={articles} />
+  </MaxWidthWrapper>
+</BaseLayout>

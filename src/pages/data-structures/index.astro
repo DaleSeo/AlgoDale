@@ -1,15 +1,13 @@
 ---
 import { getCollection } from "astro:content";
-import CardList from "../../components/CardList.astro";
-import MaxWidthWrapper from "../../components/MaxWidthWrapper.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import ListLayout from "~/layouts/ListLayout.astro";
 
-const dataStructures = await getCollection("data-structure");
+const dataStructures = await getCollection("data-structures");
 const articles = dataStructures
   .filter((dataStructures) => !dataStructures.data.draft)
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .map(({ collection, slug, data: { title, description, tags } }) => ({
-    href: `/data-structures/${slug}`,
+    href: `/${collection}/${slug}`,
     slug,
     title,
     description,
@@ -17,8 +15,4 @@ const articles = dataStructures
   }));
 ---
 
-<BaseLayout>
-  <MaxWidthWrapper>
-    <CardList articles={articles} />
-  </MaxWidthWrapper>
-</BaseLayout>
+<ListLayout articles={articles} />

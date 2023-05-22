@@ -1,6 +1,8 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import Guide from "../../layouts/Guide.astro";
+import Article from "../../components/Article.astro";
+import MaxWidthWrapper from "../../components/MaxWidthWrapper.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
   const guides = await getCollection("guides");
@@ -14,9 +16,16 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"guides">;
 
 const guide = Astro.props;
+const {
+  data: { title, date },
+} = guide;
 const { Content } = await guide.render();
 ---
 
-<Guide {...guide.data}>
-  <Content />
-</Guide>
+<BaseLayout>
+  <MaxWidthWrapper>
+    <Article title={title} date={date}>
+      <Content />
+    </Article>
+  </MaxWidthWrapper>
+</BaseLayout>

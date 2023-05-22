@@ -2,15 +2,16 @@
 import { getCollection } from "astro:content";
 import ListLayout from "~/layouts/ListLayout.astro";
 
-const guides = await getCollection("guides");
-const articles = guides
-  .filter((problem) => !problem.data.draft)
+const algorithms = await getCollection("algorithms");
+const articles = algorithms
+  .filter((algorithms) => !algorithms.data.draft)
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
-  .map(({ collection, slug, data: { title, description } }) => ({
+  .map(({ collection, slug, data: { title, description, tags } }) => ({
     href: `/${collection}/${slug}`,
     slug,
     title,
     description,
+    tags,
   }));
 ---
 
