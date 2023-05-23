@@ -1,8 +1,9 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { CollectionEntry, getCollection, getEntry } from "astro:content";
 import ListLayout from "~/layouts/ListLayout.astro";
 
 interface Props {
+  tagName: string;
   articles: CollectionEntry<"problems">[];
 }
 
@@ -10,37 +11,42 @@ export async function getStaticPaths() {
   const programs = await getCollection("problems");
   const algorithms = await getCollection("algorithms");
   const dataStructures = await getCollection("data-structures");
-  const posts = [...programs, ...algorithms, ...dataStructures];
+  const posts = [...programs, ...algorithms, ...dataStructures]
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
 
-  const uniqueTags = [
+  const tagIds = [
     ...new Set(
-    posts
+      posts
         .map((post) => post.data.tags)
         .filter(Boolean)
         .flat()
     ),
-  ].filter((tag) => tag);
+  ];
 
-  return uniqueTags.map((tag) => {
-    const filteredPosts = posts
-      .filter((post) => post.data.tags?.includes(tag))
-      .filter((post) => !post.data.draft)
-      .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
-      .map(({ collection, slug, data: { title, tags } }) => ({
-        href: `/${collection}/${slug}`,
-        slug,
-        title,
-        tags,
-      }));
-    return {
-      params: { tag },
-      props: { articles: filteredPosts },
-    };
-  });
+  return await Promise.all(
+    tagIds.map(async (tagId) => {
+      const tag = await getEntry("tags", tagId);
+      const tagName = tag ? tag.data.name : tag;
+
+      const articles = posts
+        .filter(({ data: { tags } }) => tags.includes(tagId))
+        .map(({ collection, slug, data: { title, tags } }) => ({
+          href: `/${collection}/${slug}`,
+          slug,
+          title,
+          tags,
+        }));
+
+      return {
+        params: { tag: tagId },
+        props: { tagName, articles },
+      };
+    })
+  );
 }
 
-const { tag } = Astro.params;
-const { articles } = Astro.props;
+const { tagName, articles } = Astro.props;
 ---
 
-<ListLayout title={`${tag} 관련 포스팅`} articles={articles} />
+<ListLayout title={`${tagName} 관련 포스팅`} articles={articles} />
