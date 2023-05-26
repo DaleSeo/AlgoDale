@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import Icon from "~/components/Icon";
 import FormattedDate from "../components/FormattedDate.astro";
 import Tags from "../components/Tags.astro";
 
@@ -19,12 +19,9 @@ const { title, tags, date } = Astro.props;
   <slot />
   <footer class="not-prose flex flex-wrap justify-between gap-4 py-12">
     <section>
-      <Icon
-        class="inline align-middle"
-        pack="feather"
+      <Icon  
         name="clock"
-        width="24px"
-        height="24px"
+        inline
       />
       <FormattedDate class="align-middle" date={date} />
     </section>
