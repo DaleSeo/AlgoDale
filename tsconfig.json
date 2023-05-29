@@ -2,8 +2,6 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "strictNullChecks": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
