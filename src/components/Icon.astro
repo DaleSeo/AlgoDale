@@ -1,0 +1,33 @@
+---
+import { Icon } from "astro-icon";
+
+const icons: Record<string, string> = {
+  book: "tabler:book",
+  clock: "fe:clock",
+  direction: "simple-line-icons:direction",
+  discord: "simple-icons:discord",
+  github: "simple-icons:github",
+  java: "mdi:language-java",
+  javascript: "simple-icons:youtube",
+  leetcode: "simple-icons:leetcode",
+  loop: "mdi:loop",
+  medium: "simple-icons:medium",
+  python: "simple-icons:python",
+  tree: "grommet-icons:tree",
+  tag: "mdi:tag",
+  twitter: "simple-icons:twitter",
+  youtube: "simple-icons:youtube",
+};
+
+const { name, size, inline } = Astro.props;
+const iconName = name in icons ? icons[name] : "mdi:account";
+---
+
+<Icon name={iconName} class:list={{ inline }} />
+
+<style define:vars={{ size }}>
+  [astro-icon] {
+    width: var(--size, 1em);
+    height: var(--size, 1em);
+  }
+</style>
