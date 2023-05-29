@@ -8,12 +8,18 @@ interface Props {
 }
 
 export async function getStaticPaths() {
-  const programs = await getCollection("problems");
-  const algorithms = await getCollection("algorithms");
-  const dataStructures = await getCollection("data-structures");
-  const posts = [...programs, ...algorithms, ...dataStructures]
-    .filter((post) => !post.data.draft)
-    .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf());
+  const programs = await getCollection("problems", ({ data }) => !data.draft);
+  const algorithms = await getCollection(
+    "algorithms",
+    ({ data }) => !data.draft
+  );
+  const dataStructures = await getCollection(
+    "data-structures",
+    ({ data }) => !data.draft
+  );
+  const posts = [...programs, ...algorithms, ...dataStructures].sort(
+    (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+  );
 
   const tagIds = [
     ...new Set(

@@ -1,0 +1,25 @@
+<header
+  class="grid place-items-center h-[50vh] max-h-[500px] overflow-hidden my-12"
+>
+  <div class="z-1 text-center p-1">
+    <h1 class="text-5xl leading-loose text-white">알고달레</h1>
+    <p class="text-2xl leading-loose text-white">
+      달레와 함께하는 코딩 시험과 면접 준비
+    </p>
+  </div>
+  <img src="/hero.jpg" alt="hero" class="object-cover w-full z-[-1]" />
+</header>
+
+<style>
+  header {
+    grid-template-areas: "hero";
+    background-color: rgba(0 0 0/ 0.3);
+    > * {
+      grid-area: hero;
+    }
+  }
+
+  img {
+    height: min(50vh, 500px);
+  }
+</style>

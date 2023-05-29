@@ -5,13 +5,11 @@ import MaxWidthWrapper from "../../components/MaxWidthWrapper.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
-  const guides = await getCollection("guides");
-  return guides
-    .filter((guide) => !guide.data.draft)
-    .map((guide) => ({
-      params: { slug: guide.slug },
-      props: guide,
-    }));
+  const guides = await getCollection("guides", (guide) => !guide.data.draft);
+  return guides.map((guide) => ({
+    params: { slug: guide.slug },
+    props: guide,
+  }));
 }
 type Props = CollectionEntry<"guides">;
 

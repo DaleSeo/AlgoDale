@@ -2,9 +2,11 @@
 import { getCollection } from "astro:content";
 import ListLayout from "~/layouts/ListLayout.astro";
 
-const dataStructures = await getCollection("data-structures");
+const dataStructures = await getCollection(
+  "data-structures",
+  (dataStructures) => !dataStructures.data.draft
+);
 const articles = dataStructures
-  .filter((dataStructures) => !dataStructures.data.draft)
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .map(({ collection, slug, data: { title, description, tags } }) => ({
     href: `/${collection}/${slug}`,
