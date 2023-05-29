@@ -1,10 +1,67 @@
 ---
+import { getCollection } from "astro:content";
+import CardList from "~/components/CardList.astro";
 import MaxWidthWrapper from "~/components/MaxWidthWrapper.astro";
 import Hero from "~/components/Hero.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
+
+const problems = (
+  await getCollection("problems", (problem) => !problem.data.draft)
+)
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
+  .slice(0, 6)
+  .map(({ collection, slug, data: { title, tags } }) => ({
+    href: `/${collection}/${slug}`,
+    slug,
+    title,
+    tags,
+  }));
+
+const algorithms = (
+  await getCollection("algorithms", (algorithms) => !algorithms.data.draft)
+)
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
+  .slice(0, 6)
+  .map(({ collection, slug, data: { title, tags } }) => ({
+    href: `/${collection}/${slug}`,
+    slug,
+    title,
+    tags,
+  }));
+
+const dataStructures = (
+  await getCollection(
+    "data-structures",
+    (dataStructures) => !dataStructures.data.draft
+  )
+)
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
+  .slice(0, 2)
+  .map(({ collection, slug, data: { title, tags } }) => ({
+    href: `/${collection}/${slug}`,
+    slug,
+    title,
+    tags,
+  }));
+
+const guides = (
+  await getCollection("guides", (dataStructures) => !dataStructures.data.draft)
+)
+  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
+  .slice(0, 2)
+  .map(({ collection, slug, data: { title } }) => ({
+    href: `/${collection}/${slug}`,
+    slug,
+    title,
+  }));
 ---
 
 <BaseLayout>
   <Hero />
-  <MaxWidthWrapper>Index</MaxWidthWrapper>
+  <MaxWidthWrapper>
+    <CardList icon="book" title="문제 해결" articles={problems} />
+    <CardList icon="loop" title="알고리즘" articles={algorithms} />
+    <CardList icon="tree" title="자료구조" articles={dataStructures} />
+    <CardList icon="direction" title="시험 가이드" articles={guides} />
+  </MaxWidthWrapper>
 </BaseLayout>
