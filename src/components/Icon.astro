@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon";
 
-const icons: Record<string, string> = {
+const icons = {
   book: "tabler:book",
   clock: "fe:clock",
   direction: "simple-line-icons:direction",
@@ -18,6 +18,12 @@ const icons: Record<string, string> = {
   twitter: "simple-icons:twitter",
   youtube: "simple-icons:youtube",
 };
+
+export interface Props {
+  name: keyof typeof icons;
+  size?: number | string;
+  inline?: boolean;
+}
 
 const { name, size, inline } = Astro.props;
 const iconName = name in icons ? icons[name] : "mdi:account";

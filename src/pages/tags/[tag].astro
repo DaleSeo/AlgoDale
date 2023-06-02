@@ -33,7 +33,7 @@ export async function getStaticPaths() {
   return await Promise.all(
     tagIds.map(async (tagId) => {
       const tag = await getEntry("tags", tagId);
-      const tagName = tag ? tag.data.name : tag;
+      const tagName = tag ? tag.data.name : tagId;
 
       const articles = posts
         .filter(({ data: { tags } }) => tags.includes(tagId))
@@ -55,4 +55,4 @@ export async function getStaticPaths() {
 const { tagName, articles } = Astro.props;
 ---
 
-<ListLayout title={`${tagName} 관련 포스팅`} articles={articles} />
+<ListLayout icon="tag" title={`${tagName} 관련 글`} articles={articles} />
