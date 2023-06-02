@@ -1,5 +1,5 @@
 ---
-title: "Best Time to Buy and Sell Stock"
+title: 'Best Time to Buy and Sell Stock'
 tags:
   - LeetCode
   - Python
@@ -7,7 +7,7 @@ tags:
 date: 2022-02-10
 ---
 
-<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/5QOhBNYXC_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5QOhBNYXC_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 LeetCode의 [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) 문제를 함께 풀어보도록 하겠습니다.
 
@@ -144,3 +144,5 @@ class Solution:
 
 주식을 사고 파는 유형의 문제는 코딩 시험에 워낙 많이 등장해서 이제는 좀 식상한 감도 없지 않은데요.
 그럼에도 불구하고 변형된 문제가 많은 만큼 익숙해지시면 도움이 되실 것 같아서 다루어보았습니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JhoteDObjmg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
