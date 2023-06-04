@@ -1,5 +1,5 @@
 ---
-title: 'Reverse Linked List'
+title: "Reverse Linked List"
 tags:
   - LeetCode
   - Python
@@ -217,15 +217,15 @@ class Solution:
 
 ```ts
 function reverseList(head: ListNode | null): ListNode | null {
-	let curr = head;
-	let prev = null;
-	while (curr) {
-		let next = curr.next;
-		curr.next = prev;
-		prev = curr;
-		curr = next;
-	}
-	return prev;
+  let curr = head;
+  let prev = null;
+  while (curr) {
+    let next = curr.next;
+    curr.next = prev;
+    prev = curr;
+    curr = next;
+  }
+  return prev;
 }
 ```
 

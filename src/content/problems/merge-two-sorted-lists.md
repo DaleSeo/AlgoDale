@@ -1,10 +1,10 @@
 ---
-title: 'Merge Two Sorted Lists'
+title: "Merge Two Sorted Lists"
 tags:
   - LeetCode
   - Python
   - Java
-  - LinkedList
+  - linkedList
   - twoPointers
   - recursion
 date: 2021-05-25
@@ -99,15 +99,18 @@ class Solution:
  * }
  */
 
-function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
-	if (!(list1 && list2)) return list1 || list2;
-	if (list1.val < list2.val) {
-		list1.next = mergeTwoLists(list1.next, list2);
-		return list1;
-	} else {
-		list2.next = mergeTwoLists(list1, list2.next);
-		return list2;
-	}
+function mergeTwoLists(
+  list1: ListNode | null,
+  list2: ListNode | null
+): ListNode | null {
+  if (!(list1 && list2)) return list1 || list2;
+  if (list1.val < list2.val) {
+    list1.next = mergeTwoLists(list1.next, list2);
+    return list1;
+  } else {
+    list2.next = mergeTwoLists(list1, list2.next);
+    return list2;
+  }
 }
 ```
 
@@ -235,15 +238,18 @@ class Solution:
 같은 알고리즘을 자바스크립트로 구현하면 다음과 같습니다.
 
 ```ts
-function mergeTwoLists(list1: ListNode | null, list2: ListNode | null): ListNode | null {
-	if (!(list1 && list2)) return list1 || list2;
-	if (list1.val < list2.val) {
-		list1.next = mergeTwoLists(list1.next, list2);
-		return list1;
-	} else {
-		list2.next = mergeTwoLists(list1, list2.next);
-		return list2;
-	}
+function mergeTwoLists(
+  list1: ListNode | null,
+  list2: ListNode | null
+): ListNode | null {
+  if (!(list1 && list2)) return list1 || list2;
+  if (list1.val < list2.val) {
+    list1.next = mergeTwoLists(list1.next, list2);
+    return list1;
+  } else {
+    list2.next = mergeTwoLists(list1, list2.next);
+    return list2;
+  }
 }
 ```
 

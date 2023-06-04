@@ -1,10 +1,10 @@
 ---
-title: 'Climbing Stairs'
+title: "Climbing Stairs"
 tags:
   - LeetCode
   - Python
   - array
-  - dynamicPrograming
+  - DP
   - hashTable
   - recursion
   - memoization

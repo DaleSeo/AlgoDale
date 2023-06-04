@@ -1,12 +1,12 @@
 ---
-title: 'Decode Ways'
+title: "Decode Ways"
 tags:
   - LeetCode
   - Python
   - recursion
   - DFS
   - memoization
-  - dynamicPrograming
+  - DP
   - string
 date: 2022-07-01
 ---

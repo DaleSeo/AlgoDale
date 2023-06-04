@@ -1,10 +1,10 @@
 ---
-title: 'House Robber'
+title: "House Robber"
 tags:
   - LeetCode
   - Python
   - array
-  - dynamicPrograming
+  - DP
   - hashTable
   - recursion
   - memoization

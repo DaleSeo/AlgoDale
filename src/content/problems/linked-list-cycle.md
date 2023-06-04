@@ -1,5 +1,5 @@
 ---
-title: 'Linked List Cycle'
+title: "Linked List Cycle"
 tags:
   - LeetCode
   - Python

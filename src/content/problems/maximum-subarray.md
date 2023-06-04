@@ -1,12 +1,12 @@
 ---
-title: 'Maximum Subarray'
+title: "Maximum Subarray"
 tags:
   - LeetCode
   - Python
   - array
   - combination
   - intuition
-  - dynamicPrograming
+  - DP
 date: 2021-02-17
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 'Coin Change'
+title: "Coin Change"
 tags:
   - LeetCode
   - Python
@@ -7,7 +7,7 @@ tags:
   - permutation
   - BFS
   - queue
-  - dynamicPrograming
+  - DP
 date: 2022-01-06
 ---
 
