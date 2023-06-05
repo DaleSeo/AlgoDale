@@ -8,10 +8,13 @@ const active = to === pathname || pathname.startsWith(to);
 <a
   href={to}
   title={title}
-  class:list={{
-    "font-bold underline underline-offset-4 decoration-2 decoration-primary":
-      active,
-  }}
+  class:list={[
+    "hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-primary",
+    {
+      "font-bold underline underline-offset-4 decoration-2 decoration-primary":
+        active,
+    },
+  ]}
 >
   <slot />
 </a>

@@ -13,7 +13,7 @@ interface Props {
 const { icon, title, articles } = Astro.props;
 ---
 
-<BaseLayout>
+<BaseLayout title={title}>
   <MaxWidthWrapper>
     <CardList icon={icon} title={title} articles={articles} />
   </MaxWidthWrapper>
