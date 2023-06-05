@@ -9,7 +9,7 @@ const dataStructures = await getCollection(
 const articles = dataStructures
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .map(({ collection, slug, data: { title, description, tags } }) => ({
-    href: `/${collection}/${slug}`,
+    href: `/${collection}/${slug}/`,
     slug,
     title,
     description,

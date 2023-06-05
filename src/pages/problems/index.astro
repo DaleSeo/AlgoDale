@@ -9,7 +9,7 @@ const problems = await getCollection(
 const articles = problems
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .map(({ collection, slug, data: { title, tags } }) => ({
-    href: `/${collection}/${slug}`,
+    href: `/${collection}/${slug}/`,
     slug,
     title,
     tags,

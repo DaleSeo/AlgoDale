@@ -7,6 +7,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: "https://daleseo.com/",
+  trailingSlash: "always",
   integrations: [mdx(), sitemap(), tailwind()],
   plugins: [prettier],
   overrides: [

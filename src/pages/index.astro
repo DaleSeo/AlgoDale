@@ -11,7 +11,7 @@ const problems = (
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .slice(0, 6)
   .map(({ collection, slug, data: { title, tags } }) => ({
-    href: `/${collection}/${slug}`,
+    href: `/${collection}/${slug}/`,
     slug,
     title,
     tags,
@@ -23,7 +23,7 @@ const algorithms = (
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .slice(0, 6)
   .map(({ collection, slug, data: { title, tags } }) => ({
-    href: `/${collection}/${slug}`,
+    href: `/${collection}/${slug}/`,
     slug,
     title,
     tags,
@@ -38,7 +38,7 @@ const dataStructures = (
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .slice(0, 2)
   .map(({ collection, slug, data: { title, tags } }) => ({
-    href: `/${collection}/${slug}`,
+    href: `/${collection}/${slug}/`,
     slug,
     title,
     tags,
@@ -50,7 +50,7 @@ const guides = (
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .slice(0, 2)
   .map(({ collection, slug, data: { title } }) => ({
-    href: `/${collection}/${slug}`,
+    href: `/${collection}/${slug}/`,
     slug,
     title,
   }));
