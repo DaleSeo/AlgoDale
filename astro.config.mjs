@@ -6,13 +6,15 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
+  site: "https://daleseo.com/",
   integrations: [mdx(), sitemap(), tailwind()],
   plugins: [prettier],
-  overrides: [{
-    files: "*.astro",
-    options: {
-      parser: "astro"
-    }
-  }]
+  overrides: [
+    {
+      files: "*.astro",
+      options: {
+        parser: "astro",
+      },
+    },
+  ],
 });
