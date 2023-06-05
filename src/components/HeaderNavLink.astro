@@ -1,8 +1,18 @@
 ---
 const { to, title } = Astro.props;
+
+const { pathname } = Astro.url;
+const active = to === pathname || pathname.startsWith(to);
 ---
 
-<a href={to} title={title}>
+<a
+  href={to}
+  title={title}
+  class:list={{
+    "font-bold underline underline-offset-4 decoration-2 decoration-primary":
+      active,
+  }}
+>
   <slot />
 </a>
 
