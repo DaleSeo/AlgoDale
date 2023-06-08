@@ -23,6 +23,6 @@
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.4.2",
     "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.9.1"
+    "prettier-plugin-astro": "^0.10.0"
   }
 }
