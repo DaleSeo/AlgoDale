@@ -1,8 +1,9 @@
 ---
-import "../styles/global.css";
+import "~/styles/global.css";
 import { SEO } from "astro-seo";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "~/components/Header.astro";
+import Footer from "~/components/Footer.astro";
+import MaxWidthWrapper from "~/components/MaxWidthWrapper.astro";
 const { title: pageTitle } = Astro.props;
 
 const title = pageTitle ? `${pageTitle} | 알고달레` : "알고달레";
@@ -44,10 +45,14 @@ const image =
     />
   </head>
   <body>
-    <Header />
+    <MaxWidthWrapper>
+      <Header />
+    </MaxWidthWrapper>
     <main>
       <slot />
     </main>
-    <Footer />
+    <MaxWidthWrapper>
+      <Footer />
+    </MaxWidthWrapper>
   </body>
 </html>
