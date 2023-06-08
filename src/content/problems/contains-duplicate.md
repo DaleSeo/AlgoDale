@@ -1,5 +1,5 @@
 ---
-title: 'Contains Duplicate'
+title: "Contains Duplicate"
 tags:
   - LeetCode
   - Python
@@ -184,3 +184,5 @@ class Solution {
 
 이상으로 LeetCode의 Contains Duplicate 문제를 3가지 방법으로 풀어보았습니다.
 이 문제는 크게 어렵지 않으면서도 풀이 방법이 다양해서 개인적으로 알고리즘/자료구조 입문자들이 처음에 풀어보기 좋은 문제라고 생각합니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wfU1-Lusv_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
