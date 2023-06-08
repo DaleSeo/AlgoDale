@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon as AstroIcon } from "astro-icon";
 
 const icons = {
   array: "ic:outline-data-array",
@@ -42,13 +42,14 @@ export interface Props {
   name: keyof typeof icons;
   size?: number | string;
   inline?: boolean;
+  class?: string;
 }
 
-const { name, size, inline } = Astro.props;
+const { name, size, inline, class: className } = Astro.props;
 const iconName = name in icons ? icons[name] : "mdi:account";
 ---
 
-<Icon name={iconName} class:list={{ inline }} />
+<AstroIcon name={iconName} class:list={[className, { inline }]} />
 
 <style define:vars={{ size }}>
   [astro-icon] {

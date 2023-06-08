@@ -1,9 +1,33 @@
 ---
-import Link from "./HeaderNavLink.astro";
+import Link from "~/components/HeaderNavLink.astro";
+import Icon from "~/components/Icon.astro";
 ---
 
 <nav>
-  <ul class="flex items-center">
+  <ul class="flex sm:hidden items-center">
+    <li>
+      <Link to="/problems/" title="문제 해결" icon="List">
+        <Icon name="book" class="text-2xl" />
+      </Link>
+    </li>
+    <li>
+      <Link to="/algorithms/" title="알고리즘" icon="Loop" size="24px">
+        <Icon name="loop" size="24" class="text-2xl" />
+      </Link>
+    </li>
+    <li>
+      <Link to="/data-structures/" title="자료구조" icon="Tree" size="24px">
+        <Icon name="graph" size="24" class="text-2xl" />
+      </Link>
+    </li>
+    <li>
+      <Link to="/guides/" title="시험 가이드" icon="Map" size="24px">
+        <Icon name="direction" size="24" class="text-2xl" />
+      </Link>
+    </li>
+  </ul>
+
+  <ul class="hidden sm:flex items-center">
     <li>
       <Link to="/problems/" title="문제 해결" icon="List">Problems</Link>
     </li>
