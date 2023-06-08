@@ -1,8 +1,6 @@
 ---
 import { CollectionEntry, getCollection } from "astro:content";
-import Article from "../../components/Article.astro";
-import MaxWidthWrapper from "../../components/MaxWidthWrapper.astro";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArticleLayout from "~/layouts/ArticleLayout.astro";
 
 export async function getStaticPaths() {
   const problems = await getCollection(
@@ -23,10 +21,6 @@ const {
 const { Content } = await problem.render();
 ---
 
-<BaseLayout title={title}>
-  <MaxWidthWrapper>
-    <Article title={title} date={date} tags={tags}>
-      <Content />
-    </Article>
-  </MaxWidthWrapper>
-</BaseLayout>
+<ArticleLayout {title} {date} {tags}>
+  <Content />
+</ArticleLayout>
