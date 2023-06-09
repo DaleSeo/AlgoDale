@@ -40,20 +40,12 @@ const icons = {
 
 export interface Props {
   name: keyof typeof icons;
-  size?: number | string;
+  size?: string;
   inline?: boolean;
-  class?: string;
 }
 
-const { name, size, inline, class: className } = Astro.props;
+const { name, size = "1em", inline } = Astro.props;
 const iconName = name in icons ? icons[name] : "mdi:account";
 ---
 
-<AstroIcon name={iconName} class:list={[className, { inline }]} />
-
-<style define:vars={{ size }}>
-  [astro-icon] {
-    width: var(--size, 1em);
-    height: var(--size, 1em);
-  }
-</style>
+<AstroIcon name={iconName} width={size} height={size} class:list={{ inline }} />
