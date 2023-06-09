@@ -5,16 +5,17 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 
 interface Props {
   title: string;
+  description?: string;
   date: Date;
   tags: string[];
 }
 
-const { title, date, tags } = Astro.props;
+const { title, description, date, tags } = Astro.props;
 ---
 
-<BaseLayout title={title}>
+<BaseLayout {title} {description}>
   <MaxWidthWrapper>
-    <Article title={title} date={date} tags={tags}>
+    <Article {title} {date} {tags}>
       <slot />
     </Article>
   </MaxWidthWrapper>

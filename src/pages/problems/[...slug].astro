@@ -3,22 +3,19 @@ import { CollectionEntry, getCollection } from "astro:content";
 import ArticleLayout from "~/layouts/ArticleLayout.astro";
 
 export async function getStaticPaths() {
-  const problems = await getCollection(
-    "problems",
-    (problem) => !problem.data.draft
-  );
-  return problems.map((problem) => ({
+  const posts = await getCollection("problems", (post) => !post.data.draft);
+  return posts.map((problem) => ({
     params: { slug: problem.slug },
     props: problem,
   }));
 }
 type Props = CollectionEntry<"problems">;
 
-const problem = Astro.props;
+const post = Astro.props;
 const {
   data: { title, date, tags },
-} = problem;
-const { Content } = await problem.render();
+} = post;
+const { Content } = await post.render();
 ---
 
 <ArticleLayout {title} {date} {tags}>

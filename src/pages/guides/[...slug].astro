@@ -3,19 +3,19 @@ import { CollectionEntry, getCollection } from "astro:content";
 import ArticleLayout from "~/layouts/ArticleLayout.astro";
 
 export async function getStaticPaths() {
-  const guides = await getCollection("guides", (guide) => !guide.data.draft);
-  return guides.map((guide) => ({
-    params: { slug: guide.slug },
-    props: guide,
+  const posts = await getCollection("guides", (post) => !post.data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
   }));
 }
 type Props = CollectionEntry<"guides">;
 
-const guide = Astro.props;
+const post = Astro.props;
 const {
   data: { title, date },
-} = guide;
-const { Content } = await guide.render();
+} = post;
+const { Content } = await post.render();
 ---
 
 <ArticleLayout {title} {date}>

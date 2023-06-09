@@ -3,22 +3,19 @@ import { CollectionEntry, getCollection } from "astro:content";
 import ArticleLayout from "~/layouts/ArticleLayout.astro";
 
 export async function getStaticPaths() {
-  const algorithms = await getCollection(
-    "algorithms",
-    (algorithm) => !algorithm.data.draft
-  );
-  return algorithms.map((algorithm) => ({
-    params: { slug: algorithm.slug },
-    props: algorithm,
+  const posts = await getCollection("algorithms", (post) => !post.data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
   }));
 }
 type Props = CollectionEntry<"algorithms">;
 
-const dataStructure = Astro.props;
+const post = Astro.props;
 const {
   data: { title, date, tags },
-} = dataStructure;
-const { Content } = await dataStructure.render();
+} = post;
+const { Content } = await post.render();
 ---
 
 <ArticleLayout {title} {date} {tags}>
