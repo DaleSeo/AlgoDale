@@ -6,7 +6,7 @@ const icons = {
   book: "tabler:book",
   brain: "mdi:brain-freeze",
   clock: "fe:clock",
-  direction: "simple-line-icons:direction",
+  direction: "mdi:compass-outline",
   discord: "simple-icons:discord",
   formula: "fluent:math-formula-24-filled",
   github: "simple-icons:github",
@@ -42,10 +42,16 @@ export interface Props {
   name: keyof typeof icons;
   size?: string;
   inline?: boolean;
+  class?: string;
 }
 
-const { name, size = "1em", inline } = Astro.props;
+const { name, size = "1em", inline, class: className } = Astro.props;
 const iconName = name in icons ? icons[name] : "mdi:account";
 ---
 
-<AstroIcon name={iconName} width={size} height={size} class:list={{ inline }} />
+<AstroIcon
+  name={iconName}
+  width={size}
+  height={size}
+  class:list={[className, { inline }]}
+/>

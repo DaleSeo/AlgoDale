@@ -1,5 +1,14 @@
 ---
-const { to, title } = Astro.props;
+import Icon, { Props as IconProps } from "~/components/Icon.astro";
+
+interface Props {
+  to: string;
+  title: string;
+  icon: IconProps["name"];
+  text: string;
+}
+
+const { to, title, icon, text } = Astro.props;
 
 const { pathname } = Astro.url;
 const active = to === pathname || pathname.startsWith(to);
@@ -16,7 +25,14 @@ const active = to === pathname || pathname.startsWith(to);
     },
   ]}
 >
-  <slot />
+  <Icon
+    name={icon}
+    size={active ? "36px" : "24px"}
+    class="sm:hidden hover:text-primary"
+  />
+  <span class="hidden sm:block">
+    {text}
+  </span>
 </a>
 
 <style>

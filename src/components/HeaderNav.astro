@@ -1,48 +1,25 @@
 ---
 import Link from "~/components/HeaderNavLink.astro";
-import Icon from "~/components/Icon.astro";
 ---
 
 <nav>
-  <ul class="flex sm:hidden items-center">
+  <ul class="flex items-center">
     <li>
-      <Link to="/problems/" title="문제 해결" icon="List">
-        <Icon name="book" size="24px" />
-      </Link>
+      <Link to="/problems/" title="문제 해결" icon="book" text="Problems" />
     </li>
     <li>
-      <Link to="/algorithms/" title="알고리즘" icon="Loop" size="24px">
-        <Icon name="loop" size="24px" />
-      </Link>
+      <Link to="/algorithms/" title="알고리즘" icon="loop" text="Algorithms" />
     </li>
     <li>
-      <Link to="/data-structures/" title="자료구조" icon="Tree" size="24px">
-        <Icon name="graph" size="24px" />
-      </Link>
+      <Link
+        to="/data-structures/"
+        title="자료구조"
+        icon="graph"
+        text="DataStructures"
+      />
     </li>
     <li>
-      <Link to="/guides/" title="시험 가이드" icon="Map" size="24px">
-        <Icon name="direction" size="24" />
-      </Link>
-    </li>
-  </ul>
-
-  <ul class="hidden sm:flex items-center">
-    <li>
-      <Link to="/problems/" title="문제 해결" icon="List">Problems</Link>
-    </li>
-    <li>
-      <Link to="/algorithms/" title="알고리즘" icon="Loop" size="24">
-        Algorithms
-      </Link>
-    </li>
-    <li>
-      <Link to="/data-structures/" title="자료구조" icon="Tree" size="24">
-        DataStructures
-      </Link>
-    </li>
-    <li>
-      <Link to="/guides/" title="시험 가이드" icon="Map" size="24">Guides</Link>
+      <Link to="/guides/" title="시험 가이드" icon="direction" text="Guides" />
     </li>
 
     <!-- <li>
