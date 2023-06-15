@@ -1,5 +1,5 @@
 ---
-title: 'Lowest Common Ancestor of a Binary Tree'
+title: "Lowest Common Ancestor of a Binary Tree"
 tags:
   - LeetCode
   - Python
@@ -10,6 +10,8 @@ tags:
   - DFS
 date: 2021-12-22
 ---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7sY3-u8BkXM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 LeetCode의 [Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/) 문제를 함께 풀어보도록 하겠습니다.
 

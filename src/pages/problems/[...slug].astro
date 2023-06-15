@@ -4,9 +4,9 @@ import ArticleLayout from "~/layouts/ArticleLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("problems", (post) => !post.data.draft);
-  return posts.map((problem) => ({
-    params: { slug: problem.slug },
-    props: problem,
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
   }));
 }
 type Props = CollectionEntry<"problems">;
@@ -15,7 +15,9 @@ const post = Astro.props;
 const {
   data: { title, date, tags },
 } = post;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
+
+console.log(headings);
 ---
 
 <ArticleLayout {title} {date} {tags}>
