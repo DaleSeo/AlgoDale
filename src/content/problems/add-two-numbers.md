@@ -126,3 +126,5 @@ public class Solution {
 M과 N을 각각 첫번째, 두번째 링크드 리스트 내의 노드 수라고 했을때, 시간 복잡도와 공간 복잡도는 모두 `O(max(M + N))`이 되는데요.
 하나의 루프를 사용하고 있기 때문에, 알고리즘은 실행 시간은 둘 중에 어느 링크트 리스트가 더 긴지에 좌우됩니다.
 결과값을 저장하기 위해서 추가적으로 링크드 리스트를 생성하는데 이 링크드 리스트 내의 노드의 수는 두 개의 입력 링크드 리스트 중 큰 겂과 동일하거나 carry 발생 시 하나 더 크게 됩겠죠?
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MiUOa8NdcFM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
