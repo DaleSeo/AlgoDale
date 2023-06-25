@@ -13,11 +13,11 @@ type Props = CollectionEntry<"guides">;
 
 const post = Astro.props;
 const {
-  data: { title, date },
+  data: { title, description, date },
 } = post;
 const { Content } = await post.render();
 ---
 
-<ArticleLayout {title} {date}>
+<ArticleLayout {title} {description} {date}>
   <Content />
 </ArticleLayout>
