@@ -16,8 +16,6 @@ const {
   data: { title, date, tags },
 } = post;
 const { Content, headings } = await post.render();
-
-console.log(headings);
 ---
 
 <ArticleLayout {title} {date} {tags}>
