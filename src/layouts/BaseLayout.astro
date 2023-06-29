@@ -13,7 +13,8 @@ interface Props {
 const { title: pageTitle, description: pageDescription } = Astro.props;
 
 const title = pageTitle ? `${pageTitle} | 알고달레` : "알고달레";
-const description = pageDescription ?? "달레와 함께하는 코딩 시험과 면접 준비";
+const description =
+  pageDescription ?? "코딩 테스트를 위한 알고리즘 공부 달레가 도와드릴께요";
 const image =
   "https://res.cloudinary.com/daleseo/image/upload/v1685926367/algodale/og.png";
 ---
