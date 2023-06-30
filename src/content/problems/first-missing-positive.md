@@ -11,6 +11,8 @@ tags:
 date: 2022-09-15
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/orNygQroXL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 LeetCode의 [First Missing Positive](https://leetcode.com/problems/first-missing-positive/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
@@ -86,11 +88,11 @@ n을 배열에 들어있는 숫자의 개수라고 했을 때, 이 알고리즘�
 ```py
 class Solution:
     def firstMissingPositive(self, nums: List[int]) -> int:
-        ans = 1
+        result = 1
         for num in sorted(nums):
-            if num == ans:
-                ans += 1
-        return ans
+            if num == result:
+                result += 1
+        return result
 ```
 
 동일한 코드를 자바로도 작성해보았습니다.
@@ -100,11 +102,11 @@ class Solution {
     public int firstMissingPositive(int[] nums) {
         Arrays.sort(nums);
 
-        int ans = 1;
+        int result = 1;
         for (int i = 0; i < nums.length; i++)
-            if (nums[i] == ans) ans ++;
+            if (nums[i] == result) result ++;
 
-        return ans;
+        return result;
     }
 }
 ```
@@ -116,7 +118,7 @@ class Solution {
 
 첫번째 풀이는 성능이 우수했으나 세트 때문에 공간 활용면에서 단점이 있었고, 두번째 풀이는 공간 효율은 우수했으나 정렬 때문에 성능 측면에서 아쉬운 점이 있었습니다.
 
-두번째 풀이처럼 추가적인 공간을 사용하지 않으면서도, 첫번째 풀이처럼 선형 시간의 성능을 달성할 수는 없을까요?
+두번째 풀이처럼 추가적인 공간을 사용하지 않으면서도, 첫번째 풀이처럼 선형 시간의 성능을 달성할 수 있다면 매우 좋겠죠?
 
 양의 정수가 하나도 누락되지 않은 배열이 모습을 상상해보면 다음과 같을 텐데요.
 만약에 숫자들을 배열 내에서 위와 같은 상태로 미리 배치해 놓을 수 있다면 어떨까요?
@@ -229,4 +231,4 @@ function firstMissingPositive(nums: number[]): number {
 ```
 
 이 알고리즘을 통해서 목표로 했던 `O(n)`의 시간 복잡도와 `O(1)`의 공간 복잡도를 달성하게 되었습니다.
-배열을 단순히 두 번 루프를 돌고 고정된 수의 변수 외에는 추가적인 메로리를 사용하는 부분이 없기 때문입니다.
+배열을 단순히 두 번 루프를 돌고 고정된 수의 변수 외에는 추가적인 메모리를 사용하지 않기 때문입니다.
