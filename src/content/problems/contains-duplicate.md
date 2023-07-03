@@ -1,9 +1,9 @@
 ---
 title: "Contains Duplicate"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - array
   - set
 date: 2022-04-13

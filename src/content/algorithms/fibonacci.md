@@ -1,7 +1,7 @@
 ---
-title: '피보나치 (Fibonacci) 알고리즘'
+title: "피보나치 (Fibonacci) 알고리즘"
 tags:
-  - Python
+  - python
   - recursion
   - memoization
 date: 2021-06-19

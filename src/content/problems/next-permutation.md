@@ -1,9 +1,9 @@
 ---
-title: 'Next Permutation'
+title: "Next Permutation"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - array
   - permutation
 date: 2021-02-16

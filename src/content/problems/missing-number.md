@@ -1,8 +1,8 @@
 ---
-title: 'Missing Number'
+title: "Missing Number"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - array
   - set
   - sort

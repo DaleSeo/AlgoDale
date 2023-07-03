@@ -1,12 +1,12 @@
 ---
-title: 'Invert Binary Tree'
+title: "Invert Binary Tree"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - binaryTree
   - tree
   - recursion
-  - DFS
+  - dfs
   - stack
 date: 2022-01-20
 ---

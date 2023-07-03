@@ -1,8 +1,8 @@
 ---
-title: 'Merge Intervals'
+title: "Merge Intervals"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - array
   - interval
 date: 2022-05-04

@@ -1,12 +1,12 @@
 ---
 title: "Remove Nth Node From End of List"
 tags:
-  - LeetCode
-  - Python
-  - Java
-  - linkedList
+  - leetcode
+  - python
+  - java
+  - linked-list
   - queue
-  - twoPointers
+  - two-pointers
 date: 2021-05-04
 ---
 

@@ -1,11 +1,11 @@
 ---
 title: "First Missing Positive"
 tags:
-  - LeetCode
-  - Python
-  - Java
-  - JavaScript
-  - hashTable
+  - leetcode
+  - python
+  - java
+  - javascript
+  - hash-table
   - set
   - sort
 date: 2022-09-15

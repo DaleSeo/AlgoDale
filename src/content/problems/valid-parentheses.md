@@ -1,11 +1,11 @@
 ---
-title: 'Valid Parentheses'
+title: "Valid Parentheses"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - parentheses
-  - hashTable
+  - hash-table
   - stack
 date: 2021-05-11
 ---

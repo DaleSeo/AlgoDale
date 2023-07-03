@@ -1,10 +1,10 @@
 ---
-title: 'Two Sum II - Input Array Is Sorted'
+title: "Two Sum II - Input Array Is Sorted"
 tags:
-  - LeetCode
-  - Python
-  - binarySearch
-  - twoPointers
+  - leetcode
+  - python
+  - binary-search
+  - two-pointers
 date: 2021-01-12
 ---
 

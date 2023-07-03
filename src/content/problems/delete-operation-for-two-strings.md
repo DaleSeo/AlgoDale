@@ -1,12 +1,12 @@
 ---
 title: "Delete Operation for Two Strings"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - string
   - recursion
   - memoization
-  - DP
+  - dp
 date: 2022-02-03
 ---
 

@@ -1,8 +1,8 @@
 ---
-title: 'Kth Largest Element in an Array'
+title: "Kth Largest Element in an Array"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - sort
   - heap
   - search

@@ -9,7 +9,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://daleseo.com/",
+  site: "https://www.algodale.com/",
   trailingSlash: "always",
   integrations: [mdx(), sitemap(), tailwind(), partytown()],
   // markdown: {

@@ -1,14 +1,14 @@
 ---
-title: 'Combination Sum'
+title: "Combination Sum"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - array
   - combination
   - backtracking
   - recursion
-  - DFS
+  - dfs
 date: 2021-07-28
 ---
 

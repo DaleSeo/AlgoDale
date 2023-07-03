@@ -1,13 +1,13 @@
 ---
 title: "Coin Change"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - array
   - permutation
-  - BFS
+  - bfs
   - queue
-  - DP
+  - dp
 date: 2022-01-06
 ---
 

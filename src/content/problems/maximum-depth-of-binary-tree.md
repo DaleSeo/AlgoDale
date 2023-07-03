@@ -1,13 +1,13 @@
 ---
-title: 'Maximum Depth of Binary Tree'
+title: "Maximum Depth of Binary Tree"
 tags:
-  - LeetCode
-  - Python
-  - Java
-  - JavaScript
+  - leetcode
+  - python
+  - java
+  - javascript
   - binaryTree
   - tree
-  - DFS
+  - dfs
   - recursion
 date: 2022-02-23
 ---
@@ -153,16 +153,16 @@ class Solution {
 
 ```js
 var maxDepth = function (root) {
-	if (!root) return 0;
-	let max = 0;
-	const stack = [[root, 1]];
-	while (stack.length > 0) {
-		const [node, depth] = stack.pop();
-		max = Math.max(depth, max);
-		if (node.left) stack.push([node.left, depth + 1]);
-		if (node.right) stack.push([node.right, depth + 1]);
-	}
-	return max;
+  if (!root) return 0;
+  let max = 0;
+  const stack = [[root, 1]];
+  while (stack.length > 0) {
+    const [node, depth] = stack.pop();
+    max = Math.max(depth, max);
+    if (node.left) stack.push([node.left, depth + 1]);
+    if (node.right) stack.push([node.right, depth + 1]);
+  }
+  return max;
 };
 ```
 
@@ -256,8 +256,8 @@ class Solution {
 
 ```js
 var maxDepth = function (root) {
-	if (!root) return 0;
-	return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+  if (!root) return 0;
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 };
 ```
 

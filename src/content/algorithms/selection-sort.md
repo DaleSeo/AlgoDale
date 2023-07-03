@@ -2,8 +2,8 @@
 title: "선택 정렬 (Selection Sort)"
 tags:
   - sort
-  - Python
-  - Java
+  - python
+  - java
 date: 2021-07-21
 ---
 

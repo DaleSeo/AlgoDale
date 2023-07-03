@@ -1,10 +1,10 @@
 ---
 title: "Merge k Sorted Lists"
 tags:
-  - LeetCode
-  - Python
-  - Java
-  - linkedList
+  - leetcode
+  - python
+  - java
+  - linked-list
   - heap
   - priorityQueue
 date: 2021-11-03

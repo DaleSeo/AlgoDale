@@ -1,11 +1,11 @@
 ---
-title: 'Longest Consecutive Sequence'
+title: "Longest Consecutive Sequence"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - array
   - sort
-  - hashTable
+  - hash-table
   - set
 date: 2022-01-11
 ---

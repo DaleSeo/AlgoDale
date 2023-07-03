@@ -1,8 +1,8 @@
 ---
-title: 'Best Time to Buy and Sell Stock'
+title: "Best Time to Buy and Sell Stock"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - array
 date: 2022-02-10
 ---

@@ -1,9 +1,9 @@
 ---
-title: '병합 정렬 (Merge Sort)'
+title: "병합 정렬 (Merge Sort)"
 tags:
   - sort
-  - Python
-  - Java
+  - python
+  - java
 date: 2021-11-11
 ---
 

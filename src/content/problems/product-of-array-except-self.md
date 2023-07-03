@@ -1,10 +1,10 @@
 ---
-title: 'Product of Array Except Self'
+title: "Product of Array Except Self"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - array
-  - DP
+  - dp
 date: 2022-01-12
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: '빠른 선택 (Quick Select) 알고리즘'
+title: "빠른 선택 (Quick Select) 알고리즘"
 tags:
   - search
   - quickSelect
-  - Python
+  - python
 date: 2022-07-28
 ---
 

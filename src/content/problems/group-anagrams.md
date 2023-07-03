@@ -1,12 +1,12 @@
 ---
-title: 'Group Anagrams'
+title: "Group Anagrams"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - string
   - anagram
-  - hashTable
+  - hash-table
   - array
   - sort
 date: 2021-02-24

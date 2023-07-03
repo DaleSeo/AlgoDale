@@ -1,11 +1,11 @@
 ---
 title: "Climbing Stairs"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - array
-  - DP
-  - hashTable
+  - dp
+  - hash-table
   - recursion
   - memoization
 date: 2022-01-04

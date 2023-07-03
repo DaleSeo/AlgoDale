@@ -1,9 +1,9 @@
 ---
-title: 'Letter Combinations of a Phone Number'
+title: "Letter Combinations of a Phone Number"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - backtracking
 date: 2021-04-27
 ---

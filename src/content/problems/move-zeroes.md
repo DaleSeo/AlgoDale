@@ -1,10 +1,10 @@
 ---
-title: 'Move Zeroes'
+title: "Move Zeroes"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - array
-  - twoPointers
+  - two-pointers
 date: 2022-01-10
 ---
 

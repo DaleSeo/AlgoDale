@@ -1,9 +1,9 @@
 ---
-title: 'Rotate Image'
+title: "Rotate Image"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - matrix
   - iteration
 date: 2021-03-17

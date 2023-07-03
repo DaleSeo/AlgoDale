@@ -1,11 +1,11 @@
 ---
-title: 'Two Sum'
+title: "Two Sum"
 tags:
-  - LeetCode
-  - Python
-  - Java
-  - JavaScript
-  - hashTable
+  - leetcode
+  - python
+  - java
+  - javascript
+  - hash-table
 date: 2021-01-05
 ---
 
@@ -180,15 +180,15 @@ class Solution {
 
 ```ts
 function twoSum(nums: number[], target: number): number[] {
-	const indices = {};
-	for (let i = 0; i < nums.length; i++) {
-		const complement = target - nums[i];
-		if (complement in indices) {
-			const j = indices[complement];
-			return [j, i];
-		}
-		indices[nums[i]] = i;
-	}
+  const indices = {};
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+    if (complement in indices) {
+      const j = indices[complement];
+      return [j, i];
+    }
+    indices[nums[i]] = i;
+  }
 }
 ```
 

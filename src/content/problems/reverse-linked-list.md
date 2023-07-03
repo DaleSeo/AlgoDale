@@ -1,10 +1,10 @@
 ---
 title: "Reverse Linked List"
 tags:
-  - LeetCode
-  - Python
-  - linkedList
-  - twoPointers
+  - leetcode
+  - python
+  - linked-list
+  - two-pointers
   - recursion
 date: 2022-02-01
 ---

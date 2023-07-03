@@ -1,9 +1,9 @@
 ---
-title: '삽입 정렬 (Insertion Sort)'
+title: "삽입 정렬 (Insertion Sort)"
 tags:
   - sort
-  - Python
-  - Java
+  - python
+  - java
 date: 2021-09-04
 ---
 

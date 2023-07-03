@@ -1,8 +1,8 @@
 ---
-title: 'Caesar Cipher'
+title: "Caesar Cipher"
 tags:
   - HackerRank
-  - Python
+  - python
   - string
   - array
 date: 2022-01-25

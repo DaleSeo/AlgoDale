@@ -1,8 +1,8 @@
 ---
-title: 'Rotate Array'
+title: "Rotate Array"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - array
   - intuition
 date: 2022-01-05

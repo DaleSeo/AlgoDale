@@ -1,14 +1,14 @@
 ---
-title: 'Longest Substring Without Repeating Characters'
+title: "Longest Substring Without Repeating Characters"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - string
-  - hashTable
+  - hash-table
   - set
   - slidingWindow
-  - twoPointers
+  - two-pointers
 date: 2021-03-23
 ---
 

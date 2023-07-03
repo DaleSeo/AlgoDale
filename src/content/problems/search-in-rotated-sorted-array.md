@@ -1,12 +1,12 @@
 ---
-title: 'Search in Rotated Sorted Array'
+title: "Search in Rotated Sorted Array"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - array
   - linearSearch
-  - binarySearch
+  - binary-search
 date: 2021-11-10
 ---
 

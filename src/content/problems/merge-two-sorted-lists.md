@@ -1,11 +1,11 @@
 ---
 title: "Merge Two Sorted Lists"
 tags:
-  - LeetCode
-  - Python
-  - Java
-  - linkedList
-  - twoPointers
+  - leetcode
+  - python
+  - java
+  - linked-list
+  - two-pointers
   - recursion
 date: 2021-05-25
 ---

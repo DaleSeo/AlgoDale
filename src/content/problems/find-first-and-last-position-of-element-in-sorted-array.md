@@ -1,10 +1,10 @@
 ---
-title: 'Find First and Last Position of Element in Sorted Array'
+title: "Find First and Last Position of Element in Sorted Array"
 tags:
-  - LeetCode
-  - Python
-  - Java
-  - binarySearch
+  - leetcode
+  - python
+  - java
+  - binary-search
 date: 2021-10-20
 ---
 

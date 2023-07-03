@@ -1,11 +1,11 @@
 ---
-title: 'Same Tree'
+title: "Same Tree"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - binaryTree
   - tree
-  - DFS
+  - dfs
   - recursion
   - stack
 date: 2022-03-24

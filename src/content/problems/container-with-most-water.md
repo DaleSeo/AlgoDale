@@ -1,11 +1,11 @@
 ---
-title: 'Container With Most Water'
+title: "Container With Most Water"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - array
-  - twoPointers
+  - two-pointers
 date: 2021-04-13
 ---
 

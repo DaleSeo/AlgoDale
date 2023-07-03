@@ -1,9 +1,9 @@
 ---
-title: '퀵 정렬 (Quick Sort)'
+title: "퀵 정렬 (Quick Sort)"
 tags:
   - sort
-  - Python
-  - Java
+  - python
+  - java
 date: 2021-12-18
 ---
 

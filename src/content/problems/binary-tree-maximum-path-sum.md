@@ -1,11 +1,11 @@
 ---
-title: 'Binary Tree Maximum Path Sum'
+title: "Binary Tree Maximum Path Sum"
 tags:
-  - LeetCode
-  - Python
+  - leetcode
+  - python
   - binaryTree
   - tree
-  - DFS
+  - dfs
   - recursion
 date: 2022-02-08
 ---

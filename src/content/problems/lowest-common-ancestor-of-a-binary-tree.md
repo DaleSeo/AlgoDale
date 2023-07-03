@@ -1,13 +1,13 @@
 ---
 title: "Lowest Common Ancestor of a Binary Tree"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - binaryTree
   - tree
   - recursion
-  - DFS
+  - dfs
 date: 2021-12-22
 ---
 

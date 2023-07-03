@@ -1,14 +1,14 @@
 ---
-title: 'Word Break'
+title: "Word Break"
 tags:
-  - LeetCode
-  - Python
-  - JavaScript
+  - leetcode
+  - python
+  - javascript
   - array
   - recursion
   - memoization
-  - DFS
-  - DP
+  - dfs
+  - dp
 date: 2022-05-18
 ---
 
@@ -190,29 +190,29 @@ class Solution:
 
 ```js
 function wordBreak(s: string, wordDict: string[]): boolean {
-	const memo = {};
+  const memo = {};
 
-	const dfs = (start) => {
-		if (start in memo) return memo[start];
+  const dfs = (start) => {
+    if (start in memo) return memo[start];
 
-		if (start === s.length) {
-			memo[start] = true;
-			return true;
-		}
+    if (start === s.length) {
+      memo[start] = true;
+      return true;
+    }
 
-		for (const word of wordDict) {
-			if (s.substring(start, start + word.length) === word) {
-				if (dfs(start + word.length)) {
-					memo[start] = true;
-					return true;
-				}
-			}
-		}
-		memo[start] = false;
-		return false;
-	};
+    for (const word of wordDict) {
+      if (s.substring(start, start + word.length) === word) {
+        if (dfs(start + word.length)) {
+          memo[start] = true;
+          return true;
+        }
+      }
+    }
+    memo[start] = false;
+    return false;
+  };
 
-	return dfs(0);
+  return dfs(0);
 }
 ```
 

@@ -1,12 +1,12 @@
 ---
-title: 'Valid Anagram'
+title: "Valid Anagram"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - string
   - anagram
-  - hashTable
+  - hash-table
   - sort
 date: 2022-03-30
 ---

@@ -1,10 +1,10 @@
 ---
-title: '이진 검색 (Binary Search)'
+title: "이진 검색 (Binary Search)"
 tags:
   - search
-  - binarySearch
-  - Python
-  - Java
+  - binary-search
+  - python
+  - java
 date: 2021-10-28
 ---
 

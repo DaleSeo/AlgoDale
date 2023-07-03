@@ -1,13 +1,13 @@
 ---
 title: "Linked List Cycle"
 tags:
-  - LeetCode
-  - Python
-  - Java
-  - linkedList
-  - hashTable
+  - leetcode
+  - python
+  - java
+  - linked-list
+  - hash-table
   - set
-  - twoPointers
+  - two-pointers
 date: 2022-02-16
 ---
 

@@ -1,14 +1,14 @@
 ---
-title: 'Permutations'
+title: "Permutations"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - array
   - permutation
   - backtracking
   - recursion
-  - DFS
+  - dfs
 date: 2021-03-10
 ---
 

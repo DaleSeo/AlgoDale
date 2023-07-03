@@ -1,9 +1,9 @@
 ---
-title: 'Generate Parentheses'
+title: "Generate Parentheses"
 tags:
-  - LeetCode
-  - Python
-  - Java
+  - leetcode
+  - python
+  - java
   - parentheses
   - recursion
   - backtracking

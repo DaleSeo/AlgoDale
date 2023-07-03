@@ -1,9 +1,9 @@
 ---
-title: 'Number of Islands'
+title: "Number of Islands"
 tags:
-  - LeetCode
-  - Python
-  - DFS
+  - leetcode
+  - python
+  - dfs
   - recursion
   - graph
   - stack

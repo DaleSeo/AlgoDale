@@ -1,9 +1,9 @@
 ---
-title: '거품 정렬 (Bubble Sort)'
+title: "거품 정렬 (Bubble Sort)"
 tags:
   - sort
-  - Python
-  - Java
+  - python
+  - java
 date: 2021-08-28
 ---
 
