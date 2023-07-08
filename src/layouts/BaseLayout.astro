@@ -5,6 +5,7 @@ import GoogleAnalytics from "~/components/GoogleAnalytics.astro";
 import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
 import MaxWidthWrapper from "~/components/MaxWidthWrapper.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "~/consts";
 
 interface Props {
   title?: string;
@@ -13,9 +14,9 @@ interface Props {
 
 const { title: pageTitle, description: pageDescription } = Astro.props;
 
-const title = pageTitle ? `${pageTitle} | 알고달레` : "알고달레";
+const title = pageTitle ? `${pageTitle} | ${SITE_TITLE}` : SITE_TITLE;
 const description =
-  pageDescription ?? "달레가 코딩 테스트를 위한 알고리즘 공부를 도와드릴께요";
+  pageDescription ?? SITE_DESCRIPTION;
 const image =
   "https://res.cloudinary.com/daleseo/image/upload/v1685926367/algodale/og.png";
 ---

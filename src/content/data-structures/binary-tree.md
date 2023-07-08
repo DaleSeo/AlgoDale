@@ -170,6 +170,8 @@ def post_order(node):
 
 ## 추천 문제
 
+이진 트리의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
+
 - [Maximum Depth of Binary Tree](/problems/maximum-depth-of-binary-tree/)
 - [Same Tree](/problems/same-tree/)
 - [Invert Binary Tree](/problems/invert-binary-tree/)
