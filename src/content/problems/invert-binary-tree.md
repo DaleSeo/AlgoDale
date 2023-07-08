@@ -4,7 +4,6 @@ tags:
   - leetcode
   - python
   - binary-tree
-  - tree
   - recursion
   - dfs
   - stack

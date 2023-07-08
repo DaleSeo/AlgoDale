@@ -6,9 +6,9 @@ tags:
   - java
   - javascript
   - binary-tree
-  - tree
   - dfs
   - recursion
+  - stack
 date: 2022-02-23
 ---
 

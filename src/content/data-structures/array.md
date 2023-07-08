@@ -3,9 +3,7 @@ title: "배열 (Array)"
 description: "너무 흔해서 오히려 소홀히 공부하기 쉬운 자료구조인 배열에 대해서 코딩 테스트의 관점에서 살펴보도록 하겠습니다"
 tags:
   - array
-  - python
-  - javascript
-  - java
+  - iteration
 date: 2022-07-01
 ---
 

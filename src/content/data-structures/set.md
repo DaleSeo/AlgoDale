@@ -3,8 +3,7 @@ title: "집합 (Set)"
 description: "고유한 값을 다루기 위한 자료구조인 집합(set)에 대해서 알아보겠습니다."
 tags:
   - set
-  - python
-  - javascript
+  - iteration
 date: 2022-08-01
 ---
 

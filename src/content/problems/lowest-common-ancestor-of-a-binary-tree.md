@@ -5,7 +5,6 @@ tags:
   - python
   - java
   - binary-tree
-  - tree
   - recursion
   - dfs
 date: 2021-12-22
