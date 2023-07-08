@@ -7,13 +7,20 @@ export async function get(context) {
     "problems",
     (problem) => !problem.data.draft
   );
+
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
     site: context.site,
-    items: posts.map((post) => ({
-      ...post.data,
-      link: `/problems/${post.slug}/`,
-    })),
+    items: posts.map((post) => {
+      console.log(post.data);
+      console.log(post.slug);
+      return {
+        title: post.data.title,
+        pubDate: post.data.date,
+        description: post.data.description || SITE_DESCRIPTION,
+        link: `/problems/${post.slug}/`,
+      };
+    }),
   });
 }
