@@ -5,7 +5,7 @@ tags:
   - python
   - java
   - javascript
-  - binaryTree
+  - binary-tree
   - tree
   - dfs
   - recursion
@@ -178,7 +178,6 @@ var maxDepth = function (root) {
 어떻하면 부모 노드의 최대 깊이를 좌우 자식 트리로 부터 구해낼 수 있을지 생각해보겠습니다.
 
 <pre>
-&nbsp;
     3(?)
    /    \
  9(?)  20(?)
@@ -188,7 +187,7 @@ var maxDepth = function (root) {
    4(?)
 </pre>
 
-위 같은 이진 트리를 함께 거슬러 올라가 보시죠.
+위와 같은 이진 트리를 함께 거슬러 올라가 보시죠.
 
 <pre>
 &nbsp;
@@ -269,3 +268,5 @@ var maxDepth = function (root) {
 
 트리 문제의 경우 이와 같이 Top-down 방향으로 접근해도 풀리고 Bottom-up 방향으로도 풀리는 경우가 많은데요.
 실제 코딩 시험에서 한 가지 방식이 구현이 까다롭다면 다른 방식으로 접근해보면 큰 도움이 될 것 입니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/L-8ctTL2J3w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

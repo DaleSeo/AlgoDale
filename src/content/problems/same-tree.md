@@ -3,7 +3,7 @@ title: "Same Tree"
 tags:
   - leetcode
   - python
-  - binaryTree
+  - binary-tree
   - tree
   - dfs
   - recursion

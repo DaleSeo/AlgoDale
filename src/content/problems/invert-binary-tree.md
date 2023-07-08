@@ -3,7 +3,7 @@ title: "Invert Binary Tree"
 tags:
   - leetcode
   - python
-  - binaryTree
+  - binary-tree
   - tree
   - recursion
   - dfs

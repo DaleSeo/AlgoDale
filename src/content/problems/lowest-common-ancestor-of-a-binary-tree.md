@@ -4,7 +4,7 @@ tags:
   - leetcode
   - python
   - java
-  - binaryTree
+  - binary-tree
   - tree
   - recursion
   - dfs

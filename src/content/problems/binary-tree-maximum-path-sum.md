@@ -3,7 +3,7 @@ title: "Binary Tree Maximum Path Sum"
 tags:
   - leetcode
   - python
-  - binaryTree
+  - binary-tree
   - tree
   - dfs
   - recursion

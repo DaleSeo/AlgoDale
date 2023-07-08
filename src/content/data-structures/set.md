@@ -5,7 +5,7 @@ tags:
   - set
   - python
   - javascript
-date: 2022-09-01
+date: 2022-08-01
 ---
 
 집합(set)는 여러 개의 고유한 값을 다루기 위한 자료구조입니다.
