@@ -6,7 +6,8 @@ tags:
   - java
   - linked-list
   - heap
-  - priorityQueue
+  - priority-queue
+  - queue
 date: 2021-11-03
 ---
 
