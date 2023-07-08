@@ -56,6 +56,6 @@ export const collections = {
   tags,
   problems,
   algorithms,
-  dataStructures,
+  "data-structures": dataStructures,
   guides,
 };
