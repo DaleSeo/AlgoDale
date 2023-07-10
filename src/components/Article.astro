@@ -12,8 +12,8 @@ interface Props {
 const { title, tags, date } = Astro.props;
 ---
 
-<article class="max-w-3xl mx-auto my-8 px-4 sm:px-8 py-4">
-  <header class="px-8 py-16 text-center">
+<article class="max-w-3xl mx-auto sm:px-8 py-4 min-w-[300px]">
+  <header class="px-4 sm:px-8 py-12 sm:py-16 text-center">
     <h1 class="break-words text-3xl lg:text-4xl">{title}</h1>
   </header>
   <div class="prose lg:prose-lg">
