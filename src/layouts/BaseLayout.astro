@@ -15,8 +15,7 @@ interface Props {
 const { title: pageTitle, description: pageDescription } = Astro.props;
 
 const title = pageTitle ? `${pageTitle} | ${SITE_TITLE}` : SITE_TITLE;
-const description =
-  pageDescription ?? SITE_DESCRIPTION;
+const description = pageDescription ?? SITE_DESCRIPTION;
 const image =
   "https://res.cloudinary.com/daleseo/image/upload/v1685926367/algodale/og.png";
 ---
@@ -54,7 +53,7 @@ const image =
     />
     <GoogleAnalytics />
   </head>
-  <body>
+  <body class="bg-background">
     <MaxWidthWrapper>
       <Header />
     </MaxWidthWrapper>

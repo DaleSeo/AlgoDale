@@ -1,6 +1,6 @@
 ---
 import Article from "~/components/Article.astro";
-import MaxWidthWrapper from "~/components/MaxWidthWrapper.astro";
+import TableOfContents from "~/components/TableOfContents.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
 interface Props {
@@ -8,15 +8,25 @@ interface Props {
   description?: string;
   date: Date;
   tags?: string[];
+  headings: Array<{
+    depth: number;
+    slug: string;
+    text: string;
+  }>;
 }
 
-const { title, description, date, tags } = Astro.props;
+const { title, description, date, tags, headings } = Astro.props;
 ---
 
 <BaseLayout {title} {description}>
-  <MaxWidthWrapper>
-    <Article {title} {date} {tags}>
-      <slot />
-    </Article>
-  </MaxWidthWrapper>
+  <div class="w-full bg-white">
+    <div
+      class="flex flex-row-reverse justify-center max-w-6xl mx-auto px-4 sm:px-8 py-8"
+    >
+      <!-- {headings && headings.length > 0 && <TableOfContents {headings} />} -->
+      <Article {title} {date} {tags}>
+        <slot />
+      </Article>
+    </div>
+  </div>
 </BaseLayout>

@@ -99,7 +99,6 @@ html {
 }
 
 body {
-  background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family-sans);
   font-weight: var(--font-weight-regular);

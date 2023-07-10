@@ -1,0 +1,22 @@
+---
+interface Props {
+  headings: Array<{
+    depth: number;
+    slug: string;
+    text: string;
+  }>;
+}
+
+const { headings } = Astro.props;
+---
+
+<aside
+  class="hidden lg:block lg:basis-[250px] lg:grow-0 lg:shrink lg:sticky lg:top-0 ml-auto py-32"
+>
+  <nav>
+    <h2>목차</h2>
+    <ul>
+      {headings.map(({ text }) => <li>{text}</li>)}
+    </ul>
+  </nav>
+</aside>
