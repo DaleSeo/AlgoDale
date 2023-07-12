@@ -11,12 +11,21 @@ const { headings } = Astro.props;
 ---
 
 <aside
-  class="hidden lg:block lg:basis-[250px] lg:grow-0 lg:shrink lg:sticky lg:top-0 ml-auto py-32"
+  class="relative hidden border-l py-24 pl-8 lg:sticky lg:top-0 lg:block lg:shrink lg:grow-0 lg:basis-[280px]"
 >
   <nav>
-    <h2>목차</h2>
-    <ul>
-      {headings.map(({ text }) => <li>{text}</li>)}
-    </ul>
+    <h2 class="mb-4 text-xl">목차</h2>
+    {
+      headings
+        .filter(({ depth }) => depth < 3)
+        .map(({ slug, text }) => (
+          <a
+            href={`#${slug}`}
+            class="mb-2 block hover:text-primary hover:underline hover:decoration-primary hover:decoration-2 hover:underline-offset-4"
+          >
+            {text}
+          </a>
+        ))
+    }
   </nav>
 </aside>

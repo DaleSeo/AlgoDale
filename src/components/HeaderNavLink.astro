@@ -28,7 +28,7 @@ const active = to === pathname || pathname.startsWith(to);
   <Icon
     name={icon}
     size={active ? "36px" : "24px"}
-    class="sm:hidden hover:text-primary"
+    class="hover:text-primary sm:hidden"
   />
   <span class="hidden sm:block">
     {text}
@@ -41,7 +41,7 @@ const active = to === pathname || pathname.startsWith(to);
     gap: var(--spacing-1);
     align-items: center;
 
-    padding: var(--spacing-1) var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-2);
 
     color: var(--color-text);
 

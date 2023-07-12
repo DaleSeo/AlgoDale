@@ -1,5 +1,6 @@
 ---
 import Article from "~/components/Article.astro";
+import ArticleHeading from "~/components/ArticleHeading.astro";
 import TableOfContents from "~/components/TableOfContents.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 
@@ -19,12 +20,13 @@ const { title, description, date, tags, headings } = Astro.props;
 ---
 
 <BaseLayout {title} {description}>
+  <ArticleHeading {title} />
   <div class="w-full bg-white">
     <div
-      class="flex flex-row-reverse justify-center max-w-6xl mx-auto px-4 sm:px-8 py-8"
+      class="mx-auto flex max-w-6xl flex-row-reverse items-start justify-center px-4 py-12 sm:px-8"
     >
-      <!-- {headings && headings.length > 0 && <TableOfContents {headings} />} -->
-      <Article {title} {date} {tags}>
+      {headings && headings.length > 0 && <TableOfContents {headings} />}
+      <Article {date} {tags}>
         <slot />
       </Article>
     </div>

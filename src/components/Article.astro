@@ -1,21 +1,17 @@
 ---
 import Icon from "~/components/Icon.astro";
-import FormattedDate from "../components/FormattedDate.astro";
-import Tags from "../components/Tags.astro";
+import FormattedDate from "~/components/FormattedDate.astro";
+import Tags from "~/components/Tags.astro";
 
 interface Props {
-  title: string;
   tags?: string[];
   date: Date;
 }
 
-const { title, tags, date } = Astro.props;
+const { tags, date } = Astro.props;
 ---
 
-<article class="max-w-3xl mx-auto sm:px-8 py-4 min-w-[300px]">
-  <header class="px-4 sm:px-8 py-12 sm:py-16 text-center">
-    <h1 class="break-words text-3xl lg:text-4xl">{title}</h1>
-  </header>
+<article class="mx-auto min-w-[300px] max-w-3xl py-4 sm:px-8">
   <div class="prose lg:prose-lg">
     <slot />
   </div>
