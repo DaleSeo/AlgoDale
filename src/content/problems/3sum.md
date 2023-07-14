@@ -280,7 +280,7 @@ function threeSum(nums: number[]): number[][] {
       const sum = nums[i] + nums[low] + nums[high];
       if (sum < 0) low++;
       else if (sum > 0) high--;
-      } else {
+      else {
         result.push([nums[i], nums[low], nums[high]]);
         while (low < high && nums[low] === nums[low + 1]) low++;
         while (low < high && nums[high] === nums[high - 1]) high--;
@@ -325,3 +325,5 @@ class Solution {
 
 배열의 길이라고 n을 했을 때, 이 알고리즘의 시간 복잡도는 세트를 사용한 알고리즘과 동일한 `O(n^2)`로 의미있는 차이가 없는데요.
 공간 복잡도 측면에서는 결과 값 저장에 필요한 메모리를 무시하면 이 투 포인터를 사용한 알고리즘이 `O(1)`로 더 우수한 공간 복잡도를 가지게 됩니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sfKnkCoQuyE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
