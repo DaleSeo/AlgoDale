@@ -131,3 +131,16 @@ arr.pop(); // 마지막 값 버림
 
 배열은 값을 순서있게 저장하는 자료구조로써 인덱스를 통해 매우 빠르게 값에 접근하거나 갱신할 수 있습니다.
 하지만 값을 맨 끝이 아닌 중간에서 삭제하거나 삽입해야할 때는 적합하지 않은 자료구조입니다.
+
+## 추천 문제
+
+배열의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
+
+- [Move Zeroes](/problems/move-zeroes/)
+- [Best Time to Buy and Sell Stock](/problems/best-time-to-buy-and-sell-stock/)
+- [Container With Most Water](/problems/container-with-most-water/)
+
+## 참고 자료
+
+- [파이썬 리스트(list) 완벽 가이드](https://www.daleseo.com/python-list/)
+- [자바스크립트 배열 기본 사용법](https://www.daleseo.com/js-array-basic/)
