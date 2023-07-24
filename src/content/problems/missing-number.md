@@ -10,6 +10,8 @@ tags:
 date: 2022-01-27
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FsragroZe3Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 LeetCode의 [Missing Number](https://leetcode.com/problems/missing-number/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
