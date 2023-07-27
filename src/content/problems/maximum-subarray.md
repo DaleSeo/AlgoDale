@@ -209,3 +209,5 @@ class Solution:
 많은 코딩 문제를 풀다보시면 자연스럽게 천천히 걸러지는 부분이니 화이팅하시기 바랍니다!! 💪
 
 이 문제를 잘 푸셨다면 비슷하지만 좀 더 어려운 [Maximum Product Subarray](/problems/maximum-product-subarray) 문제도 풀어보시라고 추천드리고 싶습니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/X7xD82YYfAY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
