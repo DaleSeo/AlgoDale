@@ -200,6 +200,23 @@ class Solution:
         return result
 ```
 
+동일한 코드를 자바스크립트로도 구현해볼께요.
+
+```js
+function maxProduct(nums: number[]): number {
+  let result = nums[0];
+  let max = 1,
+    min = 1;
+  nums.forEach((num) => {
+    const candidates = [max * num, min * num, num];
+    max = Math.max(...candidates);
+    min = Math.min(...candidates);
+    result = Math.max(max, result);
+  });
+  return result;
+}
+```
+
 이 풀이는 루프를 하나만 사용하므로 시간 복잡도가 `O(n)`로 대폭 향상되고 Leet Code에서 잘 통과할 거에요.
 
 참고로 이렇게 이전 단계에서 구한 계산 결과를 현재 단계에서 재활용하는 기법을 다이나믹 프로그래밍이라고 하며 알고리즘 문제에서 자주 활용됩니다.
@@ -207,3 +224,5 @@ class Solution:
 ## 마치면서
 
 이 문제가 너무 어렵게 느껴지셨다면 유사하면서 좀 더 쉬운 [Maximum Subarray](/problems/maximum-subarray) 문제를 먼저 풀어보시라고 추천드리고 싶습니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eiWlLKjrXKU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

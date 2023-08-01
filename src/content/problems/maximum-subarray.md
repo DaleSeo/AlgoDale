@@ -189,6 +189,20 @@ class Solution:
         return max_total
 ```
 
+동일한 코드를 자바스크립트로도 구현해볼께요.
+
+```js
+function maxSubArray(nums: number[]): number {
+  let maxSum = nums[0];
+  let sum = 0;
+  nums.forEach((num) => {
+    sum = Math.max(sum + num, num);
+    maxSum = Math.max(sum, maxSum);
+  });
+  return maxSum;
+}
+```
+
 이번 풀이에서는 루프를 하나만 사용함으로써 시간 복잡도를 `O(n)`로 대폭 향상시킬 수 있었습니다. 🎉
 
 참고로 이전 단계에서 구한 계산 결과를 재활용하므로 일종의 다이나믹 프로그래밍으로도 보고 코드를 좀 더 간결하게 짤 수도 있겠네요. ✨
