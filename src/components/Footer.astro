@@ -5,7 +5,7 @@ import Social from "./Social.astro";
 const today = new Date();
 ---
 
-<div>
+<div class="max-width">
   <footer>
     <section class="flex flex-wrap items-center justify-around gap-4">
       <Logo />
@@ -21,6 +21,7 @@ const today = new Date();
 
 <style>
   div {
+    margin-top: auto;
     isolation: isolate;
     transition: background 350ms ease 0s;
     background: var(--color-background);

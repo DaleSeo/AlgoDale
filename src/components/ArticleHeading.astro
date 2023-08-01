@@ -1,6 +1,4 @@
 ---
-import MaxWidthWrapper from "./MaxWidthWrapper.astro";
-
 interface Props {
   title: string;
 }
@@ -9,7 +7,7 @@ const { title } = Astro.props;
 ---
 
 <div class="bg-background px-4 py-12 text-center sm:px-8 sm:py-16">
-  <MaxWidthWrapper>
-    <h1 class="break-words text-4xl lg:text-5xl lg:leading-snug">{title}</h1>
-  </MaxWidthWrapper>
+  <h1 class="max-width break-words text-4xl lg:text-5xl lg:leading-snug">
+    {title}
+  </h1>
 </div>

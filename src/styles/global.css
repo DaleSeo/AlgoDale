@@ -101,9 +101,14 @@ html {
 
 body {
   color: var(--color-text);
+  background: var(--color-background);
   font-family: var(--font-family-sans);
   font-weight: var(--font-weight-regular);
   line-height: 1.6;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 p {
@@ -133,4 +138,14 @@ iframe[title="YouTube video player"] {
   aspect-ratio: 16 / 9;
   width: 100%;
   height: 100%;
+}
+
+.max-width {
+  width: 100%;
+  max-width: 64rem;
+  margin-inline: auto;
+  padding-inline: var(--spacing-4);
+  @media (min-width: 640px) {
+    padding-inline: var(--spacing-8);
+  }
 }

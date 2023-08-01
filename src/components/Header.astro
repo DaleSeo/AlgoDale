@@ -1,16 +1,13 @@
 ---
-import MaxWidthWrapper from "~/components/MaxWidthWrapper.astro";
 import Logo from "./HeaderLogo.astro";
 import Nav from "./HeaderNav.astro";
 ---
 
-<div>
-  <MaxWidthWrapper>
-    <header>
-      <Logo />
-      <Nav />
-    </header>
-  </MaxWidthWrapper>
+<div class="max-width">
+  <header>
+    <Logo />
+    <Nav />
+  </header>
 </div>
 
 <style>

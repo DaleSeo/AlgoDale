@@ -1,6 +1,5 @@
 ---
 import CardList from "~/components/CardList.astro";
-import MaxWidthWrapper from "~/components/MaxWidthWrapper.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import type { Props as IconProps } from "~/components/Icon.astro";
 
@@ -14,7 +13,7 @@ const { icon, title, articles } = Astro.props;
 ---
 
 <BaseLayout title={title}>
-  <MaxWidthWrapper>
+  <div class="max-width">
     <CardList icon={icon} title={title} articles={articles} />
-  </MaxWidthWrapper>
+  </div>
 </BaseLayout>

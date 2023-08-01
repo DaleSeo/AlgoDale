@@ -4,7 +4,6 @@ import { SEO } from "astro-seo";
 import GoogleAnalytics from "~/components/GoogleAnalytics.astro";
 import Header from "~/components/Header.astro";
 import Footer from "~/components/Footer.astro";
-import MaxWidthWrapper from "~/components/MaxWidthWrapper.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "~/consts";
 
 interface Props {
@@ -53,13 +52,11 @@ const image =
     />
     <GoogleAnalytics />
   </head>
-  <body class="bg-background">
+  <body>
     <Header />
     <main>
       <slot />
     </main>
-    <MaxWidthWrapper>
-      <Footer />
-    </MaxWidthWrapper>
+    <Footer />
   </body>
 </html>
