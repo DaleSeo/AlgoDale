@@ -16,10 +16,9 @@ const problems = shuffle(
     tags,
   }));
 
-const algorithms = (
+const algorithms = shuffle(
   await getCollection("algorithms", (algorithms) => !algorithms.data.draft)
 )
-  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .slice(0, 6)
   .map(({ collection, slug, data: { title, tags } }) => ({
     href: `/${collection}/${slug}/`,
@@ -28,14 +27,13 @@ const algorithms = (
     tags,
   }));
 
-const dataStructures = (
+const dataStructures = shuffle(
   await getCollection(
     "data-structures",
     (dataStructures) => !dataStructures.data.draft
   )
 )
-  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
-  .slice(0, 2)
+  .slice(0, 4)
   .map(({ collection, slug, data: { title, tags } }) => ({
     href: `/${collection}/${slug}/`,
     slug,
@@ -43,10 +41,9 @@ const dataStructures = (
     tags,
   }));
 
-const guides = (
+const guides = shuffle(
   await getCollection("guides", (dataStructures) => !dataStructures.data.draft)
 )
-  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .slice(0, 2)
   .map(({ collection, slug, data: { title } }) => ({
     href: `/${collection}/${slug}/`,
