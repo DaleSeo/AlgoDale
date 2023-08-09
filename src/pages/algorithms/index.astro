@@ -6,6 +6,7 @@ const algorithms = await getCollection(
   "algorithms",
   (algorithms) => !algorithms.data.draft
 );
+
 const articles = algorithms
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .map(({ collection, slug, data: { title, description, tags } }) => ({

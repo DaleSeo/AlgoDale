@@ -6,6 +6,7 @@ const dataStructures = await getCollection(
   "data-structures",
   (dataStructures) => !dataStructures.data.draft
 );
+
 const articles = dataStructures
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .map(({ collection, slug, data: { title, description, tags } }) => ({

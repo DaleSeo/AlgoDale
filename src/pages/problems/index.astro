@@ -1,12 +1,14 @@
 ---
 import { getCollection } from "astro:content";
 import ListLayout from "~/layouts/ListLayout.astro";
+import { shuffle } from "~/utils";
 
 const problems = await getCollection(
   "problems",
   (problem) => !problem.data.draft
 );
-const articles = problems
+
+const articles = shuffle(problems)
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
   .map(({ collection, slug, data: { title, tags } }) => ({
     href: `/${collection}/${slug}/`,

@@ -3,16 +3,9 @@ import { getCollection } from "astro:content";
 import CardList from "~/components/CardList.astro";
 import Hero from "~/components/Hero.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
+import { shuffle } from "~/utils";
 
-function shuffleArray<T>(array: Array<T>) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
-const problems = shuffleArray(
+const problems = shuffle(
   await getCollection("problems", (problem) => !problem.data.draft)
 )
   .slice(0, 6)
