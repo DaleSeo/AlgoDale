@@ -21,7 +21,6 @@ LeetCode의 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-
 - 입력
 
 <pre>
-&nbsp;
  -10
  / \
 9  20
@@ -40,7 +39,6 @@ LeetCode의 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-
 - 설명
 
 <pre>
-&nbsp;
   20
  /  \
 15   7
@@ -53,7 +51,6 @@ LeetCode의 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-
 문제에서 주어진 트리에서 어떻게 노드의 합이 최대인 경로를 구할 수 있을지 생각해보겠습니다.
 
 <pre>
-&nbsp;
  -10
  / \
 9  20
@@ -65,7 +62,6 @@ LeetCode의 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-
 이 셋 중에 하나랑은 연결을 끊어야 갈라지지 않는 유효한 경로를 구성할 수 있습니다.
 
 <pre>
-&nbsp;
  -10
  / \
 9  20
@@ -76,7 +72,6 @@ LeetCode의 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-
 예를 들어, `15`를 버리면 위와 같은 경로가 구성되고,
 
 <pre>
-&nbsp;
  -10
  / \
 9  20
@@ -87,7 +82,6 @@ LeetCode의 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-
 `7`을 버리면 위와 같은 경로가 구성되며
 
 <pre>
-&nbsp;
    20
   /  \
  15   7
@@ -105,7 +99,6 @@ LeetCode의 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-
 하위 트리를 상대로 재귀 함수를 호출한 결과를 상위 트리에서 비교해서 단순히 큰 쪽을 선택하면 됩니다.
 
 <pre>
-&nbsp;
    P
  /  \
 L    R
@@ -124,7 +117,6 @@ F(P) = P.VAL + MAX(F(L) + F(R))
 문제에서 주어진 예제가 이를 보여주는 좋은 사례인데요.
 
 <pre>
-&nbsp;
  -10
  / \
 9  20
@@ -135,7 +127,6 @@ F(P) = P.VAL + MAX(F(L) + F(R))
 우측 노드와 연결을 끊으면, 경로 상의 노드의 합이 `9 + -10 + 20 + 15 = 34`이 되지만,
 
 <pre>
-&nbsp;
    20
   /  \
  15   7
@@ -146,7 +137,6 @@ F(P) = P.VAL + MAX(F(L) + F(R))
 만약에 `-10`의 좌측 자식이 `9` 대신에 `90`이었으면 어땠을까요?
 
 <pre>
-&nbsp;
  -10
  / \
 90 20
@@ -186,7 +176,6 @@ class Solution:
 문제에서 주어진 트리를 상대로 재귀 함수가 어떻게 호출되는지 시각화하면 다음과 같습니다.
 
 <pre>
-&nbsp;
  -10
  / \
 9  20

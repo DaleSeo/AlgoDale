@@ -23,7 +23,6 @@ LeetCode의 [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tre
 - 입력
 
 <pre>
-&nbsp;
     4
    /  \
   2    7
@@ -36,7 +35,6 @@ LeetCode의 [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tre
 - 결과
 
 <pre>
-&nbsp;
     4
    /  \
   7    2
@@ -51,7 +49,6 @@ LeetCode의 [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tre
 다음과 같은 서브 트리가 주어지면
 
 <pre>
-&nbsp;
  부모
  / \ 
 좌   우 
@@ -60,7 +57,6 @@ LeetCode의 [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tre
 다음과 같은 형태로 바꾸면 되죠?
 
 <pre>
-&nbsp;
  부모
  / \ 
 우   좌 
@@ -103,7 +99,6 @@ stack = [4] # push 4
 ```
 
 <pre>
-&nbsp;
     4
    /  \
   2    7
@@ -120,7 +115,6 @@ stack = [7, 2] # push 7, push 2
 ```
 
 <pre>
-&nbsp;
     4
    /  \
   7    2
@@ -137,7 +131,6 @@ stack = [7, null, 1] # push null, push 1
 ```
 
 <pre>
-&nbsp;
     4
    /  \
   7    2
@@ -169,7 +162,6 @@ stack = [9, 6] # push 9, push 6
 ```
 
 <pre>
-&nbsp;
     4
    /  \
   7    2

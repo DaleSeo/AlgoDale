@@ -24,7 +24,6 @@ LeetCode의 [Same Tree](https://leetcode.com/problems/same-tree/) 문제를 함�
 - 입력
 
 <pre>
-&nbsp;
   1        1
  /  \     /  \
 2    3   2    3
@@ -41,7 +40,6 @@ true
 ## 예제 2
 
 <pre>
-&nbsp;
   1        1
  /          \
 2            2
@@ -82,7 +80,6 @@ false
 예를 들어, 다음과 같은 2개의 트리가 주어졌다고 생각해볼까요?
 
 <pre>
-&nbsp;
   1        1
  /  \     /  \
 2    3   2    3
@@ -152,7 +149,6 @@ class Solution {
 아래와 같은 두 개의 이진 트리를 대상으로 다시 한 번 생각을 해볼까요?
 
 <pre>
-&nbsp;
   1        1
  /  \     /  \
 2    3   2    3

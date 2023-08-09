@@ -27,7 +27,6 @@ LeetCode의 [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum
 - 입력
 
 <pre>
-&nbsp;
     3
    / \
   9  20
@@ -46,7 +45,6 @@ LeetCode의 [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum
 문제에서 주어진 예제를 기준으로 최상위 노드부터 아래로 내려가면서 각 노드까지의 깊이를 계산을 해보면 다음과 같은 모습일 것입니다.
 
 <pre>
-&nbsp;
     3(1)
    /    \
  9(2)  20(2)
@@ -190,7 +188,6 @@ var maxDepth = function (root) {
 위와 같은 이진 트리를 함께 거슬러 올라가 보시죠.
 
 <pre>
-&nbsp;
     3(?)
    /    \
  9(1)  20(?)
@@ -201,7 +198,6 @@ var maxDepth = function (root) {
 우선 말단 노드의 깊이는 `1`이 될 것이고 우리는 이 것을 기저 사례(base case)로 사용할 수 있을 것입니다.
 
 <pre>
-&nbsp;
     3(?)
    /    \
  9(1)  20(2 = max(1, 1) + 1)
@@ -214,7 +210,6 @@ var maxDepth = function (root) {
 따라서 자식 트리로 부터 얻을 수 있는 최대 깊이인 `1`에 자신의 깊이인 `1`을 더하면 `2`가 해당 서브 트리의 최대 깊이가 될 것입니다.
 
 <pre>
-&nbsp;
     3(4 = max(1, 3) + 1)
    /    \
  9(1)  20(3 = max(2, 1) + 1)
