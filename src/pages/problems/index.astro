@@ -8,14 +8,14 @@ const problems = await getCollection(
   (problem) => !problem.data.draft
 );
 
-const articles = shuffle(problems)
-  .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
-  .map(({ collection, slug, data: { title, tags } }) => ({
+const articles = shuffle(problems).map(
+  ({ collection, slug, data: { title, tags } }) => ({
     href: `/${collection}/${slug}/`,
     slug,
     title,
     tags,
-  }));
+  })
+);
 ---
 
 <ListLayout icon="book" title="문제 해결" articles={articles} />
