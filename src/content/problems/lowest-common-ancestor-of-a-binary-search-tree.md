@@ -6,9 +6,10 @@ tags:
   - binary-tree
   - recursion
   - iteration
-  - dfs
 date: 2023-08-08
 ---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ABhdD-WZjzU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 LeetCode의 [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/) 문제를 함께 풀어보도록 하겠습니다.
 
@@ -60,7 +61,7 @@ LeetCode의 [Lowest Common Ancestor of a Binary Search Tree](https://leetcode.co
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        if p.val < root.val  and q.val < root.val:
+        if p.val < root.val and q.val < root.val:
             return self.lowestCommonAncestor(root.left, p, q)
         if root.val < p.val and root.val < q.val:
             return self.lowestCommonAncestor(root.right, p, q)
