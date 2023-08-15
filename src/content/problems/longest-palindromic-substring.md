@@ -146,6 +146,40 @@ class Solution:
         return text[max_s : max_e + 1]
 ```
 
+동일한 코드를 자바스크립트로 작성해볼까요?
+
+```ts
+function longestPalindrome(s: string): string {
+  let maxStart = 0,
+    maxEnd = 0;
+
+  for (let i = 0; i < s.length; i++) {
+    let start = i,
+      end = i;
+    while (0 <= start && end < s.length && s[start] === s[end]) {
+      if (end - start > maxEnd - maxStart) {
+        maxStart = start;
+        maxEnd = end;
+      }
+      start--;
+      end++;
+    }
+
+    (start = i), (end = i + 1);
+    while (0 <= start && end < s.length && s[start] === s[end]) {
+      if (end - start > maxEnd - maxStart) {
+        maxStart = start;
+        maxEnd = end;
+      }
+      start--;
+      end++;
+    }
+  }
+
+  return s.slice(maxStart, maxEnd + 1);
+}
+```
+
 이 풀이의 시간 복잡도는 외부에 `for` 문 그리고, 내부에 `while` 문이 순차적으로 2개가 있이므로 `O(n * 2n) = O(2n^2) = O(n^2)`이 됩니다.
 정해진 개수의 변수 외에는 추가적인 메모리 사용이 없으므로 공간 복잡도는 그대로 `O(1)` 됩니다.
 
@@ -226,3 +260,5 @@ class Solution {
 ```
 
 이 이중 루프를 사용하는 알고리즘은 `O(n^2)`의 시간 복잡도를 가지며, 2차원 배열을 사용하므로 공간 복잡도도 `O(n^2)`이 됩니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rGySPuTuYEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
