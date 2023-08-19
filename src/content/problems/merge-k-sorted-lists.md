@@ -318,4 +318,4 @@ class Solution:
 
 지금까지 Merge k Sorted Lists 문제를 총 4가지 방법으로 풀어보았습니다.
 아무래도 LeetCode에서 어려운 난이도에 속하는 문제이기 때문에 한 번에 이해가 어려우실 수도 있을 것 같습니다.
-그럴 때는 비슷하지만 더 쉬운 문제인 [Merge Two Sorted Lists](/problems/merge-two-sorted-lists)를 먼저 풀어보시고 돌아오시기를 추천드릴께요.
+그럴 때는 비슷하지만 더 쉬운 문제인 [Merge Two Sorted Lists](/problems/merge-two-sorted-lists/)를 먼저 풀어보시고 돌아오시기를 추천드릴께요.
