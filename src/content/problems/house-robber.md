@@ -241,6 +241,20 @@ class Solution:
         return dp[-1]
 ```
 
+같은 알고리즘을 자바스크립트로도 구현해보았습니다.
+
+```ts
+function rob(nums: number[]): number {
+  const dp = new Array(nums.length + 1);
+  dp[0] = 0;
+  dp[1] = nums[0];
+  for (let i = 2; i < dp.length; i++) {
+    dp[i] = Math.max(dp[i - 1], dp[i - 2] + nums[i - 1]);
+  }
+  return dp[dp.length - 1];
+}
+```
+
 이 DP 알고리즘의 시간 복잡도와 공간 복잡도는 모두 `O(n)`으로써 메모이제이션을 적용한 재귀 알고리즘과 크게 다르지 않은데요.
 그래도 전반적으로 코드가 짧아지고 이해하기기 쉬워지는 것을 알 수 있습니다.
 
@@ -265,3 +279,5 @@ class Solution:
 
 이렇게 알고리즘을 최적화해주면 공간 복잡도를 `O(1)`로 내릴 수 있습니다.
 처음에 작성한 코드도 나쁘지는 않지만 이렇게 추가적으로 최적화까지 해주면 코딩 시험에서 더 좋은 결과를 얻을 수 있을 것입니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u-luU_q3OfE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
