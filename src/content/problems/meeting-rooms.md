@@ -9,9 +9,9 @@ tags:
 date: 2023-08-28
 ---
 
-LeetCode의 [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 252번 문제인 [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)을 함께 풀어보도록 하겠습니다.
 
-> 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode에서 [920번 문제](https://www.lintcode.com/problem/920/)가 동일하오니 참고 바랍니다.
+> 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode에서 [920번 문제](https://www.lintcode.com/problem/920/)와 동일하며 무료로 푸실 수 있으니 참고 바랍니다.
 
 ## 문제
 
@@ -127,3 +127,5 @@ class Solution:
 
 코딩 시험에서 구간(interval)을 다루는 유형의 문제에서는 이 문제가 가장 기본이 된다고 볼 수 있는데요.
 기본기를 잘 닦아놓으셔서 같은 유형의 좀 더 어려운 문제를 풀 때 큰 도움이 되었으면 좋겠습니다.
+
+코딩 테스트에서 구간을 어떻게 다루는지에 대해서 더 공부하고 싶으시다면 [관련 게시물](/data-structures/interval/)을 추천드리겠습니다.

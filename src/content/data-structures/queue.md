@@ -5,7 +5,7 @@ tags:
   - queue
   - bfs
   - priority-queue
-date: 2022-04-02
+date: 2023-02-02
 ---
 
 코딩 테스트에 단골로 나오는 자료구조인 큐(Queue)에 대해서 알아보겠습니다.
@@ -92,3 +92,11 @@ def bfs(root, target):
 - [Remove Nth Node From End of List](/problems/remove-nth-node-from-end-of-list/)
 - [Coin Change](/problems/coin-change/)
 - [Merge k Sorted Lists](/problems/merge-k-sorted-lists/)
+
+## 추천 문제
+
+세트의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
+
+- [Contains Duplicate](/problems/contains-duplicate/)
+- [Longest Consecutive Sequence](/problems/longest-consecutive-sequence/)
+- [Longest Substring Without Repeating Characters](/problems/longest-substring-without-repeating-characters/)

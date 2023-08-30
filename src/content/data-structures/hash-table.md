@@ -4,7 +4,7 @@ description: "상수 시간에 데이터 접근이 가능한 자료구조인 해
 tags:
   - hash-table
   - iteration
-date: 2022-02-02
+date: 2022-12-02
 ---
 
 상수 시간에 데이터 접근이 가능한 자료구조인 해시 테이블(hash table)에 대해서 알아보겠습니다.
