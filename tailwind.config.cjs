@@ -23,7 +23,7 @@ module.exports = {
             },
             blockquote: {
               background: theme("colors.background"),
-              borderLeft: `5px solid ${theme("colors.secondary")}`,
+              borderLeft: `5px solid ${theme("colors.primary")}`,
               borderRadius: `0 ${theme("spacing.2")} ${theme("spacing.2")} 0`,
               paddingBlock: "0.3em",
               paddingRight: "0.7em",
