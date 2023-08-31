@@ -1,7 +1,9 @@
 {
   "name": "algodale",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "repository": "github:DaleSeo/AlgoDale",
+  "author": "Dale Seo <DaleSeo@gmail.com> (https://daleseo.com)",
   "scripts": {
     "dev": "astro dev",
     "start": "npm run dev",
@@ -10,13 +12,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.19.1",
-    "@astrojs/partytown": "^1.2.3",
-    "@astrojs/rss": "^2.4.1",
-    "@astrojs/sitemap": "^2.0.1",
-    "@astrojs/tailwind": "^4.0.0",
+    "@astrojs/mdx": "^1.0.0",
+    "@astrojs/partytown": "^2.0.0",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.0",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.9.6",
+    "astro": "^3.0.3",
     "astro-icon": "^0.8.0",
     "astro-seo": "^0.8.0",
     "rehype-autolink-headings": "^6.1.1",
@@ -26,8 +28,8 @@
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.1",
-    "prettier": "^2.8.8",
-    "prettier-plugin-astro": "^0.10.0",
-    "prettier-plugin-tailwindcss": "^0.4.0"
+    "prettier": "^3.0.3",
+    "prettier-plugin-astro": "^0.12.0",
+    "prettier-plugin-tailwindcss": "^0.5.3"
   }
 }
