@@ -13,11 +13,15 @@ type Props = CollectionEntry<"problems">;
 
 const post = Astro.props;
 const {
+  collection,
+  slug,
   data: { title, date, tags },
 } = post;
+const editUrl = `https://github.com/DaleSeo/AlgoDale/edit/main/src/content/${collection}/${slug}.md`;
+
 const { Content, headings } = await post.render();
 ---
 
-<ArticleLayout {title} {date} {tags} {headings}>
+<ArticleLayout {title} {date} {tags} {headings} {editUrl}>
   <Content />
 </ArticleLayout>

@@ -16,7 +16,7 @@ const { icon, title, articles } = Astro.props;
     title && (
       <header>
         <h1 class="text-2xl ">
-          {icon && <Icon name={icon} inline />}
+          {icon && <Icon name={icon} inline />}{" "}
           <span class="align-middle">{title}</span>
         </h1>
       </header>

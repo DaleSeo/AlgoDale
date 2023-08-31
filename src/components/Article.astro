@@ -1,25 +1,18 @@
 ---
-import Icon from "~/components/Icon.astro";
-import FormattedDate from "~/components/FormattedDate.astro";
-import Tags from "~/components/Tags.astro";
+import ArticleFooter from "./ArticleFooter.astro";
 
 interface Props {
   tags?: string[];
   date: Date;
+  editUrl?: string;
 }
 
-const { tags, date } = Astro.props;
+const { tags, date, editUrl } = Astro.props;
 ---
 
 <article class="mx-auto min-w-[300px] max-w-3xl py-4 sm:px-8">
   <div class="prose lg:prose-lg">
     <slot />
   </div>
-  <footer class="flex flex-wrap justify-between gap-4 py-12">
-    <section>
-      <Icon name="clock" inline />
-      <FormattedDate class="align-middle" date={date} />
-    </section>
-    {tags && <Tags tags={tags} />}
-  </footer>
+  <ArticleFooter {date} {tags} {editUrl} />
 </article>

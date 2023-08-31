@@ -1,0 +1,70 @@
+---
+import Icon from "./Icon.astro";
+import FormattedDate from "./FormattedDate.astro";
+import Tags from "./Tags.astro";
+import Link from "./Link.astro";
+
+interface Props {
+  tags?: string[];
+  date: Date;
+  editUrl?: string;
+}
+
+const { tags, date, editUrl } = Astro.props;
+---
+
+<footer>
+  <section class="flex flex-wrap items-center justify-between gap-4">
+    <div>
+      <Icon name="clock" inline />{" "}
+      <FormattedDate class="align-middle" date={date} />
+    </div>
+    {tags && <Tags tags={tags} />}
+  </section>
+
+  <section class="flex flex-wrap items-center justify-between gap-4">
+    <a
+      target="_blank"
+      rel="license noopener noreferrer"
+      href="https://creativecommons.org/licenses/by/4.0/deed.ko"
+      ><img
+        alt="크리에이티브 커먼즈 라이선스"
+        style="border-width:0"
+        src="https://i.creativecommons.org/l/by/4.0/88x31.png"
+      /></a
+    >
+    <div>
+      이 저작물은 <a
+        target="_blank"
+        rel="license noopener noreferrer"
+        href="https://creativecommons.org/licenses/by/4.0/deed.ko"
+        >크리에이티브 커먼즈 저작자표시 4.0 국제 라이선스</a
+      >에 따라 이용할 수 있습니다.
+    </div>
+  </section>
+
+  <section class="flex justify-end">
+    {
+      editUrl && (
+        <Link to={editUrl}>
+          <Icon name="edit" inline /> 오타 수정 및 변경 제안
+        </Link>
+      )
+    }
+  </section>
+</footer>
+
+<style>
+  footer {
+    margin-top: var(--spacing-16);
+    padding-block: var(--spacing-16);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8);
+  }
+
+  a,
+  img {
+    display: inline;
+  }
+</style>

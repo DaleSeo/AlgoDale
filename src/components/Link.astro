@@ -1,0 +1,26 @@
+---
+interface Props {
+  to: string;
+  inline?: boolean;
+  external?: boolean;
+}
+
+const { to, external = false, inline = false } = Astro.props;
+
+const display = inline ? "inline-flex" : "flex";
+---
+
+<a
+  href={to}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener noreferrer" : undefined}><slot /></a
+>
+
+<style define:vars={{ display }}>
+  a {
+    color: var(--color-primary);
+    display: var(--display);
+    align-items: center;
+    gap: var(--spacing-1);
+  }
+</style>
