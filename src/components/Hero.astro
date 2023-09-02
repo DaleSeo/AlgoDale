@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { SITE_TITLE, SITE_DESCRIPTION } from "~/consts";
+import hero from '~/images/hero.jpg'
 ---
 
 <header
@@ -8,10 +10,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "~/consts";
   <div class="z-1 text-center p-1">
     <h1 class="text-5xl leading-loose text-white">{SITE_TITLE}</h1>
     <p class="text-2xl leading-loose text-white">
-      {SITE_DESCRIPTION}
+      {SITE_DESCRIPTION} 
     </p>
   </div>
-  <img src="/hero.jpg" alt="hero" class="object-cover w-full z-[-1]" />
+  <Image src={hero} alt="hero" class="object-cover w-full z-[-1]" />
 </header>
 
 <style>
