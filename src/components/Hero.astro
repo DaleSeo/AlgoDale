@@ -1,25 +1,28 @@
 ---
 import { Image } from "astro:assets";
 import { SITE_TITLE, SITE_DESCRIPTION } from "~/consts";
-import hero from '~/assets/hero.jpg'
+import hero from "~/assets/hero.jpg";
 ---
 
-<header
-  class="grid place-items-center h-[40vh] max-h-[400px] overflow-hidden my-8"
->
+<header>
   <div class="z-1 text-center p-1">
     <h1 class="text-5xl leading-loose text-white">{SITE_TITLE}</h1>
     <p class="text-2xl leading-loose text-white">
-      {SITE_DESCRIPTION} 
+      {SITE_DESCRIPTION}
     </p>
   </div>
-  <Image src={hero} alt="hero" class="object-cover w-full z-[-1]" />
+  <Image src={hero} alt="" />
 </header>
 
 <style>
   header {
+    height: min(40vh, 400px);
+    overflow: hidden;
+    margin-block: var(--spacing-8);
+    display: grid;
+    place-items: center;
     grid-template-areas: "hero";
-    background-color: rgba(0 0 0/ 0.3);
+    background-color: rgba(0 0 0/ 0.2);
     > * {
       grid-area: hero;
     }
@@ -27,5 +30,7 @@ import hero from '~/assets/hero.jpg'
 
   img {
     height: min(40vh, 400px);
+    object-fit: cover;
+    z-index: -1;
   }
 </style>

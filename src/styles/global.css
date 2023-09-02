@@ -15,13 +15,19 @@
 }
 
 :root {
-  --color-background: hsl(210deg 18% 96%);
+  --color-background: hsl(210deg, 20%, 96%);
   --color-background-secondary: hsl(60deg 100% 100%);
-  --color-text: hsl(214deg 100% 15%);
+  /* --color-text: hsl(214deg 100% 15%);
   --color-headline: hsl(214deg 100% 15%);
-  --color-paragraph: hsl(214deg 44% 19%);
-  --color-primary: hsl(171deg 100% 46%);
-  --color-secondary: hsl(350deg 100% 66%);
+  --color-paragraph: hsl(214deg 44% 19%); */
+  --color-text: hsl(216deg, 6%, 15%);
+  --color-headline: hsl(216deg 6% 15%);
+  --color-paragraph: hsl(240deg 8% 9%);
+
+  /* --color-primary: hsl(171deg 100% 46%); */
+  --color-primary: hsl(255deg 83% 65%);
+  /* --color-secondary: hsl(350deg 100% 66%); */
+  --color-secondary: hsl(161deg, 66%, 37%);
   --color-tertiary: hsl(51deg 98% 65%);
   --color-gray: hsl(225deg, 12%, 40%);
   --color-gray-1000: hsl(225deg, 15%, 15%);
@@ -139,11 +145,6 @@ h5,
 h6 {
   color: var(--color-headline);
   font-weight: var(--font-weight-bold);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 iframe[title="YouTube video player"] {

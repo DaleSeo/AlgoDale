@@ -18,14 +18,19 @@ const { headings } = Astro.props;
     {
       headings
         .filter(({ depth }) => depth < 3)
-        .map(({ slug, text }) => (
-          <a
-            href={`#${slug}`}
-            class="mb- hover:decoration- block hover:text-primary hover:no-underline"
-          >
-            {text}
-          </a>
-        ))
+        .map(({ slug, text }) => <a href={`#${slug}`}>{text}</a>)
     }
   </nav>
 </aside>
+
+<style>
+  a {
+    display: block;
+
+    &:hover {
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+  }
+</style>

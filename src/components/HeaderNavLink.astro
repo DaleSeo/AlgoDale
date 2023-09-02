@@ -1,5 +1,5 @@
 ---
-import Icon, { Props as IconProps } from "~/components/Icon.astro";
+import Icon, { type Props as IconProps } from "~/components/Icon.astro";
 
 interface Props {
   to: string;
@@ -14,22 +14,8 @@ const { pathname } = Astro.url;
 const active = to === pathname || pathname.startsWith(to);
 ---
 
-<a
-  href={to}
-  title={title}
-  class:list={[
-    "hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-primary",
-    {
-      "font-bold underline underline-offset-4 decoration-2 decoration-primary":
-        active,
-    },
-  ]}
->
-  <Icon
-    name={icon}
-    size={active ? "36px" : "24px"}
-    class="hover:text-primary sm:hidden"
-  />
+<a href={to} title={title} class:list={{ active }}>
+  <Icon name={icon} size={active ? "36px" : "24px"} class="icon" />
   <span class="hidden sm:block">
     {text}
   </span>
@@ -46,11 +32,33 @@ const active = to === pathname || pathname.startsWith(to);
     color: var(--color-text);
 
     font-size: var(--font-size-4);
+
+    &:hover,
+    &.active {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      text-decoration-thickness: 3px;
+      text-decoration-color: var(--color-primary);
+    }
+
+    &.active {
+      font-weight: var(--font-weight-bold);
+    }
   }
 
   span {
     @media (min-width: 34.375rem) {
       display: revert;
+    }
+  }
+
+  .icon {
+    &:hover {
+      color: var(--color-primary);
+    }
+
+    @media (min-width: 640px) {
+      display: none;
     }
   }
 </style>
