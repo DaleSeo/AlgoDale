@@ -1,57 +1,21 @@
 ---
-import "~/styles/global.css";
-import { SEO } from "astro-seo";
-import GoogleAnalytics from "~/components/GoogleAnalytics.astro";
+import BaseHead from "~/components/BaseHead.astro";
 import Header from "~/components/Header.astro";
 import Help from "~/components/Help.astro";
 import Footer from "~/components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "~/consts";
 
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
 }
 
-const { title: pageTitle, description: pageDescription } = Astro.props;
-
-const title = pageTitle ? `${pageTitle} | ${SITE_TITLE}` : SITE_TITLE;
-const description = pageDescription ?? SITE_DESCRIPTION;
-const image =
-  "https://res.cloudinary.com/daleseo/image/upload/v1685926367/algodale/og.png";
+const { title, description } = Astro.props;
 ---
 
 <html lang="ko">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <SEO
-      title={title}
-      description={description}
-      openGraph={{
-        basic: {
-          title,
-          type: "website",
-          image,
-          url: "https://www.algodale.com",
-        },
-        optional: {
-          siteName: title,
-          description,
-          locale: "ko",
-        },
-      }}
-      twitter={{
-        creator: "@DaleSeo",
-        image,
-        imageAlt: title,
-        title,
-        description,
-      }}
-    />
-    <GoogleAnalytics />
+    <BaseHead title={title} description={description} />
   </head>
   <body>
     <Header />
@@ -62,3 +26,4 @@ const image =
     <Help />
   </body>
 </html>
+

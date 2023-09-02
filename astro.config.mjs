@@ -16,12 +16,4 @@ export default defineConfig({
   //   rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
   // },
   plugins: [prettier],
-  overrides: [
-    {
-      files: "*.astro",
-      options: {
-        parser: "astro",
-      },
-    },
-  ],
 });
