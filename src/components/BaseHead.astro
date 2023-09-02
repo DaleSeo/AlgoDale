@@ -1,7 +1,7 @@
 ---
 import "~/styles/global.css";
 import { SEO } from "astro-seo";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 import GoogleAnalytics from "~/components/GoogleAnalytics.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "~/consts";
 
@@ -11,13 +11,16 @@ interface Props {
   image?: string;
 }
 
-const { title: pageTitle, description: pageDescription, image = "https://res.cloudinary.com/daleseo/image/upload/v1685926367/algodale/og.png" } = Astro.props;
+const {
+  title: pageTitle,
+  description: pageDescription,
+  image = "https://res.cloudinary.com/daleseo/image/upload/v1685926367/algodale/og.png",
+} = Astro.props;
 
 const title = pageTitle ? `${pageTitle} | ${SITE_TITLE}` : SITE_TITLE;
 const description = pageDescription ?? SITE_DESCRIPTION;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
-
 
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
@@ -36,7 +39,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       url: "https://www.algodale.com",
     },
     optional: {
-      siteName: title,
+      siteName: SITE_TITLE,
       description,
       locale: "ko",
     },
