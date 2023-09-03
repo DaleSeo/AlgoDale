@@ -15,8 +15,8 @@ const active = to === pathname || pathname.startsWith(to);
 ---
 
 <a href={to} title={title} class:list={{ active }}>
-  <Icon name={icon} size={active ? "36px" : "24px"} class="icon" />
-  <span class="hidden sm:block">
+  <Icon name={icon} size="28px" class:list={["icon", { active }]} />
+  <span>
     {text}
   </span>
 </a>
@@ -27,7 +27,7 @@ const active = to === pathname || pathname.startsWith(to);
     gap: var(--spacing-1);
     align-items: center;
 
-    padding: var(--spacing-2) var(--spacing-2);
+    padding: var(--spacing-2);
 
     color: var(--color-text);
 
@@ -47,13 +47,18 @@ const active = to === pathname || pathname.startsWith(to);
   }
 
   span {
-    @media (min-width: 34.375rem) {
+    display: none;
+
+    @media (min-width: 640px) {
       display: revert;
     }
   }
 
   .icon {
-    &:hover {
+    margin-inline: var(--spacing-2);
+
+    &:hover,
+    &.active {
       color: var(--color-primary);
     }
 
