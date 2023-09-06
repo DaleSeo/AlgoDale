@@ -1,7 +1,8 @@
 {
   "name": "algodale",
-  "type": "module",
   "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://www.algodale.com",
   "repository": "github:DaleSeo/AlgoDale",
   "author": "Dale Seo <DaleSeo@gmail.com> (https://daleseo.com)",
   "scripts": {
