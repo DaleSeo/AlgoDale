@@ -6,6 +6,7 @@ tags:
   - python
   - array
   - interval
+  - sort
 date: 2023-08-28
 ---
 
@@ -13,7 +14,7 @@ date: 2023-08-28
 
 LeetCode의 252번 문제인 [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)을 함께 풀어보도록 하겠습니다.
 
-> 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode에서 [920번 문제](https://www.lintcode.com/problem/920/)와 동일하며 무료로 푸실 수 있으니 참고 바랍니다.
+> 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode의 [920번 문제](https://www.lintcode.com/problem/920/)가 거의 동일하며 무료로 푸실 수 있으니 참고 바랍니다.
 
 ## 문제
 
@@ -72,7 +73,7 @@ class Solution:
 ```
 
 `n`을 회의의 개수라고 했을 때 이 풀이의 시간 복잡도는 이중 반복문을 사용하므로 `O(n^2)`이 됩니다.
-반면에 입력 배열 외에는 별다른 자료 구조를 사용하지 않기 때문에 공간 복잡도는 `O(1)`이 될 것입니다.
+반면에 입력 배열 외에는 별다른 자료구조를 사용하지 않기 때문에 공간 복잡도는 `O(1)`이 될 것입니다.
 
 ## 풀이 2: 정렬
 
@@ -115,7 +116,7 @@ B의 시작 < A의 끝
 ```py
 class Solution:
     def canAttendMeetings(self, intervals: List[List[int]]) -> bool:
-        intervals.sort(key=lambda x: x[0])
+        intervals.sort()
         for i in range(len(intervals) - 1):
             if intervals[i][1] > intervals[i + 1][0]:
                 return False
@@ -130,4 +131,5 @@ class Solution:
 코딩 시험에서 구간(interval)을 다루는 유형의 문제에서는 이 문제가 가장 기본이 된다고 볼 수 있는데요.
 기본기를 잘 닦아놓으셔서 같은 유형의 좀 더 어려운 문제를 풀 때 큰 도움이 되었으면 좋겠습니다.
 
+이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [Meeting Rooms II](/problems/meeting-rooms-ii/)도 풀어보시면 좋을 것 같고요.
 코딩 테스트에서 구간을 어떻게 다루는지에 대해서 더 공부하고 싶으시다면 [관련 게시물](/data-structures/interval/)을 추천드리겠습니다.
