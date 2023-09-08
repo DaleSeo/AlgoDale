@@ -131,5 +131,5 @@ class Solution:
 코딩 시험에서 구간(interval)을 다루는 유형의 문제에서는 이 문제가 가장 기본이 된다고 볼 수 있는데요.
 기본기를 잘 닦아놓으셔서 같은 유형의 좀 더 어려운 문제를 풀 때 큰 도움이 되었으면 좋겠습니다.
 
-이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [Meeting Rooms II](/problems/meeting-rooms-ii/)도 풀어보시면 좋을 것 같고요.
-코딩 테스트에서 구간을 어떻게 다루는지에 대해서 더 공부하고 싶으시다면 [관련 게시물](/data-structures/interval/)을 추천드리겠습니다.
+이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [Meeting Rooms II](/problems/meeting-rooms-ii/)도 풀어보시라고 추천드립니다.
+코딩 테스트에서 구간을 어떻게 다루는지에 대해서 더 공부하고 싶으시다면 [관련 게시물](/data-structures/interval/)을 참고 바랄께요.
