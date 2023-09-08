@@ -12,6 +12,8 @@ tags:
 date: 2023-09-06
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iJT18DGqRwk?si=67YSwftpJv-n6k0q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 LeetCode의 253번 문제인 [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)을 함께 풀어보도록 하겠습니다.
 
 > 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode의 [919번 문제](https://www.lintcode.com/problem/919/)가 거의 동일하며 무료로 푸실 수 있으니 참고 바랍니다.
@@ -240,7 +242,7 @@ class Solution:
 
 보시다시피 회의가 시작할 때 마다 새로운 회의실이 필요하고, 회의가 끝날 때 마다 기존에 쓰던 회의실이 필요가 없어집니다.
 
-따라서 시작 시간과 종료 시간을 함께 오름차순 정렬한다면 이 문제를 매우 쉽게 해결할 수 있을텐데요.
+따라서 시작 시간과 종료 시간을 함께 묶어서 오름차순 정렬한다면 이 문제를 매우 쉽게 해결할 수 있을텐데요.
 시작 시간에는 회의실이 하나 **더** 필요하기 때문에 `+1`을 덧붙이고, 종료 시간에는 회의실이 하나 **덜** 필요하기 때문에 `-1`을 덧붙이겠습니다.
 
 ```py
