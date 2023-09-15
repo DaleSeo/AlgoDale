@@ -3,6 +3,7 @@ title: "Permutations"
 tags:
   - leetcode
   - python
+  - javascript
   - java
   - array
   - permutation
@@ -140,7 +141,30 @@ class Solution:
             1 ---> 고른 수: [3, 2, 1], 남은 수: [] 👉 여섯 번째 순열
 ```
 
-참고로 동일한 알고리즘을 자바로 구현하면 다음과 비슷한 코드일 것입니다.
+동일한 알고리즘을 자바스크립트로 구현도 구현해보았습니다.
+
+```ts
+function permute(nums: number[]): number[][] {
+  const permutations = [];
+
+  const dfs = (picked, unpicked) => {
+    if (!unpicked.length) return permutations.push(picked);
+
+    unpicked.forEach((num, i) =>
+      dfs(
+        [...picked, num],
+        [...unpicked.slice(0, i), ...unpicked.slice(i + 1)],
+      ),
+    );
+  };
+
+  dfs([], nums);
+
+  return permutations;
+}
+```
+
+동일한 알고리즘을 자바로 구현하면 다음과 비슷한 코드일 것입니다.
 
 ```java
 import java.util.*;
@@ -167,9 +191,11 @@ class Solution {
 }
 ```
 
-이 알고리즘의 시간 복잡도는 순열 공식에 따라서 `O(n!)`이 됩니다.
+`n`을 입력 배열에 들어있는 숫자의 개수라고 했을 때 이 알고리즘의 시간 복잡도는 순열 공식에 따라서 `O(n!)`이 됩니다.
 공간 복잡도는 재귀 함수의 호출 스택에 깊이가 `n`이고, 각 재귀 함수 호출에서 크기가 `n`인 배열을 추가적으로 생성하므로 `O(n^2)`이 되겠습니다.
 
 ## 비슷한 문제
 
 - [Combination Sum 풀이](/problems/combination-sum)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YcP8hnaBWtM?si=06GKbrbaOABNC18n" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
