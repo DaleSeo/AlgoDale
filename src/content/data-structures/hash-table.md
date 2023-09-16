@@ -112,7 +112,7 @@ for key in dic:
 - [Valid Anagram](/problems/valid-anagram/)
 - [Climbing Stairs](/problems/climbing-stairs/)
 
-## 참고 자료
+## 함께 읽으면 좋은 글
 
 - [파이썬 사전(dictionary) 완벽 가이드](https://www.daleseo.com/python-dictionary/)
 - [파이썬 collections 모듈의 Counter 사용법](https://www.daleseo.com/python-collections-counter/)

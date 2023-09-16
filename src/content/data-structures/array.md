@@ -140,7 +140,7 @@ arr.pop(); // 마지막 값 버림
 - [Best Time to Buy and Sell Stock](/problems/best-time-to-buy-and-sell-stock/)
 - [Container With Most Water](/problems/container-with-most-water/)
 
-## 참고 자료
+## 함께 읽으면 좋은 글
 
 - [파이썬 리스트(list) 완벽 가이드](https://www.daleseo.com/python-list/)
 - [자바스크립트 배열 기본 사용법](https://www.daleseo.com/js-array-basic/)

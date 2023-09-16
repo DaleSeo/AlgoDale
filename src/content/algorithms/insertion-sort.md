@@ -4,7 +4,7 @@ tags:
   - sort
   - python
   - java
-date: 2021-09-04
+date: 2022-09-04
 ---
 
 [선택 정렬](/algorithms/selection-sort), [거품 정렬](/algorithms/bubble-sort)과 더불어 대표적인 O(N^2) 정렬 알고리즘인 삽입 정렬(Insertion Sort)에 대해서 알아보겠습니다.

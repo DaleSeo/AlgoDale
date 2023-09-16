@@ -105,6 +105,6 @@ difference = set_a - set_b # {1, 2, 3}
 - [Longest Consecutive Sequence](/problems/longest-consecutive-sequence/)
 - [Longest Substring Without Repeating Characters](/problems/longest-substring-without-repeating-characters/)
 
-## 참고 자료
+## 함께 읽으면 좋은 글
 
 - [자바스크립트 세트(Set) 완벽 가이드](https://www.daleseo.com/js-set/)

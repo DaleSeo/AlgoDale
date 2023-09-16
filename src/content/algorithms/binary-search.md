@@ -5,7 +5,7 @@ tags:
   - binary-search
   - python
   - java
-date: 2021-10-28
+date: 2023-06-28
 ---
 
 정렬된 데이터를 검색할 때 가장 널리 사용되는 이진 검색(binary search)에 대해서 알아보겠습니다.

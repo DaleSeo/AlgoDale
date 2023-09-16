@@ -4,7 +4,7 @@ tags:
   - sort
   - python
   - java
-date: 2021-07-21
+date: 2022-07-21
 ---
 
 정렬 알고리즘 중에서 가장 직관적이고 쉽게 구현이 가능한 선택 정렬(Selection Sort)에 대해서 알아보겠습니다.

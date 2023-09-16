@@ -4,10 +4,10 @@ tags:
   - sort
   - python
   - java
-date: 2021-08-28
+date: 2022-08-28
 ---
 
-[선택 정렬(Slection Sort)](/algorithms/selection-sort)과 더불어 대표적인 O(N^2) 정렬 알고리즘인 거품 정렬(Bubble Sort)에 대해서 알아보겠습니다.
+[선택 정렬(Selection Sort)](/algorithms/selection-sort)과 더불어 대표적인 O(N^2) 정렬 알고리즘인 거품 정렬(Bubble Sort)에 대해서 알아보겠습니다.
 
 ## 기본 컨셉
 

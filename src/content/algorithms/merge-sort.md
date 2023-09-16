@@ -4,7 +4,7 @@ tags:
   - sort
   - python
   - java
-date: 2021-11-11
+date: 2022-11-11
 ---
 
 대표적인 O(logN) 알고리즘인 병합 정렬(Merge Sort)에 대해서 알아보겠습니다.
