@@ -158,7 +158,7 @@ class Solution:
         return dfs(0)
 ```
 
-파이썬의 `@cache` 데코레이터를 사용해서 메모이제이션을 적용했는데요.
+파이썬의 `@cache` 데코레이터를 사용해서 [메모이제이션(memoization)](/algorithms/memoization/) 기법을 적용했는데요.
 이 방법에 익숙하지 않으신 분들은 사전을 사용하셔도 동일한 효과를 얻을 수 있습니다.
 
 ```py
