@@ -90,3 +90,8 @@ date: 2023-06-02
 - [Kth Largest Element in an Array](/problems/kth-largest-element-in-an-array/)
 - [Merge k Sorted Lists](/problems/merge-k-sorted-lists/)
 - [Meeting Rooms II](/problems/meeting-rooms-ii/)
+
+## 함께 읽으면 좋은 글
+
+- [파이썬의 heapq 모듈로 힙 자료구조 사용하기](https://www.daleseo.com/python-heapq/)
+- [파이썬의 우선순위 큐(PriorityQueue) 사용법](https://www.daleseo.com/python-priority-queue/)

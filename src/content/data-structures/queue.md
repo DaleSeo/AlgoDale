@@ -100,3 +100,7 @@ def bfs(root, target):
 - [Contains Duplicate](/problems/contains-duplicate/)
 - [Longest Consecutive Sequence](/problems/longest-consecutive-sequence/)
 - [Longest Substring Without Repeating Characters](/problems/longest-substring-without-repeating-characters/)
+
+## 함께 읽으면 좋은 글
+
+- [파이썬에서 큐(queue) 자료 구조 사용하기](https://www.daleseo.com/python-queue/)
