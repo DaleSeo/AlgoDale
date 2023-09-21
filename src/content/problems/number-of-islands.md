@@ -4,9 +4,9 @@ tags:
   - leetcode
   - array
   - matrix
+  - graph
   - dfs
   - recursion
-  - graph
   - stack
   - set
   - python
@@ -16,7 +16,7 @@ date: 2022-01-21
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FidNa-kRF1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Number of Islands](https://leetcode.com/problems/number-of-islands/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 200번 문제인 [Number of Islands](https://leetcode.com/problems/number-of-islands/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
@@ -300,5 +300,10 @@ class Solution:
 이 풀이는 얼핏보면 세트가 추가적인 메모리를 소모하므로 공간 복잡도가 저하될 거라고 생각할 수 있는데요.
 세트의 크기는 배열의 원소의 수보다는 커질 수 없으므로 공간 복잡도는 `O(2n)`가 됩니다.
 따라서 빅오 계산법 기준으로는 `O(2n) = O(n)`가 되어 유의미한 차이가 있다고는 보기 어렵겠습니다.
+
+## 마치면서
+
+이 문제가 너무 어려우셨다면 비슷하지만 좀 더 쉬운 문제인 [Number of Provinces](/problems/number-of-provinces/)도 풀어보시라고 추천드립니다.
+코딩 테스트에서 구간을 어떻게 다루는지에 대해서 더 공부하고 싶으시다면 [관련 게시물](/data-structures/graph/)을 참고 바랄께요.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kg1TjFaVTZ4?si=ji2_4FYpfq8ig3cx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
