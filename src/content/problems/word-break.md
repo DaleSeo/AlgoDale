@@ -2,13 +2,13 @@
 title: "Word Break"
 tags:
   - leetcode
-  - python
-  - javascript
   - array
   - recursion
   - memoization
   - dfs
   - dp
+  - python
+  - javascript
 date: 2022-05-18
 ---
 

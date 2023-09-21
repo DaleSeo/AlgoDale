@@ -2,10 +2,11 @@
 title: "Reverse Linked List"
 tags:
   - leetcode
-  - python
   - linked-list
   - two-pointers
   - recursion
+  - python
+  - javascript
 date: 2022-02-01
 ---
 

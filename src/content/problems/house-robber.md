@@ -2,12 +2,13 @@
 title: "House Robber"
 tags:
   - leetcode
-  - python
   - array
   - dp
   - hash-table
   - recursion
   - memoization
+  - python
+  - javascript
 date: 2022-04-06
 ---
 

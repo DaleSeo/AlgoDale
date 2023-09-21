@@ -2,10 +2,11 @@
 title: "Maximum Product Subarray"
 tags:
   - leetcode
-  - python
   - array
   - combination
   - dp
+  - python
+  - javascript
 date: 2022-01-19
 ---
 

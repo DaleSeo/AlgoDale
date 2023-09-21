@@ -2,12 +2,13 @@
 title: "3Sum"
 tags:
   - leetcode
-  - python
-  - java
   - array
   - hash-table
   - set
   - two-pointers
+  - python
+  - javascript
+  - java
 date: 2021-01-19
 ---
 

@@ -2,11 +2,13 @@
 title: "Maximum Subarray"
 tags:
   - leetcode
-  - python
   - array
   - combination
   - intuition
   - dp
+  - python
+  - array
+  - javascript
 date: 2021-02-17
 ---
 

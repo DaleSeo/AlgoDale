@@ -2,10 +2,11 @@
 title: "Two Sum"
 tags:
   - leetcode
+  - array
+  - hash-table
   - python
   - java
   - javascript
-  - hash-table
 date: 2021-01-05
 ---
 

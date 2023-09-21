@@ -2,9 +2,10 @@
 title: "Add Two Numbers"
 tags:
   - leetcode
+  - linked-list
   - python
   - java
-  - linked-list
+  - javascript
 date: 2021-03-02
 ---
 

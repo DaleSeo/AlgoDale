@@ -2,11 +2,12 @@
 title: "Longest Palindromic Substring"
 tags:
   - leetcode
+  - string
+  - palindrome
+  - dp
   - python
   - java
-  - string
-  - Palindrome
-  - dp
+  - javascript
 date: 2021-04-06
 ---
 

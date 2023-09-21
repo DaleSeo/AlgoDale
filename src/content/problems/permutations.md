@@ -2,14 +2,14 @@
 title: "Permutations"
 tags:
   - leetcode
-  - python
-  - javascript
-  - java
   - array
   - permutation
   - backtracking
   - recursion
   - dfs
+  - python
+  - javascript
+  - java
 date: 2021-03-10
 ---
 

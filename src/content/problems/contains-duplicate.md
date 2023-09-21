@@ -2,10 +2,11 @@
 title: "Contains Duplicate"
 tags:
   - leetcode
-  - python
-  - java
   - array
   - set
+  - python
+  - javascript
+  - java
 date: 2022-04-13
 ---
 

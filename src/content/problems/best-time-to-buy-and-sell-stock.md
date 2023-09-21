@@ -2,8 +2,9 @@
 title: "Best Time to Buy and Sell Stock"
 tags:
   - leetcode
-  - python
   - array
+  - python
+  - javascript
 date: 2022-02-10
 ---
 

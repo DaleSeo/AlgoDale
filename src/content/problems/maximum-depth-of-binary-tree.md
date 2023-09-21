@@ -2,13 +2,13 @@
 title: "Maximum Depth of Binary Tree"
 tags:
   - leetcode
-  - python
-  - java
-  - javascript
   - binary-tree
   - dfs
   - recursion
   - stack
+  - python
+  - java
+  - javascript
 date: 2022-02-23
 ---
 
