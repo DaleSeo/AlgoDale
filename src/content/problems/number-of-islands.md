@@ -150,6 +150,36 @@ class Solution:
         return cnt
 ```
 
+같은 알고리즘을 자바스크립트로도 구현해보겠습니다.
+
+```ts
+function numIslands(grid: string[][]): number {
+  const sink = (row, col) => {
+    grid[row][col] = "0";
+    [
+      [row, col - 1],
+      [row, col + 1],
+      [row - 1, col],
+      [row + 1, col],
+    ].forEach(([r, c]) => {
+      if (0 <= r && r < grid.length && 0 <= c && c < grid[r].length)
+        if (grid[r][c] === "1") sink(r, c);
+    });
+  };
+
+  let cnt = 0;
+  for (let r = 0; r < grid.length; r++) {
+    for (let c = 0; c < grid[r].length; c++) {
+      if (grid[r][c] === "1") {
+        cnt++;
+        sink(r, c);
+      }
+    }
+  }
+  return cnt;
+}
+```
+
 `sink()`는 배열 내의 행과 열 인덱스를 인자로 받아서 그 위치에 인접하고 있는 땅을 재귀적으로 꺼뜨리기 위한 재귀 함수입니다.
 배열을 루프 돌다가 땅이 발견되면 일단 개수를 하나 증가시키고, `sink()` 함수를 호출함으로써 그 땅을 시작으로 해서 수평과 수직 방형으로 연결된 모든 땅들을 꺼드리게 됩니다.
 
@@ -267,3 +297,5 @@ class Solution:
 이 풀이는 얼핏보면 세트가 추가적인 메모리를 소모하므로 공간 복잡도가 저하될 거라고 생각할 수 있는데요.
 세트의 크기는 배열의 원소의 수보다는 커질 수 없으므로 공간 복잡도는 `O(2n)`가 됩니다.
 따라서 빅오 계산법 기준으로는 `O(2n) = O(n)`가 되어 유의미한 차이가 있다고는 보기 어렵겠습니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kg1TjFaVTZ4?si=ji2_4FYpfq8ig3cx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
