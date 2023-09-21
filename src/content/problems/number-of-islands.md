@@ -2,12 +2,15 @@
 title: "Number of Islands"
 tags:
   - leetcode
-  - python
+  - array
+  - matrix
   - dfs
   - recursion
   - graph
   - stack
   - set
+  - python
+  - javascript
 date: 2022-01-21
 ---
 

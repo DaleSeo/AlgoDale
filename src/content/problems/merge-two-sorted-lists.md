@@ -101,7 +101,7 @@ class Solution:
 
 function mergeTwoLists(
   list1: ListNode | null,
-  list2: ListNode | null
+  list2: ListNode | null,
 ): ListNode | null {
   if (!(list1 && list2)) return list1 || list2;
   if (list1.val < list2.val) {
@@ -240,7 +240,7 @@ class Solution:
 ```ts
 function mergeTwoLists(
   list1: ListNode | null,
-  list2: ListNode | null
+  list2: ListNode | null,
 ): ListNode | null {
   if (!(list1 && list2)) return list1 || list2;
   if (list1.val < list2.val) {
