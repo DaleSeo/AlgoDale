@@ -116,3 +116,4 @@ for key in dic:
 
 - [파이썬 사전(dictionary) 완벽 가이드](https://www.daleseo.com/python-dictionary/)
 - [파이썬 collections 모듈의 Counter 사용법](https://www.daleseo.com/python-collections-counter/)
+- [파이썬 사전의 기본값 처리 (dict.setdefault / collections.defaultdict)](https://www.daleseo.com/python-collections-defaultdict/)

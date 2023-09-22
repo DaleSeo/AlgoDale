@@ -16,7 +16,7 @@ date: 2022-01-21
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/FidNa-kRF1I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 200번 문제인 [Number of Islands](https://leetcode.com/problems/number-of-islands/)를 함께 풀어보도록 하겠습니다.
+LeetCode의 200번째 문제인 [Number of Islands](https://leetcode.com/problems/number-of-islands/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 

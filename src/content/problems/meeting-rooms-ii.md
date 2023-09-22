@@ -14,9 +14,9 @@ date: 2023-09-06
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iJT18DGqRwk?si=67YSwftpJv-n6k0q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-LeetCode의 253번 문제인 [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)을 함께 풀어보도록 하겠습니다.
+LeetCode의 253번째 문제인 [Meeting Rooms II](https://leetcode.com/problems/meeting-rooms-ii/)을 함께 풀어보도록 하겠습니다.
 
-> 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode의 [919번 문제](https://www.lintcode.com/problem/919/)가 거의 동일하며 무료로 푸실 수 있으니 참고 바랍니다.
+> 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode의 [919번째 문제](https://www.lintcode.com/problem/919/)가 거의 동일하며 무료로 푸실 수 있으니 참고 바랍니다.
 
 ## 문제
 

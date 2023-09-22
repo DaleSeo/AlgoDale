@@ -10,11 +10,10 @@ tags:
   - stack
   - set
   - python
-  - javascript
-date: 2023-09-21
+date: 2023-07-14
 ---
 
-LeetCode의 547번 문제인 [Number of Provinces](https://leetcode.com/problems/number-of-provinces/)를 함께 풀어보도록 하겠습니다.
+LeetCode의 547번째 문제인 [Number of Provinces](https://leetcode.com/problems/number-of-provinces/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
