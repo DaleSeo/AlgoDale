@@ -32,7 +32,7 @@ acyclic
 
 ## 그래프 표현
 
-인접 리스트, 인접 배열, 클래스
+인접 리스트(adjacency list), 인접 행렬(adjacency matrix), 클래스
 
 ## 추천 문제
 
