@@ -1,38 +1,177 @@
 ---
 title: "그래프 (Graph)"
-description: "코딩 테스트에 종종 나오는 자료구조인 그래프(graph)에 대해서 알아보겠습니다."
+description: "코딩 테스트에 중급 이상의 난이도 문제에서 자주 등장하는 자료구조인 그래프(graph)에 대해서 알아보겠습니다."
 tags:
   - graph
   - recursion
   - dfs
   - bfs
 date: 2023-05-02
-draft: true
 ---
 
-코딩 테스트에 종종 나오는 자료구조인 그래프(graph)에 대해서 알아보겠습니다.
+코딩 테스트에 중급 이상의 난이도 문제에서 자주 등장하는 자료구조인 그래프(graph)에 대해서 알아보겠습니다.
 
 ## 그래프란?
 
-그래프(graph)는 정점(vertex)과 간선(edge)으로 이루어진 자료구조입니다.
-지도라고 생각한다면 각 도시가 정점이 되고, 도시 사이를 있는 도로가 간선이 될 것입니다.
-소셜 네트워크라고 생각한다면 각 사람이 정점이 되고, 사람 사이의 관계가 간선이 되겠지요.
+일반인에게 그래프(graph)라고 하면 데이터를 알아보고 쉽게 시각화해주는 막대 그래프, 원 그래프와 같은 소위 차트를 떠올리기 쉬운데요.
+자료구조로서의 그래프는 정점(vertex)과 간선(edge)으로 이루어진 자료구조를 뜻합니다.
 
-장점은 그래프 상에서 데이터를 저장할 수 있는 노드(node)를 나타내고, 간선은 장점 간의 연결을 나타내며 그래프의 유형에 따라서 방향성이나 가중치를 가질 수도 있습니다.
+```py
+0 → 1 → 2
+↓ ↗ ↑
+3 → 4   5
+```
 
-## 그래프의 유형
+알게 모르게 우리는 실생활에서 그래프를 쉽게 접할 수 있는데요.
+지도에서는 각 도시가 정점이 되고, 도시 사이를 있는 도로가 간선이 될 수 있습니다.
+소셜 네트워크에서는 각 사람이 정점이 되고, 사람 사이의 관계가 간선이 될 것입니다.
 
-그래프에는 여러가지 유형이 있는데요.
-코딩 테스트 측면에서는 크게 방향(directed) 그래프, 무방향(undirected) 그래프, 그리고 가중(weighted) 그래프로 나눠볼 수 있겠습니다.
+장점은 그래프 상에서 데이터를 저장할 수 있는 노드(node)를 나타내고, 간선은 정점 간의 연결을 나타냅니다.
+그래서 [트리(tree)](/data-structures/binary-tree/)나 [링크드 리스트(linked list)](/data-structures/linked-list/)도 크게 보면 그래프의 범주에 들어오는데요.
+트리는 순환(cycle)이 발생하지 않는 그래프이며, 링크드 리스트는 모든 노드가 최대 1개의 간선이 있는 그래프로 볼 수 있습니다.
 
-## 순환 그래프
+## 그래프 종류
 
-cyclic
-acyclic
+그래프에는 여러가지 종류가 있는데요.
+코딩 테스트 측면에서는 크게 간선에 방향성이 있는지와 가중치를 줄 수 있는지 여부로 나눠볼 수 있겠습니다.
+
+방향성이 있는 방향(directed) 그래프는 간선이 출발되는 노드와 간선이 도착하는 노드가 명확하게 구분됩니다.
+팔로워(Follower)와 팔로이(Followee)의 관계가 단방향인 트위터(Twitter)나 인스타그램(Instagram)과 같은 SNS를 떠올리시면 쉬우실 것 같네요.
+
+무방향(undirected) 그래프는 노드 간에 항상 양방향으로 간선이 형성됩니다.
+링크드인(LinkedIn)이나 페이스북(Facebook)과 같이 친구를 요청하고 수락해야 관계가 성립되는 SNS를 떠올리시면 되는데요.
+
+가중(weighted) 그래프에서는 간선에 일종의 점수가 매개져있습니다.
+네비게이션이나 GPS 앱을 생각하면 쉬울 것 같은데요.
+출발지부터 도착지까지 여러가지 경로가 있지만 가장 빠른 길을 선택하려면 소요 시간에 대한 정보가 각 간선에 등록되어 있어야 할 것입니다.
 
 ## 그래프 표현
 
-인접 리스트(adjacency list), 인접 행렬(adjacency matrix), 클래스
+그래프는 다양한 방식으로 표현할 수 있는데요.
+가장 대표적인 방법으로 인접 리스트(adjacency list), 인접 행렬(adjacency matrix), 그리고 노드 클래스를 들 수 있습니다.
+
+인접 리스트는 [해시 테이블(hash table)](/data-structures/hash-table/) 자료구조에 그래프를 저장하는데요.
+노드를 키로, 노드에 연결된 모든 노드를 값으로 저장합니다.
+
+인접 리스트의 크기는 간선의 수와 비례하기 때문에 공간 효율이 좋으며, 노드 간에 관계가 복잡하지 않은 그래프를 저장하기 적합합니다.
+
+```py
+0 → 1 → 2
+↓ ↗ ↑
+3 → 4   5
+
+인접 리스트: {
+  0: [1, 3],
+  1: [2],
+  2: [],
+  3: [1, 4],
+  4: [1],
+  5: []
+}
+```
+
+반면에 인접 행렬은 이차원 [배열(array)](/data-structures/array/) 자료구조에 그래프를 저장합니다.
+
+인접 행렬은 노드의 수에 비례하는 메모리가 필요하며, 노드 간에 관계가 복잡하거나 가중치 그래프를 저장하기 적합합니다.
+
+```py
+0 → 1 → 2
+↓ ↗ ↑
+3 → 4   5
+
+인접 행렬: [
+  [0, 1, 0, 1, 0, 0],
+  [0, 0, 1, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 1, 0, 0, 1, 0],
+  [0, 1, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+]
+```
+
+마지막으로 각 노드를 다음과 같이 클래스로 표현할 수도 있는데요.
+코딩 테스트에서는 잘 사용되는 방법이 아니라서 자세히 다루지는 않겠습니다.
+
+```py
+class Vertex:
+    def __init__(self, value, edges = []):
+        self.value = value
+        self.edges = edges
+        self.visited = False
+        self.traversing = False
+```
+
+## 그래프 탐색
+
+그래프에서 어떤 값을 찾으려면 그래프를 순회(traverse)를 해야하는데요.
+이 때 깊이를 우선해서 탐색을 할 수도 있고, 너비를 우선해서 탐색을 할 수도 있습니다.
+
+깊이 우선 탐색(DFS, Depth First Search)은 재귀 알고리즘을 이용해서 많이 구현합니다.
+
+예를 들어서, 인접 리스트가 인자로 넘어오면 다음과 같이 깊이 우선 탐색을 구현할 수 있습니다.
+
+```py
+def search(graph, target):
+    @cache
+    def dfs(src):
+        if src == target:
+            return True
+
+        return any(dfs(dst) for dst in graph[src])
+
+    return any(dfs(src) for src in graph)
+```
+
+깊이 우선 탐색(BFS, Breath First Search)은 [큐(queue)](/data-structures/queue/) 자료구조를 이용해서 많이 구현합니다.
+
+```py
+from collections import deque
+
+
+def search(graph, target):
+    visited = set()
+
+    def bfs(src, target):
+        queue = deque([src])
+        while queue:
+          src = queue.popleft()
+
+          if src in visited:
+              continue
+
+          visited.add(src)
+          if src == target:
+              return True
+
+          for dst in graph[src]:
+              queue.append(dst)
+
+    return any(bfs(src) for src in graph)
+```
+
+## 그래프 순환
+
+코딩 테스트에서 그래프 관련 문제를 풀 때 그래프에서 순환이 일어나는지 여부를 찾아야 하는 경우가 많은데요.
+이 때는 그래프를 순회하면서 하나의 노드가 두 번 이상 들려지는지를 탐지하면 됩니다.
+
+```py
+def has_cycle(graph):
+    traversing = set()
+
+    @cache
+    def dfs(src):
+        if src in traversing:
+            return True
+
+        traversing.add(src)
+        for dst in graph[src]:
+            if dfs(dst):
+                return True
+        traversing.remove(src)
+        return False
+
+    return any(dfs(src) for src in graph)
+```
 
 ## 추천 문제
 
