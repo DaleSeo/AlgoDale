@@ -45,6 +45,9 @@ date: 2023-05-02
 네비게이션이나 GPS 앱을 생각하면 쉬울 것 같은데요.
 출발지부터 도착지까지 여러가지 경로가 있지만 가장 빠른 길을 선택하려면 소요 시간에 대한 정보가 각 간선에 등록되어 있어야 할 것입니다.
 
+그리고 노드가 모든 간선으로 연결되어 있는지 여부에 따라서 연결된(connected) 그래프와 연결되지 않은(disconnected) 그래프로도 나눌 수 있습니다.
+연결된 그래프를 탐색할 때는 아무 노드나 하나만 탐색을 해도 결국은 모든 노드를 들릴 수 있지만, 연결되지 않은 그래프에서는 모든 노드에서 탐색을 시작해봐야 합니다.
+
 ## 그래프 표현
 
 그래프는 다양한 방식으로 표현할 수 있는데요.
@@ -93,12 +96,10 @@ date: 2023-05-02
 코딩 테스트에서는 잘 사용되는 방법이 아니라서 자세히 다루지는 않겠습니다.
 
 ```py
-class Vertex:
-    def __init__(self, value, edges = []):
-        self.value = value
-        self.edges = edges
-        self.visited = False
-        self.traversing = False
+class Node {
+    public int val;
+    public List<Node> neighbors;
+}
 ```
 
 ## 그래프 탐색
@@ -113,13 +114,13 @@ class Vertex:
 ```py
 def search(graph, target):
     @cache
-    def dfs(src):
-        if src == target:
+    def dfs(node):
+        if node == target:
             return True
 
-        return any(dfs(dst) for dst in graph[src])
+        return any(dfs(nei) for nei in graph[node])
 
-    return any(dfs(src) for src in graph)
+    return any(dfs(node) for node in graph)
 ```
 
 깊이 우선 탐색(BFS, Breath First Search)은 [큐(queue)](/data-structures/queue/) 자료구조를 이용해서 많이 구현합니다.
@@ -131,23 +132,26 @@ from collections import deque
 def search(graph, target):
     visited = set()
 
-    def bfs(src, target):
-        queue = deque([src])
+    def bfs(node, target):
+        queue = deque([node])
         while queue:
-          src = queue.popleft()
+          node = queue.popleft()
 
-          if src in visited:
+          if node in visited:
               continue
 
-          visited.add(src)
-          if src == target:
+          visited.add(node)
+          if node == target:
               return True
 
-          for dst in graph[src]:
-              queue.append(dst)
+          for nei in graph[node]:
+              queue.append(nei)
 
-    return any(bfs(src) for src in graph)
+    return any(bfs(node) for node in graph)
 ```
+
+두 개의 구현 모두 [세트(set)](/data-structures/set/) 자료구조를 사용하여 하나의 노드가 여러 번 순회되는 것을 방지하고 있는데요.
+이는 그래프 순회에 들어가는 시간을 `O(V + E)`로 최적화하기 위함이며, 그래프를 탐색할 때 매우 흔하게 볼 수 있는 코딩 패턴입니다.
 
 ## 그래프 순환
 
@@ -159,24 +163,25 @@ def has_cycle(graph):
     traversing = set()
 
     @cache
-    def dfs(src):
-        if src in traversing:
+    def traverse(node):
+        if node in traversing:
             return True
 
-        traversing.add(src)
-        for dst in graph[src]:
-            if dfs(dst):
+        traversing.add(node)
+        for nei in graph[node]:
+            if traverse(nei):
                 return True
-        traversing.remove(src)
+        traversing.remove(node)
         return False
 
-    return any(dfs(src) for src in graph)
+    return any(traverse(node) for node in graph)
 ```
 
 ## 추천 문제
 
 그래프의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
 
+- [Clone Graph](/problems/clone-graph/)
 - [Number of Provinces](/problems/number-of-provinces/)
 - [Number of Islands](/problems/number-of-islands/)
 - [Course Schedule](/problems/course-schedule/)

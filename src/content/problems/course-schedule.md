@@ -2,8 +2,6 @@
 title: "Course Schedule"
 tags:
   - leetcode
-  - array
-  - matrix
   - graph
   - dfs
   - recursion
