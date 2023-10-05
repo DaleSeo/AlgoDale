@@ -2,11 +2,12 @@
 title: "Longest Consecutive Sequence"
 tags:
   - leetcode
-  - python
   - array
   - sort
   - hash-table
   - set
+  - python
+  - javascript
 date: 2022-01-11
 ---
 
@@ -201,7 +202,7 @@ ___________
    2. 아니라면, 계속해서 1씩 증가시면서 가능한한 최대로 구간을 늘려봄
    3. 여태까지 최대 구간의 길이와 비교
 
-정리된 알고리즘을 코드로 구현을 해보겠습니다.
+정리된 알고리즘을 파이썬으로 구현해 볼까요?
 
 ```py
 class Solution:
@@ -220,8 +221,26 @@ class Solution:
         return longest
 ```
 
+같은 알고리즘을 자바스크립트로도 구현해보겠습니다.
+
+```ts
+function longestConsecutive(nums: number[]): number {
+  let longest = 0;
+  const numSet = new Set(nums);
+  for (const num of nums) {
+    if (numSet.has(num - 1)) continue;
+    let length = 1;
+    while (numSet.has(num + length)) length++;
+    longest = Math.max(length, longest);
+  }
+  return longest;
+}
+```
+
 이 풀이는 단순히 이중 루프 때문에 시간 복잡도를 `O(n^2)`라고 생각할 수 있지만 사실 시간 복잡도는 `O(n)`입니다.
 왜냐하면 `for` 문 안에 `while` 문의 정확한 수행 횟수를 따져보면 `n`번이 된다는 것을 알 수 있습니다.
 빅오 표현법으로 `O(n + n)`은 `O(n)`와 동일합니다.
 
 배열의 모든 정수를 세트에 저장하였기 때문에 공간 복잡도는 `O(n)`이 됩니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5pwDyIUfowU?si=0SPyc2Bpwuf92thM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
