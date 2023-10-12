@@ -2,12 +2,13 @@
 title: "Coin Change"
 tags:
   - leetcode
-  - python
   - array
   - permutation
   - bfs
   - queue
   - dp
+  - python
+  - javascript
 date: 2022-01-06
 ---
 
@@ -295,6 +296,20 @@ class Solution:
         return dp[amount] if dp[amount] < amount + 1 else -1
 ```
 
+동일한 알고리즘을 자바스크립트로도 구현해볼까요?
+
+```ts
+function coinChange(coins: number[], amount: number): number {
+  const dp = [0, ...new Array(amount).fill(amount + 1)];
+  for (let i = 1; i <= amount; i++) {
+    for (const coin of coins) {
+      if (coin <= i) dp[i] = Math.min(dp[i - coin] + 1, dp[i]);
+    }
+  }
+  return dp[amount] < amount + 1 ? dp[amount] : -1;
+}
+```
+
 이 DP 알고리즘의 시간 복잡도는 `O(ca)`입니다. 보시다시피 이중 루프가 있는데 외부 루프의 반복 회수는 주어진 동전의 개수에 비례하고, 내부 루프의 반복 회수는 만들어야하는 금액의 크기에 비례하기 때문입니다.
 반면에 계산 결과를 저장해놓을 배열의 크기는 주어진 금액에 비례하므로 공간 복잡도는 `O(a)`가 되겠습니다.
 
@@ -331,3 +346,5 @@ class Solution:
 
 이렇게 두가지 이상의 방법으로 풀 수 있는 코딩 문제는 특히 면접관과 대면으로 진행되는 코딩 인터뷰에서 자주 접할 수 있는데요.
 각 풀이 방법의 장단점에 대해서 토론하기가 좋기 때문에 단순히 코딩 뿐만 아니라 지원자의 전반적인 기술 역량을 파악하기 좋기 때문입니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/40ZvBUkbchk?si=4yTj1L4CdJkmK0UM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
