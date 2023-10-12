@@ -22,32 +22,21 @@ LeetCode의 [Coin Change](https://leetcode.com/problems/coin-change/) 문제를 
 만약에 동전을 조합하여 해당 금액을 만들 수가 없다면 `-1`을 반환하라.
 단, 각 동전은 무한대로 사용할 수 있다.
 
-## 예제 1
-
-- 입력
+## 예제
 
 ```py
-coins = [1, 2, 5], amount = 11
+Input: coins = [1,2,5], amount = 11
+Output: 3
 ```
 
-- 결과
-
 ```py
-3
+Input: coins = [2], amount = 3
+Output: -1
 ```
 
-## 예제 2
-
-- 입력
-
 ```py
-coins = [2], amount = 3
-```
-
-- 결과
-
-```py
--1
+Input: coins = [1], amount = 0
+Output: 0
 ```
 
 ## 풀이 1
