@@ -184,4 +184,5 @@ def has_cycle(graph):
 - [Clone Graph](/problems/clone-graph/)
 - [Number of Provinces](/problems/number-of-provinces/)
 - [Number of Islands](/problems/number-of-islands/)
+- [01 Matrix](/problems/01-matrix/)
 - [Course Schedule](/problems/course-schedule/)
