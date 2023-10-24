@@ -107,4 +107,5 @@ difference = set_a - set_b # {1, 2, 3}
 
 ## 함께 읽으면 좋은 글
 
+- [파이썬 세트(set) 완벽 가이드](https://www.daleseo.com/python-set/)
 - [자바스크립트 세트(Set) 완벽 가이드](https://www.daleseo.com/js-set/)
