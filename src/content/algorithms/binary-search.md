@@ -205,6 +205,12 @@ int mid = (low + high) / 2;
 int mid = low + (high - low) / 2;
 ```
 
+## 추천 문제
+
+이진 검색의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
+
+- [Search in Rotated Sorted Array](/problems/search-in-rotated-sorted-array/)
+
 ## 마치면서
 
 이진 검색은 정말 기초적인 알고리즘임에도 불구하고, 막상 직접 구현해보라고 하면 애를 먹는 분들이 많이 있습니다.

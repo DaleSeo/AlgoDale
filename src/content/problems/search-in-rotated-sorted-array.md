@@ -2,11 +2,12 @@
 title: "Search in Rotated Sorted Array"
 tags:
   - leetcode
-  - python
-  - java
   - array
   - linearSearch
   - binary-search
+  - python
+  - javascript
+  - java
 date: 2021-11-10
 ---
 
@@ -82,7 +83,7 @@ class Solution:
 
 문제를 자세히 읽어보면 주어진 배열이 원래 **정렬**이 되어 있었는데 어떤 지점으로 회전이 되었다는 것을 알 수 있습니다.
 
-만약에 회전이 안 되었다면 어땠을까요? 네! 바로 `O(log(n))`의 성능을 갖는 이진 검색(binary search)을 적용할 수 있었을 것입니다.
+만약에 회전이 안 되었다면 어땠을까요? 네! 바로 `O(log(n))`의 성능을 갖는 [이진 검색(Binary Search)](/algorithms/binary-search)을 적용할 수 있었을 것입니다.
 
 그럼 회전이 된 배열에도 이진 검색을 적용할 수 있는 방법은 혹시 없을까요❓
 
@@ -289,6 +290,29 @@ class Solution:
         return -1
 ```
 
+이번에는 자바스크리븥로 구현해볼까요?
+
+```ts
+function search(nums: number[], target: number): number {
+  let low = 0,
+    high = nums.length - 1;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    if (nums[mid] === target) return mid;
+    if (nums[low] <= nums[mid]) {
+      if (nums[low] <= target && target < nums[mid]) high = mid - 1;
+      else low = mid + 1;
+    } else {
+      if (nums[mid] < target && target <= nums[high]) low = mid + 1;
+      else high = mid - 1;
+    }
+  }
+
+  return -1;
+}
+```
+
 같은 알고리즘을 Java로 구현하면 다음과 같습니다.
 
 ```java
@@ -323,3 +347,5 @@ class Solution {
 
 이진 검색을 정말 다양하게 활용할 수 있는 문제였습니다.
 이진 검색 알고리즘에 대해서는 [별도 포스팅](/algorithms/binary-search)에서 자세히 다루었으니 참고해보시면 도움이 될 것 같습니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r_WTXGNHsEw?si=A31vxW9vy3mxMM1B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
