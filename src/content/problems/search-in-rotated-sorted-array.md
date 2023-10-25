@@ -13,7 +13,7 @@ date: 2021-11-10
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Og8J5E6qC4M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 33번째 문제인 [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
@@ -23,41 +23,22 @@ LeetCode의 [Search in Rotated Sorted Array](https://leetcode.com/problems/searc
 
 이렇게 회전된 배열 `nums`와 어떤 정수 `target`이 주어졌을 때, 해당 정수가 배열 내에서 찾아지면 그 값의 인덱스를 리턴하고, 그렇지 않으면 `-1`을 리턴하는 함수를 작성하라.
 
-## 예제 1
-
-- 입력
+## 예제
 
 ```py
-nums = [4, 5, 6, 7, 0, 1, 2], target = 0
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
 ```
-
-- 결과
-
-```
-4
-```
-
-- 설명
-
-`nums`에서 `0`은 index 4에 위치
-
-## 예제 2
-
-- 입력
 
 ```py
-nums = [4, 5, 6, 7, 0, 1, 2], target = 3
+Input: nums = [4,5,6,7,0,1,2], target = 3
+Output: -1
 ```
 
-- 결과
-
+```py
+Input: nums = [1], target = 0
+Output: -1
 ```
--1
-```
-
-- 설명
-
-`nums`에서 `3`은 찾을 수 없음
 
 ## 풀이 1
 
