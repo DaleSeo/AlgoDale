@@ -304,6 +304,6 @@ class Solution:
 ## 마치면서
 
 이 문제가 너무 어려우셨다면 비슷하지만 좀 더 쉬운 문제인 [Number of Provinces](/problems/number-of-provinces/)도 풀어보시라고 추천드립니다.
-코딩 테스트에서 구간을 어떻게 다루는지에 대해서 더 공부하고 싶으시다면 [관련 게시물](/data-structures/graph/)을 참고 바랄께요.
+코딩 테스트에서 그래프를 어떻게 다루는지에 대해서 더 공부하고 싶으시다면 [관련 게시물](/data-structures/graph/)을 참고 바랄께요.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kg1TjFaVTZ4?si=ji2_4FYpfq8ig3cx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
