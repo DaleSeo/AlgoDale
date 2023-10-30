@@ -13,7 +13,7 @@ date: 2022-01-11
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8sF5-yK2jsk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-LeetCode의 [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 128번째 문제인 [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
