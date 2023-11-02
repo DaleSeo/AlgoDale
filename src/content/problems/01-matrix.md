@@ -13,6 +13,8 @@ tags:
 date: 2023-10-16
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/un_ZLlz4Lzk?si=o7yrNKqznHiK6AZP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 LeetCode의 542번째 문제인 [01 Matrix](https://leetcode.com/problems/01-matrix/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
@@ -60,7 +62,7 @@ Output: [[0,0,0],[0,1,0],[1,2,1]]
 [1, 1, 1]
 ```
 
-추가 행렬을 만들기 보다는 간단하게 입력 행렬에 최소 거리를 바로 저장하는 것이 간단할 것 같습니다.
+추가 행렬을 만들기 보다는 입력 행렬에 최소 거리를 바로 저장하는 것이 간단할 것 같습니다.
 거리를 구할 때 마다 더 작은 값으로 갱신이 용이하도록, 입력 행렬에서 `0`이 아닌 칸의 값을 가능한 최대 거리로 초기화해 주겠습니다.
 3개의 행과 3개의 열로 이루어진 행렬에서 칸 사이의 거리는 아무리 크더라도 절대 `3 x 3`를 넘지 못할 것이므로 `9`로 갱신해줄께요.
 
@@ -134,7 +136,7 @@ class Solution:
         n_rows, n_cols = len(mat), len(mat[0])
 
         def dfs(row, col):
-            for r, c in [(0, -1), (0, 1), (-1, 0), (1, 0)]:
+            for r, c in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
                 if 0 <= row + r < n_rows and 0 <= col + c < n_cols:
                     if mat[row + r][col + c] > mat[row][col] + 1:
                         mat[row + r][col + c] = mat[row][col] + 1
@@ -164,7 +166,7 @@ class Solution:
 
 기본 아이디어는 주어진 행렬 내에서 `0`이 들어있는 칸부터 시작해서 `0`이 들어있지 않는 칸을 향해서 거리를 1씩 점점 늘려가면서 탐색을 하는 건데요.
 이렇게 하면 `0`이 아닌 셀에 제일 처음 도달했을 때의 거리가 무조건 `0`부터 해당 셀까지의 가장 가까운 거리라고 확신할 수 있습니다.
-그러므로 `0`이 들어있는 다른 셀에서 해당 셀에 도착할 수 있는 경로를 모두 배재해버릴 수 있겠죠?
+그러므로 `0`이 들어있는 다른 셀에서 해당 셀까지 도착할 수 있는 경로를 모두 배재해버릴 수 있겠죠?
 즉, 너비 우선 탐색을 통해서 연산량을 획기적으로 줄이고 훨씬 빨리 최소 거리를 찾을 수 있습니다.
 
 그럼 문제에서 주어진 두 번째 예제로 다시 생각을 해볼까요?
