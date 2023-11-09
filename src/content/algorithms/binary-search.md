@@ -106,7 +106,7 @@ binary_search(arr, "G", 0, 14)
 ### 복잡도
 
 이 재귀 알고리즘은 함수를 호출할 때 마다 검색 범위가 절반으로 줄어들므로 시간 복잡도는 `O(log n)` 입니다.
-재귀 함수의 호출 횟수와 비례햐여 콜 스택의 크기도 커지기 대문에 공간 복잡도도 동일한 `O(log n)` 입니다.
+재귀 함수의 호출 횟수와 비례하여 콜 스택의 크기도 커지기 대문에 공간 복잡도도 동일한 `O(log n)` 입니다.
 
 ### Java 구현
 
@@ -209,7 +209,9 @@ int mid = low + (high - low) / 2;
 
 이진 검색의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
 
+- [Binary Search](/problems/binary-search/)
 - [Search in Rotated Sorted Array](/problems/search-in-rotated-sorted-array/)
+- [Two Sum II - Input Array Is Sorted](/problems/two-sum-ii-input-array-is-sorted/)
 
 ## 마치면서
 

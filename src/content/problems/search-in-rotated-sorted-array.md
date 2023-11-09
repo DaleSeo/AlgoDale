@@ -64,7 +64,7 @@ class Solution:
 
 문제를 자세히 읽어보면 주어진 배열이 원래 **정렬**이 되어 있었는데 어떤 지점으로 회전이 되었다는 것을 알 수 있습니다.
 
-만약에 회전이 안 되었다면 어땠을까요? 네! 바로 `O(log(n))`의 성능을 갖는 [이진 검색(Binary Search)](/algorithms/binary-search)을 적용할 수 있었을 것입니다.
+만약에 회전이 안 되었다면 어땠을까요? 네! 바로 `O(log n)`의 성능을 갖는 [이진 검색(Binary Search)](/algorithms/binary-search/)을 적용할 수 있었을 것입니다.
 
 그럼 회전이 된 배열에도 이진 검색을 적용할 수 있는 방법은 혹시 없을까요❓
 
@@ -98,7 +98,7 @@ nums[i - 1] > nums[i]
 ```
 
 여기서 정말로 정말로 주의할 점은 이 지점을 순차 탐색을 이용해서 찾는다면 위에 풀이보다도 못한 풀이가 될 거에요.
-두번째 범위가 시작하는 지점도 이진 검색을 이용해서 찾아야지 처음에 노렸던 `O(log(n))`의 시간 복잡도를 달성할 수 있을 것입니다.
+두번째 범위가 시작하는 지점도 이진 검색을 이용해서 찾아야지 처음에 노렸던 `O(log n)`의 시간 복잡도를 달성할 수 있을 것입니다.
 
 두번째 범위의 시작 위치를 찾는데 사용되는 이진 검색의 로직은 다음과 같은데요.
 
@@ -327,6 +327,7 @@ class Solution {
 ## 마치면서
 
 이진 검색을 정말 다양하게 활용할 수 있는 문제였습니다.
-이진 검색 알고리즘에 대해서는 [별도 포스팅](/algorithms/binary-search)에서 자세히 다루었으니 참고해보시면 도움이 될 것 같습니다.
+이 문제가 너무 어려우셨다면 비슷하지만 좀 더 쉬운 문제인 [Binary Search](/problems/binary-search/)도 풀어보시라고 추천드립니다.
+이진 검색 알고리즘에 대해서는 [별도 포스팅](/algorithms/binary-search/)에서 자세히 다루었으니 참고해보시면 도움이 될 것 같습니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/r_WTXGNHsEw?si=A31vxW9vy3mxMM1B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
