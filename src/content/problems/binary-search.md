@@ -10,6 +10,8 @@ tags:
 date: 2023-11-10
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1BcbUf-Y8pY?si=WiZVdBrsMEAQ23eR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 LeetCode의 704번째 문제인 [Binary Search](https://leetcode.com/problems/binary-search/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
