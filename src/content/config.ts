@@ -5,7 +5,6 @@ const tags = defineCollection({
   schema: z.object({
     name: z.string().optional(),
     icon: z.string().optional(),
-    ko: z.array(z.string()),
   }),
 });
 

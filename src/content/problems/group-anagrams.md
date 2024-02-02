@@ -65,7 +65,7 @@ class Solution:
         return anagrams.values()
 ```
 
-참고로 내장 모듈인 `collections`의 `defaultdict` 자료구조를 사용하면 사전(dictinoary)에 어떤 키에 대한 값이 없을 때 좀 더 깔끔하게 빈 리스트(list)를 할당할 수 있습니다.
+참고로 내장 모듈인 `collections`의 [defaultdict](https://www.daleseo.com/python-collections-defaultdict/) 자료구조를 사용하면 사전(dictinoary)에 어떤 키에 대한 값이 없을 때 좀 더 깔끔하게 빈 리스트(list)를 할당할 수 있습니다.
 
 ```py
 from collections import defaultdict

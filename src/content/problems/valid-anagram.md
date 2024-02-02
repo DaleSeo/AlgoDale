@@ -197,7 +197,7 @@ class Solution:
         return all(cnt == 0 for cnt in counter.values())
 ```
 
-참고로 파이썬의 내장 자료구조인 `Counter`를 사용하면 단 한 줄로도 구현이 가능하지만 코딩 시험에서는 그닥 추천드리고 싶지 않은 방법입니다.
+참고로 파이썬의 내장 자료구조인 [Counter](https://www.daleseo.com/python-collections-counter/)를 사용하면 단 한 줄로도 구현이 가능하지만 코딩 시험에서는 그닥 추천드리고 싶지 않은 방법입니다.
 
 ```py
 from collections import Counter
