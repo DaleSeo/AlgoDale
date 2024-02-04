@@ -5,6 +5,7 @@ tags:
   - python
   - java
   - array
+  - hash-table
   - combination
   - backtracking
 date: 2021-04-27
@@ -21,9 +22,11 @@ LeetCode의 [Letter Combinations of a Phone Number](https://leetcode.com/problem
 예를 들면, 입력으로 `23`을 들어오면 `["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"]`을 출력해야 한다.
 왜냐하면 키패드 `2`로는 `a` 또는 `b`, `c`를 표현할 수 있고, 키패드 `3`으로는 `d`, `e`, `f`를 표현할 수 있기 때문에 이 두 키패드를 순서대로 누르면 위와 같은 조합의 글자를 모두 표현할 수 있다.
 
-## 풀이
+## 풀이 1
 
-전화기의 키패드 하나는 총 3개(간혹 4개)의 문자를 표현할 수 있습니다. 따라서 키패드의 2개로는 2개의 문자로 이뤄진 9개 (= 3 x 3)의 글자를 구성할 수 있습니다. 마찬가지로 키패드 3개로는 3개의 문자로 이뤄진 27(= 3 x 3 x 3)개의 글자를 구성할 수 있습니다.
+전화기의 키패드 하나는 총 3개(간혹 4개)의 문자를 표현할 수 있습니다.
+따라서 키패드 2개로는 2개의 문자로 이뤄진 9개 (= 3 x 3)의 글자를 구성할 수 있습니다.
+마찬가지로 키패드 3개로는 3개의 문자로 이뤄진 27(= 3 x 3 x 3)개의 글자를 구성할 수 있지요.
 
 여기서 패턴을 읽을 수 있습니다. 키패드를 하나 더 이용할 때 마다 표현 가능한 문자의 조합이 3배수로 늘어납니다. 이렇게 가능한 모든 경우의 조합을 찾을 때는 사람이 자연스럽게 사고하는 방식과 유사한 백트래킹 풀이법이 널리 사용됩니다.
 
@@ -31,171 +34,219 @@ LeetCode의 [Letter Combinations of a Phone Number](https://leetcode.com/problem
 
 이제 `4`로 만들 수 있는 모든 문자를 사용했기 때문에 `3`로 거슬러 올라가서 (backtrack) `d` 대신 `e`를 사용합니다. 그리고 다시 `4`에 대해서 `g`, `h`, `i`를 차례대로 사용해서 새로운 조합을 계속해서 만들어 냅니다.
 
-위에서 설명드린 내용을 일반화하면 다음과 같이 재귀 알고리즘으로 도식화 해볼 수 있습니다.
+이 과정을 도식화해보면 다음과 같은 트리 형태가 될 것입니다.
 
+```py
+a
+    ad
+        adg
+        adh
+        adi
+    ae
+        aeg
+        aeh
+        aei
+    af
+        afg
+        afh
+        afi
+b
+    bd
+        bdg
+        bdh
+        bdi
+    be
+        beg
+        beh
+        bei
+    bf
+        bfg
+        bfh
+        bfi
+c
+    cd
+        cdg
+        cdh
+        cdi
+    ce
+        ceg
+        ceh
+        cei
+    cf
+        cfg
+        cfh
+        cfi
 ```
-f('', '234')
-    f('a', '34')
-        f('ad', '4')
-            f('adg', '')
-            f('adh', '')
-            f('adi', '')
-        f('ae', '4')
-            f('aeg', '')
-            f('aeh', '')
-            f('aei', '')
-        f('af', '4')
-            f('afg', '')
-            f('afh', '')
-            f('afi', '')
-    f('b', '34')
-        f('bd', '4')
-            ...
-    f('c', '34')
-        ...
-```
 
-### Python
-
-키패드가 표현 가능한 문자를 해시 테이블에 미리 저장해놓고 재귀 함수를 사용하여 `combinations` 배열에 문자열 조합을 차곡차곡 쌓아나갑니다.
-재귀 함수는 남아있는 캐패드가 있는 경우에는 재귀적으로 자신을 호출하고, 남아있는 키패드가 없는 기저 사례(base case)에 다달으면 `combinations` 배열에 완성된 문자열을 추가합니다.
+위 알고리즘을 먼저 파이썬으로 구현해볼까요?
 
 ```py
 class Solution:
-    def letterCombinations(self, digits):
+    def letterCombinations(self, digits: str) -> list[str]:
         if not digits:
             return []
 
         digit_letters = {
-            '2': ['a', 'b', 'c'],
-            '3': ['d', 'e', 'f'],
-            '4': ['g', 'h', 'i'],
-            '5': ['j', 'k', 'l'],
-            '6': ['m', 'n', 'o'],
-            '7': ['p', 'q', 'r', 's'],
-            '8': ['t', 'u', 'v'],
-            '9': ['w', 'x', 'y', 'z']
+            "2": "abc",
+            "3": "def",
+            "4": "ghi",
+            "5": "jkl",
+            "6": "mno",
+            "7": "pqrs",
+            "8": "tuv",
+            "9": "wxyz",
         }
 
-        def helper(combination, digits):
-            if not digits:
-                return combinations.append(combination)
-            for letter in digit_letters[digits[0]]:
-                helper(combination + letter, digits[1:])
-
         combinations = []
-        helper('', digits)
+        letters = []
+
+        def dfs():
+            if len(letters) == len(digits):
+                return combinations.append("".join(letters))
+            digit = digits[len(letters)]
+            for letter in digit_letters[digit]:
+                letters.append(letter)
+                dfs()
+                letters.pop()
+
+        dfs()
+
         return combinations
 ```
 
-### Java
+우선 각 키패드가 표현 가능한 문자들을 해시 테이블 `digit_letters`에 미리 저장해놓았습니다.
+함수 `dfs()`는 조합 문자열과 시작 인덱스를 인자로 받으며, 표현할 수 있는 모든 문자에 대해서 `dfs()` 재귀 호출합니다.
+`letters` 배열에 문자를 하나씩 넣었다가 빼면서 backtracking을 구현하고 있습니다.
+최종적으로 남아있는 키패드가 없는 상황, 즉 조합의 길이와 입력 문자열의 길이가 같아지면 결과 배열 `combinations`에 완성된 문자열을 추가합니다.
+
+동일한 알고리즘 자바로 구현하면 다음과 같습니다.
 
 ```java
 class Solution {
-    List<String> combinations = new LinkedList<>();
-    Map<Character, char[]> digitLetters;
-
-    Solution() {
-        digitLetters = new HashMap<>();
-        digitLetters.put('2', new char[]{'a', 'b', 'c'});
-        digitLetters.put('3', new char[]{'d', 'e', 'f'});
-        digitLetters.put('4', new char[]{'g', 'h', 'i'});
-        digitLetters.put('5', new char[]{'j', 'k', 'l'});
-        digitLetters.put('6', new char[]{'m', 'n', 'o'});
-        digitLetters.put('7', new char[]{'p', 'q', 'r', 's'});
-        digitLetters.put('8', new char[]{'t', 'u', 'v'});
-        digitLetters.put('9', new char[]{'w', 'x', 'y', 'z'});
-    }
-
     public List<String> letterCombinations(String digits) {
-        if (digits.length() == 0) return Collections.emptyList();
-        helper("", digits);
+        if (digits.isEmpty()) {
+            return new ArrayList<>();
+        }
+
+        Map<Character, String> digitLetters = new HashMap<>();
+        digitLetters.put('2', "abc");
+        digitLetters.put('3', "def");
+        digitLetters.put('4', "ghi");
+        digitLetters.put('5', "jkl");
+        digitLetters.put('6', "mno");
+        digitLetters.put('7', "pqrs");
+        digitLetters.put('8', "tuv");
+        digitLetters.put('9', "wxyz");
+
+        List<String> combinations = new ArrayList<>();
+
+        dfs("", digits, digitLetters, combinations);
+
         return combinations;
     }
 
-    private void helper(String combination, String digits) {
-        if (digits.length() == 0) {
+    private void dfs(String combination, String digits, Map<Character, String> digitLetters, List<String> combinations) {
+        if (combination.length() == digits.length()) {
             combinations.add(combination);
             return;
         }
-        for (char letter : digitLetters.get(digits.charAt(0))) {
-            helper(combination + letter, digits.substring(1));
+
+        char currentDigit = digits.charAt(combination.length());
+        String letters = digitLetters.get(currentDigit);
+
+        for (char letter : letters.toCharArray()) {
+            dfs(combination + letter, digits, digitLetters, combinations);
         }
     }
 }
 ```
 
-## Interation
+이 재귀 알고리즘의 복잡도를 분석해보겠습니다.
 
-위 재귀 알고리즘을 단순히 반복문을 사용하여 재작성할 수 있습니다.
+7과 9처럼 하나의 키패드가 4개의 알파벳까지 표현할 수 있으므로, 호출 스택의 각 단계에서 최대 4번의 재귀 호출이 일날 수 있죠?
+호출 스택의 높이는 입력 문자열의 길이와 비례하기 때문에, `n`을 입력 문자열의 길이라고 했을 때, 시간 복잡도는 `O(4^n)`이 됩니다.
 
-### Python
+반면에 공간 복잡도는 `O(n)`이 되는데요.
+입력 문자열의 길이에 비례해서 호출 스택의 높아지기 때문입니다.
+
+## 풀이 2
+
+재귀 알고리즘은 입력값이 크면 스택 오버플로우(Stack Overflow)가 발생할 위험이 있습니다.
+따라서 [스택(stack)](/data-structures/stack/) 자료구조를 활용하여 반복 알고리즘을 사용하여 문제를 다시 풀어보도록 하겠습니다.
 
 ```py
 class Solution:
-    def letterCombinations(self, digits):
+    def letterCombinations(self, digits: str) -> list[str]:
         if not digits:
             return []
 
         digit_letters = {
-            '2': ['a', 'b', 'c'],
-            '3': ['d', 'e', 'f'],
-            '4': ['g', 'h', 'i'],
-            '5': ['j', 'k', 'l'],
-            '6': ['m', 'n', 'o'],
-            '7': ['p', 'q', 'r', 's'],
-            '8': ['t', 'u', 'v'],
-            '9': ['w', 'x', 'y', 'z']
+            "2": "abc",
+            "3": "def",
+            "4": "ghi",
+            "5": "jkl",
+            "6": "mno",
+            "7": "pqrs",
+            "8": "tuv",
+            "9": "wxyz",
         }
 
-        combinations = ['']
-        for digit in digits:
-            next_combinations = []
+        combinations = []
+        stack = [""]
+
+        while stack:
+            combination = stack.pop()
+
+            if len(combination) == len(digits):
+                combinations.append(combination)
+                continue
+
+            digit = digits[len(combination)]
             for letter in digit_letters[digit]:
-                for combination in combinations:
-                    combination += letter
-                    next_combinations.append(combination)
-            combinations = next_combinations
+                stack.append(combination + letter)
+
         return combinations
 ```
 
-### Java
-
 ```java
 class Solution {
-    Map<Character, char[]> digitLetters;
-
-    Solution() {
-        digitLetters = new HashMap<>();
-        digitLetters.put('2', new char[]{'a', 'b', 'c'});
-        digitLetters.put('3', new char[]{'d', 'e', 'f'});
-        digitLetters.put('4', new char[]{'g', 'h', 'i'});
-        digitLetters.put('5', new char[]{'j', 'k', 'l'});
-        digitLetters.put('6', new char[]{'m', 'n', 'o'});
-        digitLetters.put('7', new char[]{'p', 'q', 'r', 's'});
-        digitLetters.put('8', new char[]{'t', 'u', 'v'});
-        digitLetters.put('9', new char[]{'w', 'x', 'y', 'z'});
-    }
-
     public List<String> letterCombinations(String digits) {
-        if (digits.length() == 0) return Collections.emptyList();
-        List<String> combinations = new LinkedList<>();
-        combinations.add("");
-        for (char digit : digits.toCharArray()) {
-            List<String> nextCombinations = new LinkedList<>();
-            for (char letter : digitLetters.get(digit))
-                for (String combination : combinations)
-                    nextCombinations.add(combination + letter);
-            combinations = nextCombinations;
+        if (digits.isEmpty()) {
+            return new ArrayList<>();
         }
+
+        Map<Character, String> digitLetters = new HashMap<>();
+        digitLetters.put('2', "abc");
+        digitLetters.put('3', "def");
+        digitLetters.put('4', "ghi");
+        digitLetters.put('5', "jkl");
+        digitLetters.put('6', "mno");
+        digitLetters.put('7', "pqrs");
+        digitLetters.put('8', "tuv");
+        digitLetters.put('9', "wxyz");
+
+        List<String> combinations = new ArrayList<>();
+        Stack<String> stack = new Stack<>();
+
+        stack.push("");
+
+        while (!stack.isEmpty()) {
+            String combination = stack.pop();
+
+            if (combination.length() == digits.length()) {
+                combinations.add(combination);
+                continue;
+            }
+
+            char digit = digits.charAt(combination.length());
+            String letters = digitLetters.get(digit);
+
+            for (char letter : letters.toCharArray()) {
+                stack.push(combination + letter);
+            }
+        }
+
         return combinations;
     }
 }
-
 ```
-
-## 복잡도
-
-N을 입력값의 길이라고 했을 때, 위 두 개의 알고리즘은 모두 동일한 `O(3^N)`의 시간/공간 복잡도를 가집니다.
-첫 번째 알고리즘은 재귀적으로 구현되어 있기 때문에 입력값이 커졌을 때 Stack Overflow가 발생할 수 있다는 위험성이 있습니다.
-항상 가능한 것은 하지만 재귀 알고리즘을 피하는 방법을 연습해두면 코딩 인터뷰나 상용 코드를 짤 때 도움이 될 수 있습니다.

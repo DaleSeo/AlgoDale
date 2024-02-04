@@ -21,7 +21,7 @@ LeetCode의 [Combination Sum](https://leetcode.com/problems/combination-sum/) �
 중복이 없는 숫자로 이뤄진 `candidates` 배열과 숫자 `target`이 주어졌을 때, 합이 `target`이 되는 모든 숫자의 조합을 찾아라.
 같은 숫자가 여러 번 사용할 수 있으며, `candidates` 배열 내의 숫자와 `target`은 모두 양의 정수이다.
 
-## 예제 1
+## 예제
 
 ```py
 Input: candidates = [2, 3, 6, 7], target = 7
@@ -31,8 +31,6 @@ Output:
   [2,2,3]
 ]
 ```
-
-## 예제 2
 
 ```py
 Input: candidates = [2, 3, 5], target = 8
