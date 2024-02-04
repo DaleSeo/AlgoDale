@@ -18,6 +18,8 @@
     "@astrojs/rss": "^4.0.4",
     "@astrojs/sitemap": "^3.0.5",
     "@astrojs/tailwind": "^5.1.0",
+    "@sentry/astro": "^7.99.0",
+    "@spotlightjs/astro": "^1.0.14",
     "@tailwindcss/typography": "^0.5.9",
     "astro": "^4.3.2",
     "astro-icon": "^0.8.0",
