@@ -2,12 +2,12 @@
 title: "Generate Parentheses"
 tags:
   - leetcode
-  - python
-  - java
   - parentheses
   - recursion
   - backtracking
   - stack
+  - python
+  - java
 date: 2021-06-08
 ---
 
@@ -157,7 +157,7 @@ F('', 0, 0)
 
 ## 풀이 2
 
-재귀 알고리즘의 한 형태인 백트랙킹(backtracking) 기법과 스택(stack) 자료구조를 사용하여 메모리 사용량을 최적화할 수 있습니다.
+재귀 알고리즘의 한 형태인 백트랙킹(backtracking) 기법과 [스택(stack)](/data-structures/stack/) 자료구조를 사용하여 메모리 사용량을 최적화할 수 있습니다.
 
 위에서 작성한 보면 재귀 함수를 호출할 때 마다 `text` 인자에 현재까지 만들어낸 문자열을 넘기는데요.
 이 때문에 호출 트리의 깊이가 깊어질수록 최대 `2n`의 추가 메모리를 사용하고 있는 것을 볼 수 있습니다.
@@ -221,5 +221,5 @@ class Solution:
 
 ## 마치면서
 
-LeetCode에서 괄호와 관련된 다른 유명한 문제로 [Valid Parentheses](/problems/valid-parentheses)가 있습니다.
+LeetCode에서 괄호와 관련된 다른 유명한 문제로 [Valid Parentheses](/problems/valid-parentheses/)가 있습니다.
 시간이 되시면 같이 풀어보시면 도움이 될 것 같습니다.

@@ -135,6 +135,7 @@ ccc()
 
 스택의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
 
+- [올바른 괄호](/problems/올바른-괄호/)
 - [Valid Parentheses](/problems/valid-parentheses/)
 - [Generate Parentheses](/problems/generate-parentheses/)
 - [Same Tree](/problems/same-tree/)

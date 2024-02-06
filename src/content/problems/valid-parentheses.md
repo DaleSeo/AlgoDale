@@ -2,11 +2,11 @@
 title: "Valid Parentheses"
 tags:
   - leetcode
-  - python
-  - java
   - parentheses
   - hash-table
   - stack
+  - python
+  - java
 date: 2021-05-11
 ---
 
@@ -23,35 +23,27 @@ LeetCode의 [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/
 
 단, 빈 문자열은 무조건 `true`로 간주한다.
 
-- Example 1:
+## 예제
 
 ```
 Input: "()"
 Output: true
 ```
 
-- Example 2:
-
 ```
 Input: "()[]{}"
 Output: true
 ```
-
-- Example 3:
 
 ```
 Input: "(]"
 Output: false
 ```
 
-- Example 4:
-
 ```
 Input: "([)]"
 Output: false
 ```
-
-- Example 5:
 
 ```
 Input: "{[]}"
@@ -215,5 +207,7 @@ class Solution {
 
 ## 마치면서
 
-LeetCode에서 괄호와 관련된 다른 유명한 문제로 [Valid Parentheses](/problems/generate-parentheses)가 있습니다.
+LeetCode에서 괄호와 관련된 다른 유명한 문제로 [Generate Parentheses](/problems/generate-parentheses/)가 있습니다.
 시간이 되시면 같이 풀어보시면 도움이 될 것 같습니다.
+
+이 문제가 너무 어려우셨다면 비슷하지만 좀 더 쉬운 문제인 프로그래머스의 [올바른 괄호](/problems/올바른-괄호/)도 풀어보시라고 추천드립니다.
