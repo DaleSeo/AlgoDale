@@ -151,7 +151,7 @@ class Solution:
 
 널리 알려진 검색 알고리즘인 빠른 선택 (Quick Select)을 사용하면 이 문제를 좀 더 효율적으로 해결할 수 있습니다.
 
-> 빠른 선택 (Quick Select) 알고리즘에 대해서는 [별도의 게시물](/algorithms/quick-select)에서 자세히 다루었으니 참고 바라겠습니다.
+> 빠른 선택 (Quick Select) 알고리즘에 대해서는 [별도의 게시물](/algorithms/quick-select/)에서 자세히 다루었으니 참고 바라겠습니다.
 
 분할(partition) 로직은 퀵 정렬(Quick Sort)와 크게 다르지 않고요.
 배열을 전체를 정렬하는 대신에 매 단계에서 분할된 두 개의 검색 영역 중 하나를 버리는 방식으로 검색 범위를 계속 좁혀나가면 됩니다.
