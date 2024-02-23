@@ -212,6 +212,7 @@ int mid = low + (high - low) / 2;
 - [Binary Search](/problems/binary-search/)
 - [Search in Rotated Sorted Array](/problems/search-in-rotated-sorted-array/)
 - [Two Sum II - Input Array Is Sorted](/problems/two-sum-ii-input-array-is-sorted/)
+- [입국 심사](/problems/입국심사/)
 
 ## 마치면서
 
