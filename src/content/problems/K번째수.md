@@ -5,7 +5,8 @@ tags:
   - parentheses
   - stack
   - python
-date: 2024-02-24
+date: 2024-03-02
+draft: true
 ---
 
 프로그래머스의 [K번째수](https://school.programmers.co.kr/learn/courses/30/lessons/42748) 문제를 함께 풀어보도록 하겠습니다.
