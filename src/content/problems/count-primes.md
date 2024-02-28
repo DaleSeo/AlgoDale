@@ -147,3 +147,17 @@ class Solution:
 
 에라토스테네스의 체 알고리즘의 복잡도는 `O(n * log(log n))`으로 알려져있습니다.
 공간 복잡도는 `n`과 비례해서 커지는 배열 또는 집합을 사용하기 때문에 `O(n)`이 되겠습니다.
+
+## 풀이 3
+
+조금만 발상의 전환을 해보면 소수의 수를 세는 대신에 합성수를 센 다음에 `n`에서 합성수의 개수를 빼도 이 문제를 해결할 수도 있겠죠?
+
+```py
+class Solution:
+    def countPrimes(self, n: int) -> int:
+        composites = {0, 1}
+        for num in range(2, int(n**0.5) + 1):
+            if num not in composites:
+                composites |= set(range(num * 2, n, num))
+        return 0 if n < 2 else n - len(composites)
+```
