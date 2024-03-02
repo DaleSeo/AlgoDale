@@ -3,6 +3,7 @@ title: "Permutations"
 tags:
   - leetcode
   - array
+  - math
   - permutation
   - backtracking
   - recursion

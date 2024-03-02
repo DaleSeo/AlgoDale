@@ -3,6 +3,7 @@ title: "Coin Change"
 tags:
   - leetcode
   - array
+  - math
   - permutation
   - bfs
   - queue

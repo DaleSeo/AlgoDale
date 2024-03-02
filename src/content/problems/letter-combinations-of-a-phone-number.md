@@ -2,12 +2,13 @@
 title: "Letter Combinations of a Phone Number"
 tags:
   - leetcode
-  - python
-  - java
   - array
   - hash-table
+  - math
   - combination
   - backtracking
+  - python
+  - java
 date: 2021-04-27
 ---
 

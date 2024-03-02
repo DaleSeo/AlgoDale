@@ -3,6 +3,7 @@ title: "Maximum Product Subarray"
 tags:
   - leetcode
   - array
+  - math
   - combination
   - dp
   - python

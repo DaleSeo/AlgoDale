@@ -2,10 +2,11 @@
 title: "Next Permutation"
 tags:
   - leetcode
+  - array
+  - math
+  - permutation
   - python
   - java
-  - array
-  - permutation
 date: 2021-02-16
 ---
 

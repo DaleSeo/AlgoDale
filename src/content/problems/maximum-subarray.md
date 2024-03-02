@@ -3,6 +3,7 @@ title: "Maximum Subarray"
 tags:
   - leetcode
   - array
+  - math
   - combination
   - intuition
   - dp
