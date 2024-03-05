@@ -130,7 +130,8 @@ Interval(min(A.start, B.start), max(A.end, B.end))
 
 ## 추천 문제
 
-세트의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
+구간의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
 
 - [Meeting Rooms](/problems/meeting-rooms/)
 - [Merge Intervals](/problems/merge-intervals/)
+- [호텔 대실](/problems/호텔-대실/)
