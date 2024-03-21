@@ -186,7 +186,7 @@ function longestPalindrome(s: string): string {
 
 ## 풀이 3
 
-참고로 이 문제는 동적 계획법(dynamic programing)으로도 해결할 수 있습니다.
+참고로 이 문제는 동적 계획법(dynamic programming)으로도 해결할 수 있습니다.
 기본 아이디어는 첫 번째 풀이에서 발생하는 중복 연산을 저장해놓고 재활용하는 것인데요.
 
 예를 들어, `eve`가 회문인지 알고 있는 상황에서는 `level`이 회문인지 검사할 때 첫 글자와 끝 글자가 동일한지만 체크하면 됩니다.
