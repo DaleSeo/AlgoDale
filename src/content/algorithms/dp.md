@@ -77,6 +77,7 @@ dp[5] = dp[4] + dp[3] = 3 + 2 = 5
 
 - [Climbing Stairs](/problems/climbing-stairs/)
 - [Maximum Subarray](/problems/maximum-subarray/)
+- [멀리 뛰기](/problems/멀리-뛰기/)
 - [House Robber](/problems/house-robber/)
 - [Word Break](/problems/word-break/)
 - [Decode Ways](/problems/decode-ways/)
