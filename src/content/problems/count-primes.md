@@ -9,6 +9,8 @@ tags:
 date: 2024-02-24
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zKdIJ8ndQmM?si=3lA46m_mmV5_tQPW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 204번째 문제인 [Count Primes](https://leetcode.com/problems/count-primes/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
