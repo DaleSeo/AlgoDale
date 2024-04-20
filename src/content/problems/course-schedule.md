@@ -161,7 +161,7 @@ Output: false
 ```
 
 그럼 이 깊이 우선 탐색을 위한 재귀 알고리즘을 파이썬으로 구현해볼까요?
-[세트(set)](/data-structures/set/) 자료구조를 사용하여 현재 순회 중인 노드를 추척하겠습니다.
+[집합(set)](/data-structures/set/) 자료구조를 사용하여 현재 순회 중인 노드를 추척하겠습니다.
 
 ```py
 from functools import cache

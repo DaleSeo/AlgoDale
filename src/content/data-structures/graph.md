@@ -150,7 +150,7 @@ def search(graph, target):
     return any(bfs(node) for node in graph)
 ```
 
-두 개의 구현 모두 [세트(set)](/data-structures/set/) 자료구조를 사용하여 하나의 노드가 여러 번 순회되는 것을 방지하고 있는데요.
+두 개의 구현 모두 [집합(set)](/data-structures/set/) 자료구조를 사용하여 하나의 노드가 여러 번 순회되는 것을 방지하고 있는데요.
 이는 그래프 순회에 들어가는 시간을 `O(V + E)`로 최적화하기 위함이며, 그래프를 탐색할 때 매우 흔하게 볼 수 있는 코딩 패턴입니다.
 
 ## 그래프 순환
