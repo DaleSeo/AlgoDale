@@ -136,7 +136,7 @@ arr.pop(); // 마지막 값 버림
 
 배열의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
 
-- [같은 숫자는 싫어](http://localhost:4321/problems/%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/)
+- [같은 숫자는 싫어](/problems/%EA%B0%99%EC%9D%80-%EC%88%AB%EC%9E%90%EB%8A%94-%EC%8B%AB%EC%96%B4/)
 - [Move Zeroes](/problems/move-zeroes/)
 - [Best Time to Buy and Sell Stock](/problems/best-time-to-buy-and-sell-stock/)
 - [Container With Most Water](/problems/container-with-most-water/)
