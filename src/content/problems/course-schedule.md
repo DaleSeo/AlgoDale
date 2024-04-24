@@ -196,6 +196,36 @@ class Solution:
             traversing.remove(crs)
             return True
 
+        for crs in graph:
+            if not can_finish(crs):
+                return False
+        return True
+```
+
+참고로 파이썬의 `all()` 함수를 활용하면 좀 더 간결하게 코드를 짤 수도 있습니다.
+
+```py
+from functools import cache
+
+
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        graph = {i: [] for i in range(numCourses)}
+        for crs, pre in prerequisites:
+            graph[crs].append(pre)
+
+        traversing = set()
+
+        @cache
+        def can_finish(crs):
+            if crs in traversing:
+                return False
+
+            traversing.add(crs)
+            result = all(can_finish(pre) for pre in graph[crs])
+            traversing.remove(crs)
+            return result
+
         return all(can_finish(crs) for crs in graph)
 ```
 

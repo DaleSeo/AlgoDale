@@ -177,6 +177,28 @@ def has_cycle(graph):
         traversing.remove(node)
         return False
 
+    for node in graph:
+        if traverse(node):
+            return True
+    return False
+```
+
+참고로 파이썬의 `any()` 함수를 활용하면 좀 더 간결하게 코드를 짤 수도 있습니다.
+
+```py
+def has_cycle(graph):
+    traversing = set()
+
+    @cache
+    def traverse(node):
+        if node in traversing:
+            return True
+
+        traversing.add(node)
+        result = any(traverse(nei) for nei in graph[node])
+        traversing.remove(node)
+        return result
+
     return any(traverse(node) for node in graph)
 ```
 
