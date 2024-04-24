@@ -37,7 +37,7 @@ Output: false
 
 ## 풀이 1
 
-각 과목을 정점(vertex)로 보고, 과목 간의 관계를 간선(edge)로 보면 이 문제는 전형적인 그래프 문제로 볼 수 있는데요.
+각 과목을 정점(vertex)로 보고, 과목 간의 관계를 간선(edge)로 보면 이 문제는 전형적인 [그래프(graph)](/data-structures/graph/) 문제로 볼 수 있는데요.
 모든 과목을 수강하려면 그래프에서 순환(cycle)이 일어나면 안 됩니다.
 여기서 순환이란 그래프를 순회할 때 하나의 노드를 두 번 이상 거치게 되는 상황을 의마하는데요.
 
@@ -160,6 +160,15 @@ Output: false
     ❓
 ```
 
+---
+
+```py
+❓
+0 ← 1
+  ↘ ↑
+3 ← 2
+```
+
 그럼 이 깊이 우선 탐색을 위한 재귀 알고리즘을 파이썬으로 구현해볼까요?
 [집합(set)](/data-structures/set/) 자료구조를 사용하여 현재 순회 중인 노드를 추척하겠습니다.
 
@@ -187,7 +196,7 @@ class Solution:
             traversing.remove(crs)
             return True
 
-        return all(can_finish(src) for src in graph)
+        return all(can_finish(crs) for crs in graph)
 ```
 
 [메모이제이션(memoization)](/algorithms/memoization/)을 위해서 재귀 함수에 `@cache` 데코레이터를 붙여준 부분을 주목하세요.
@@ -232,7 +241,7 @@ class Solution:
             statuses[crs] = Status.FINISHED
             return True
 
-        return all(can_finish(src) for src in graph)
+        return all(can_finish(crs) for crs in graph)
 ```
 
 이 풀이의 시간 복잡도와 공간 복잡도는 위 풀이와 다르지 않습니다.

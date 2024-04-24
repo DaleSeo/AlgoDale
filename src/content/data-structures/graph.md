@@ -36,10 +36,10 @@ date: 2023-05-02
 코딩 테스트 측면에서는 크게 간선에 방향성이 있는지와 가중치를 줄 수 있는지 여부로 나눠볼 수 있겠습니다.
 
 방향성이 있는 방향(directed) 그래프는 간선이 출발되는 노드와 간선이 도착하는 노드가 명확하게 구분됩니다.
-팔로워(Follower)와 팔로이(Followee)의 관계가 단방향인 트위터(Twitter)나 인스타그램(Instagram)과 같은 SNS를 떠올리시면 쉬우실 것 같네요.
+팔로워(follower)와 팔로이(followee)의 관계가 단방향인 트위터(Twitter)나 인스타그램(Instagram)과 같은 SNS를 떠올리시면 쉬우실 것 같네요.
 
 무방향(undirected) 그래프는 노드 간에 항상 양방향으로 간선이 형성됩니다.
-링크드인(LinkedIn)이나 페이스북(Facebook)과 같이 친구를 요청하고 수락해야 관계가 성립되는 SNS를 떠올리시면 되는데요.
+페이스북(Facebook)이나 링크드인(LinkedIn)과 같이 친구나 일촌을 요청하고 수락해야 관계가 성립되는 SNS를 떠올리시면 되는데요.
 
 가중(weighted) 그래프에서는 간선에 일종의 점수가 매개져있습니다.
 네비게이션이나 GPS 앱을 생각하면 쉬울 것 같은데요.
@@ -112,6 +112,9 @@ class Node {
 예를 들어서, 인접 리스트가 인자로 넘어오면 다음과 같이 깊이 우선 탐색을 구현할 수 있습니다.
 
 ```py
+from functools import cache
+
+
 def search(graph, target):
     @cache
     def dfs(node):
