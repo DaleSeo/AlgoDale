@@ -2,8 +2,9 @@
 title: "Longest Palindromic Substring"
 tags:
   - leetcode
-  - string
   - palindrome
+  - string
+  - two-pointers
   - dp
   - python
   - java
@@ -29,7 +30,7 @@ LeetCode의 [Longest Palindromic Substring](https://leetcode.com/problems/longes
 
 이 문제를 풀 수 있는 단순 무식한 방법은 주어진 문자열에서 만들어낼 수 있는 모든 부분 문자열이 회문(palindrome)인지를 구하는 것입니다.
 
-앞에서부터 바로 읽으나 뒤에서부터 거꾸로 읽으나 동일한 문자열인 회문은 두 개의 포인터를 이용한 알고리즘이 널리 사용됩는데요.
+앞에서부터 바로 읽으나 뒤에서부터 거꾸로 읽으나 동일한 문자열인 회문은 두 개의 포인터를 이용한 알고리즘이 널리 사용되는데요.
 첫 포인터는 앞에서부터 뒤로 전진시키고 뒤 포인터는 뒤에서부터 앞으로 전진시키면서, 두 포인터가 가리키는 문자가 다르면 회문이 아니라고 바로 판단할 수 있습니다.
 
 주어진 문자열에서 만들어낼 수 있는 모든 부분 문자열은 이중 루프를 이용해서 어렵지 않게 만들어 낼 수 있겠죠?
@@ -263,3 +264,8 @@ class Solution {
 이 이중 루프를 사용하는 알고리즘은 `O(n^2)`의 시간 복잡도를 가지며, 2차원 배열을 사용하므로 공간 복잡도도 `O(n^2)`이 됩니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rGySPuTuYEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## 마치면서
+
+LeetCode에서 회문과 관련된 다른 유명한 문제로 [Valid Palindrome](/problems/valid-palindrome/)이 있습니다.
+이 문제보다는 쉬운 문제이므로 이 문제가 너무 어려우셨다면 먼저 풀어보시면 도움이 될 것 같습니다.
