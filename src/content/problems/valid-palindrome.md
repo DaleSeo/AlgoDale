@@ -16,7 +16,7 @@ LeetCode의 [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) 
 
 대문자를 모두 소문자로 변환하고 알파벳과 숫자를 제외한 모든 문자를 제거한 후, 앞으로 읽어도 뒤로 읽어도 같은 문자열을 회문(Palindrome)이라고 합니다.
 
-주어진 문자열 `s`가 회문인 경우 참을 반환하고, 그렇지 않은 경우 거짓을 반환합니다.
+주어진 문자열 `s`가 회문인 경우 참을 반환하고, 그렇지 않은 경우 거짓을 반환하시오.
 
 ## 예제
 
@@ -38,7 +38,7 @@ LeetCode의 [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) 
 ## 풀이 1
 
 문제에서 회문의 정의를 보면 앞으로 읽어도 뒤로 읽어도 같은 문자열이라고 하는데요.
-그렇다면 문자열을 거꾸로 뒤집었을 때도 원래 문자열과 동일한 것입니다.
+그렇다면 문자열을 거꾸로 뒤집었을 때 원래 문자열과 동일하겠죠?
 
 예를 들어, 대표적인 회문인 `level`은 거꾸로 뒤짚어도 `level`이 됩니다.
 
@@ -56,15 +56,14 @@ level
 그 두 문자열이 동일하다면 회문이고, 동일하지 않다면 회문이 아닐테니까요.
 
 단 한 가지 주의해야 할 부분은 입력 문자열에서 알파벳과 숫자만 고려해야하고 소문자로 변환한 후 비교를 해야하는 점인데요.
-파이썬에서 문자열에는 `lower()`이나 `isalnum()`가 같은 메서드가 기본으로 제공되기 때문에 문자열을 비교하기 전에 어렵지 않게 입력 문자열을 원하는 형태로 손질할 수 있습니다.
+파이썬에서는 문자열이 `lower()`이나 `isalnum()`가 같은 메서드를 기본으로 제공되기 때문에 문자열을 비교하기 전에 어렵지 않게 입력 문자열을 원하는 형태로 손질할 수 있습니다.
 저는 파이썬의 표현식(comprehension)을 사용하여 문자열을 리스트로 변환한 후에 굳이 다시 문자열로 재변환하지 않고 바로 리스트 간에 비교를 하였습니다.
 
 ```py
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         cleaned = [ch for ch in s.lower() if ch.isalnum()]
-        reversed = cleaned[::-1]
-        return cleaned == reversed
+        return cleaned == cleaned[::-1]
 ```
 
 자바스크립트로 구현한다면 그냥 문자열로 다루는 편이 더 쉬울 것 같습니다.
