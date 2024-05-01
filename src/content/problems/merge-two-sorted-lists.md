@@ -13,7 +13,7 @@ date: 2021-05-25
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1eDB3coge3U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 21번째 문제인 [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 

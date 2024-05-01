@@ -12,7 +12,7 @@ date: 2022-04-13
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/V5e9tBNrcxk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 217번째 문제인 [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 

@@ -12,7 +12,7 @@ date: 2022-01-20
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/G3uAIITZkuE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 226번째 문제인 [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 

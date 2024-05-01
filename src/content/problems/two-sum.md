@@ -12,7 +12,7 @@ date: 2021-01-05
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zH7F-qnTi74" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Two Sum](https://leetcode.com/problems/two-sum/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 1번째 문제인 [Two Sum](https://leetcode.com/problems/two-sum/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 

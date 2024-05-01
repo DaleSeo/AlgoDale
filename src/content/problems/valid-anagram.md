@@ -13,7 +13,7 @@ date: 2022-03-30
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DdnjB3B1xTE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Valid Anagram](https://leetcode.com/problems/valid-anagram/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 242번째 문제인 [Valid Anagram](https://leetcode.com/problems/valid-anagram/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 

@@ -12,7 +12,7 @@ date: 2021-05-11
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4cGPICrIoWQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 20번째 문제인 [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 

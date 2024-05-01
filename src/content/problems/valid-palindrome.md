@@ -10,7 +10,9 @@ tags:
 date: 2024-04-22
 ---
 
-LeetCode의 [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) 문제를 함께 풀어보도록 하겠습니다.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8ifuCWs3KPw?si=_eLpojMbeAGRWKV4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+LeetCode의 125번째 문제인 [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
