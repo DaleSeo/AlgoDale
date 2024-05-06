@@ -98,7 +98,7 @@ class Solution:
         return dummy.next
 ```
 
-이 번에는 같은 알고리즘을 자바로도 구현해볼까요?
+이번에는 같은 알고리즘을 자바로도 구현해볼까요?
 
 ```java
 public class Solution {
