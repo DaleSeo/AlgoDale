@@ -149,7 +149,7 @@ def pre_order(node):
     pre_order(node.right)
 ```
 
-중위 순회(pre-order)에서는 좌측 트리를 먼저 순회한 후 부모 노드를 먼저 방문하고, 그 다음 우측 트리를 순회합니다.
+중위 순회(in-order)에서는 좌측 트리를 먼저 순회한 후 부모 노드를 먼저 방문하고, 그 다음 우측 트리를 순회합니다.
 
 ```py
 def in_order(node):
@@ -158,7 +158,7 @@ def in_order(node):
     in_order(node.right)
 ```
 
-후위 순회(pre-order)에서는 좌측 트리, 우측 트리 순으로 순회한 후 마지막에 부모 노드를 방문합니다.
+후위 순회(post-order)에서는 좌측 트리, 우측 트리 순으로 순회한 후 마지막에 부모 노드를 방문합니다.
 
 ```py
 def post_order(node):
