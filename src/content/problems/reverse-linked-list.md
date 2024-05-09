@@ -214,6 +214,17 @@ class Solution:
         return prev
 ```
 
+임수 변수를 사용하지 않고, `while` 문을 이렇게 한 줄로 작성할 수도 있겠네요.
+
+```py
+class Solution:
+    def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        prev, curr = None, head
+        while curr:
+            curr.next, prev, curr = prev, curr, curr.next
+        return prev
+```
+
 동일한 알고리즘을 자바스크립트로 구현해보면 다음과 같습니다.
 
 ```ts
