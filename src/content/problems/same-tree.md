@@ -2,17 +2,18 @@
 title: "Same Tree"
 tags:
   - leetcode
-  - python
   - binary-tree
   - dfs
   - recursion
   - stack
+  - python
+  - java
 date: 2022-03-24
 ---
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZkMQevV6q-4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Same Tree](https://leetcode.com/problems/same-tree/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 100번째 문제인 [Same Tree](https://leetcode.com/problems/same-tree/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
@@ -31,13 +32,15 @@ LeetCode의 [Same Tree](https://leetcode.com/problems/same-tree/) 문제를 함�
 
 <br/>
 
-- 결과
+- 출력
 
 ```py
 true
 ```
 
 ## 예제 2
+
+- 입력
 
 <pre>
   1        1
@@ -47,7 +50,7 @@ true
 
 <br/>
 
-- 결과
+- 출력
 
 ```py
 false
@@ -55,7 +58,7 @@ false
 
 ## 풀이 1
 
-두 개의 트리가 같은지 판단하려면 결국 양쪽 트리 전체를 동시에 스캔해야 할 것입니다.
+두 개의 트리가 같은지 판단하려면 결국 양쪽 트리 전체를 동시에 순회해야 할 것입니다.
 하나의 노드라도 다른 값을 가지면 두 개의 트리를 같다고 볼 수 없을테니까요.
 
 함수인 인자로 트리가 최상위 노드가 주어지므로 우리는 당연히 트리의 꼭대기 부터 시작해서 양 노드를 하나씩 비교하면서 내려가야겠죠?
@@ -64,11 +67,11 @@ false
 뿐만 아니라 좌우측 자식 트리를 상대로도 동일한 검사를 반복해야 할 것입니다.
 이를 통해 우리는 자연스럽게 이 문제를 재귀적으로 풀어야 한다는 것을 깨닫게 됩니다.
 
-두 개의 트리를 동시에 타고 내려가다가 노드 값이 서로 다른 노드를 마주치게 되면 우리는 더 내려갈 필요도 없이 이 두 개 트리는 다르다고 판단할 수 있습니다.
+두 개의 트리를 동시에 타고 내려 가다가 노드 값이 서로 다른 노드를 마주치게 되면 우리는 더 내려갈 필요도 없이 이 두 개 트리는 다르다고 판단할 수 있습니다.
 하지만 노드 값이 계속 같다면 좌측 자식 트리도 서로 같고 우측 자식 트리도 서로 같은지 재귀적으로 확인해야 할 것입니다.
 양쪽 결과가 모두 같은 경우에만 우리는 최종적으로 같은 트리라고 판단할 수 있을 것입니다.
 
-재귀 알고리즘을 설계할 때는 적당한 기저 사례(base case)을 넣어서 연쇄 함수 호출이 언제가는 종료되도록 해주는 것이 중요한데요.
+재귀 알고리즘을 설계할 때는 적당한 기저 사례(base case)을 넣어서 연쇄 함수 호출이 언젠가는 종료되도록 해주는 것이 중요한데요.
 이 문제의 경우 2가지 기저 사례를 생각해볼 수 있을 것 같습니다.
 
 첫 번째는 행복한 경우(happy path)인데요.
@@ -87,11 +90,9 @@ false
    4        4
 </pre>
 
-<br/>
-
 재귀 함수를 `F()`라고 가정하면 우리는 대략 아래와 같은 형태로 재귀 함수를 호출하게 될 것입니다.
 
-```sh
+```py
 F(1, 1) => True
     F(2, 2) => True
         F(null, null) => True
@@ -120,7 +121,18 @@ class Solution:
         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 ```
 
-같은 알고리즘을 자바로 구현하면 다음과 같습니다.
+같은 코드를 자바스크립트로도 작성해 볼게요.
+
+```ts
+function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
+  if (!p && !q) return true;
+  if (!p || !q) return false;
+  if (p.val !== q.val) return false;
+  return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
+}
+```
+
+자바로도 짜보면 크게 다르지는 않습니다.
 
 ```java
 class Solution {
@@ -155,8 +167,6 @@ class Solution {
     /        /
    4        4
 </pre>
-
-<br/>
 
 먼저 빈 스택에 양 트리의 최상위 노드를 추가하고 시작하겠습니다.
 
@@ -254,4 +264,5 @@ class Solution:
 
 ## 마치면서
 
-트리 문제는 푸는 가장 좋은 방법은 역시 재귀적으로 접근하는 것이라는 것을 보여주는 좋은 문제였습니다.
+이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [Subtree of Another Tree](/problems/subtree-of-another-tree/)도 풀어보시라고 추천드립니다.
+코딩 테스트에서 이진 트리를 어떻게 다루는지에 대해서 더 공부하고 싶으시다면 [관련 게시물](/data-structures/binary-tree/)을 참고 바랄께요.
