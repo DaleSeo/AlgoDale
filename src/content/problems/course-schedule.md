@@ -12,6 +12,8 @@ tags:
 date: 2022-09-21
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bG9IObCN-tg?si=fh3vvjVqsGzmkLVr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 207번째 문제인 [Course Schedule](https://leetcode.com/problems/course-schedule/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
