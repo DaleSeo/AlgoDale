@@ -2,9 +2,10 @@
 title: "Reverse Bits"
 tags:
   - leetcode
-  - string
+  - stack
   - math
   - bitManipulation
+  - string
   - python
   - javascript
 date: 2024-05-06
