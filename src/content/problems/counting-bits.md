@@ -10,7 +10,9 @@ tags:
 date: 2024-05-13
 ---
 
-LeetCode의 338번째 문제인 [Counting Bits](https://leetcode.com/problems/counting-bits/) 문제를 함께 풀어보도록 하겠습니다.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CNHIHRofKdk?si=Xdb8_xNcjpSnaLt6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+LeetCode의 338번째 문제인 [Counting Bits](https://leetcode.com/problems/counting-bits/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
@@ -130,6 +132,60 @@ class Solution:
 ```
 
 이 풀이는 단순히 `O(1)`의 시간이 걸리는 로직을 `1`부터 `n`까지 한 번 루프를 돌고 있기 때문에 시간 복잡도가 `O(n)`으로 향상이 됩니다.
+
+## 풀이 3
+
+이번에는 MSB(Most Significant Bit) 대신에 LSB(Most Significant Bit), 즉 최하위 비트를 활용해보면 어떨까요?
+
+최하위 비트는 숫자를 `2`로 나눈 나머지나, 비트 연산 `& 1`을 해주면 구할 수 있는데요.
+숫자가 `1`씩 커짐에 따라 `0`과 `1`이 계속해서 반복될 것입니다.
+
+그럼 우리는 최하위 비트를 제외한 이진수의 나머지 부분에서 `1`의 개수만 세면 될텐데요.
+최하위 비트를 제외하려면 숫자를 `2`로 나눈 몫이나, 비트 연산 `>> 1`을 해주면 구할 수 있습니다.
+그러면 현재 숫자보다 적은 숫자가 나오므로 동적 계획법을 사용할 수 있게 됩니다.
+
+| 십진수 | 이진수 | 최하위 비트 제외 | 최하위 비트 | 1의 개수      |
+| ------ | ------ | ---------------- | ----------- | ------------- |
+| 0      | 0      |                  | 0           | 0             |
+| 1      | 1      |                  | 1           | dp[0] + 1 = 1 |
+| 2      | 10     | 1                | 0           | dp[1] + 0 = 1 |
+| 3      | 11     | 1                | 1           | dp[1] + 1 = 2 |
+| 4      | 100    | 10               | 0           | dp[2] + 0 = 1 |
+| 5      | 101    | 10               | 1           | dp[2] + 1 = 2 |
+| 6      | 110    | 11               | 0           | dp[3] + 0 = 2 |
+| 7      | 111    | 11               | 1           | dp[3] + 1 = 3 |
+| 8      | 1000   | 100              | 0           | dp[4] + 0 = 1 |
+| 9      | 1001   | 100              | 1           | dp[4] + 1 = 2 |
+| 10     | 1010   | 101              | 0           | dp[5] + 0 = 2 |
+| 11     | 1011   | 101              | 1           | dp[5] + 1 = 3 |
+| 12     | 1100   | 110              | 0           | dp[6] + 0 = 2 |
+| 13     | 1101   | 110              | 1           | dp[6] + 1 = 3 |
+| 14     | 1110   | 111              | 0           | dp[7] + 0 = 3 |
+| 15     | 1111   | 111              | 1           | dp[7] + 1 = 4 |
+
+나누기를 사용해서 알고리즘을 구현해보겠습니다.
+
+```py
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        dp = [0] * (n + 1)
+        for num in range(1, n + 1):
+            dp[num] = dp[num // 2] + (num % 2)
+        return dp
+```
+
+비트 연산을 사용해서 구현할 수도 있습니다.
+
+```py
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        dp = [0] * (n + 1)
+        for num in range(1, n + 1):
+            dp[num] = dp[num >> 1] + (num & 1)
+        return dp
+```
+
+이전 풀이보다 코드가 살짝 더 간결해지기는 했지만, 시간 복잡도와 공간 복잡도는 모두 여전히 `O(n)`이므로 빅오 계산법 기준으로는 의미있는 차이가 없습니다.
 
 ## 마치면서
 

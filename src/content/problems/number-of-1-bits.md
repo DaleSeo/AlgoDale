@@ -12,7 +12,7 @@ date: 2024-05-06
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DwNEyAKmUoE?si=8Y6FMLru5ftBIJJP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-LeetCode의 191번째 문제인 [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 191번째 문제인 [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
