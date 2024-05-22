@@ -200,6 +200,23 @@ function hammingWeight(n: number): number {
 이 알고리즘의 반복의 횟수를 생각해보면 이전 풀이와 유의미한 차이가 없다는 것을 알 수 있습니다.
 따라서 시간 복잡도는 `O(log n)`, 공간 복잡도는 `O(1)`로 동일하겠습니다.
 
+## 풀이 4
+
+주어진 숫자를 건드리지 않고 비트 마스킹(bit masking) 기법을 사용해서 이 문제를 해결할 수도 있습니다.
+마스크 비트를 한 칸씩 오른쪽으로 총 32번 시프트하면서, 주어진 숫자와 논리곱을 했을 때 `1`이 나오는 경우만 세면 됩니다.
+
+```py
+class Solution:
+    def hammingWeight(self, n: int) -> int:
+        cnt = 0
+        mask = 1 << 31
+        while mask:
+            if n & mask:
+                cnt += 1
+            mask >>= 1
+        return cnt
+```
+
 ## 마치면서
 
 이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [Counting Bits](/problems/counting-bits/)도 풀어보시라고 추천드립니다.
