@@ -10,7 +10,7 @@ tags:
 date: 2024-04-30
 ---
 
-LeetCode의 572번째 문제인 [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 572번째 문제인 [Subtree of Another Tree](https://leetcode.com/problems/subtree-of-another-tree/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 

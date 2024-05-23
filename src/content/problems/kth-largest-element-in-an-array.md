@@ -2,10 +2,10 @@
 title: "Kth Largest Element in an Array"
 tags:
   - leetcode
-  - python
   - sort
   - heap
   - search
+  - python
 date: 2022-07-11
 ---
 
@@ -137,10 +137,9 @@ class Solution:
         for num in nums:
             if len(heap) < k:
                 heappush(heap, num)
-            else:
-                if heap[0] < num:
-                    heappop(heap)
-                    heappush(heap, num)
+            elif heap[0] < num:
+                heappop(heap)
+                heappush(heap, num)
         return heap[0]
 ```
 
