@@ -3,7 +3,7 @@ title: "Search in Rotated Sorted Array"
 tags:
   - leetcode
   - array
-  - linearSearch
+  - search
   - binary-search
   - python
   - javascript
@@ -105,7 +105,7 @@ nums[i - 1] > nums[i]
 우선 배열을 절반으로 가르면 왼쪽 편이든 오른쪽 편이든 둘 중에 한 곳에는 해당 지점(pivot) 존재할텐데요.
 배열의 중앙에 위치한 값을 배열의 첫 번째 값 (또는 마지막 값과) 비교하면 어느 쪽에 존재하는지 알아낼 수 있습니다.
 예를 들어, `mid`를 배열에 중앙에 위치한 인덱스라고 했을 때, `nums[0]`이 `nums[mid]`보다 크면, `pivot`은 왼쪽에 위치하게 됩니다.
-왼쪽이 정렬이 되어 있었다면 `nums[0]`이 `nums[mid]`보다 클리기 없기 때문입니다.
+왼쪽이 정렬이 되어 있었다면 `nums[0]`이 `nums[mid]`보다 클리가 없기 때문입니다.
 
 최종적으로 이렇게 이분 탐색으로 두 번째 범위의 시작 위치를 알아내고, 첫 번째 범위와 두 번째 범위를 상대로 각각 이분 탐색을 하면 됩니다.
 
@@ -326,8 +326,7 @@ class Solution {
 
 ## 마치면서
 
-이분 탐색을 정말 다양하게 활용할 수 있는 문제였습니다.
-이 문제가 너무 어려우셨다면 비슷하지만 좀 더 쉬운 문제인 [Binary Search](/problems/binary-search/)도 풀어보시라고 추천드립니다.
+이 문제가 너무 어려우셨다면 비슷하지만 좀 더 쉬운 문제인 [Find Minimum in Rotated Sorted Array](/find-minimum-in-rotated-sorted-array/)도 풀어보시라고 추천드립니다.
 이분 탐색 알고리즘에 대해서는 [별도 포스팅](/algorithms/binary-search/)에서 자세히 다루었으니 참고해보시면 도움이 될 것 같습니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/r_WTXGNHsEw?si=A31vxW9vy3mxMM1B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -210,6 +210,7 @@ int mid = low + (high - low) / 2;
 이분 탐색의 기초를 다지시는데 아래 문제를 추천드리겠습니다.
 
 - [Binary Search](/problems/binary-search/)
+- [Find Minimum in Rotated Sorted Array](/find-minimum-in-rotated-sorted-array/)
 - [Search in Rotated Sorted Array](/problems/search-in-rotated-sorted-array/)
 - [Two Sum II - Input Array Is Sorted](/problems/two-sum-ii-input-array-is-sorted/)
 - [입국 심사](/problems/입국심사/)

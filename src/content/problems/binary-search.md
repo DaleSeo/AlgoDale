@@ -96,5 +96,5 @@ class Solution:
 ## 마치면서
 
 코딩 시험에서 이분 탐색(Binary Search)을 다루는 유형의 문제에서는 이 문제가 가장 기본이 된다고 볼 수 있는데요.
-이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [Search in Rotated Sorted Array](/problems/search-in-rotated-sorted-array/)도 풀어보시라고 추천드립니다.
+이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [Find Minimum in Rotated Sorted Array](/find-minimum-in-rotated-sorted-array/)도 풀어보시라고 추천드립니다.
 이분 탐색 알고리즘에 대해서는 [별도 포스팅](/algorithms/binary-search/)에서 자세히 다루었으니 참고해보시면 도움이 될 것 같습니다.
