@@ -326,7 +326,7 @@ class Solution {
 
 ## 마치면서
 
-이 문제가 너무 어려우셨다면 비슷하지만 좀 더 쉬운 문제인 [Find Minimum in Rotated Sorted Array](/find-minimum-in-rotated-sorted-array/)도 풀어보시라고 추천드립니다.
+이 문제가 너무 어려우셨다면 비슷하지만 좀 더 쉬운 문제인 [Find Minimum in Rotated Sorted Array](/problems/find-minimum-in-rotated-sorted-array/)도 풀어보시라고 추천드립니다.
 이분 탐색 알고리즘에 대해서는 [별도 포스팅](/algorithms/binary-search/)에서 자세히 다루었으니 참고해보시면 도움이 될 것 같습니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/r_WTXGNHsEw?si=A31vxW9vy3mxMM1B" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
