@@ -16,7 +16,7 @@ LeetCode의 [Product of Array Except Self](https://leetcode.com/problems/product
 
 정수 배열 `nums`가 주어졌을 때, 다음 조건을 충족하는 `products` 배열을 반환하는 함수를 작성해라.
 
-"`products[i]`에 저장되어 있는 정수는 `nums[i]`를 제외한 배열 내의 모든 정수를 곱한 값과 일치해야 한다."
+`products[i]`에 저장되어 있는 정수는 `nums[i]`를 제외한 배열 내의 모든 정수를 곱한 값과 일치해야 한다."
 
 ## 예제
 
