@@ -15,7 +15,7 @@ date: 2021-03-23
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/uDocqamAVr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 3번째 문제인 [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
@@ -307,5 +307,9 @@ function lengthOfLongestSubstring(s: string): number {
 이 풀이는 하나의 `while` 루프를 사용하여 시작 인덱스와 끝 인덱스 중 하나를 증가시켜나가기 때문에 `O(2n) = O(n)`의 시간 복잡도를 가지게 됩니다.
 (참고로 세트에 어떤 요소가 있는지 검사하거나, 새로운 요소를 추가, 기존 요소를 삭제하는 작업은 모두 `O(1)`의 시간을 소모합니다.)
 그리고 주어진 문자열에 반복되는 문자가 하나도 없을 경우, 세트에 최대 `n`개의 문자를 저장하게 되므로 `O(n)`의 공간 복잡도를 가지게 됩니다.
+
+## 마치면서
+
+이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [Longest Repeating Character Replacement](/problems/longest-repeating-character-replacement/)도 풀어보시라고 추천드립니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ZqG_sk9AS44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
