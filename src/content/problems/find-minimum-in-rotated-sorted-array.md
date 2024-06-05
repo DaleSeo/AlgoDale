@@ -10,6 +10,8 @@ tags:
 date: 2024-01-13
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uP67WLrnfio?si=qYdhTzCVLTdmKs5t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 153번째 문제인 [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
