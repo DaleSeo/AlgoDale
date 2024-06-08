@@ -129,7 +129,7 @@ Output: [[]]
 
 이렇게 깊이 우선 탐색으로 주어진 노드부터 그래프를 순회하면서 모든 노드를 재귀적으로 복제할 수 있습니다.
 하지만 이미 복제해놓은 노드를 다시 복제하지 않고 재사용하는 부분이 까다로울 수 있는데요.
-이 부분은 [해시 테이블(hash table)](/data-structures/hash-table/) 자료구조에 복제된 노드를 기억해두면 될 것 같습니다.
+이 부분은 [해시 테이블(Hash Table)](/data-structures/hash-table/) 자료구조에 복제된 노드를 기억해두면 될 것 같습니다.
 
 그럼 파이썬으로 이 재귀 알고리즘을 구현해보겠습니다.
 
@@ -181,7 +181,7 @@ class Solution:
 ## 풀이 2
 
 그래프 내의 모든 노드를 복제하려면 어차피 그래프 내의 모든 노드를 들려야하기 때문에,
-[큐(queue)](/data-structures/queue/) 자료구조를 사용하여 너비 우선 탐색(BFS, Breath First Search)을 해도 상관이 없습니다.
+[큐(Queue)](/data-structures/queue/) 자료구조를 사용하여 너비 우선 탐색(BFS, Breath First Search)을 해도 상관이 없습니다.
 
 처음에는 문제에서 주어진 노드 `1`을 복제한 후에 큐에서 넣고 시작합니다.
 

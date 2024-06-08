@@ -53,7 +53,7 @@ date: 2023-05-02
 그래프는 다양한 방식으로 표현할 수 있는데요.
 가장 대표적인 방법으로 인접 리스트(adjacency list), 인접 행렬(adjacency matrix), 그리고 노드 클래스를 들 수 있습니다.
 
-인접 리스트는 [해시 테이블(hash table)](/data-structures/hash-table/) 자료구조에 그래프를 저장하는데요.
+인접 리스트는 [해시 테이블(Hash Table)](/data-structures/hash-table/) 자료구조에 그래프를 저장하는데요.
 노드를 키로, 노드에 연결된 모든 노드를 값으로 저장합니다.
 
 인접 리스트의 크기는 간선의 수와 비례하기 때문에 공간 효율이 좋으며, 노드 간에 관계가 복잡하지 않은 그래프를 저장하기 적합합니다.
@@ -126,7 +126,7 @@ def search(graph, target):
     return any(dfs(node) for node in graph)
 ```
 
-깊이 우선 탐색(BFS, Breath First Search)은 [큐(queue)](/data-structures/queue/) 자료구조를 이용해서 많이 구현합니다.
+깊이 우선 탐색(BFS, Breath First Search)은 [큐(Queue)](/data-structures/queue/) 자료구조를 이용해서 많이 구현합니다.
 
 ```py
 from collections import deque

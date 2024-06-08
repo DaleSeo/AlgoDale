@@ -117,7 +117,7 @@ def dfs(root, target):
     return False
 ```
 
-너비 우선 탐색은 [큐(queue)](/data-structures/queue/) 자료구조를 사용해서 구현해야 합니다.
+너비 우선 탐색은 [큐(Queue)](/data-structures/queue/) 자료구조를 사용해서 구현해야 합니다.
 
 ```py
 from collections import deque
