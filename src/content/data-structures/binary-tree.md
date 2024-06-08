@@ -175,3 +175,4 @@ def post_order(node):
 - [Same Tree](/problems/same-tree/)
 - [Invert Binary Tree](/problems/invert-binary-tree/)
 - [Subtree of Another Tree](/problems/subtree-of-another-tree/)
+- [Validate Binary Search Tree](/problems/validate-binary-search-tree/)
