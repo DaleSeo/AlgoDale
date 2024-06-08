@@ -12,7 +12,7 @@ date: 2022-02-01
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/O4po8XPf5Hc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 206번째 문제인 [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 206번째 문제인 [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
