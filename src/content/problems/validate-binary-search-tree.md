@@ -57,7 +57,7 @@ false
 
 ## 풀이 1
 
-이진 탐색 트리의 조건을 종합해보면, 각 노드에서의 값의 범위는 부모 노드이 값에 의해서 결정이 된다는 것을 알 수 있는데요.
+이진 탐색 트리의 조건을 종합해보면, 각 노드에서의 값의 범위는 조상 노드의 값에 의해서 결정이 된다는 것을 알 수 있는데요.
 
 <pre>
           부모
@@ -104,12 +104,12 @@ class Solution:
 
 입력 트리를 이루고 있는 노드의 개수를 `n`라고 했을 때, 이 풀이의 시간 복잡도는 트리의 각 노드를 한 번씩 방문하므로 `O(n)`입니다.
 공간 복잡도도 `O(n)`이 되는데요.
-재귀 함수의 호출 스택의 높이가 트리의 높이에 비례해서 깊어지고, 최악의 경우 트리가 링크드 리스트처럼 좌측이나 오른쪽으로 뻗어나갈 수 있기 때문입니다.
+재귀 함수의 호출 스택이 트리의 높이에 비례해서 깊어지고, 최악의 경우 트리가 링크드 리스트처럼 좌측이나 오른쪽으로 뻗어나갈 수 있기 때문입니다.
 
 ## 풀이 2
 
 이진 탐색 트리는 중위 순회(in-order)를 하면 오름 차순으로 모든 노드를 방문할 수 있습니다.
-중위 순회에서는 좌측 트리를 먼저 순회한 후, 부모 노드를 먼저 방문하고, 그 다음 우측 트리를 순회하기 때문입니다.
+중위 순회 방식으로 이진 탐색 트리 순회하면 좌측 트리를 먼저 순회한 후, 부모 노드를 방문하고, 그 다음 우측 트리를 순회하기 때문입니다.
 
 > 트리를 순회하는 방법에 대해서는 [별도의 글](/data-structures/binary-tree/)에서 자세히 설명하고 있으니 참고 바랍니다.
 
@@ -155,25 +155,27 @@ class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         max_val = float("-inf")
 
-        def in_order(node):
+        def dfs(node):
             if not node:
                 return True
 
             nonlocal max_val
 
-            if not in_order(node.left):
+            if not dfs(node.left):
                 return False
 
             if max_val >= node.val:
                 return False
             max_val = node.val
 
-            if not in_order(node.right):
+            if not dfs(node.right):
                 return False
+
             return True
 
-        return in_order(root)
+        return dfs(root)
 ```
 
 이 풀이의 복잡도도 이전 풀이와 동일하게 시간과 공간 측면에서 모두 `O(n)`이 됩니다.
 단지 트리 순회 방식을 전위 순회(pre-order)에서 중위 순회(in-order)로 바꾼 것이기 때문입니다.
+재귀 알고리즘을 사용하여 트리를 깊이 우선 탐색하는 부분은 변하지 않습니다.
