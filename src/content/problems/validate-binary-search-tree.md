@@ -9,6 +9,8 @@ tags:
 date: 2023-06-07
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/96WGW7KDtxs?si=n9y5165Z59VV8pVy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 98번째 문제인 [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
@@ -55,7 +57,7 @@ true
 false
 ```
 
-## 풀이 1
+## 풀이 1: 전위 순회
 
 이진 탐색 트리의 조건을 종합해보면, 각 노드에서의 값의 범위는 조상 노드의 값에 의해서 결정이 된다는 것을 알 수 있는데요.
 
@@ -106,7 +108,7 @@ class Solution:
 공간 복잡도도 `O(n)`이 되는데요.
 재귀 함수의 호출 스택이 트리의 높이에 비례해서 깊어지고, 최악의 경우 트리가 링크드 리스트처럼 좌측이나 오른쪽으로 뻗어나갈 수 있기 때문입니다.
 
-## 풀이 2
+## 풀이 2: 중위 순회
 
 이진 탐색 트리는 중위 순회(in-order)를 하면 오름 차순으로 모든 노드를 방문할 수 있습니다.
 중위 순회 방식으로 이진 탐색 트리 순회하면 좌측 트리를 먼저 순회한 후, 부모 노드를 방문하고, 그 다음 우측 트리를 순회하기 때문입니다.
@@ -125,6 +127,7 @@ class Solution:
 이 트리는 유효한 이진 탐색 트리라고 판단할 수 있습니다.
 
 ```py
+  📈   📈
 1 -> 2 -> 3
 ```
 
@@ -142,7 +145,8 @@ class Solution:
 이 트리는 유효한 이진 탐색 트리가 아니라고 판단할 수 있습니다.
 
 ```py
-1 -> 5 -> 4 -> 3 -> 6
+  📈   📉   📈   📈
+1 -> 5 -> 3 -> 4 -> 6
 ```
 
 따라서 단순히 입력 트리를 중위 순회하면서 노드 값이 계속해서 커지는지만 확인해주면 됩니다.
