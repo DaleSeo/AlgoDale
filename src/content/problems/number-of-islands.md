@@ -2,7 +2,6 @@
 title: "Number of Islands"
 tags:
   - leetcode
-  - array
   - matrix
   - graph
   - dfs
