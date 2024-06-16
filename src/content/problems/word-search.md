@@ -8,7 +8,7 @@ tags:
   - backtracking
   - dfs
   - python
-date: 2024-06-13
+date: 2023-05-13
 ---
 
 LeetCode의 79번째 문제인 [Word Search](https://leetcode.com/problems/word-search/)를 함께 풀어보도록 하겠습니다.
