@@ -2,7 +2,10 @@
 title: "Implement Trie (Prefix Tree)"
 tags:
   - leetcode
+  - tree
   - trie
+  - iteration
+  - recursion
   - python
 date: 2023-04-20
 ---
@@ -76,7 +79,7 @@ class Trie:
             if ch not in node["children"]:
                 return False
             node = node["children"][ch]
-        return node["ending"] == True
+        return node["ending"]
 
     def startsWith(self, prefix: str) -> bool:
         node = self.root
@@ -87,15 +90,13 @@ class Trie:
         return True
 ```
 
-## 풀이 2
-
 노드를 표현하시기 위해서 사전을 쓰는 것이 꺼려지신다면, 클래스를 사용하실 수도 있습니다.
 
 ```py
 class Node:
     def __init__(self, ending=False):
-        self.ending = ending
         self.children = {}
+        self.ending = ending
 
 
 class Trie:
@@ -116,7 +117,7 @@ class Trie:
             if ch not in node.children:
                 return False
             node = node.children[ch]
-        return node.ending == True
+        return node.ending
 
     def startsWith(self, prefix: str) -> bool:
         node = self.root
@@ -125,4 +126,53 @@ class Trie:
                 return False
             node = node.children[ch]
         return True
+```
+
+## 풀이 2
+
+여타의 트리 문제처럼 재귀 알고리즘을 사용해서 구현할 수도 있습니다.
+
+```py
+class Node:
+    def __init__(self, ending=False):
+        self.children = {}
+        self.ending = ending
+
+class Trie:
+    def __init__(self):
+        self.root = Node(ending=True)
+
+    def insert(self, word: str) -> None:
+        def dfs(node, idx):
+            if idx == len(word):
+                node.ending = True
+                return
+            ch = word[idx]
+            if ch not in node.children:
+                node.children[ch] = Node()
+            dfs(node.children[ch], idx + 1)
+
+        dfs(self.root, 0)
+
+    def search(self, word: str) -> bool:
+        def dfs(node, idx):
+            if idx == len(word):
+                return node.ending
+            ch = word[idx]
+            if ch not in node.children:
+                return False
+            return dfs(node.children[ch], idx + 1)
+
+        return dfs(self.root, 0)
+
+    def startsWith(self, prefix: str) -> bool:
+        def dfs(node, idx):
+            if idx == len(prefix):
+                return True
+            ch = prefix[idx]
+            if ch not in node.children:
+                return False
+            return dfs(node.children[ch], idx + 1)
+
+        return dfs(self.root, 0)
 ```
