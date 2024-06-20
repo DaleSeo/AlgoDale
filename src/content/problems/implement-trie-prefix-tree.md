@@ -10,6 +10,8 @@ tags:
 date: 2023-04-20
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j7Zkw5XWe_Q?si=x5F3-6oFjhx32lO9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 208번째 문제인 [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
@@ -40,7 +42,7 @@ Trie(발음은 "트라이"로 함) 또는 접두사 트리는 문자열 데이�
 트라이의 각 노드에는 다음에 나올 수 있는 모든 글자에 대한 포인터가 있어야 합니다.
 그래야지 트라이의 최상위 노드부터 아래로 내려가면서 단어를 빠르게 찾을 수 있기 때문입니다.
 
-그리고 어떤 문자열로 시작하는 단어가 트라이에 저장되어 있는지 알아내려면, 각 글자에서 끝나는 단어가 있는지 여부를 저장해놔야 합니다.
+그리고 어떤 문자열로 시작하는 단어가 트라이에 저장되어 있는지 뿐만 아니라 정확히 전체 단어가 저장되어 있는지 알아내려면, 각 글자에서 끝나는 단어가 있는지 여부를 저장해놔야 합니다.
 
 다음에 나올 수 있는 모든 문자를 저장하기에는 [해시 테이블(Hash Table)](/data-structures/hash-table/) 자료구조가 딱일 것입니다.
 키로 글자를 저장하고 값으로 각 글자를 나타내는 노드를 저장해두면, 상수 시간에 다음 글자로 이동할 수 있기 때문입니다.
