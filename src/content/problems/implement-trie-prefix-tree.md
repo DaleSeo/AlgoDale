@@ -2,6 +2,7 @@
 title: "Implement Trie (Prefix Tree)"
 tags:
   - leetcode
+  - hash-table
   - tree
   - trie
   - iteration
@@ -12,7 +13,7 @@ date: 2023-04-20
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/j7Zkw5XWe_Q?si=x5F3-6oFjhx32lO9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-LeetCode의 208번째 문제인 [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 208번째 문제인 [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
@@ -21,10 +22,10 @@ Trie(발음은 "트라이"로 함) 또는 접두사 트리는 문자열 데이�
 
 `Trie` 클래스를 구현하시오:
 
-- `Trie()`는 트라이 객체를 초기화합니다.
-- `void insert(String word)`는 문자열 `word`를 트라이에 삽입합니다.
-- `boolean search(String word)`는 문자열 `word`가 트라이에 있는 경우(즉, 이전에 삽입되었던 경우) 참을 반환하고 그렇지 않으면 거짓을 반환합니다.
-- `boolean startsWith(String prefix)`는 이전에 삽입된 문자열 `word` 중 접두사 `prefix`를 가진 문자열이 있는 경우 참을 반환하고 그렇지 않으면 거짓을 반환합니다.
+- `Trie()` 생성자는 트라이 객체를 초기화합니다.
+- `void insert(String word)` 메서든는 문자열 `word`를 트라이에 삽입합니다.
+- `boolean search(String word)` 메서드는 문자열 `word`가 트라이에 있는 경우(즉, 이전에 삽입되었던 경우) 참을 반환하고 그렇지 않으면 거짓을 반환합니다.
+- `boolean startsWith(String prefix)` 메서드는 이전에 삽입된 문자열 `word` 중 접두사 `prefix`를 가진 문자열이 있는 경우 참을 반환하고 그렇지 않으면 거짓을 반환합니다.
 
 ## 예제
 
@@ -59,21 +60,22 @@ Trie(발음은 "트라이"로 함) 또는 접두사 트리는 문자열 데이�
 거짓을 반환하지 않고 루프를 다 돌면 모든 글자가 트라이에 있다는 뜻입니다.
 따라서 `startsWith()` 함수는 바로 참을 반환할 수 있고, `search()` 함수는 해당 글자에서 끝나는 단어가 있다고 표시가 된 경우에만 참을 반환합니다.
 
-그럼 지금까지 설명드린 알고리즘을 파이썬으로 구현해보겠습니다.
-노드는 간단히 사전(dictionary)를 사용하여 표현하였습니다.
+그럼 지금까지 설명드린 알고리즘을 구현해보겠습니다.
+파이썬의 내장 자료구조인 사전(dictionary)를 사용하여, 각 글자를 키로 자식 사전을 값으로 저장하였습니다.
+단어가 있는지 여부는 `$`를 키로 사전에 참 또는 거짓을 저장하였습니다.
 
 ```py
 class Trie:
     def __init__(self):
-        self.root = {"ending": True}
+        self.root = {"$": True}
 
     def insert(self, word: str) -> None:
         node = self.root
         for ch in word:
             if ch not in node:
-                node[ch] = {"ending": False}
+                node[ch] = {"$": False}
             node = node[ch]
-        node["ending"] = True
+        node["$"] = True
 
     def search(self, word: str) -> bool:
         node = self.root
@@ -81,7 +83,7 @@ class Trie:
             if ch not in node:
                 return False
             node = node[ch]
-        return node["ending"]
+        return node["$"]
 
     def startsWith(self, prefix: str) -> bool:
         node = self.root
