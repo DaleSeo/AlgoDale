@@ -45,8 +45,8 @@ Trie(발음은 "트라이"로 함) 또는 접두사 트리는 문자열 데이�
 그리고 어떤 문자열로 시작하는 단어가 트라이에 저장되어 있는지 뿐만 아니라 정확히 전체 단어가 저장되어 있는지 알아내려면, 각 글자에서 끝나는 단어가 있는지 여부를 저장해놔야 합니다.
 
 다음에 나올 수 있는 모든 문자를 저장하기에는 [해시 테이블(Hash Table)](/data-structures/hash-table/) 자료구조가 딱일 것입니다.
-키로 글자를 저장하고 값으로 각 글자를 나타내는 노드를 저장해두면, 상수 시간에 다음 글자로 이동할 수 있기 때문입니다.
-각 글자에서 끝나는 단어가 있는지 여부는 불리언 자료형으로 저장할 수 있습니다.
+키로 글자를 저장하고 값으로 각 글자를 나타내는 해시 테이블에 저장해두면, 상수 시간에 다음 글자로 이동할 수 있기 때문입니다.
+각 글자에서 끝나는 단어가 있는지 여부도 해시 테이블에 불리언 자료형으로 저장할 수 있습니다.
 
 `Trie` 클래스의 모든 함수는 모두 최상위 노드부터 작업을 수행해야하므로, 클래스의 생성자에서 최상위 노드를 인스턴스 변수로 저장해두면 편할 것입니다.
 
@@ -65,30 +65,30 @@ Trie(발음은 "트라이"로 함) 또는 접두사 트리는 문자열 데이�
 ```py
 class Trie:
     def __init__(self):
-        self.root = {"children": {}, "ending": True}
+        self.root = {"ending": True}
 
     def insert(self, word: str) -> None:
         node = self.root
         for ch in word:
-            if ch not in node["children"]:
-                node["children"][ch] = {"children": {}, "ending": False}
-            node = node["children"][ch]
+            if isinstance(node, dict) and ch not in node:
+                node[ch] = {"ending": False}
+            node = node[ch]
         node["ending"] = True
 
     def search(self, word: str) -> bool:
         node = self.root
         for ch in word:
-            if ch not in node["children"]:
+            if ch not in node:
                 return False
-            node = node["children"][ch]
+            node = node[ch]
         return node["ending"]
 
     def startsWith(self, prefix: str) -> bool:
         node = self.root
         for ch in prefix:
-            if ch not in node["children"]:
+            if ch not in node:
                 return False
-            node = node["children"][ch]
+            node = node[ch]
         return True
 ```
 
