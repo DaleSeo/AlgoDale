@@ -11,7 +11,7 @@ tags:
 date: 2024-06-20
 ---
 
-LeetCode의 208번째 문제인 [Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/)를 함께 풀어보도록 하겠습니다.
+LeetCode의 211번째 문제인 [Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
