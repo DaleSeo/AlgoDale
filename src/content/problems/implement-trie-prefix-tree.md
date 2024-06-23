@@ -70,7 +70,7 @@ class Trie:
     def insert(self, word: str) -> None:
         node = self.root
         for ch in word:
-            if isinstance(node, dict) and ch not in node:
+            if ch not in node:
                 node[ch] = {"ending": False}
             node = node[ch]
         node["ending"] = True
