@@ -48,14 +48,14 @@ class Solution:
         max_s, max_e = 0, 0
 
         for s in range(len(text)):
-            for e in range(s, len(text)):
+            for e in range(s + 1, len(text)):
                 if is_palindrome(s, e) and max_e - max_s < e - s:
                     max_s, max_e = s, e
 
         return text[max_s : max_e + 1]
 ```
 
-아 알고리즘은 모든 부분 문자열을 구하는데 `O(n^2)`의 시간이 소요되고, 각 부분 문자열이 회문인지를 알아내는데 또 `O(n)`의 시간이 소요됩니다.
+이 풀이는 모든 부분 문자열을 구하는데 `O(n^2)`의 시간이 소요되고, 각 부분 문자열이 회문인지를 알아내는데 또 `O(n)`의 시간이 소요됩니다.
 결국 시간 복잡도가 `O(n^3)`이 되고, 공간 복잡도가 `O(1)`인 알고리즘이 되는데요.
 성능이 너무 떨어져서 LeetCode에서 `Time Limit Exceeded` 오류가 나면서 통과가 되지 않을 것입니다.
 
@@ -261,7 +261,7 @@ class Solution {
 }
 ```
 
-이 이중 루프를 사용하는 알고리즘은 `O(n^2)`의 시간 복잡도를 가지며, 2차원 배열을 사용하므로 공간 복잡도도 `O(n^2)`이 됩니다.
+이 이중 루프를 사용하는 풀이는 `O(n^2)`의 시간 복잡도를 가지며, 2차원 배열을 사용하므로 공간 복잡도도 `O(n^2)`이 됩니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rGySPuTuYEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
