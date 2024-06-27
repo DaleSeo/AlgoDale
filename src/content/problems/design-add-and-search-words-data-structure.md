@@ -12,6 +12,8 @@ tags:
 date: 2024-06-20
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/F2CCfhCqDCY?si=ExXiXX8FF-8boNIe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 211번째 문제인 [Design Add and Search Words Data Structure](https://leetcode.com/problems/design-add-and-search-words-data-structure/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
