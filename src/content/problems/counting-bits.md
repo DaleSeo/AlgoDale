@@ -115,7 +115,7 @@ class Solution:
 | 1110   | 14     | 8           | 1 + dp[14 - 8] = 3 |
 | 1111   | 15     | 8           | 1 + dp[15 - 8] = 4 |
 
-결국은 [동적 계획법 (Dynamic Programming)](/algorithms/dp/)으로 해결할 수 있다 문제라는 것을 알 수 있게 되었네요!
+결국은 [동적 계획법(Dynamic Programming)](/algorithms/dp/)으로 해결할 수 있다 문제라는 것을 알 수 있게 되었네요!
 
 지금까지 설명드린 알고리즘을 파이썬으로 구현해보겠습니다.
 

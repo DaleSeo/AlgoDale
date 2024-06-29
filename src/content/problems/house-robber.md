@@ -14,7 +14,7 @@ date: 2022-04-06
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pEx5-hg4pr4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [House Robber](https://leetcode.com/problems/house-robber/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 198번째 문제인 [House Robber](https://leetcode.com/problems/house-robber/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
@@ -67,7 +67,7 @@ Output: 12
 
 ```py
 인덱스 0에 있는 집을 털었을 때 최대 금액 = nums[0] + F(nums[2:])
-인덱스 0에 있는 집을 안 털었을 때  최대 금액 = F(nums[1:])
+인덱스 0에 있는 집을 안 털었을 때 최대 금액 = F(nums[1:])
 ```
 
 ```py
@@ -160,7 +160,7 @@ class Solution:
 위 재귀 풀이에서는 더 큰 배열에 대한 결과를 구하기 위해서 더 작은 배열에 대한 결과가 계산되기를 기다리는 방식으로 문제를 해결을 하는데요.
 이렇게 Top-down 방향으로 문제에 접근을 해봤으니 이번에는 정반대인 Bottom-up 방향으로도 접근해볼까요?
 
-이 문제는 [동적 계획법 (Dynamic Programming)](/algorithms/dp/)이라는 테크닉을 사용하면 반복 알고리즘으로도 해결할 수 있는데요.
+이 문제는 [동적 계획법(Dynamic Programming)](/algorithms/dp/)이라는 테크닉을 사용하면 반복 알고리즘으로도 해결할 수 있는데요.
 기본적인 아이디어는 빈 배열부터 하나 씩 배열의 크기를 늘려가면서 최대 금액을 배열에 저장해두고 작은 크기의 배열을 상대로 저장해둔 계산 결과를 더 큰 크기의 배열을 상대로 계산할 때 활용하는 것입니다.
 각 배열의 크기에 대한 계산 결과는 `DP`라는 배열에 저장해놓고 재활용하면 될 것 같아요.
 
@@ -199,7 +199,7 @@ DP: [0, 1, 2]
 ```py
 [1, 2, 3]
 
-MAX(3 + DP[1], DP[2]) = MAX(3 + 1, 4) = 4
+MAX(3 + DP[1], DP[2]) = MAX(3 + 1, 2) = 4
 DP: [0, 1, 2, 4]
 ```
 
@@ -208,7 +208,7 @@ DP: [0, 1, 2, 4]
 ```py
 [1, 2, 3, 1]
 
-MAX(1 + DP[2], DP[3]) = MAX(1 + 2, 2) = 4
+MAX(1 + DP[2], DP[3]) = MAX(1 + 2, 4) = 4
 DP: [0, 1, 2, 4, 4]
 ```
 
@@ -245,7 +245,7 @@ function rob(nums: number[]): number {
 
 ## 풀이 4
 
-위 다이나믹 프로그래밍 알고리즘은 메모리 사용량 측면에서 개선의 여지가 보이는데요.
+위 동적 계획법 알고리즘은 메모리 사용량 측면에서 개선의 여지가 보이는데요.
 훔칠 수 있는 최대 금액을 굳이 모든 크기의 배열에 대해서 다 저장해 둘 필요가 있을까요?
 
 배열의 크기가 1일 때 계산 결과와 배열의 크기가 2일 때 계산 결과는 크기가 3인 배열에 대한 결과를 구할 때 활용하면 그 이후로는 쓸모가 없습니다.
@@ -264,5 +264,9 @@ class Solution:
 
 이렇게 알고리즘을 최적화해주면 공간 복잡도를 `O(1)`로 내릴 수 있습니다.
 처음에 작성한 코드도 나쁘지는 않지만 이렇게 추가적으로 최적화까지 해주면 코딩 시험에서 더 좋은 결과를 얻을 수 있을 것입니다.
+
+## 마치면서
+
+이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [House Robber II](/problems/house-robber-ii/)도 풀어보시라고 추천드립니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u-luU_q3OfE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
