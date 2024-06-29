@@ -112,7 +112,7 @@ Output: 3
 ```
 
 도시 `1`은 방금 방문하였으니 건너 뛰고, 도시 `2`와 연결된 도시를 탐색하겠습니다.
-도시 `2`는 자기 자신 외에 다른 도시와는 연결되어 있지 않으므로, 혼자서 하나의 구를 이룹니다.
+도시 `2`는 자기 자신 외에 다른 도시와는 연결되어 있지 않으므로, 혼자서 하나의 도를 이룹니다.
 
 ```py
    0  1  2
@@ -130,18 +130,18 @@ Output: 3
 ```py
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
-        def dfs(node):
-            visited.add(node)
-            for adj, connected in enumerate(isConnected[node]):
-                if adj not in visited and connected == 1:
-                    dfs(adj)
+        def dfs(start):
+            visited.add(start)
+            for end, connected in enumerate(isConnected[start]):
+                if end not in visited and connected == 1:
+                    dfs(end)
 
         cnt = 0
         visited = set()
-        for node in range(len(isConnected)):
-            if node not in visited:
+        for start in range(len(isConnected)):
+            if start not in visited:
                 cnt += 1
-                dfs(node)
+                dfs(start)
 
         return cnt
 ```
@@ -208,7 +208,7 @@ class Solution:
 ```
 
 `isConnected[1][1]`은 `0`이니 이미 방문했다는 뜻이므로 건너 뛰고, 도시 `2`와 연결된 도시를 탐색하기 위해서 `isConnected[2][2]`를 `0`으로 변경하겠습니다.
-도시 `2`는 자기 자신 외에 다른 도시와는 연결되어 있지 않으므로, 혼자서 하나의 구를 이룹니다.
+도시 `2`는 자기 자신 외에 다른 도시와는 연결되어 있지 않으므로, 혼자서 하나의 도를 이룹니다.
 
 ```py
    0  1  2
@@ -225,17 +225,17 @@ class Solution:
 ```py
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
-        def dfs(node):
-            isConnected[node][node] = 0
-            for adj, connected in enumerate(isConnected[node]):
-                if isConnected[adj][adj] == 1 and connected == 1:
-                    dfs(adj)
+        def dfs(start):
+            isConnected[start][start] = 0
+            for end, connected in enumerate(isConnected[start]):
+                if isConnected[end][end] == 1 and connected == 1:
+                    dfs(end)
 
         cnt = 0
-        for node in range(len(isConnected)):
-            if isConnected[node][node] == 1:
+        for start in range(len(isConnected)):
+            if isConnected[start][start] == 1:
                 cnt += 1
-                dfs(node)
+                dfs(start)
 
         return cnt
 ```
@@ -252,16 +252,16 @@ class Solution:
 class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         cnt = 0
-        for node in range(len(isConnected)):
-            if isConnected[node][node] == 1:
+        for start in range(len(isConnected)):
+            if isConnected[start][start] == 1:
                 cnt += 1
-                stack = [node]
+                stack = [start]
                 while stack:
-                    node = stack.pop()
-                    isConnected[node][node] = 0
-                    for adj, connected in enumerate(isConnected[node]):
-                        if isConnected[adj][adj] == 1 and connected == 1:
-                            stack.append(adj)
+                    start = stack.pop()
+                    isConnected[start][start] = 0
+                    for end, connected in enumerate(isConnected[start]):
+                        if isConnected[end][end] == 1 and connected == 1:
+                            stack.append(end)
         return cnt
 ```
 
