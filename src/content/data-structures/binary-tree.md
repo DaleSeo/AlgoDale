@@ -102,7 +102,7 @@ def dfs(node, target):
     return dfs(node.left, target) or dfs(node.right, target)
 ```
 
-면접관이 반복 알고리즘을 더 선호하신다면 [스택(stack)](/data-structures/stack/) 자료구조를 사용할 수도 있습니다.
+면접관이 반복 알고리즘을 더 선호하신다면 [스택(Stack)](/data-structures/stack/) 자료구조를 사용할 수도 있습니다.
 
 ```py
 def dfs(root, target):

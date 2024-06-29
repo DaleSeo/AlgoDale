@@ -173,7 +173,7 @@ class Solution {
 ## 풀이 2
 
 재귀 알고리즘은 입력값이 크면 스택 오버플로우(Stack Overflow)가 발생할 위험이 있습니다.
-따라서 [스택(stack)](/data-structures/stack/) 자료구조를 활용하여 반복 알고리즘을 사용하여 문제를 다시 풀어보도록 하겠습니다.
+따라서 [스택(Stack)](/data-structures/stack/) 자료구조를 활용하여 반복 알고리즘을 사용하여 문제를 다시 풀어보도록 하겠습니다.
 
 ```py
 class Solution:

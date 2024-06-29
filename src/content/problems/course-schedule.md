@@ -165,7 +165,7 @@ Output: false
 ```
 
 그럼 이 깊이 우선 탐색을 위한 재귀 알고리즘을 파이썬으로 구현해볼까요?
-[집합(set)](/data-structures/set/) 자료구조를 사용하면 현재 순회 중인 노드(traversing)와 이미 순회를 마친 노드(finished)를 효과적으로 추적할 수 있습니다.
+[집합(Set)](/data-structures/set/) 자료구조를 사용하면 현재 순회 중인 노드(traversing)와 이미 순회를 마친 노드(finished)를 효과적으로 추적할 수 있습니다.
 
 ```py
 class Solution:

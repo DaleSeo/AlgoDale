@@ -52,7 +52,7 @@ index: 0 1 2 3 4 5 6 7 8 9
 value: A B B C C C D D D D
 ```
 
-만약에 배열에서 중복되는 값을 제거해야 한다면 [집합(set)](/data-structures/set/) 자료구조를 사용해야 합니다.
+만약에 배열에서 중복되는 값을 제거해야 한다면 [집합(Set)](/data-structures/set/) 자료구조를 사용해야 합니다.
 
 ## 배열 순회
 
