@@ -2,18 +2,19 @@
 title: "Number of Connected Components in an Undirected Graph"
 tags:
   - leetcode
-  - array
-  - matrix
   - graph
   - dfs
   - recursion
   - stack
+  - queue
   - set
   - python
 date: 2023-12-14
 ---
 
 LeetCode의 323번째 문제인 [Number of Connected Components in an Undirected Graph](https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/)를 함께 풀어보도록 하겠습니다.
+
+> 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode의 [3651번째 문제](https://www.lintcode.com/problem/3651/)가 거의 동일하며 무료로 푸실 수 있으니 참고 바랍니다.
 
 ## 문제
 
@@ -213,5 +214,4 @@ class Solution:
 코딩 시험에서 그래프(graph)을 다루는 유형의 문제에서는 이 문제가 가장 기본이 된다고 볼 수 있는데요.
 본 문제를 통해 기본기를 잘 닦아놓으셔서 같은 유형의 좀 더 어려운 문제를 풀 때 큰 도움이 되었으면 좋겠습니다.
 
-이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [Number of Islands](/problems/number-of-islands/)도 풀어보시라고 추천드립니다.
 코딩 테스트에서 그래프 자료구조를 어떻게 다루는지에 대해서 더 공부하고 싶으시다면 [관련 게시물](/data-structures/graph/)을 참고 바랄께요.
