@@ -68,7 +68,7 @@ stack.pop(); // []
 
 ## 깊이 우선 탐색
 
-스택은 [트리(tree)](/data-structures/binary-tree/)나 [그래프(graph)](/data-structures/graph/)를 깊이 우선 탐색할 때도 활용할 수 있는데요.
+스택은 [트리(Tree)](/data-structures/binary-tree/)나 [그래프(Graph)](/data-structures/graph/)를 깊이 우선 탐색할 때도 활용할 수 있는데요.
 깊이 우선 탐색은 재귀 알고리즘으로도 구현할 수 있지만 스택을 사용하면 반복 알고리즘으로도 구현할 수 있습니다.
 
 ```py

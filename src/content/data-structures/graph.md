@@ -27,7 +27,7 @@ date: 2023-05-02
 소셜 네트워크에서는 각 사람이 정점이 되고, 사람 사이의 관계가 간선이 될 것입니다.
 
 장점은 그래프 상에서 데이터를 저장할 수 있는 노드(node)를 나타내고, 간선은 정점 간의 연결을 나타냅니다.
-그래서 [트리(tree)](/data-structures/binary-tree/)나 [링크드 리스트(linked list)](/data-structures/linked-list/)도 크게 보면 그래프의 범주에 들어오는데요.
+그래서 [트리(Tree)](/data-structures/binary-tree/)나 [링크드 리스트(Linked List)](/data-structures/linked-list/)도 크게 보면 그래프의 범주에 들어오는데요.
 트리는 순환(cycle)이 발생하지 않는 그래프이며, 링크드 리스트는 모든 노드가 최대 1개의 간선이 있는 그래프로 볼 수 있습니다.
 
 ## 그래프 종류

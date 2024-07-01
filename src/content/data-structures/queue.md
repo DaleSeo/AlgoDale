@@ -59,7 +59,7 @@ queue.shift(); // []
 
 ## 너비 우선 탐색
 
-큐는 [트리(tree)](/data-structures/binary-tree/)나 [그래프(graph)](/data-structures/graph/)를 너비 우선 탐색할 때 많이 사용되는데요.
+큐는 [트리(Tree)](/data-structures/binary-tree/)나 [그래프(Graph)](/data-structures/graph/)를 너비 우선 탐색할 때 많이 사용되는데요.
 
 ```py
 from collections import deque
