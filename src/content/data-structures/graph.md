@@ -121,7 +121,7 @@ def search(graph, target):
         if node == target:
             return True
 
-        return any(dfs(nei) for nei in graph[node])
+        return any(dfs(adj) for adj in graph[node])
 
     return any(dfs(node) for node in graph)
 ```
@@ -147,8 +147,8 @@ def search(graph, target):
           if node == target:
               return True
 
-          for nei in graph[node]:
-              queue.append(nei)
+          for adj in graph[node]:
+              queue.append(adj)
 
     return any(bfs(node) for node in graph)
 ```
@@ -159,47 +159,97 @@ def search(graph, target):
 ## 그래프 순환
 
 코딩 테스트에서 그래프 관련 문제를 풀 때 그래프에서 순환이 일어나는지 여부를 찾아야 하는 경우가 많은데요.
-이 때는 그래프를 순회하면서 하나의 노드가 두 번 이상 들려지는지를 탐지하면 됩니다.
+
+우선 무방향(undirected) 그래프의 경우 그래프를 순회하면서 하나의 노드가 두 번 이상 들려지는지를 탐지하면 됩니다.
+무방향 그래프는 노드 간이 간선이 상호 쌍방으로 있기 때문에 간선이 끝나는 노드에서 다시 간선이 시작하는 노드로 돌아가지 않도록 주의해야하는데요.
+재귀 함수의 인자로 간선이 끝나는 노드 뿐만 아니라 간선이 시작하는 노드까지 넘기면 어렵지 않게 간선이 시작하는 노드를 무시할 수 있습니다.
 
 ```py
 def has_cycle(graph):
-    traversing = set()
+     visited = set()
 
-    @cache
-    def traverse(node):
-        if node in traversing:
-            return True
-
-        traversing.add(node)
-        for nei in graph[node]:
-            if traverse(nei):
+    def dfs(node, prev):
+        if node in visited:
+            return True # 동일 노드 재방문 👉 순환 발생 🔁
+        visited.add(node)
+        for adj in graph[node]:
+            if node == prev:
+                continue
+            if dfs(adj, node):
                 return True
-        traversing.remove(node)
         return False
 
     for node in graph:
-        if traverse(node):
+        if node in visited:
+            continue
+        if dfs(node, -1):
             return True
     return False
 ```
 
-참고로 파이썬의 `any()` 함수를 활용하면 좀 더 간결하게 코드를 짤 수도 있습니다.
+방향(directed) 그래프에서 순환이 일어나는지 여부를 찾는 것은 좀 더 복잡한데요.
+하나의 노드로 여러 간선이 들어온다고 하더라도 무방향 그래프처럼 무조건 순환이 발생했다고 단정할 수 없기 때문입니다.
+
+예를 들어, 아래 그래프에서는 `A`와 `B` 노드에서 시작한 간선이 모두 `C` 노드에서 끝이나고 있지만 순환이 일어나지는 않고 있습니다.
+
+```py
+A → B
+  ↘ ↓
+    C
+```
+
+단지 다음과 같이 두 개의 다른 경로로 `C` 노드에 도달할 수 있을 뿐이죠.
+
+```py
+경로 1: A → B → C
+경로 2: A → C
+```
+
+따라서 방향(directed) 그래프에서 순환이 일어났는지 알아내려면, 현재 탐색 중인 경로 상에 같은 노드가 두 번 이상 나오는지를 확인해야합니다.
+그리고 성능 측면에서 경로와 무방하게 방문한 노드도 추적하여, 이미 방문한 경로를 재탐색하는 것을 방지해주는 것이 좋겠습니다.
+
+```py
+def has_cycle(graph):
+    traversing = set() # 경로 추적
+    visited = set() # 방문 추적
+
+    def dfs(node):
+        if node in traversing:
+            return True # 경로 상 동일 노드 재방문 👉 순환 발생 🔁
+        if node in visited:
+            return False # 이미 방문한 경로를 또 탐색할 필요 없음
+
+        traversing.add(node) # 경로 진입
+        for adj in graph[node]:
+            if dfs(adj):
+                return True
+        traversing.remove(node) # 경로 탈출
+        visited.add(node) # 탐색 완료
+        return False
+
+    for node in graph:
+        if dfs(node):
+            return True
+    return False
+```
+
+참고로 파이썬의 `@cache` 데코레이터와 `any()` 함수를 활용하면 좀 더 간결하게 코드를 짤 수도 있습니다.
 
 ```py
 def has_cycle(graph):
     traversing = set()
 
     @cache
-    def traverse(node):
+    def dfs(node):
         if node in traversing:
             return True
 
         traversing.add(node)
-        result = any(traverse(nei) for nei in graph[node])
+        result = any(dfs(adj) for adj in graph[node])
         traversing.remove(node)
         return result
 
-    return any(traverse(node) for node in graph)
+    return any(dfs(node) for node in graph)
 ```
 
 ## 추천 문제
