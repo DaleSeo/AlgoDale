@@ -21,7 +21,7 @@ LeetCode의 323번째 문제인 [Number of Connected Components in an Undirected
 `n`개의 노드로 구성된 그래프가 있습니다.
 정수 `n`과 배열 `edges`가 주어지는데, `edges[i] = [ai, bi]`는 그래프에서 `ai`와 `bi` 사이에 간선이 있음을 나타냅니다.
 
-그래프 내의 연결 구성 요소의 수를 반환하시오.
+그래프 내의 연결된 구성 요소의 수를 반환하시오.
 
 ## 예제 1
 
@@ -44,13 +44,13 @@ LeetCode의 323번째 문제인 [Number of Connected Components in an Undirected
 ## 풀이 1: DFS (재귀)
 
 문제에서 구성 요소란 그래프 내에서 서로 간선을 통해 연결되어 있는 노드의 무리를 의미합니다.
-노드가 하나도 연결되어 있지 않다면 구성 요소의 개수가 `n`이 되고, 반대로 모든 노드가 연결되어 있다면 구성 요소의 개수는 `1`이 될 것입니다.
+노드가 서로 하나도 연결되어 있지 않다면 구성 요소의 개수가 `n`이 되고, 반대로 모든 노드가 연결되어 있다면 구성 요소의 개수는 `1`이 될 것입니다.
 
 각각의 구성 요소에 얼마나 많은 노드가 있는지는 해당 무리 안에 연결되어 있는 모든 노드를 탐색할 때 까지는 알 수 없겠죠?
 따라서, 주어진 그래프를 깊이 우선 탐색하든 너비 우선 탐색하는 지는 별로 중요하지 않을 것입니다.
 
 오히려 중요한 것은 탐색할 때 한 번 방문한 노드는 다시 방문하지 말아야 한다는 것인데요.
-무방향(undirected) 그래프이기 때문에 노드 간에 쌍방으로 간선이 있어서 하나의 노드를 두 번 이상 방문하게 되기 때문입니다.
+무방향(undirected) 그래프가 주어지기 때문에 노드 간에 쌍방으로 간선이 있어서 하나의 노드를 두 번 이상 방문할 수 있기 되기 때문입니다.
 
 같은 노드의 중복 방문을 방지하기 위해서 안성맞춤인 자료구조가 있죠?
 네, 바로 [집합(Set)](/data-structures/set/)입니다.
@@ -127,7 +127,7 @@ LeetCode의 323번째 문제인 [Number of Connected Components in an Undirected
 최종 무리의 개수는 `2`가 됩니다.
 
 이 깊이 우선 탐색 알고리즘을 재귀 함수를 이용하여 파이썬으로 구현해보겠습니다.
-각 노드에서 간선으로 연결된 노드를 상대로 루프를 돌기 적합하도록 입력 배열을 인접 리스트(adjacency list)로 변경하였습니다.
+각 노드에 연결된 모든 이웃 노드를 상대로 루프를 돌기 적합하도록 입력 배열을 인접 리스트(adjacency list)로 변경하였습니다.
 
 ```py
 class Solution:
@@ -157,7 +157,7 @@ class Solution:
 노드의 개수와 간선의 수를 합친만큼 재귀 함수를 호출해야하기 때문입니다.
 
 공간 복잡도도 `O(n + e)`인데요.
-공간 복잡도는 인접 리스트의 크기가 노드와 간선의 수에 비례하고 집합에 최대 `n`개의 숫자를 저장해야 하기 때문입니다.
+인접 리스트의 크기가 노드와 간선의 수의 합에 비례하고 집합에 최대 `n`개의 숫자를 저장해야 하기 때문입니다.
 
 ## 풀이 2: DFS (스택)
 
@@ -174,8 +174,9 @@ class Solution:
         cnt = 0
         visited = set()
         for node in range(n):
-            if node not in visited:
-                cnt += 1
+            if node in visited:
+                continue
+            cnt += 1
             stack = [node]
             while stack:
                 node = stack.pop()
@@ -204,8 +205,9 @@ class Solution:
         cnt = 0
         visited = set()
         for node in range(n):
-            if node not in visited:
-                cnt += 1
+            if node in visited:
+                continue
+            cnt += 1
             queue = deque([node])
             while queue:
                 node = queue.pop()
