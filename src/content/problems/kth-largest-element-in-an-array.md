@@ -3,6 +3,7 @@ title: "Kth Largest Element in an Array"
 tags:
   - leetcode
   - sort
+  - array
   - heap
   - search
   - python
@@ -45,10 +46,10 @@ nums = [3, 2, 3, 1, 2, 4, 5, 5, 6], k = 4
 4
 ```
 
-## 풀이 1: 정렬
+## 풀이 1: Sort
 
 이 문제를 푸는 가장 단순한 방법은 주어진 배열을 정렬하는 것입니다.
-정렬을 하면 k번째 큰 원소는 뒤에서 k번째 위치하고 있겠죠?
+정렬을 하면 `k`번째 큰 원소는 뒤에서 `k`번째 위치하고 있겠죠?
 
 ```py
 class Solution:
@@ -60,10 +61,39 @@ class Solution:
 일반적으로 정렬을 하는데 `O(nlog(n))`의 시간이 소요되기 때문에 이 풀이의 시간 복잡도는 `O(nlog(n))`이 될 것입니다.
 공간 복잡도는 퀵 정렬 기준으로 `O(log n)`이 되겠네요.
 
-## 풀이 2: 최소 힙 (Min Heap)
+## 풀이 2: K-sized Array
 
-정렬을 하지 않고 이 문제를 풀 수는 없을까요?
-[힙(Heap)](/data-structures/heap/) 자료구조를 사용해보면 어떨까요?
+`k`번째 큰 원소를 알아내려고 배열 전체를 정렬하는 것은 상당히 비효율적으로 느껴지는데요.
+정렬을 하지 않고 이 문제를 풀 수 있다면 좋을 것 같습니다.
+
+만약에 크기가 `k`인 [배열(Array)](/data-structures/array/)을 사용해서 `k`개의 큰 숫자를 추척해보면 어떨까요?
+그 배열을 `k_largest`라고 가정하면, 처음 `k`개 숫자는 그냥 `k_largest`에 추가할 수 있을 것입니다.
+
+그 다음부터 나오는 숫자와 `k_largest` 배열에 저장해둔 숫자 중에서 가장 작은 숫자와 비교합니다.
+만약에 그 숫자가 `k_largest` 배열의 최소값보다 크다면, `k_largest` 배열에서 최소값을 제거하고 그 숫자를 추가합니다.
+
+이 과정을 모든 숫자에 대해서 반복하면 최종적으로 `k_largest` 배열에는 가장 큰 `k`개의 숫자만 남을 것입니다.
+그 중 가장 작은 값이 우리가 찾고자 하는 `k`번째로 큰 숫자입니다.
+
+```py
+class Solution:
+    def findKthLargest(self, nums, k):
+        k_largest = nums[:k]
+        for num in nums[k:]:
+            smallest = min(k_largest)
+            if smallest < num:
+                k_largest.remove(smallest)
+                k_largest.append(num)
+        return min(k_largest)
+```
+
+이 풀이의 시간 복잡도는 총 `n`번 반복을 하는데 각 반복에서 최소값을 구하고, 최소값을 제거하는 `k`의 시간이 걸리기 때문에 `O(n * k)`입니다.
+공간 복잡도는 크기가 `k`인 배열이 차지하는 메모리 공간을 고려하면 `O(k)`가 되겠죠?
+
+## 풀이 3: Min Heap
+
+이전 풀이에서 배열을 사용해서 `k`개의 큰 숫자를 추적해었는데, 배열보다 좀 더 효율적인 자료구조는 없을까요?
+[힙(Heap)](/data-structures/heap/) 자료구조를 사용하면 최소값을 훨씬 효율적으로 구할 수 있습니다!
 
 기본 아이디어는 배열을 스캔하면서 이 최소 힙(Min Heap)에 값을 넣거나 빼면서 상위 k개의 최대값만 기억해두는 거에요.
 즉, 크기가 k인 최소 힙에 가장 큰 원소부터 k번째 큰 원소를 저장하는 것입니다.
@@ -146,7 +176,7 @@ class Solution:
 이 풀이의 시간 복잡도는 크기가 k인 힙에 원소를 추가/제거하는데 들어가는 시간에 비례하기 때문에 `O(nlog(k))`가 될 것입니다.
 공간 복잡도는 크기가 k인 힙이 차지하는 메모리 공간을 고려하면 `O(k)`가 되겠죠?
 
-## 풀이 3: 빠른 선택 (Quick Select)
+## 풀이 4: Quick Select
 
 널리 알려진 검색 알고리즘인 빠른 선택 (Quick Select)을 사용하면 이 문제를 좀 더 효율적으로 해결할 수 있습니다.
 
