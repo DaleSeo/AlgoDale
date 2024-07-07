@@ -10,7 +10,7 @@ date: 2022-02-10
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5QOhBNYXC_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 121번째 문제인 [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 121번째 문제인 [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 

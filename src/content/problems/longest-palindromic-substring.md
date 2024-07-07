@@ -14,7 +14,7 @@ date: 2021-04-06
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yuVLpbgBOnY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 5번째 문제인 [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
