@@ -3,6 +3,7 @@ title: "Longest Consecutive Sequence"
 tags:
   - leetcode
   - array
+  - sequence
   - sort
   - hash-table
   - set

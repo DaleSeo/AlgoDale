@@ -2,6 +2,8 @@
 title: "Longest Common Subsequence"
 tags:
   - leetcode
+  - string
+  - sequence
   - dfs
   - recursion
   - memoization
@@ -11,6 +13,34 @@ date: 2022-10-13
 ---
 
 LeetCode의 1143번째 문제인 [Longest Consecutive Sequence](https://leetcode.com/problems/longest-common-subsequence/)를 함께 풀어보도록 하겠습니다.
+
+## 문제
+
+두 개의 문자열 `text1`과 `text2`가 주어졌을 때 두 문자열의 가장 긴 공통 부분 수열의 길이를 반환하시오.
+공통 부분 수열이 없는 경우에는 `0`을 반환하시오.
+
+문자열의 부분 수열은 원래 문자열에서 일부 글자들를 삭제하되 남은 문자들의 상대적인 순서를 바꾸지 않은 새로운 문자열입니다.
+
+예를 들어, `ace`는 `abcde`의 부분 수열입니다.
+
+두 문자열의 공통 부분 수열은 두 문자열 모두에 공통으로 있는 부분 수열입니다.
+
+## 예제
+
+```py
+입력: text1 = "abcde", text2 = "ace"
+출력: 3
+```
+
+```py
+입력: text1 = "abc", text2 = "abc"
+출력: 3
+```
+
+```py
+입력: text1 = "abc", text2 = "def"
+출력: 0
+```
 
 ## 풀이 1
 

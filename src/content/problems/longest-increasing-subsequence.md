@@ -3,6 +3,7 @@ title: "Longest Increasing Subsequence"
 tags:
   - leetcode
   - array
+  - sequence
   - recursion
   - permutation
   - dp
