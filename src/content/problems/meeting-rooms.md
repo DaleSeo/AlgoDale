@@ -12,7 +12,7 @@ date: 2023-08-28
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/P9Xf9ASvees?si=I7yGqKnmTkvbiBU1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-LeetCode의 252번째 문제인 [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)을 함께 풀어보도록 하겠습니다.
+LeetCode의 252번째 문제인 [Meeting Rooms](https://leetcode.com/problems/meeting-rooms/)를 함께 풀어보도록 하겠습니다.
 
 > 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode의 [920번째 문제](https://www.lintcode.com/problem/920/)가 거의 동일하며 무료로 푸실 수 있으니 참고 바랍니다.
 

@@ -8,7 +8,7 @@ tags:
 date: 2022-05-11
 ---
 
-LeetCode의 [Insert Interval](https://leetcode.com/problems/insert-interval/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 57번째 문제인 [Insert Interval](https://leetcode.com/problems/insert-interval/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 

@@ -10,7 +10,7 @@ date: 2022-05-04
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iVAeQzY_nZs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-LeetCode의 [Merge Intervals](https://leetcode.com/problems/merge-intervals/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 56번째 문제인 [Merge Intervals](https://leetcode.com/problems/merge-intervals/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
