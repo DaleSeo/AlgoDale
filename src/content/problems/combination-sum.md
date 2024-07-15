@@ -125,13 +125,13 @@ sum([2, 2, 3]) = 7 ✅
 ```py
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        result, nums = [], []
+        output, nums = [], []
 
         def dfs(start, total):
             if total > target:
                 return
             if total == target:
-                return result.append(nums[:])
+                return output.append(nums[:])
             for i in range(start, len(candidates)):
                 num = candidates[i]
                 nums.append(num)
@@ -139,7 +139,7 @@ class Solution:
                 nums.pop()
 
         dfs(0, 0)
-        return result
+        return output
 ```
 
 이 재귀 알고리즘을 두 번째 예제를 기준으로 실행해보면 다음과 같이 함수 호출 트리가 그려지니 코드를 따라가실 때 참고하시면 좋을 것 같습니다.
@@ -184,22 +184,22 @@ candidates = [2, 3, 5], target = 8
 ```java
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> results = new ArrayList<>();
+        List<List<Integer>> output = new ArrayList<>();
         Stack<Integer> nums = new Stack<>();
-        dfs(candidates, results, nums, target, 0, 0);
-        return results;
+        dfs(candidates, output, nums, target, 0, 0);
+        return output;
     }
 
-    private void dfs(int[] candidates, List<List<Integer>> results, Stack<Integer> nums, int target, int start, int total) {
+    private void dfs(int[] candidates, List<List<Integer>> output, Stack<Integer> nums, int target, int start, int total) {
         if (total > target) return;
         if (total == target) {
-            results.add(new ArrayList<>(nums));
+            output.add(new ArrayList<>(nums));
             return;
         }
         for (int i = start; i < candidates.length; i++) {
             int num = candidates[i];
             nums.push(num);
-            dfs(candidates, results, nums, target, i, total + num);
+            dfs(candidates, output, nums, target, i, total + num);
             nums.pop();
         }
     }

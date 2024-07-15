@@ -95,19 +95,19 @@ class Solution:
 ```java
 class Solution {
     public List<String> generateParenthesis(int n) {
-        List<String> results = new ArrayList<>();
-        dfs("", 0, 0, n, results);
-        return results;
+        List<String> output = new ArrayList<>();
+        dfs("", 0, 0, n, output);
+        return output;
     }
 
-    private void dfs(String text, int opening, int closing, int n, List<String> results) {
+    private void dfs(String text, int opening, int closing, int n, List<String> output) {
         if (opening == n && closing == n) {
-            results.add(text);
+            output.add(text);
             return;
         }
         if (opening > n || opening < closing) return;
-        dfs(text + "(", opening + 1, closing, n, results);
-        dfs(text + ")", opening, closing + 1, n, results);
+        dfs(text + "(", opening + 1, closing, n, output);
+        dfs(text + ")", opening, closing + 1, n, output);
     }
 }
 ```

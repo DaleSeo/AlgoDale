@@ -172,20 +172,20 @@ import java.util.*;
 
 class Solution {
     public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> results = new ArrayList();
-        helper(results, new Stack(), nums);
-        return results;
+        List<List<Integer>> output = new ArrayList();
+        helper(output, new Stack(), nums);
+        return output;
     }
 
-    private void helper(List<List<Integer>> results, Stack<Integer> path, int[] nums) {
+    private void helper(List<List<Integer>> output, Stack<Integer> path, int[] nums) {
         if (path.size() == nums.length) {
-            results.add(new ArrayList<>(path));
+            output.add(new ArrayList<>(path));
             return;
         }
         for (int i = 0; i < nums.length; i++) {
             if (path.contains(nums[i])) continue;
             path.push(nums[i]);
-            helper(results, path, nums);
+            helper(output, path, nums);
             path.pop();
         }
     }

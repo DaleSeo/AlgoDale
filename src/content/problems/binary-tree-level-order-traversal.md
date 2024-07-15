@@ -52,7 +52,7 @@ class Solution:
         if not root:
             return []
 
-        results = []
+        output = []
         queue = deque([root])
         while queue:
             values = []
@@ -63,8 +63,8 @@ class Solution:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-            results.append(values)
-        return results
+            output.append(values)
+        return output
 ```
 
 입력 트리를 이루고 있는 노드의 개수를 `n`라고 했을 때, 이 풀이의 시간 복잡도는 트리의 각 노드를 한 번씩 방문하므로 `O(n)`입니다.
