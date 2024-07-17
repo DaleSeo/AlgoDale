@@ -134,5 +134,5 @@ Interval(min(A.start, B.start), max(A.end, B.end))
 
 - [Meeting Rooms](/problems/meeting-rooms/)
 - [Merge Intervals](/problems/merge-intervals/)
-- [Insert Interval](/problems/insert-interval/)
+- [Non-overlapping Intervals](/problems/non-overlapping-intervals/)
 - [호텔 대실](/problems/호텔-대실/)

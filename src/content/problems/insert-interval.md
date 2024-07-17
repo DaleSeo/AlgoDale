@@ -105,3 +105,7 @@ class Solution:
 
         return output
 ```
+
+## 마치면서
+
+이 문제가 너무 어렵게 느껴지셨다면 유사하면서 좀 더 쉬운 [Merge Intervals](/problems/merge-intervals/) 문제를 먼저 풀어보시라고 추천드리고 싶습니다.
