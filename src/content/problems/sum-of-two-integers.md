@@ -93,7 +93,7 @@ class Solution:
     def getSum(self, a: int, b: int) -> int:
         xor = a ^ b
         carry = (a & b) << 1
-        while carry > 0:
+        while carry:
             xor, carry = xor ^ carry, (xor & carry) << 1
         return xor
 ```
@@ -103,12 +103,47 @@ class Solution:
 ```py
 class Solution:
     def getSum(self, a: int, b: int) -> int:
-        while b > 0:
+        while b:
             a, b = a ^ b, (a & b) << 1
         return a
 ```
 
-이 코드는 LeetCode에서 주어진 테스트 케이스는 통과를 하지만 제출을 해보면 `Time Limit Exceeded` 오류가 발생할 거에요.
-이유는 바로 우리가 음수를 고려하지 않았기 때문입니다.
+이 코드는 LeetCode에서 주어진 테스트 케이스는 통과를 하지만 제출을 해보면 `Time Limit Exceeded` 오류가 발생할 겁니다.
+
+이유는 바로 우리가 음수를 고려하지 않았기 때문인데요.
+예를 들어, 입력으로 `-1`과 `1`이 주어지면, 첫 올림수가 `2`가 되고, 그 다음에는 `4`가 되어 영원히 `0`에 도달할 수 없게 됩니다.
 
 ## 풀이 2
+
+어떻게 하면 입력으로 양수가 주어지든 음수가 주어지든 작동할 수 있도록 알고리즘을 개선할 수 있을까요?
+
+파이썬의 경우, 숫자형이 32비트가 아닙니다.
+따라서 32비트 마스크를 사용하도록 코드를 수정해야합니다.
+
+```py
+class Solution:
+    def getSum(self, a: int, b: int) -> int:
+        mask = 0xFFFFFFFF  # 32 bit mask
+        while b & mask:
+            a, b = a ^ b, (a & b) << 1
+        return (a & mask) if b > 0 else a
+```
+
+자바의 경우, 숫자형이 32비트입니다.
+그래서 위에서 파이썬으로 작성한 코드를 다시 자바로만 작성해줘도 해결이 됩니다.
+
+```java
+class Solution {
+    public int getSum(int a, int b) {
+        while (b != 0) {
+            int carry = a & b;
+            a = a ^ b;
+            b = carry << 1;
+        }
+        return a;
+    }
+}
+```
+
+이 풀이의 시간 복잡도와 공간 복잡도는 모두 `O(1)`이 되는데요.
+문제에서 숫자가 `-1000`보다 크거나 같고, `1000`보다 작거나 같다는 제약 사항이 있기 때문입니다.
