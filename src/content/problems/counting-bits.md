@@ -3,7 +3,7 @@ title: "Counting Bits"
 tags:
   - leetcode
   - string
-  - bitManipulation
+  - bit-manipulation
   - dp
   - python
   - javascript

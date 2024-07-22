@@ -6,7 +6,7 @@ tags:
   - array
   - set
   - sort
-  - bitManipulation
+  - bit-manipulation
 date: 2022-01-27
 ---
 

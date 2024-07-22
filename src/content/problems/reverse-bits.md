@@ -4,7 +4,7 @@ tags:
   - leetcode
   - stack
   - math
-  - bitManipulation
+  - bit-manipulation
   - string
   - python
   - javascript
