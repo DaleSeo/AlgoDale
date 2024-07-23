@@ -74,7 +74,7 @@ LeetCode의 213번째 문제인 [House Robber II](https://leetcode.com/problems/
 ```
 
 이렇게 크게 두 가지 경우로 분리하고 나면 [House Robber](/problems/house-robber/) 문제를 푼 것처럼 재귀 알고리즘을 적용할 수 있습니다.
-입력 배열 내의 특정 인덱스부터 시작해서 훔칠 수 있는 최대 금액은 아래 공식으로 구할 수 있습니다.
+입력 배열 내의 특정 인덱스부터 시작해서 훔칠 수 있는 최대 금액은 아래 점화식으로 구할 수 있습니다.
 
 ```py
 F(start) = MAX(nums[start] + F(start + 2), F(start + 1))

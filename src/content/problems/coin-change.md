@@ -272,7 +272,7 @@ class Solution:
 dp[i] = min(dp[i], dp[i - coin] + 1)
 ```
 
-이 공식을 이용하면 다음과 같이 간단하게 DP 알고리즘을 구현할 수 있게 됩니다.
+이 점화식을 이용하면 다음과 같이 간단하게 DP 알고리즘을 구현할 수 있게 됩니다.
 
 ```py
 class Solution:
