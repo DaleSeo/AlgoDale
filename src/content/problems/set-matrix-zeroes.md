@@ -13,7 +13,7 @@ LeetCode의 73번째 문제인 [Set Matrix Zeroes](https://leetcode.com/problems
 ## 문제
 
 정수로 이뤄진 `m x n` 행렬이 주어졌을 때, 만약에 어떤 요소가 `0`이면, 해당 요소의 행과 열을 모두 `0`으로 설정하시오.
-제자리에서(in place) 이 작업을 수행해야 합니다.
+반드시 제자리에서(in place) 이 작업을 수행해야 합니다.
 
 ## 예제
 
@@ -49,32 +49,32 @@ LeetCode의 73번째 문제인 [Set Matrix Zeroes](https://leetcode.com/problems
 [0, 1, 1]   [0, 0, 1]   [0, 0, 0]
 ```
 
-이런 일이 발생하는 이유는 처음부터 `0`인 요소와 `0`인 요소 때문에 나중에 `0`으로 변한 요소를 구분하지 않기 때문입니다
+이런 일이 발생하는 이유는 처음부터 `0`인 요소와 `0`인 요소 때문에 나중에 `0`으로 변한 요소를 구분하지 않기 때문입니다.
 그러므로 우리는 행렬에 변경을 가하기 전에 원래 `0`이었던 요소의 위치를 미리 기억해두어야 한다는 것을 알 수 있습니다.
 
-행렬을 순회하면서 `0`인 요소의 위치를 [배열(Array)](/data-structures/array/)에 저장해놓겠습니다.
-그 다음에는 배열을 순회하면서 각 위치의 행과 열을 모두 `0`으로 설정해주면 되겠죠?
+행렬을 순회하면서 `0`인 요소의 좌표를 [배열(Array)](/data-structures/array/)에 저장해놓겠습니다.
+그 다음에는 배열을 순회하면서 각 좌표의 행과 열을 모두 `0`으로 설정해주면 되겠죠?
 
 이 알고리즘을 코드로 구현해보겠습니다.
 
 ```py
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
-        zeros = set()
+        zeros = []
 
         for r in range(len(matrix)):
             for c in range(len(matrix[0])):
                 if matrix[r][c] == 0:
-                    zeros.add((r, c))
+                    zeros.append((r, c))
 
         for r, c in zeros:
-            for i in range(len(matrix)):
-                matrix[i][c] = 0
             for i in range(len(matrix[0])):
                 matrix[r][i] = 0
+            for i in range(len(matrix)):
+                matrix[i][c] = 0
 ```
 
-행렬의 크기를 `m x n`이라고 했을 때 이 풀이의 시간 복잡도는 행렬의 모든 원소에 대해서 루프를 도므로 `O(m * n)`이 됩니다.
+행렬의 크기를 `m x n`이라고 했을 때, 이 풀이의 시간 복잡도는 행렬의 모든 원소에 대해서 루프를 도므로 `O(m * n)`이 됩니다.
 공간 복잡도는 최악의 경우 행렬이 처음부터 모두 `0`으로 채워져 있다면, 배열의 크기가 행렬의 크기가 동일해지므로 `O(m * n)`입니다.
 
 ## 풀이 2: Set
@@ -135,7 +135,7 @@ class Solution:
 각 행과 열의 첫 번째 요소에 이 정보를 저장하면 어떨까요?
 괜찮은 아이디어인 것 같죠?
 
-그런데 여기서 한 가지 걸림돌은 `m * n` 행렬이 주어졌을 때 우리는 `m + n`개의 저장 공간이 필요한데,
+그런데 여기서 까다로운 부분은 `m * n` 행렬이 주어졌을 때 우리는 `m + n`개의 저장 공간이 필요한데,
 배열의 첫 번째 행과 첫 번째 열에 있는 원소의 수를 모두 합하면 `m + n - 1`이라는 것 입니다.
 즉, 정보를 저장하기에 한 칸이 모자리는 것이지요.
 
@@ -160,8 +160,8 @@ class Solution:
 class Solution:
     def setZeroes(self, matrix: List[List[int]]) -> None:
         # 인덱스 0에 대한 행과 열의 정보는 외부 변수에 저장
-        first_col_zero = any(matrix[r][0] == 0 for r in range(len(matrix)))
         first_row_zero = any(matrix[0][c] == 0 for c in range(len(matrix[0])))
+        first_col_zero = any(matrix[r][0] == 0 for r in range(len(matrix)))
 
         # 인덱스 1부터 n-1까지 행렬의 첫 행과 첫 열에 저장
         for r in range(1, len(matrix)):
@@ -187,4 +187,8 @@ class Solution:
                 matrix[i][0] = 0
 ```
 
-이 풀이는 행렬의 크기가 관계없이 항상 정해진 두 개의 개수만 사용하므로 공간 복잡도가 `O(1)`로 개선됩니다.
+이 풀이는 행렬의 크기가 관계없이 항상 정해진 두 개의 변수만 사용하므로 공간 복잡도가 `O(1)`로 개선됩니다.
+
+## 마치면서
+
+어떤 자료구조를 사용하느냐에 따라서 공간 복잡도가 크게 달라질 수 있다는 것을 느끼게 해준 문제였습니다.

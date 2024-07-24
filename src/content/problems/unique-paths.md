@@ -10,6 +10,8 @@ tags:
 date: 2024-07-04
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dXAIBrWbpoY?si=OX4u0dCuCmSmAiIG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 62번째 문제인 [Unique Paths](https://leetcode.com/problems/unique-paths/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
