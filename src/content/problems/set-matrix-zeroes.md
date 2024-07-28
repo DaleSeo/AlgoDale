@@ -8,6 +8,8 @@ tags:
 date: 2021-07-15
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DdwGGU5LGdA?si=oUL94qTCUuUomH2p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 73번째 문제인 [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
