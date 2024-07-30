@@ -13,7 +13,7 @@ date: 2021-06-08
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Y4cGI3MXL7U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-LeetCode의 [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 22번째 문제인 [Generate Parentheses](https://leetcode.com/problems/generate-parentheses/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
@@ -22,21 +22,21 @@ n 쌍의 괄호가 주어졌을 때, 괄호로 이루어진 유효한 문자열�
 ## 예제
 
 ```py
-Input: n = 3
-Output: ["((()))","(()())","(())()","()(())","()()()"]
+입력: n = 3
+출력: ["((()))","(()())","(())()","()(())","()()()"]
 ```
 
 ```py
-Input: n = 1
-Output: ["()"]
+입력: n = 1
+출력: ["()"]
 ```
 
 ## 풀이 1
 
 이 문제에서 괄호로 이뤄진 문자열은 어떤 조건을 만족해야 유효해질까요?
 
-1. `(`의 개수는 `)`의 개수와 동일해야 합니다.
-1. `(`와 `)`의 개수는 n개를 초과할 수 없습니다.
+1. 열린 괄호와 닫힌 괄호의 개수가 `n`개로 동일해야 합니다.
+1. 괄호를 닫으려면 반드시 앞에 더 많은 열린 괄호가 있어야 합니다.
 
 자 그럼, 빈 문자열부터 시작해서 위 조건을 만족하도록 괄호를 하나씩 더해나가보겠습니다.
 n = 2 일 때, 다음과 같은 사고 과정을 거쳐서 2개의 유효한 문자열을 찾아낼 수 있습니다.
@@ -180,7 +180,7 @@ class Solution:
                 stack.append("(")
                 dfs(opening + 1, closing)
                 stack.pop()
-            if closing < opening:
+            if opening > closing:
                 stack.append(")")
                 dfs(opening, closing + 1)
                 stack.pop()
