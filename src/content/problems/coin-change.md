@@ -126,6 +126,8 @@ class Solution:
 
 보시다시피 이 알고리즘의 성능은 매우 안 좋기 때문에 LeetCode에서 제출해보면 Time Limit Exceeded 오류가 나면서 통과하지 않을 것입니다.
 
+> 재귀 함수 내에서 `nonlocal` 키워드를 사용하는 이유에 대해서는 [관련 포스팅](https://www.daleseo.com/python-global-nonlocal/)을 참고하세요.
+
 ## 풀이 2
 
 이전 풀이에서는 해당 금액을 만들기 위해서 동전을 선택할 수 있는 모든 경우의 수를 따져봤는데요.

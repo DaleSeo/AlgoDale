@@ -106,7 +106,7 @@ class Solution:
 
 이 코드는 성능이 너무 안 좋아서 LeetCode에 제출하면 Time Limit Exceeded 오류가 발생할 것입니다.
 
-> 재귀 함수 내에서 `nonlocal` 키워드를 사용하는 이유에 대해서는 [관련 포스팅](https://www.daleseo.com/python-global-nonlocal/)을 참고 바랍니다.
+> 재귀 함수 내에서 `nonlocal` 키워드를 사용하는 이유에 대해서는 [관련 포스팅](https://www.daleseo.com/python-global-nonlocal/)을 참고하세요.
 
 ## 풀이 2
 
