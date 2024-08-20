@@ -38,7 +38,14 @@ LeetCode의 271번째 문제인 [Encode and Decode Strings](https://leetcode.com
 그런데 여기서 주의할 점은 문자열에 256개의 유효한 ASCII 문자 중 어떤 문자든지 포함될 수 있다는 것인데요.
 따라서 반드시 구분 문자(delimiter)로 ASCII 문자가 아닌 문자를 사용해야겠습니다.
 
-우리 채팅할 때 자주 사용하는 이모지로 문자열을 구분해보면 어떨까요?
+우리 채팅할 때 자주 사용하는 `😄` 이모지로 문자열을 구분해보면 어떨까요?
+첫 번째 예제에서 주어진 배열을 상대로 적용해보면 다음과 같은 형태로 인코딩과 디코딩을 거쳐 원래 문자열을 얻을 수 있을 것입니다.
+
+```py
+["Hello", "World"] -- 인코딩 --> "Hello😄World" -- 디코딩 --> ["Hello", "World"]
+```
+
+그럼 이 간단한 알고리즘을 코드로 구현해보겠습니다.
 
 ```py
 class Codec:
@@ -51,7 +58,8 @@ class Codec:
 
 입력 배열이 담고 있는 문자열의 개수를 `n`라고 했을 때, 이 풀이의 시간 복잡도는 `O(n)`입니다.
 `join()`과 `split()` 함수의 수행 시간은 문자열 개수와 비례하기 때문입니다.
-별도의 추가 메모리를 사용하는 부분이 없기 때문에 공간 복잡도는 `O(1)`이 되겠습니다.
+
+공간 복잡도는 결과 값이 차지하는 메모리를 제외하면 추가적인 메모리를 사용하는 부분이 없으므로 `O(1)`이 되겠습니다.
 
 ## 풀이 2
 
@@ -101,23 +109,25 @@ class Codec:
 class Codec:
     def encode(self, strs: List[str]) -> str:
         text = ""
-        for s in strs:
-            text += str(len(s)) + "-" + s
+        for str in strs:
+            text += f"{len(str)}-{str}"
         return text
 
     def decode(self, s: str) -> List[str]:
-        strs, i = [], 0
-        while i < len(s):
-            delimiter = s.find("-", i)  # i부터 첫 구분자 찾음
-            length = int(s[i:delimiter])
-            strs.append(s[delimiter + 1 : delimiter + 1 + length])
-            i = delimiter + 1 + length
-        return strs
+        ls, start = [], 0
+        while start < len(s):
+            mid = s.find("-", start)
+            length = int(s[start:mid])
+            ls.append(s[mid + 1 : mid + 1 + length])
+            start = mid + 1 + length
+        return ls
 ```
 
-이 풀이의 시간 복잡도와 공간 복잡도는 이전 풀이와 동일합니다.
+이 풀이의 시간 복잡도와 공간 복잡도는 이전 풀이와 동일하게 `O(n)`과 `O(1)`이 되겠습니다.
+
+> 위 코드에서 사용된 파이썬의 f-string에 대해서는 [관련 포스팅](/python-f-strings)을 참고하세요.
 
 ## 마치면서
 
-이 문제는 Blind 75에 속하는 매우 유명한 문제이지만 저는 개인적으로 그닥 선호하는 문제는 아닙니다.
-면접관으로서 지원자의 어떤 능력을 평가하려는 건지 출제 의도가 분명하지 않은 것 같습니다.
+이 문제는 Blind 75에 속하는 매우 유명한 문제이지만 저는 솔직히 개인적으로 그닥 선호하는 문제는 아니에요.
+면접관으로서 지원자의 어떤 능력을 평가하려는 건지 출제 의도가 분명하지 않다고 생각하는데 여러분은 어떠신가요?
