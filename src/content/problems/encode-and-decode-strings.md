@@ -68,23 +68,23 @@ class Codec:
 만약에 구분자를 256개의 ASCII 문자 중 하나를 사용해야한다면 어떻게 해야할까요?
 그럼 문자열 안에도 구분자가 들어있을 가능성이 있기 때문에 좀 더 까다로워지겠죠?
 
-예를 들어, 입력으로 다음과 같은 문자열 배열이 `-`로 문자열을 구분했다고 가정해봅시다.
+예를 들어, 입력으로 다음과 같은 문자열 배열이 `:`로 문자열을 구분했다고 가정해봅시다.
 
 ```py
-["Hello", "World","yes-or-no"]
+["Hello", "World", "Yes:Or:No"]
 ```
 
 위 알고리즘으로 인코드를 한다면 다음과 같은 문자열이 나와서 뭐가 구분자이고 뭐가 문자열의 일부인지 알 수가 없겠죠?
 
 ```py
-"Hello-World-yes-or-no"
+"Hello:World:Yes:Or:No"
 ```
 
 만약에 `-`를 구분자로 디코드를 하면 다음과 같이 5개의 문자열이 나올 것입니다.
 입력 배열과 동일하지 않죠.
 
 ```py
-["Hello", "World", "yes", "or", "no"]
+["Hello", "World", "Yes", "Or", "No"]
 ```
 
 어떻게 하면 문자열에 포함되어 있는 구분자와 동일한 문자에서 구분이 되는 것을 피할 수 있을까요?
@@ -93,14 +93,14 @@ class Codec:
 예를 들어, 다음과 같이 문자열 길이를 첨가하여 디코딩을 할 수 있을 것입니다.
 
 ```py
-"5-Hello5-World9-yes-or-no"
+"5:Hello5:World9:Yes:Or:No"
 ```
 
 그러면 원치 않게 문자열의 중간에서 구분이 될 위험이 사라지게 되겠죠?
 
 ```py
    --5--  --5--  ----9----
-"5-Hello5-World9-yes-or-no"
+"5:Hello5:World9:Yes:Or:No"
 ```
 
 이 알고리즘을 파이썬으로 구현해보겠습니다.
@@ -110,13 +110,13 @@ class Codec:
     def encode(self, strs: List[str]) -> str:
         text = ""
         for str in strs:
-            text += f"{len(str)}-{str}"
+            text += f"{len(str)}:{str}"
         return text
 
     def decode(self, s: str) -> List[str]:
         ls, start = [], 0
         while start < len(s):
-            mid = s.find("-", start)
+            mid = s.find(":", start)
             length = int(s[start:mid])
             ls.append(s[mid + 1 : mid + 1 + length])
             start = mid + 1 + length
