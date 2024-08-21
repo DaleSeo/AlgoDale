@@ -7,6 +7,8 @@ tags:
 date: 2024-05-23
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ACpF1zqqB7M?si=fqC0BIMlmUKm2myv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 271번째 문제인 [Encode and Decode Strings](https://leetcode.com/problems/encode-and-decode-strings/)를 함께 풀어보도록 하겠습니다.
 
 > 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode의 [659번째 문제](https://www.lintcode.com/problem/659/)가 거의 동일하며 무료로 푸실 수 있으니 참고 바랍니다.
@@ -15,6 +17,9 @@ LeetCode의 271번째 문제인 [Encode and Decode Strings](https://leetcode.com
 
 문자열 목록을 문자열로 인코딩하는 알고리즘을 설계하십시오.
 인코딩된 문자열은 네트워크를 통해 전송되고 다시 원래의 문자열 목록으로 디코딩됩니다.
+
+`encode`와 `decode` 메서드를 구현하시오.
+`eval`과 같은 직렬화 메서드를 사용해서 문제를 푸시면 안 됩니다.
 
 `strs[i]`에는 256개의 유효한 ASCII 문자 중 어떤 문자든 포함될 수 있습니다."
 
@@ -32,11 +37,11 @@ LeetCode의 271번째 문제인 [Encode and Decode Strings](https://leetcode.com
 
 ## 풀이 1
 
-이 문제는 얼핏 보면 아주 쉬워보일 수 있습니다.
+Medium 난이도 임에도 불구하고 이 문제는 얼핏 보면 아주 쉬워보일 수 있는데요.
 문자열 목록을 문자열로 인코딩할 때 문자 사이에 구분자를 넣으면 될 것 같기 때문입니다.
 
 그런데 여기서 주의할 점은 문자열에 256개의 유효한 ASCII 문자 중 어떤 문자든지 포함될 수 있다는 것인데요.
-따라서 반드시 구분 문자(delimiter)로 ASCII 문자가 아닌 문자를 사용해야겠습니다.
+따라서 반드시 구분 기호(delimiter)로 ASCII 문자가 아닌 다른 문자를 사용해야겠습니다.
 
 우리 채팅할 때 자주 사용하는 `😄` 이모지로 문자열을 구분해보면 어떨까요?
 첫 번째 예제에서 주어진 배열을 상대로 적용해보면 다음과 같은 형태로 인코딩과 디코딩을 거쳐 원래 문자열을 얻을 수 있을 것입니다.
@@ -63,9 +68,10 @@ class Codec:
 
 ## 풀이 2
 
-위 풀이는 너무 반칙 같으니 좀 더 코딩 테스트에 걸맞는 알고리즘을 생각해보겠습니다.
+이전 풀이는 좀 반칙같은 느낌이 들죠?
+이번에는 좀 더 코딩 테스트에 걸맞는 알고리즘을 생각해보겠습니다.
 
-만약에 구분자를 256개의 ASCII 문자 중 하나를 사용해야한다면 어떻게 해야할까요?
+만약에 구분 기호로 ASCII 문자 중 하나를 선택해야 한다면 이 문제를 해결할 수 있을까요?
 그럼 문자열 안에도 구분자가 들어있을 가능성이 있기 때문에 좀 더 까다로워지겠죠?
 
 예를 들어, 입력으로 다음과 같은 문자열 배열이 `:`로 문자열을 구분했다고 가정해봅시다.
@@ -80,14 +86,14 @@ class Codec:
 "Hello:World:Yes:Or:No"
 ```
 
-만약에 `-`를 구분자로 디코드를 하면 다음과 같이 5개의 문자열이 나올 것입니다.
+만약에 `:`를 구분자로 디코드를 하면 다음과 같이 5개의 문자열이 나올 것입니다.
 입력 배열과 동일하지 않죠.
 
 ```py
 ["Hello", "World", "Yes", "Or", "No"]
 ```
 
-어떻게 하면 문자열에 포함되어 있는 구분자와 동일한 문자에서 구분이 되는 것을 피할 수 있을까요?
+어떻게 하면 각 문자열 내부에서 구분자와 동일한 기호에서 문자열이 쪼개지는 것을 피할 수 있을까요?
 
 한 가지 방법은 구분자 이후에 나오는 문자열의 길이도 인코딩 결과에 기록을 해두는 것입니다.
 예를 들어, 다음과 같이 문자열 길이를 첨가하여 디코딩을 할 수 있을 것입니다.
