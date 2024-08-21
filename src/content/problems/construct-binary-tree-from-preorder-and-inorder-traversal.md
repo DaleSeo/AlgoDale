@@ -110,22 +110,33 @@ class Solution:
 이전 풀이를 보면 `inorder` 배열에서 최상위 노드 값의 인덱스를 찾는데 `O(n)`의 시간이 걸리고 있는데요.
 미리 각 값에 대한 인덱스를 [해시 테이블 (Hash Table)](/data-structures/hash-table/)에 저장해놓으면 상수 시간에 인덱스 탐색이 가능해질 것입니다.
 
+추가적으로 `preorder` 배열인 인덱스를 나타내는 `pre`를 재귀함수 밖에서 선언하고 재귀 함수 내에서 1씩 증가시키도록 변경하였습니다.
+이렇게 해주면 다소 까다로웠던 `pre` 값을 직접 계산하는 부분을 피할 수 있겠죠?
+
 ```py
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
         indices = {val: idx for idx, val in enumerate(inorder)}
+        pre = 0
 
-        def dfs(pre, start, end):
+        def dfs(start, end):
+            nonlocal pre
+
             if not (pre < len(preorder) and start <= end):
                 return None
 
-            val = preorder[pre]
-            mid = indices[val]
-            left = dfs(pre + 1, start, mid - 1)
-            right = dfs(pre + 1 + mid - start, mid + 1, end)
-            return TreeNode(preorder[pre], left, right)
+            node = TreeNode(preorder[pre])
+            mid = indices[preorder[pre]]
 
-        return dfs(0, 0, len(inorder) - 1)
+            pre += 1
+
+            node.left = dfs(start, mid - 1)
+            node.right = dfs(mid + 1, end)
+            return node
+
+        return dfs(0, len(inorder) - 1)
 ```
 
 이렇게 추가 최적화를 해주면 시간 복잡도도 `O(n^2)`에서 `O(n)`으로 향상이 됩니다.
+
+> 재귀 함수 내에서 `nonlocal` 키워드를 사용하는 이유에 대해서는 [관련 포스팅](https://www.daleseo.com/python-global-nonlocal/)을 참고하세요.
