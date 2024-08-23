@@ -142,6 +142,7 @@ def bfs(root, target):
 대표적으로 전위 순회(pre-order), 중위 순회(in-order), 후위 순회(post-order)가 있는데 모두 재귀 알고리즘을 구현할 수 있습니다.
 
 전위 순회(pre-order)에서는 부모 노드를 먼저 방문하고 그 다음 좌측 트리, 우측 트리 순으로 순회합니다.
+코딩 테스트에서 트리를 순회할 때 가장 흔하게 사용되는 방식입니다.
 
 ```py
 def pre_order(node):
@@ -151,6 +152,7 @@ def pre_order(node):
 ```
 
 중위 순회(in-order)에서는 좌측 트리를 먼저 순회한 후 부모 노드를 먼저 방문하고, 그 다음 우측 트리를 순회합니다.
+이진 탐색 트리(binary search tree)의 경우, 중위 순회(in-order)를 하면 오름 차순으로 모든 노드를 방문할 수 있다는 특징이 있습니다.
 
 ```py
 def in_order(node):
