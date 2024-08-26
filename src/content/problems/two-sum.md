@@ -30,7 +30,7 @@ LeetCode의 1번째 문제인 [Two Sum](https://leetcode.com/problems/two-sum/) 
 `nums`로 부터 만들 수 있는 모든 경우의 두 수의 조합을 만든 후 더해서 `target`과 비교하는 것입니다.
 즉, 모든 경우의 수의 `[i, j]` 인덱스 쌍에 대해 `nums[i] + nums[j] = target`을 만족하는 경우를 찾는 것입니다.
 
-### Python
+파이썬으로 구현해보겠습니다.
 
 ```py
 class Solution:
@@ -42,7 +42,7 @@ class Solution:
           return [i, j]
 ```
 
-### Java
+자바로 구현해보겠습니다.
 
 ```java
 class Solution {
@@ -96,14 +96,12 @@ target = 9
 
 한가지 주의할 점은 Hast Table에 `target - nums[i]`의 존재 여부를 체크할 때 동일 인덱스를 두 번 쓰지 않도록 신경써줘야 한다는 것입니다.
 
-### Python
+파이썬으로 구현해보겠습니다.
 
 ```py
 class Solution:
   def twoSum(self, nums: List[int], target: int) -> List[int]:
-    indices = {}
-    for i, v in enumerate(nums):
-      indices[v] = i
+    indices = {num: idx for idx, num in enumerate(nums)}
 
     for i, v in enumerate(nums):
       complement = target - v
@@ -112,7 +110,7 @@ class Solution:
         return [i, j]
 ```
 
-### Java
+자바로 구현해보겠습니다.
 
 ```java
 class Solution {
@@ -144,7 +142,7 @@ Hash Talbe의 크기는 배열의 크기와 비례해서 증가히기 때문에 
 위 알고리즘을 조금만 더 생각을 해보면 한 번의 루프로도 구현할 수 있습니다.
 하나의 루프에서 해시 테이블에 검색과 저장을 연이어서 할 수 있기 때문입니다.
 
-### Python
+파이썬으로 구현해보겠습니다.
 
 ```py
 class Solution:
@@ -158,7 +156,7 @@ class Solution:
       indices[v] = i
 ```
 
-### Java
+자바로 구현해보겠습니다.
 
 ```java
 class Solution {
@@ -177,7 +175,7 @@ class Solution {
 }
 ```
 
-### JavaScript
+자바스크립트로 구현해보겠습니다.
 
 ```ts
 function twoSum(nums: number[], target: number): number[] {
