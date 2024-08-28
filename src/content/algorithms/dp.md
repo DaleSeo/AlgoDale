@@ -81,3 +81,4 @@ dp[5] = dp[4] + dp[3] = 3 + 2 = 5
 - [House Robber](/problems/house-robber/)
 - [Word Break](/problems/word-break/)
 - [Decode Ways](/problems/decode-ways/)
+- [Coin Change](/problems/coin-change/)
