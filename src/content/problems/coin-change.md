@@ -268,10 +268,10 @@ class Solution:
 이렇게 새로운 동전을 하나씩 추가하면서 `dp` 배열을 갱신하다보면 최종적으로 `dp[7]`에는 `2`가 저장되어 있는 것을 볼 수 있습니다.
 이 것이 우리가 구하고자하는 `7`을 만드는데 필요한 최소한의 동전의 개수이죠.
 
-위 패턴을 일반화하면, 최소한 동전의 개수를 저장해놓을 배열을 `dp`, 만들고 싶은 금액을 `i`, 선택한 동전의 액수를 `coin`이라고 했을 때 다음과 같은 공식을 얻을 수 있습니다.
+위 패턴을 일반화하면, 최소한 동전의 개수를 저장해놓을 배열을 `dp`, 만들고 싶은 금액을 `n`, 선택한 동전의 액수를 `coin`이라고 했을 때 다음과 같은 공식을 얻을 수 있습니다.
 
 ```py
-dp[i] = min(dp[i], dp[i - coin] + 1)
+dp[n] = min(dp[n], dp[n - coin] + 1)
 ```
 
 이 점화식을 이용하면 다음과 같이 간단하게 DP 알고리즘을 구현할 수 있게 됩니다.
@@ -281,9 +281,9 @@ class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
         dp = [0] + [amount + 1] * amount
 
-        for coin in coins:
-            for i in range(coin, amount + 1):
-                dp[i] = min(dp[i - coin] + 1, dp[i])
+        for c in coins:
+            for n in range(c, amount + 1):
+                dp[n] = min(dp[n - c] + 1, dp[n])
 
         return dp[amount] if dp[amount] < amount + 1 else -1
 ```
@@ -293,9 +293,9 @@ class Solution:
 ```ts
 function coinChange(coins: number[], amount: number): number {
   const dp = [0, ...new Array(amount).fill(amount + 1)];
-  for (let i = 1; i <= amount; i++) {
-    for (const coin of coins) {
-      if (coin <= i) dp[i] = Math.min(dp[i - coin] + 1, dp[i]);
+  for (const c of coins) {
+    for (let n = c; n <= amount; n++) {
+      dp[n] = Math.min(dp[n - c] + 1, dp[n]);
     }
   }
   return dp[amount] < amount + 1 ? dp[amount] : -1;
