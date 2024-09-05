@@ -23,7 +23,7 @@ Trie(발음은 "트라이"로 함) 또는 접두사 트리는 문자열 데이�
 `Trie` 클래스를 구현하시오:
 
 - `Trie()` 생성자는 트라이 객체를 초기화합니다.
-- `void insert(String word)` 메서든는 문자열 `word`를 트라이에 삽입합니다.
+- `void insert(String word)` 메서드는 문자열 `word`를 트라이에 삽입합니다.
 - `boolean search(String word)` 메서드는 문자열 `word`가 트라이에 있는 경우(즉, 이전에 삽입되었던 경우) 참을 반환하고 그렇지 않으면 거짓을 반환합니다.
 - `boolean startsWith(String prefix)` 메서드는 이전에 삽입된 문자열 `word` 중 접두사 `prefix`를 가진 문자열이 있는 경우 참을 반환하고 그렇지 않으면 거짓을 반환합니다.
 
