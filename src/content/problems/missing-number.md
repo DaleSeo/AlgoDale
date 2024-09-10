@@ -56,7 +56,7 @@ class Solution:
 어떻게 하면 시간 복잡도를 향상 시킬 수 있을까요?
 
 위 알고리즘에서 가장 시간을 많이 잡아먹는 작업은 바로 특정 배열 내에서 숫자를 찾기위한 선형 탐색인데요.
-배열 내의 모든 숫자를 해시 테이블을 기반으로 하는 집합(set) 자료구조에 저장해놓고 찾으면 검색 시간을 상수 시간(constant time)으로 낮출 수가 있을 것입니다.
+배열 내의 모든 숫자를 해시 테이블을 기반으로 하는 [집합(Set)](/data-structures/set/) 자료구조에 저장해놓고 찾으면 검색 시간을 상수 시간(constant time)으로 낮출 수가 있을 것입니다.
 
 이 것을 그대로 코드로 구현해보겠습니다.
 
@@ -68,6 +68,15 @@ class Solution:
             if i not in num_set:
                 return i
         return len(nums)
+```
+
+차집합을 활용하면 좀 더 간결하게 구현할 수도 있을 것입니다.
+
+```py
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        diff = set(range(len(nums) + 1)) - set(nums)
+        return diff.pop()
 ```
 
 이 풀이에서는 공간 복잡도를 `O(1)`에서 `O(n)`으로 올린 댓가로 시간 복잡도를 `O(n^2)`에서 `O(n)`로 대폭 낮출 수 있었습니다.

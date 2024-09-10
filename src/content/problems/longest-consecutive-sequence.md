@@ -146,7 +146,7 @@ class Solution:
 그렇다면 공간 복잡도를 희생하더라도 시간 복잡도를 향상시킬 수 있는 방법은 없을까요?
 
 첫 번째 풀이에서 시간 복잡도가 그토록 나빴던 이유 중 하나는 배열을 대상으로한 선형 탐색 때문이 있습니다.
-만약에 정수들을 배열이 아닌 집합(set)와 같은 해시 테이블(hash table)을 기반으로하는 자료구조에 저장해놓았다면 어땠을까요?
+만약에 정수들을 배열이 아닌 [집합(Set)]와 같은 [해시 테이블(Hash Table)](/data-structures/hash-table/)을 기반으로하는 자료구조에 저장해놓았다면 어땠을까요?
 그러면 원하는 정수에 접근하는데 `O(1)` 시간 밖에 걸리지 않을 것입니다.
 
 이번에는 첫 번째 풀이에서 발생했던 아래 3개의 중복 연산을 생각해봅시다.
@@ -175,7 +175,7 @@ ___________
 
 1. 배열의 모든 정수를 세트에 저장
 2. 모든 정수에 대해서 루프를 돌면서,
-   1. 해당 정수에서 1을 뺀 정수가 세트에 있으면 구간 내에 첫 번째값이 될 수 없으므로 다음 정수로 건너띰
+   1. 해당 정수에서 1을 뺀 정수가 세트에 있으면 구간 내에 첫 번째 값이 될 수 없으므로 다음 정수로 건너띰
    2. 아니라면, 계속해서 1씩 증가시면서 가능한한 최대로 구간을 늘려봄
    3. 여태까지 최대 구간의 길이와 비교
 
@@ -219,5 +219,36 @@ function longestConsecutive(nums: number[]): number {
 빅오 표현법으로 `O(n + n)`은 `O(n)`와 동일합니다.
 
 배열의 모든 정수를 세트에 저장하였기 때문에 공간 복잡도는 `O(n)`이 됩니다.
+
+## 풀이 4
+
+이전 풀이에서는 우선 구간 내에 첫 번째 값을 찾고, 그 다음 오른 쪽으로 구간을 확장해나갔는데요.
+만약에 구간을 양쪽으로 확장할 수 있다면, 굳이 첫 번째 값을 찾을 필요가 없을 것입니다.
+
+임의 숫자를 고른 다음에 구간을 양쪽으로 확장하면서 숫자를 집합에서 제거하면 어떨까요?
+이 작업을 집합에 원소가 하나도 남지 않을 때까지 하면 가장 긴 구간의 길이를 구할 수 있을 것입니다.
+집합에서 원소를 제거하는데는 상수 시간이 걸리니 성능 측면에서도 큰 문제가 없겠죠?
+
+이 알고리즘을 코드로 구현해보겠습니다.
+
+```py
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        longest = 0
+        num_set = set(nums)
+        while num_set:
+            num = num_set.pop()
+            left, right = 1, 1
+            while num - left in num_set:
+                num_set.remove(num - left)
+                left += 1
+            while num + right in num_set:
+                num_set.remove(num + right)
+                right += 1
+            longest = max(left + right - 1, longest)
+        return longest
+```
+
+이 풀이의 복잡도는 이전 풀이와 동일하게 시간 공간 측면에서 모두 `O(n)`이 되겠습니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5pwDyIUfowU?si=0SPyc2Bpwuf92thM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
