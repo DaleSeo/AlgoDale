@@ -73,7 +73,7 @@ class Solution:
         return list(triplets)
 ```
 
-반환 결과에서 동일한 정수로 이루어진 조합을 제거하기 위해서 각 조합을 정렬한 후에 집합(set) 자료구조에 저장하고 있는데요.
+반환 결과에서 동일한 정수로 이루어진 조합을 제거하기 위해서 각 조합을 정렬한 후에 [집합(Set)](/data-structures/set/) 자료구조에 저장하고 있는데요.
 파이썬에서 집합(set) 자료구조에는 가변 자료구조인 리스트(list)를 저장할 수 없기 때문에 튜플(tuple)로 변환하는 부분 주의 바라겠습니다.
 
 ## 풀이 2
@@ -266,6 +266,41 @@ class Solution:
         return list(triplets)
 ```
 
+배열의 길이라고 n을 했을 때, 이 알고리즘의 시간 복잡도는 세트를 사용한 알고리즘과 동일한 `O(n^2)`로 의미있는 차이가 없는데요.
+공간 복잡도 측면에서는 결과 값 저장에 필요한 메모리를 무시하면 이 투 포인터를 사용한 알고리즘이 `O(1)`로 더 우수한 공간 복잡도를 가지게 됩니다.
+
+## 풀이 3
+
+이전 두 풀이에서는 세트를 사용하여 동일한 정수로 이루어진 조합을 제거하였는데요.
+우리가 직접 중복을 제거해주면 세트 대신에 [배열(Array)](/data-structures/array/)을 사용해서 해결할 수도 있습니다.
+
+```py
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        triplets = []
+        nums.sort()
+
+        for i in range(len(nums) - 2):
+            if i > 0 and nums[i - 1] == nums[i]:
+                continue
+            low, high = i + 1, len(nums) - 1
+            while low < high:
+                three_sum = nums[i] + nums[low] + nums[high]
+                if three_sum < 0:
+                    low += 1
+                elif three_sum > 0:
+                    high -= 1
+                else:
+                    triplets.append([nums[i], nums[low], nums[high]])
+                    while low < high and nums[low] == nums[low + 1]:
+                        low += 1
+                    while low < high and nums[high] == nums[high - 1]:
+                        high -= 1
+                    low, high = low + 1, high - 1
+
+        return triplets
+```
+
 같은 알고리즘을 자바스크립트로 구현해볼까요?
 
 ```js
@@ -324,7 +359,6 @@ class Solution {
 }
 ```
 
-배열의 길이라고 n을 했을 때, 이 알고리즘의 시간 복잡도는 세트를 사용한 알고리즘과 동일한 `O(n^2)`로 의미있는 차이가 없는데요.
-공간 복잡도 측면에서는 결과 값 저장에 필요한 메모리를 무시하면 이 투 포인터를 사용한 알고리즘이 `O(1)`로 더 우수한 공간 복잡도를 가지게 됩니다.
+이 풀이의 바로 이전 풀이와 동일하게 시간 복잡도는 `O(n^2)`이고 공간 복잡도는 `O(1)`입니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sfKnkCoQuyE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
