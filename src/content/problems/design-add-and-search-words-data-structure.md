@@ -310,8 +310,7 @@ class WordDictionary:
             if ch in node:
                 return dfs(node[ch], idx + 1)
             if ch == ".":
-                return any(dfs(node[k], idx + 1) for k in node if k != "$"):
-            return False
+                return any(dfs(node[k], idx + 1) for k in node if k != "$")
 
         return dfs(self.root, 0)
 ```
