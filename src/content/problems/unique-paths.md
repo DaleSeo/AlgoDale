@@ -237,9 +237,9 @@ class Solution:
 
         for _ in range(1, m):
             left = 1
-            for col in range(1, n):
-                left += up_row[col]
-                up_row[col] = left
+            for c in range(1, n):
+                up_row[c] += left
+                left = up_row[c]
 
         return up_row[-1]
 ```
