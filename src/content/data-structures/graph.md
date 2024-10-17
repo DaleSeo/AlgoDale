@@ -126,7 +126,7 @@ def search(graph, target):
     return any(dfs(node) for node in graph)
 ```
 
-깊이 우선 탐색(BFS, Breath First Search)은 [큐(Queue)](/data-structures/queue/) 자료구조를 이용해서 많이 구현합니다.
+넓이 우선 탐색(BFS, Breadth First Search)은 [큐(Queue)](/data-structures/queue/) 자료구조를 이용해서 많이 구현합니다.
 
 ```py
 from collections import deque
