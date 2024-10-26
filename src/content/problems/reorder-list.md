@@ -116,22 +116,19 @@ class Solution:
 ```py
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
-        slow, fast = head, head
+        slow = fast = head
         while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
         curr = slow.next
         slow.next = None
 
-        # reverse the second half
         prev = None
         while curr:
             temp_next = curr.next
             curr.next = prev
-            prev = curr
-            curr = temp_next
+            prev, curr = curr, temp_next
 
-        # merge two lists
         first, second = head, prev
         while second:
             first_next, second_next = first.next, second.next
