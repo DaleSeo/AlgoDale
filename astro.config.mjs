@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import prettier from "prettier-plugin-astro";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
@@ -15,9 +14,15 @@ export default defineConfig({
   site: "https://www.algodale.com/",
   scopedStyleStrategy: "where",
   trailingSlash: "always",
-  integrations: [mdx(), sitemap(), tailwind(), partytown(), sentry(), spotlightjs()],
+  integrations: [
+    mdx(),
+    sitemap(),
+    tailwind(),
+    partytown(),
+    sentry(),
+    spotlightjs(),
+  ],
   // markdown: {
   //   rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
   // },
-  plugins: [prettier]
 });
