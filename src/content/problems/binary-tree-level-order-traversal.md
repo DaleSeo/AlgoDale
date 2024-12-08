@@ -12,6 +12,8 @@ tags:
 date: 2022-06-07
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dEW2za8gd8M?si=5NJolqPsLbpqEF9D" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 102번째 문제인 [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
@@ -96,8 +98,7 @@ LeetCode의 102번째 문제인 [Binary Tree Level Order Traversal](https://leet
 그리고 큐에서 꺼낸 노드의 자식들은 다음 단계에서 처리하기 위해서 큐에 넣어놓습니다.
 
 단순히 노드의 값을 결과 배열에 하나 씩 넣는 것이 아니라 매 단계에 있는 모든 노드의 값을 배열로 한 번 묶어서 결과 배열에 추가해야하기 때문에 구현이 좀 까다로울 수 있습니다.
-`while` 문 안에서 `for` 문을 사용하여 정확히 처음에 큐에 있던 노드의 수만큼 반복을 하여 값들을 배열로   묶어주는 것이 중요하겠습니다.
-
+`while` 문 안에서 `for` 문을 사용하여 정확히 처음에 큐에 있던 노드의 수만큼 반복을 하여 값들을 배열로 묶어주는 것이 중요하겠습니다.
 
 ```py
 from collections import deque
