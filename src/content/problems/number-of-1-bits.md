@@ -45,7 +45,7 @@ LeetCode의 191번째 문제인 [Number of 1 Bits](https://leetcode.com/problems
 
 파이썬에서는 숫자를 이진수 형태의 문자열로 바꿀 때 `bin()`이나 `format()` 내장 함수를 사용합니다.
 
-> 파이썬에서 2진수, 8진수, 16진수를 다루는 방법에 대해서는 [관련 포스팅](https://www.daleseo.com/python-int-bases/)을 참조 바랍니다.
+> 파이썬에서 2진수, 8진수, 16진수를 다루는 방법에 대해서는 [관련 포스팅](https://www.daleseo.com/python-int-bases/)을 참고하세요.
 
 그럼 이 알고리즘을 파이썬으로 구현해보겠습니다.
 
