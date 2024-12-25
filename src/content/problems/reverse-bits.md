@@ -43,18 +43,35 @@ LeetCode의 190번째 문제인 [Reverse Bits](https://leetcode.com/problems/rev
 그럼 이 알고리즘을 파이썬으로 구현해보겠습니다.
 
 ```py
-  class Solution:
-      def reverseBits(self, n: int) -> int:
-          stack = []
-          while len(stack) < 32:
-              stack.append(n % 2)
-              n //= 2
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        stack = []
+        while len(stack) < 32:
+            stack.append(n % 2)
+            n //= 2
 
-          result, scale = 0, 1
-          while stack:
-              result += stack.pop() * scale
-              scale *= 2
-          return result
+        output, scale = 0, 1
+        while stack:
+            output += stack.pop() * scale
+            scale *= 2
+        return output
+```
+
+아예 처음부터 주어진 숫자를 이진수로 다룬다면, 곱셈, 나눗셈 대신에 비트 연산(bitwise operation)을 할 수도 있겠죠?
+
+```py
+class Solution:
+    def reverseBits(self, n: int) -> int:
+        stack = []
+        while len(stack) < 32:
+            stack.append(n & 1)
+            n >>= 1
+
+        output, scale = 0, 1
+        while stack:
+            output += stack.pop() * scale
+            scale <<= 1
+        return output
 ```
 
 같은 코드를 자바스크립트로도 짜볼게요.
@@ -67,13 +84,13 @@ function reverseBits(n: number): number {
     n = Math.floor(n / 2);
   }
 
-  let result = 0,
+  let output = 0,
     scale = 1;
   while (stack.length > 0) {
-    result += stack.pop() * scale;
+    output += stack.pop() * scale;
     scale *= 2;
   }
-  return result;
+  return output;
 }
 ```
 
@@ -82,8 +99,8 @@ function reverseBits(n: number): number {
 
 ## 풀이 2
 
-이번에는 아예 처음부터 주어진 숫자를 이진수로 다뤄보면 어떨까요?
-그러면 우리는 자연스럽게 비트 연산(bitwise operation)을 활용할 수 있을텐데요.
+추가적인 메모리를 사용하지 않고 이 문제를 해결할 수는 없을까요?
+숫자 자체를 0과 1로 이루어진 32칸의 배열로 생각하면 어떨까요?
 
 기본 아이디어는 출력 숫자는 `0`부터 시작해서 한 칸씩 32번 좌측으로 쉬프트해주는 거에요.
 동시에 입력 숫자를 32번 우측으로 쉬프트하면서 `0`에서 끝나게 되겠죠?
@@ -96,19 +113,19 @@ function reverseBits(n: number): number {
 ```py
 class Solution:
     def reverseBits(self, n: int) -> int:
-        result = 0
+        output = 0
         for _ in range(32):
-            result <<= 1
-            result |= n & 1
+            output <<= 1
+            output |= n & 1
             n >>= 1
-        return result
+        return output
 ```
 
 코드는 아주 간단하지만 비트 조작이 익숙하지 않으시다면 좀 어렵게 느껴질 수도 있는데요.
 반복문 내의 로직에 대해서 부연 설명을 드리겠습니다.
 
-- `result << 1`: 제일 오른쪽에 새로운 숫자가 들어갈 자리를 마련하기 위해서 모든 비트를 왼쪽으로 1칸씩 밉니다.
-- `result = result | n & 1`: 입력 숫자의 가장 오른쪽 자리 숫자를 취해서 출력 숫자의 제일 오른쪽 자리에 반영합니다.
+- `output << 1`: 제일 오른쪽에 새로운 숫자가 들어갈 자리를 마련하기 위해서 모든 비트를 왼쪽으로 1칸씩 밉니다.
+- `output = output | n & 1`: 입력 숫자의 가장 오른쪽 자리 숫자를 취해서 출력 숫자의 제일 오른쪽 자리에 반영합니다.
 - `n = n >> 1`: 입력 숫자를 오른쪽으로 1칸씩 밀어서 가장 오른쪽 자리 숫자를 버립니다.
 
 이 알고리즘을 문제에서 주어진 두 번째 예제에 적용하면 입력 숫자와 출력 숫자가 어떻게 변화하는지 시각화해보았습니다.
