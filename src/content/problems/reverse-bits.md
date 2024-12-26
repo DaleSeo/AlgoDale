@@ -11,6 +11,8 @@ tags:
 date: 2024-05-06
 ---
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sojMmI0ZjSA?si=xXkjF9uM90r7nyTK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 LeetCode의 190번째 문제인 [Reverse Bits](https://leetcode.com/problems/reverse-bits/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
