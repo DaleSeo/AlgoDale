@@ -82,3 +82,4 @@ dp[5] = dp[4] + dp[3] = 3 + 2 = 5
 - [Word Break](/problems/word-break/)
 - [Decode Ways](/problems/decode-ways/)
 - [Coin Change](/problems/coin-change/)
+- [Longest Common Subsequence](/longest-common-subsequence/)
