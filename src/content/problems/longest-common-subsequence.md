@@ -11,14 +11,16 @@ tags:
 date: 2022-10-13
 ---
 
-LeetCode의 1143번째 문제인 [Longest Consecutive Sequence](https://leetcode.com/problems/longest-common-subsequence/)를 함께 풀어보도록 하겠습니다.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OdrC-Zhw6sw?si=CTB_0USdLDXXaKjA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+LeetCode의 1143번째 문제인 [Longest Common Sequence](https://leetcode.com/problems/longest-common-subsequence/)를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
 두 개의 문자열 `text1`과 `text2`가 주어졌을 때 두 문자열의 가장 긴 공통 부분 수열의 길이를 반환하시오.
 공통 부분 수열이 없는 경우에는 `0`을 반환하시오.
 
-문자열의 부분 수열은 원래 문자열에서 일부 글자들를 삭제하되 남은 문자들의 상대적인 순서를 바꾸지 않은 새로운 문자열입니다.
+문자열의 부분 수열은 원래 문자열에서 일부 글자들을 삭제하되 남은 문자들의 상대적인 순서를 바꾸지 않은 새로운 문자열입니다.
 
 예를 들어, `ace`는 `abcde`의 부분 수열입니다.
 
@@ -146,7 +148,7 @@ class Solution:
 ```
 
 첫 번째 문자열의 길이를 `m`, 두 번째 문자열의 길이를 `n`이라고 했을 때 이 풀이의 복잡도는 어떻게 될까요?
-재귀 함수 내에서 재귀 호출이 최대 두 번 일어날 수 있고, 최악의 경우 두 문자열 간에 일치하는 문자가 하나도 없어서 호출 스택이 두 문자열의 길이의 곱만큼 깊어질 수 있습니다.
+재귀 함수 내에서 재귀 호출이 최대 두 번 일어날 수 있고, 최악의 경우 두 문자열 간에 일치하는 글자가 하나도 없어서 호출 스택이 두 문자열의 길이의 곱만큼 깊어질 수 있습니다.
 따라서 시간 복잡도는 `O(2^(m * n))`이고, 공간 복잡도는 `O(m * n)`이 되겠습니다.
 
 ## 풀이 2
@@ -187,7 +189,7 @@ class Solution:
         return dfs(0, 0)
 ```
 
-참고로 `@cache` 데코레이터를 사용하시면 좀 더 간편하게 메모이제인션 효과를 얻을 수 있습니다.
+참고로 `@cache` 데코레이터를 사용하시면 좀 더 간편하게 메모이제이션 효과를 얻을 수 있습니다.
 
 ```py
 from functools import cache
