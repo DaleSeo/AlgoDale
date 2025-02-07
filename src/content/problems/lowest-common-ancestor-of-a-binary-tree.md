@@ -81,7 +81,7 @@ class Solution:
         if left and right:
             return node
 
-        return left if left else right
+        return left or right
 ```
 
 동일한 코드를 자바로도 한번 작성해보았습니다.
