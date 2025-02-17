@@ -14,8 +14,6 @@ LeetCode의 261번째 문제인 [Graph Valid Tree](https://leetcode.com/problems
 
 > 이 문제는 LeetCode에서 유료 구독자만 접근할 수 있습니다. LintCode의 [178번째 문제](https://www.lintcode.com/problem/178/)가 거의 동일하며 무료로 푸실 수 있으니 참고 바랍니다.
 
-# 문제
-
 주어진 `n`개의 노드에 `0`부터 `n - 1`까지 레이블이 붙은 그래프가 있습니다.
 정수 `n`과 간선 목록이 주어지는데, 여기서 `edges[i] = [ai, bi]`는 그래프에서 노드 `ai`와 `bi` 사이에 무방향 간선이 있음을 나타냅니다.
 

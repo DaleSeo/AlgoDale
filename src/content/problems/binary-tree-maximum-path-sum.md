@@ -9,7 +9,7 @@ tags:
 date: 2022-02-08
 ---
 
-LeetCode의 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) 문제를 함께 풀어보도록 하겠습니다.
+LeetCode의 124번째 문제인 [Binary Tree Maximum Path Sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/) 문제를 함께 풀어보도록 하겠습니다.
 
 ## 문제
 
