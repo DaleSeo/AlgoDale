@@ -15,7 +15,7 @@ date: 2023-02-02
 큐(queue)하면 제일 먼저 FIFO(First In, First out), 즉 선입선출을 떠올리시는 분들이 많을텐데요.
 네, 맞습니다. 큐는 기본적으로 먼저 넣은 값이 먼저 나오는 자료구조입니다.
 
-큐는 데이터가 입력되는 순서되로 처리하고 싶을 때 사용하면 매우 효율적입니다.
+큐는 데이터가 입력되는 순서대로 처리하고 싶을 때 사용하면 매우 효율적입니다.
 왜냐하면 큐에는 `O(1)`, 즉 상수 시간에 값을 넣고 뺄 수 있습니다.
 
 파이썬에서 큐가 필요할 때는 `collection` 내장 모듈의 `deque`을 사용합니다.
@@ -27,8 +27,8 @@ queue = deque()
 queue.append(1) # [1]
 queue.append(2) # [1, 2]
 queue.append(3) # [1, 2, 3]
-queue.popleft() # [1, 2]
-queue.popleft() # [1]
+queue.popleft() # [2, 3]
+queue.popleft() # [3]
 queue.popleft() # []
 ```
 
