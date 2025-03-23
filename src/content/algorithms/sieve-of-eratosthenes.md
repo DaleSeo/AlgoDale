@@ -1,5 +1,5 @@
 ---
-title: "에라토스테네스의 체(Sieve of Eratosthenes)"
+title: "에라토스테네스의 체 (Sieve of Eratosthenes)"
 tags:
   - math
   - prime
