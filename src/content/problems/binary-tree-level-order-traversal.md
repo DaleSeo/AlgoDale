@@ -173,3 +173,5 @@ class Solution:
 
 이 풀이의 복잡도도 이전 풀이와 동일하게 시간과 공간 측면에서 모두 `O(n)`이 됩니다.
 재귀 함수의 호출 스택이 트리의 높이에 비례해서 깊어지고, 최악의 경우 트리가 링크드 리스트처럼 좌측이나 오른쪽으로 뻗어나갈 수 있기 때문입니다.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eRQJzWHyQmM?si=-uDelHi1E31CbugM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
