@@ -303,7 +303,7 @@ class Solution:
 
 같은 알고리즘을 자바스크립트로 구현해볼까요?
 
-```js
+```ts
 function threeSum(nums: number[]): number[][] {
   const result = [];
   nums.sort((a, b) => a - b);

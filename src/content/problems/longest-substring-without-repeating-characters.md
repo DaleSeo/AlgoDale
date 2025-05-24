@@ -285,23 +285,24 @@ class Solution {
 
 동일한 알고리즘을 자바스크립트로 짜면 다음과 같습니다.
 
-```js
+```ts
 function lengthOfLongestSubstring(s: string): number {
-     let maxLen = 0;
-     const chars = new Set<string>();
-     let start = 0, end = 0;
-     while (end < s.length) {
-         if (chars.has(s[end])) {
-             chars.delete(s[start]);
-             start++;
-         } else {
-             chars.add(s[end]);
-             end++;
-             maxLen = Math.max(end - start, maxLen);
-         }
-     }
-     return maxLen;
- };
+  let maxLen = 0;
+  const chars = new Set<string>();
+  let start = 0,
+    end = 0;
+  while (end < s.length) {
+    if (chars.has(s[end])) {
+      chars.delete(s[start]);
+      start++;
+    } else {
+      chars.add(s[end]);
+      end++;
+      maxLen = Math.max(end - start, maxLen);
+    }
+  }
+  return maxLen;
+}
 ```
 
 이 풀이는 하나의 `while` 루프를 사용하여 시작 인덱스와 끝 인덱스 중 하나를 증가시켜나가기 때문에 `O(2n) = O(n)`의 시간 복잡도를 가지게 됩니다.

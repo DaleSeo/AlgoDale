@@ -188,7 +188,7 @@ class Solution:
 
 같은 알고리즘을 자바스크립트로도 한번 구현해보았습니다.
 
-```js
+```ts
 function wordBreak(s: string, wordDict: string[]): boolean {
   const memo = {};
 

@@ -149,7 +149,7 @@ class Solution {
 
 자바스크립트로도 구현해보았습니다.
 
-```js
+```ts
 var maxDepth = function (root) {
   if (!root) return 0;
   let max = 0;
@@ -248,7 +248,7 @@ class Solution {
 
 자바스크립트로 구현하면 다음과 같습니다.
 
-```js
+```ts
 var maxDepth = function (root) {
   if (!root) return 0;
   return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));

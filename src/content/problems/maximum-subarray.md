@@ -194,7 +194,7 @@ class Solution:
 
 동일한 코드를 자바스크립트로도 구현해볼께요.
 
-```js
+```ts
 function maxSubArray(nums: number[]): number {
   let maxSum = nums[0];
   let sum = 0;

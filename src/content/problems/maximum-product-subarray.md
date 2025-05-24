@@ -204,7 +204,7 @@ class Solution:
 
 동일한 코드를 자바스크립트로도 구현해볼께요.
 
-```js
+```ts
 function maxProduct(nums: number[]): number {
   let result = nums[0];
   let max = 1,

@@ -69,10 +69,13 @@ class Solution:
 
 동일한 코드를 자바스크립트로도 작성해보았습니다.
 
-```js
+```ts
 function hammingWeight(n: number): number {
-  return n.toString(2).split('').filter(bit => bit === '1').length;
-};
+  return n
+    .toString(2)
+    .split("")
+    .filter((bit) => bit === "1").length;
+}
 ```
 
 이 풀이의 시간 복잡도는 `O(log n)`이 되는데요.
@@ -126,15 +129,15 @@ class Solution:
 
 동일한 코드를 자바스크립트로도 작성해보았습니다.
 
-```js
+```ts
 function hammingWeight(n: number): number {
   let cnt = 0;
   while (n > 0) {
-      cnt += n % 2;
-      n = Math.floor(n / 2);
+    cnt += n % 2;
+    n = Math.floor(n / 2);
   }
   return cnt;
-};
+}
 ```
 
 이 풀이도 계속해서 입력 값을 반으로 나누기 때문에 시간 복잡도가 `O(log n)`이 됩니다.
@@ -186,7 +189,7 @@ class Solution:
 
 자바스크립트로로 작성한 코드도 거의 동일합니다.
 
-```js
+```ts
 function hammingWeight(n: number): number {
   let cnt = 0;
   while (n) {
@@ -194,7 +197,7 @@ function hammingWeight(n: number): number {
     n >>= 1;
   }
   return cnt;
-};
+}
 ```
 
 이 알고리즘의 반복의 횟수를 생각해보면 이전 풀이와 유의미한 차이가 없다는 것을 알 수 있습니다.

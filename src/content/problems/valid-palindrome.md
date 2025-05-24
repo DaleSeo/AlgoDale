@@ -112,22 +112,20 @@ class Solution:
 
 동일한 알고리즘을 자바스크립트로도 짜보았습니다..
 
-```js
+```ts
 function isPalindrome(s: string): boolean {
-    let low = 0, high = s.length - 1;
+  let low = 0,
+    high = s.length - 1;
 
-    while (low < high) {
-      while (low < high && !s[low].match(/[a-zA-Z0-9]/))
-        low++;
-      while (low < high && !s[high].match(/[a-zA-Z0-9]/))
-        high--;
-      if (s[low].toLowerCase() !== s[high].toLowerCase())
-        return false;
-      low++;
-      high--;
-    }
-    return true;
-};
+  while (low < high) {
+    while (low < high && !s[low].match(/[a-zA-Z0-9]/)) low++;
+    while (low < high && !s[high].match(/[a-zA-Z0-9]/)) high--;
+    if (s[low].toLowerCase() !== s[high].toLowerCase()) return false;
+    low++;
+    high--;
+  }
+  return true;
+}
 ```
 
 이 풀이를 통해서 우리는 시간 복잡도는 `O(n)`으로 유지하면서도, 공간 복잡도를 `O(1)`로 향상시키게 되었습니다. 🤗

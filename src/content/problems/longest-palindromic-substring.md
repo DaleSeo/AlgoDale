@@ -203,9 +203,9 @@ function longestPalindrome(s: string): string {
 > If s + 1 == e and if S[s] == S[e], then palindrome(s, e) is True.
 
 이런 방식으로 더 작은 문자열의 회문 검사 결과를 더 큰 문자열을 검사할 때 재활용하면 회문 검사에 소요되는 시간을 O(n)에서 O(1)으로 단축시킬 수 있습니다.
-그리고 모든 부분 문자열의 회문 검사를 저장해놓을 자료구조가 필요한데 2차원 배열이나 시작, 끝 인덱스를 키로 갖는 해시테이블을 이용할 수 있습니다.
+그리고 모든 부분 문자열의 회문 검사를 저장해놓을 자료구조가 필요한데 이차원배열이나 시작, 끝 인덱스를 키로 갖는 해시테이블을 이용할 수 있습니다.
 
-동적 계획법을 활용하여 2차원 배열에 회문 검사를 짧은 문자열부터 긴 문자열 순서로 저장해 나가겠습니다.
+동적 계획법을 활용하여 이차원배열에 회문 검사를 짧은 문자열부터 긴 문자열 순서로 저장해 나가겠습니다.
 일단 모든 부분 문자열을 구하기 위해서 이중 루프로 모든 가능한 시작 인덱스와 끝 인덱스의 조합을 만들어내야 합니다.
 그리고 각 시작, 끝 인덱스 쌍에 대해서 자료구조에 회문인지를 더 짧은 문자열의 검사 결과를 재활용하여 검사하여 그 결과를 다시 더 큰 문자열을 위해서 자료구조에 저장해줘야 합니다.
 
@@ -261,11 +261,11 @@ class Solution {
 }
 ```
 
-이 이중 루프를 사용하는 풀이는 `O(n^2)`의 시간 복잡도를 가지며, 2차원 배열을 사용하므로 공간 복잡도도 `O(n^2)`이 됩니다.
+이 이중 루프를 사용하는 풀이는 `O(n^2)`의 시간 복잡도를 가지며, 이차원배열을 사용하므로 공간 복잡도도 `O(n^2)`이 됩니다.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rGySPuTuYEI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## 마치면서
+## 마치며
 
-LeetCode에서 회문과 관련된 다른 유명한 문제로 [Valid Palindrome](/problems/valid-palindrome/)이 있습니다.
-이 문제보다는 쉬운 문제이므로 이 문제가 너무 어려우셨다면 먼저 풀어보시면 도움이 될 것 같습니다.
+LeetCode에서 비슷한 문제로 [Delete Operation for Two Strings](/problems/delete-operation-for-two-strings/)이 있습니다.
+함께 연습해보시면 도움이 될 것 같습니다.
