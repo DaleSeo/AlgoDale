@@ -271,7 +271,7 @@ class Solution:
         return -1
 ```
 
-이번에는 자바스크리븥로 구현해볼까요?
+이번에는 자바스크립트로 구현해볼까요?
 
 ```ts
 function search(nums: number[], target: number): number {
