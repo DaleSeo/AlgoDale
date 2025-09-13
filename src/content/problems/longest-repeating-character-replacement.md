@@ -240,7 +240,7 @@ class Solution:
         for end in range(len(s)):
             counter[s[end]] = counter.get(s[end], 0) + 1
             max_cnt = max(counter[s[end]], max_cnt)
-            while end - start + 1 - max_cnt > k:
+            if end - start + 1 - max_cnt > k:
                 counter[s[start]] -= 1
                 start += 1
             max_len = max(end - start + 1, max_len)
