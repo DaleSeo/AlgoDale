@@ -8,6 +8,7 @@ import partytown from "@astrojs/partytown";
 
 import sentry from "@sentry/astro";
 import spotlightjs from "@spotlightjs/astro";
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,6 +22,7 @@ export default defineConfig({
     partytown(),
     sentry(),
     spotlightjs(),
+    icon(),
   ],
   // markdown: {
   //   rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
