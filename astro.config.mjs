@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 import partytown from "@astrojs/partytown";
 // import rehypeSlug from "rehype-slug";
 // import rehypeAutolinkHeadings from "rehype-autolink-headings";
@@ -18,12 +18,14 @@ export default defineConfig({
   integrations: [
     mdx(),
     sitemap(),
-    tailwind(),
     partytown(),
     sentry(),
     spotlightjs(),
     icon(),
   ],
+  vite: {
+    plugins: [tailwindcss({ config: "./tailwind.config.js" })],
+  },
   // markdown: {
   //   rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
   // },

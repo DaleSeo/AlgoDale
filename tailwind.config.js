@@ -1,5 +1,7 @@
+import typography from "@tailwindcss/typography";
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
@@ -10,7 +12,7 @@ module.exports = {
         background: "#f3f5f7",
         text: "#151519",
       },
-      typography: (theme) => ({
+      typography: ({ theme }) => ({
         DEFAULT: {
           css: {
             a: {
@@ -38,5 +40,7 @@ module.exports = {
       }),
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [typography],
 };
+
+export default config;

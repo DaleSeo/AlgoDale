@@ -1,3 +1,6 @@
+@config "../../tailwind.config.js";
+@import "tailwindcss";
+
 @font-face {
   font-family: "Spoqa Han Sans Neo";
   font-weight: 400;
@@ -14,151 +17,155 @@
   src: url("/fonts/SpoqaHanSansNeo-Bold.woff2") format("woff2");
 }
 
-:root {
-  --color-background: hsl(210deg, 20%, 96%);
-  --color-background-secondary: hsl(60deg 100% 100%);
-  /* --color-text: hsl(214deg 100% 15%);
-  --color-headline: hsl(214deg 100% 15%);
-  --color-paragraph: hsl(214deg 44% 19%); */
-  --color-text: hsl(216deg, 6%, 15%);
-  --color-headline: hsl(216deg 6% 15%);
-  --color-paragraph: hsl(240deg 8% 9%);
+@layer base {
+  :root {
+    --color-background: hsl(210deg, 20%, 96%);
+    --color-background-secondary: hsl(60deg 100% 100%);
+    /* --color-text: hsl(214deg 100% 15%);
+    --color-headline: hsl(214deg 100% 15%);
+    --color-paragraph: hsl(214deg 44% 19%); */
+    --color-text: hsl(216deg, 6%, 15%);
+    --color-headline: hsl(216deg 6% 15%);
+    --color-paragraph: hsl(240deg 8% 9%);
 
-  /* --color-primary: hsl(171deg 100% 46%); */
-  --color-primary: hsl(255deg 83% 65%);
-  /* --color-secondary: hsl(350deg 100% 66%); */
-  --color-secondary: hsl(161deg, 66%, 37%);
-  --color-tertiary: hsl(51deg 98% 65%);
-  --color-gray: hsl(225deg, 12%, 40%);
-  --color-gray-1000: hsl(225deg, 15%, 15%);
-  --color-overlay: hsl(220deg 5% 40% / 0.8);
+    /* --color-primary: hsl(171deg 100% 46%); */
+    --color-primary: hsl(255deg 83% 65%);
+    /* --color-secondary: hsl(350deg 100% 66%); */
+    --color-secondary: hsl(161deg, 66%, 37%);
+    --color-tertiary: hsl(51deg 98% 65%);
+    --color-gray: hsl(225deg, 12%, 40%);
+    --color-gray-1000: hsl(225deg, 15%, 15%);
+    --color-overlay: hsl(220deg 5% 40% / 0.8);
 
-  --spacing-1: 4px;
-  --spacing-2: 8px;
-  --spacing-3: 12px;
-  --spacing-4: 16px;
-  --spacing-5: 20px;
-  --spacing-6: 24px;
-  --spacing-7: 28px;
-  --spacing-8: 32px;
-  --spacing-9: 36px;
-  --spacing-10: 40px;
-  --spacing-11: 44px;
-  --spacing-12: 48px;
-  --spacing-13: 52px;
-  --spacing-14: 56px;
-  --spacing-15: 60px;
-  --spacing-16: 64px;
-  --spacing-17: 68px;
-  --spacing-18: 72px;
-  --spacing-19: 76px;
-  --spacing-20: 80px;
+    --spacing-1: 4px;
+    --spacing-2: 8px;
+    --spacing-3: 12px;
+    --spacing-4: 16px;
+    --spacing-5: 20px;
+    --spacing-6: 24px;
+    --spacing-7: 28px;
+    --spacing-8: 32px;
+    --spacing-9: 36px;
+    --spacing-10: 40px;
+    --spacing-11: 44px;
+    --spacing-12: 48px;
+    --spacing-13: 52px;
+    --spacing-14: 56px;
+    --spacing-15: 60px;
+    --spacing-16: 64px;
+    --spacing-17: 68px;
+    --spacing-18: 72px;
+    --spacing-19: 76px;
+    --spacing-20: 80px;
 
-  --font-size-1: 0.25rem;
-  --font-size-2: 0.5rem;
-  --font-size-3: 0.75rem;
-  --font-size-3-5: 0.875rem;
-  --font-size-4: 1rem;
-  --font-size-4-5: 1.125rem;
-  --font-size-5: 1.25rem;
-  --font-size-6: 1.5rem;
-  --font-size-7: 1.75rem;
-  --font-size-8: 2rem;
-  --font-size-9: 2.25rem;
-  --font-size-10: 2.5rem;
-  --font-size-p: 1.125rem;
-  --font-size-h6: 0.875rem;
-  --font-size-h5: 1rem;
-  --font-size-h4: 1.2rem;
-  --font-size-h3: 1.5rem;
-  --font-size-h2: 1.8rem;
-  --font-size-h1: 2.1rem;
+    --font-size-1: 0.25rem;
+    --font-size-2: 0.5rem;
+    --font-size-3: 0.75rem;
+    --font-size-3-5: 0.875rem;
+    --font-size-4: 1rem;
+    --font-size-4-5: 1.125rem;
+    --font-size-5: 1.25rem;
+    --font-size-6: 1.5rem;
+    --font-size-7: 1.75rem;
+    --font-size-8: 2rem;
+    --font-size-9: 2.25rem;
+    --font-size-10: 2.5rem;
+    --font-size-p: 1.125rem;
+    --font-size-h6: 0.875rem;
+    --font-size-h5: 1rem;
+    --font-size-h4: 1.2rem;
+    --font-size-h3: 1.5rem;
+    --font-size-h2: 1.8rem;
+    --font-size-h1: 2.1rem;
 
-  --font-weight-regular: 400;
-  --font-weight-bold: 700;
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
 
-  --font-family-sans: "Spoqa Han Sans Neo", -apple-system, BlinkMacSystemFont,
-    avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto,
-    noto, arial, sans-serif;
-  --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-    monospace;
-  --font-family-serif: Iowan Old Style, Apple Garamond, Baskerville,
-    Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
-    Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --font-family-sans: "Spoqa Han Sans Neo", -apple-system,
+      BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
+      helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+    --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
+      monospace;
+    --font-family-serif: Iowan Old Style, Apple Garamond, Baskerville,
+      Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
+      Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
-  --radius-1: 2px;
-  --radius-2: 5px;
-  --radius-3: 1rem;
-  --radius-4: 2rem;
-  --radius-5: 4rem;
-  --radius-6: 8rem;
-  --radius-round: 1e5px;
+    --radius-1: 2px;
+    --radius-2: 5px;
+    --radius-3: 1rem;
+    --radius-4: 2rem;
+    --radius-5: 4rem;
+    --radius-6: 8rem;
+    --radius-round: 1e5px;
+  }
+
+  body.dark-mode {
+    --color-background: hsl(216deg 6% 15%);
+    --color-background-secondary: hsl(240deg 8% 9%);
+    --color-text: hsl(60deg 100% 100%);
+    --color-headline: hsl(60deg 100% 100%);
+    --color-paragraph: hsl(214deg 16% 64%);
+    --color-primary: hsl(255deg 83% 65%);
+    --color-secondary: hsl(155deg 61% 44%);
+    --color-tertiary: hsl(225deg 5% 47%);
+    --color-gray: hsl(210deg, 14%, 66%);
+  }
+
+  html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    color: var(--color-text);
+    background: var(--color-background);
+    font-family: var(--font-family-sans);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.6;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  p {
+    color: var(--color-paragraph);
+  }
+
+  strong {
+    font-weight: var(--font-weight-bold);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-headline);
+    font-weight: var(--font-weight-bold);
+  }
+
+  iframe[title="YouTube video player"] {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-body.dark-mode {
-  --color-background: hsl(216deg 6% 15%);
-  --color-background-secondary: hsl(240deg 8% 9%);
-  --color-text: hsl(60deg 100% 100%);
-  --color-headline: hsl(60deg 100% 100%);
-  --color-paragraph: hsl(214deg 16% 64%);
-  --color-primary: hsl(255deg 83% 65%);
-  --color-secondary: hsl(155deg 61% 44%);
-  --color-tertiary: hsl(225deg 5% 47%);
-  --color-gray: hsl(210deg, 14%, 66%);
-}
-
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
-
-body {
-  color: var(--color-text);
-  background: var(--color-background);
-  font-family: var(--font-family-sans);
-  font-weight: var(--font-weight-regular);
-  line-height: 1.6;
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-}
-
-p {
-  color: var(--color-paragraph);
-}
-
-strong {
-  font-weight: var(--font-weight-bold);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-headline);
-  font-weight: var(--font-weight-bold);
-}
-
-iframe[title="YouTube video player"] {
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  height: 100%;
-}
-
-.max-width {
-  width: 100%;
-  max-width: 64rem;
-  margin-inline: auto;
-  padding-inline: var(--spacing-4);
-  @media (min-width: 640px) {
-    padding-inline: var(--spacing-8);
+@layer utilities {
+  .max-width {
+    width: 100%;
+    max-width: 64rem;
+    margin-inline: auto;
+    padding-inline: var(--spacing-4);
+    @media (min-width: 640px) {
+      padding-inline: var(--spacing-8);
+    }
   }
 }
