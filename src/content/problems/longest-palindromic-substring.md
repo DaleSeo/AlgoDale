@@ -167,7 +167,7 @@ function longestPalindrome(s: string): string {
       end++;
     }
 
-    (start = i), (end = i + 1);
+    ((start = i), (end = i + 1));
     while (0 <= start && end < s.length && s[start] === s[end]) {
       if (end - start > maxEnd - maxStart) {
         maxStart = start;

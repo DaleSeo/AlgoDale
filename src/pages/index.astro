@@ -6,7 +6,7 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 import { shuffle } from "~/utils";
 
 const problems = shuffle(
-  await getCollection("problems", (problem) => !problem.data.draft)
+  await getCollection("problems", (problem) => !problem.data.draft),
 )
   .slice(0, 6)
   .map(({ collection, slug, data: { title, tags } }) => ({
@@ -17,7 +17,7 @@ const problems = shuffle(
   }));
 
 const algorithms = shuffle(
-  await getCollection("algorithms", (algorithms) => !algorithms.data.draft)
+  await getCollection("algorithms", (algorithms) => !algorithms.data.draft),
 )
   .slice(0, 6)
   .map(({ collection, slug, data: { title, tags } }) => ({
@@ -30,8 +30,8 @@ const algorithms = shuffle(
 const dataStructures = shuffle(
   await getCollection(
     "data-structures",
-    (dataStructures) => !dataStructures.data.draft
-  )
+    (dataStructures) => !dataStructures.data.draft,
+  ),
 )
   .slice(0, 4)
   .map(({ collection, slug, data: { title, tags } }) => ({
@@ -42,7 +42,7 @@ const dataStructures = shuffle(
   }));
 
 const guides = shuffle(
-  await getCollection("guides", (dataStructures) => !dataStructures.data.draft)
+  await getCollection("guides", (dataStructures) => !dataStructures.data.draft),
 )
   .slice(0, 2)
   .map(({ collection, slug, data: { title } }) => ({

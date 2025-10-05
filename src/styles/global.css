@@ -32,9 +32,6 @@
     --color-gray-1000: hsl(225deg, 15%, 15%);
     --color-overlay: hsl(220deg 5% 40% / 0.8);
 
-    --font-weight-regular: 400;
-    --font-weight-bold: 700;
-
     --font-family-sans:
       "Spoqa Han Sans Neo", -apple-system, BlinkMacSystemFont, avenir next,
       avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial,
@@ -81,7 +78,7 @@
     color: var(--color-text);
     background: var(--color-background);
     font-family: var(--font-family-sans);
-    font-weight: var(--font-weight-regular);
+    font-weight: 400;
     line-height: 1.6;
     min-height: 100vh;
     min-height: 100dvh;
@@ -93,10 +90,6 @@
     color: var(--color-paragraph);
   }
 
-  strong {
-    font-weight: var(--font-weight-bold);
-  }
-
   h1,
   h2,
   h3,
@@ -104,7 +97,7 @@
   h5,
   h6 {
     color: var(--color-headline);
-    font-weight: var(--font-weight-bold);
+    font-weight: 700;
   }
 
   iframe[title="YouTube video player"] {

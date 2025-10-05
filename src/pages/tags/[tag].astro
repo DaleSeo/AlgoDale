@@ -11,14 +11,14 @@ export async function getStaticPaths() {
   const programs = await getCollection("problems", ({ data }) => !data.draft);
   const algorithms = await getCollection(
     "algorithms",
-    ({ data }) => !data.draft
+    ({ data }) => !data.draft,
   );
   const dataStructures = await getCollection(
     "data-structures",
-    ({ data }) => !data.draft
+    ({ data }) => !data.draft,
   );
   const posts = [...programs, ...algorithms, ...dataStructures].sort(
-    (a, b) => a.data.date.valueOf() - b.data.date.valueOf()
+    (a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
   );
 
   const tagIds = [
@@ -26,7 +26,7 @@ export async function getStaticPaths() {
       posts
         .map((post) => post.data.tags)
         .filter(Boolean)
-        .flat()
+        .flat(),
     ),
   ];
 
@@ -48,7 +48,7 @@ export async function getStaticPaths() {
         params: { tag: tagId },
         props: { tagName, articles },
       };
-    })
+    }),
   );
 }
 

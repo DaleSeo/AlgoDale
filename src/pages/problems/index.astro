@@ -5,7 +5,7 @@ import { shuffle } from "~/utils";
 
 const problems = await getCollection(
   "problems",
-  (problem) => !problem.data.draft
+  (problem) => !problem.data.draft,
 );
 
 const articles = shuffle(problems).map(
@@ -14,7 +14,7 @@ const articles = shuffle(problems).map(
     slug,
     title,
     tags,
-  })
+  }),
 );
 ---
 

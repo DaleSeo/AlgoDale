@@ -13,8 +13,7 @@ const { to, external = false, inline = false } = Astro.props;
   target={external ? "_blank" : undefined}
   rel={external ? "noopener noreferrer" : undefined}
   class:list={[
-    "items-center gap-1 text-primary",
+    "text-primary items-center gap-1",
     inline ? "inline-flex" : "flex",
-  ]}
-  ><slot /></a
+  ]}><slot /></a
 >

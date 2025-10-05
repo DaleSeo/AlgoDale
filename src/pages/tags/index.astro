@@ -8,10 +8,10 @@ const tags = await getCollection("tags");
   <h1>Tag Index</h1>
   {
     tags.map((tag) => (
-      <p
-        class="m-1 rounded-lg border border-dotted border-[#a1a1a1] bg-[#f8fcfd] px-4 py-2 text-[1.15em]"
-      >
-        <a href={`/tags/${tag.id}`} class="text-[#00539f]">{tag.id}</a>
+      <p class="m-1 rounded-lg border border-dotted border-[#a1a1a1] bg-[#f8fcfd] px-4 py-2 text-[1.15em]">
+        <a href={`/tags/${tag.id}`} class="text-[#00539f]">
+          {tag.id}
+        </a>
       </p>
     ))
   }

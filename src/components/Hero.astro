@@ -5,7 +5,7 @@ import hero from "~/assets/hero.jpg";
 ---
 
 <header
-  class="relative grid h-[min(40vh,400px)] place-items-center overflow-hidden bg-black/20 my-8"
+  class="relative my-8 grid h-[min(40vh,400px)] place-items-center overflow-hidden bg-black/20"
 >
   <div class="relative z-10 p-1 text-center text-white">
     <h1 class="text-5xl leading-loose text-white">{SITE_TITLE}</h1>
@@ -16,6 +16,6 @@ import hero from "~/assets/hero.jpg";
   <Image
     src={hero}
     alt=""
-    class="absolute inset-0 h-full w-full object-cover -z-10"
+    class="absolute inset-0 -z-10 h-full w-full object-cover"
   />
 </header>

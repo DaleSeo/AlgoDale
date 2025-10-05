@@ -4,7 +4,7 @@ import ListLayout from "~/layouts/ListLayout.astro";
 
 const algorithms = await getCollection(
   "algorithms",
-  (algorithms) => !algorithms.data.draft
+  (algorithms) => !algorithms.data.draft,
 );
 
 const articles = algorithms

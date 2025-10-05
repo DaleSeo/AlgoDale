@@ -9,6 +9,6 @@ interface Props {
 const { tags } = Astro.props;
 ---
 
-<div class="flex justify-end flex-wrap gap-1">
+<div class="flex flex-wrap justify-end gap-1">
   {tags.map((tag) => <TagLink tag={tag} />)}
 </div>

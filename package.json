@@ -10,7 +10,8 @@
     "start": "npm run dev",
     "build": "NODE_OPTIONS='--max-old-space-size=8192' astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.6",
@@ -34,20 +35,21 @@
     "@iconify-json/uiw": "^1.2.3",
     "@sentry/astro": "^10.17.0",
     "@spotlightjs/astro": "^3.2.6",
+    "@tailwindcss/postcss": "^4.1.14",
     "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.14",
     "astro": "^5.14.1",
     "astro-icon": "^1.1.5",
     "astro-seo": "^0.8.0",
-    "rehype-toc": "^3.0.2",
-    "tailwindcss": "^4.1.14",
-    "@tailwindcss/vite": "^4.1.14",
-    "@tailwindcss/postcss": "^4.1.14",
     "postcss-import": "^16.1.1",
-    "postcss-nesting": "^13.0.2"
+    "postcss-nesting": "^13.0.2",
+    "rehype-toc": "^3.0.2",
+    "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.6.1",
     "prettier": "^3.4.2",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.14"
   }
 }

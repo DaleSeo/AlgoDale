@@ -11,7 +11,7 @@ const { headings } = Astro.props;
 ---
 
 <aside
-  class="relative hidden border-l border-l-gray/40 py-24 pl-8 text-text lg:sticky lg:top-0 lg:block lg:shrink lg:grow-0 lg:basis-[280px]"
+  class="border-l-gray/40 text-text relative hidden border-l py-24 pl-8 lg:sticky lg:top-0 lg:block lg:shrink lg:grow-0 lg:basis-[280px]"
 >
   <nav>
     <h2 class="mb-4 text-xl">목차</h2>
@@ -21,7 +21,7 @@ const { headings } = Astro.props;
         .map(({ slug, text }) => (
           <a
             href={`#${slug}`}
-            class="block hover:font-bold hover:text-primary hover:no-underline"
+            class="hover:text-primary block hover:font-bold hover:no-underline"
           >
             {text}
           </a>

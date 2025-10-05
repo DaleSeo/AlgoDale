@@ -3,40 +3,26 @@ const nums = [5, 7, 3];
 ---
 
 <figure
-  class="flex items-center justify-center overflow-x-auto whitespace-nowrap py-8"
+  class="flex items-center justify-center overflow-x-auto py-8 whitespace-nowrap"
 >
-  <div
-    class="rounded-full bg-background px-4 py-4 text-text text-2xl"
-  >
+  <div class="bg-background text-text rounded-full px-4 py-4 text-2xl">
     head
   </div>
-  <div
-    class="-mr-6 -translate-x-6 px-2 py-1 text-text text-3xl"
-  >
-    --&gt;
-  </div>
+  <div class="text-text -mr-6 -translate-x-6 px-2 py-1 text-3xl">--&gt;</div>
   {
     nums.map((num) => (
       <>
-        <div
-          class="flex items-stretch rounded-lg border-2 border-text text-primary text-3xl"
-        >
+        <div class="border-text text-primary flex items-stretch rounded-lg border-2 text-3xl">
           <div class="px-2 py-1">{num}</div>
-          <div class="border-l-2 border-l-text px-2 py-1">
-            &nbsp;&nbsp;
-          </div>
+          <div class="border-l-text border-l-2 px-2 py-1">&nbsp;&nbsp;</div>
         </div>
-        <div
-          class="-mr-6 -translate-x-6 px-2 py-1 text-text text-3xl"
-        >
+        <div class="text-text -mr-6 -translate-x-6 px-2 py-1 text-3xl">
           --&gt;
         </div>
       </>
     ))
   }
-  <div
-    class="rounded-full bg-background px-4 py-4 text-text text-2xl"
-  >
+  <div class="bg-background text-text rounded-full px-4 py-4 text-2xl">
     null
   </div>
 </figure>

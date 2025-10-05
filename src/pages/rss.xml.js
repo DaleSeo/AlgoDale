@@ -24,7 +24,7 @@ export async function get(context) {
   const dataStructures = (
     await getCollection(
       "data-structures",
-      (dataStructures) => !dataStructures.data.draft
+      (dataStructures) => !dataStructures.data.draft,
     )
   ).map((post) => ({
     title: post.data.title,
@@ -36,7 +36,7 @@ export async function get(context) {
   const guides = (
     await getCollection(
       "guides",
-      (dataStructures) => !dataStructures.data.draft
+      (dataStructures) => !dataStructures.data.draft,
     )
   ).map((post) => ({
     title: post.data.title,
@@ -50,7 +50,7 @@ export async function get(context) {
     description: SITE_DESCRIPTION,
     site: context.site,
     items: [...guides, ...algorithms, ...dataStructures, ...problems].sort(
-      (a, b) => a.pubDate.valueOf() - b.pubDate.valueOf()
+      (a, b) => a.pubDate.valueOf() - b.pubDate.valueOf(),
     ),
   });
 }

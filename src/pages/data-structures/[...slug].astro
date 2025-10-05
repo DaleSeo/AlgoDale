@@ -5,7 +5,7 @@ import ArticleLayout from "~/layouts/ArticleLayout.astro";
 export async function getStaticPaths() {
   const posts = await getCollection(
     "data-structures",
-    (post) => !post.data.draft
+    (post) => !post.data.draft,
   );
   return posts.map((post) => ({
     params: { slug: post.slug },
