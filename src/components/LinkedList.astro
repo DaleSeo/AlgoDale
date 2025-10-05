@@ -2,63 +2,41 @@
 const nums = [5, 7, 3];
 ---
 
-<figure>
-  <div class="head">head</div>
-  <div class="edge">--&gt;</div>
+<figure
+  class="flex items-center justify-center overflow-x-auto whitespace-nowrap py-8"
+>
+  <div
+    class="rounded-full bg-(--color-background) px-4 py-4 text-(--color-text) text-2xl"
+  >
+    head
+  </div>
+  <div
+    class="-mr-6 -translate-x-6 px-2 py-1 text-(--color-text) text-3xl"
+  >
+    --&gt;
+  </div>
   {
     nums.map((num) => (
       <>
-        <div class="node">
-          <div class="val">{num}</div>
-          <div class="next">&nbsp;&nbsp;</div>
+        <div
+          class="flex items-stretch rounded-lg border-2 border-(--color-text) text-(--color-primary) text-3xl"
+        >
+          <div class="px-2 py-1">{num}</div>
+          <div class="border-l-2 border-l-(--color-text) px-2 py-1">
+            &nbsp;&nbsp;
+          </div>
         </div>
-        <div class="edge">--&gt;</div>
+        <div
+          class="-mr-6 -translate-x-6 px-2 py-1 text-(--color-text) text-3xl"
+        >
+          --&gt;
+        </div>
       </>
     ))
   }
-  <div class="null">null</div>
+  <div
+    class="rounded-full bg-(--color-background) px-4 py-4 text-(--color-text) text-2xl"
+  >
+    null
+  </div>
 </figure>
-
-<style>
-  figure {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: var(--spacing-8) 0;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  div {
-    padding: var(--spacing-1) var(--spacing-2);
-    font-size: var(--font-size-8);
-  }
-
-  div.node {
-    display: flex;
-    border: 2px solid var(--color-text);
-    border-radius: var(--spacing-2);
-    color: var(--color-primary);
-
-    & div.val {
-    }
-
-    & div.next {
-      border-left: 2px solid var(--color-text);
-    }
-  }
-
-  div.head,
-  div.null {
-    font-size: var(--font-size-6);
-    padding: var(--spacing-4);
-    color: var(--color-text);
-    background: var(--color-background);
-    border-radius: 50%;
-  }
-
-  div.edge {
-    transform: translateX(-24px);
-    margin-right: -24px;
-  }
-</style>

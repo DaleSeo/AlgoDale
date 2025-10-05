@@ -3,33 +3,11 @@ import Logo from "./HeaderLogo.astro";
 import Nav from "./HeaderNav.astro";
 ---
 
-<div>
-  <header class="max-width">
+<div
+  class="sticky top-[-16px] z-[1] pt-4 transition-colors duration-[350ms] bg-(--color-background) opacity-[0.85] backdrop-blur-[10px]"
+>
+  <header class="max-width flex items-center gap-4 py-4">
     <Logo />
     <Nav />
   </header>
 </div>
-
-<style>
-  div {
-    position: sticky;
-    z-index: 1;
-    top: -16px;
-    padding-top: var(--spacing-4);
-    transition: background 350ms ease 0s;
-    background: var(--color-background);
-    opacity: 0.85;
-    backdrop-filter: blur(10px);
-  }
-
-  header {
-    display: flex;
-    /* flex-direction: column; */
-    gap: var(--spacing-4);
-    align-items: center;
-    padding-block: 16px;
-    @media (min-width: 34.375rem) {
-      flex-direction: row;
-    }
-  }
-</style>

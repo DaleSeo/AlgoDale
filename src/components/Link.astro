@@ -6,21 +6,15 @@ interface Props {
 }
 
 const { to, external = false, inline = false } = Astro.props;
-
-const display = inline ? "inline-flex" : "flex";
 ---
 
 <a
   href={to}
   target={external ? "_blank" : undefined}
-  rel={external ? "noopener noreferrer" : undefined}><slot /></a
+  rel={external ? "noopener noreferrer" : undefined}
+  class:list={[
+    "items-center gap-1 text-(--color-primary)",
+    inline ? "inline-flex" : "flex",
+  ]}
+  ><slot /></a
 >
-
-<style define:vars={{ display }}>
-  a {
-    color: var(--color-primary);
-    display: var(--display);
-    align-items: center;
-    gap: var(--spacing-1);
-  }
-</style>

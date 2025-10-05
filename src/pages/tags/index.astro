@@ -4,34 +4,15 @@ import { getCollection } from "astro:content";
 const tags = await getCollection("tags");
 ---
 
-<div class="tags">
+<div class="mx-auto flex flex-wrap gap-2">
   <h1>Tag Index</h1>
   {
     tags.map((tag) => (
-      <p class="tag">
-        <a href={`/tags/${tag.id}`}>{tag.id}</a>
+      <p
+        class="m-1 rounded-lg border border-dotted border-[#a1a1a1] bg-[#f8fcfd] px-4 py-2 text-[1.15em]"
+      >
+        <a href={`/tags/${tag.id}`} class="text-[#00539f]">{tag.id}</a>
       </p>
     ))
   }
 </div>
-
-<style>
-  a {
-    color: #00539f;
-  }
-
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-  }
-
-  .tag {
-    margin: 0.25em;
-    border: dotted 1px #a1a1a1;
-    border-radius: 0.5em;
-    padding: 0.5em 1em;
-    font-size: 1.15em;
-    background-color: #f8fcfd;
-  }
-</style>

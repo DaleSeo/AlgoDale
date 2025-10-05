@@ -5,48 +5,18 @@ import Social from "./Social.astro";
 const today = new Date();
 ---
 
-<div>
-  <footer class="max-width">
+<div
+  class="mt-auto pb-15 isolate transition-colors duration-[350ms] bg-(--color-background)"
+>
+  <footer class="max-width flex flex-col gap-4 p-10">
     <section class="flex flex-wrap items-center justify-around gap-4">
       <Logo />
       <Social />
     </section>
-    <scetion>
-      <p>
+    <section>
+      <p class="text-center text-sm font-normal text-(--color-gray)">
         &copy; 2021-{today.getFullYear()} AlgoDale. All rights reserved.
       </p>
-    </scetion>
+    </section>
   </footer>
 </div>
-
-<style>
-  div {
-    margin-top: auto;
-    padding-bottom: var(--spacing-15);
-    isolation: isolate;
-    transition: background 350ms ease 0s;
-    background: var(--color-background);
-  }
-
-  footer {
-    padding: var(--spacing-10);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-4);
-  }
-
-  section.left {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-4);
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  p {
-    text-align: center;
-    font-size: var(--font-size-3);
-    font-weight: var(--font-weight-regular);
-    color: var(--color-gray);
-  }
-</style>

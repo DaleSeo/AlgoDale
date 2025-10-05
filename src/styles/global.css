@@ -37,47 +37,6 @@
     --color-gray-1000: hsl(225deg, 15%, 15%);
     --color-overlay: hsl(220deg 5% 40% / 0.8);
 
-    --spacing-1: 4px;
-    --spacing-2: 8px;
-    --spacing-3: 12px;
-    --spacing-4: 16px;
-    --spacing-5: 20px;
-    --spacing-6: 24px;
-    --spacing-7: 28px;
-    --spacing-8: 32px;
-    --spacing-9: 36px;
-    --spacing-10: 40px;
-    --spacing-11: 44px;
-    --spacing-12: 48px;
-    --spacing-13: 52px;
-    --spacing-14: 56px;
-    --spacing-15: 60px;
-    --spacing-16: 64px;
-    --spacing-17: 68px;
-    --spacing-18: 72px;
-    --spacing-19: 76px;
-    --spacing-20: 80px;
-
-    --font-size-1: 0.25rem;
-    --font-size-2: 0.5rem;
-    --font-size-3: 0.75rem;
-    --font-size-3-5: 0.875rem;
-    --font-size-4: 1rem;
-    --font-size-4-5: 1.125rem;
-    --font-size-5: 1.25rem;
-    --font-size-6: 1.5rem;
-    --font-size-7: 1.75rem;
-    --font-size-8: 2rem;
-    --font-size-9: 2.25rem;
-    --font-size-10: 2.5rem;
-    --font-size-p: 1.125rem;
-    --font-size-h6: 0.875rem;
-    --font-size-h5: 1rem;
-    --font-size-h4: 1.2rem;
-    --font-size-h3: 1.5rem;
-    --font-size-h2: 1.8rem;
-    --font-size-h1: 2.1rem;
-
     --font-weight-regular: 400;
     --font-weight-bold: 700;
 
@@ -163,9 +122,9 @@
     width: 100%;
     max-width: 64rem;
     margin-inline: auto;
-    padding-inline: var(--spacing-4);
+    padding-inline: 1rem;
     @media (min-width: 640px) {
-      padding-inline: var(--spacing-8);
+      padding-inline: 2rem;
     }
   }
 }

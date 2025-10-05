@@ -12,9 +12,11 @@ export interface Props {
 const { href, slug, title, tags } = Astro.props;
 ---
 
-<article>
+<article
+  class="flex flex-col justify-between gap-8 rounded-2xl bg-(--color-background-secondary) p-8"
+>
   <header>
-    <h3>
+    <h3 class="text-xl">
       <a {href}>{title}</a>
     </h3>
   </header>
@@ -26,19 +28,3 @@ const { href, slug, title, tags } = Astro.props;
     )
   }
 </article>
-
-<style>
-  article {
-    background: var(--color-background-secondary);
-    border-radius: var(--spacing-4);
-    padding: var(--spacing-8);
-    display: flex;
-    gap: var(--spacing-8);
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  h3 {
-    font-size: var(--font-size-h4);
-  }
-</style>

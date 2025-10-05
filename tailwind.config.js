@@ -12,6 +12,9 @@ const config = {
         background: "#f3f5f7",
         text: "#151519",
       },
+      spacing: {
+        15: "3.75rem",
+      },
       typography: ({ theme }) => ({
         DEFAULT: {
           css: {

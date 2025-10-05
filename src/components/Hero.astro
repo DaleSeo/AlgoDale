@@ -4,33 +4,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "~/consts";
 import hero from "~/assets/hero.jpg";
 ---
 
-<header>
-  <div class="z-1 text-center p-1">
+<header
+  class="relative grid h-[min(40vh,400px)] place-items-center overflow-hidden bg-black/20 my-8"
+>
+  <div class="relative z-10 p-1 text-center text-white">
     <h1 class="text-5xl leading-loose text-white">{SITE_TITLE}</h1>
     <p class="text-2xl leading-loose text-white">
       {SITE_DESCRIPTION}
     </p>
   </div>
-  <Image src={hero} alt="" />
+  <Image
+    src={hero}
+    alt=""
+    class="absolute inset-0 h-full w-full object-cover -z-10"
+  />
 </header>
-
-<style>
-  header {
-    height: min(40vh, 400px);
-    overflow: hidden;
-    margin-block: var(--spacing-8);
-    display: grid;
-    place-items: center;
-    grid-template-areas: "hero";
-    background-color: rgba(0 0 0/ 0.2);
-    > * {
-      grid-area: hero;
-    }
-  }
-
-  img {
-    height: min(40vh, 400px);
-    object-fit: cover;
-    z-index: -1;
-  }
-</style>

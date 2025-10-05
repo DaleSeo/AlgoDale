@@ -11,27 +11,21 @@ const { headings } = Astro.props;
 ---
 
 <aside
-  class="relative hidden border-l border-gray-200 py-24 pl-8 text-text lg:sticky lg:top-0 lg:block lg:shrink lg:grow-0 lg:basis-[280px]"
-  style="border-color: color-mix(in srgb, var(--color-text) 20%, white)"
+  class="relative hidden border-l border-l-[color:color-mix(in_srgb,var(--color-text)_20%,white)] py-24 pl-8 text-text lg:sticky lg:top-0 lg:block lg:shrink lg:grow-0 lg:basis-[280px]"
 >
   <nav>
     <h2 class="mb-4 text-xl">목차</h2>
     {
       headings
         .filter(({ depth }) => depth < 3)
-        .map(({ slug, text }) => <a href={`#${slug}`}>{text}</a>)
+        .map(({ slug, text }) => (
+          <a
+            href={`#${slug}`}
+            class="block hover:font-bold hover:text-primary hover:no-underline"
+          >
+            {text}
+          </a>
+        ))
     }
   </nav>
 </aside>
-
-<style>
-  a {
-    display: block;
-
-    &:hover {
-      font-weight: var(--font-weight-bold);
-      color: var(--color-primary);
-      text-decoration: none;
-    }
-  }
-</style>

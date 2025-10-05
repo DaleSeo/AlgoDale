@@ -14,56 +14,24 @@ const { pathname } = Astro.url;
 const active = to === pathname || pathname.startsWith(to);
 ---
 
-<a href={to} title={title} class:list={{ active }}>
-  <Icon name={icon} size="28px" class:list={["icon", { active }]} />
-  <span>
+<a
+  href={to}
+  title={title}
+  class:list={[
+    "group flex items-center gap-1 p-2 text-(--color-text) text-base transition-colors hover:underline hover:decoration-[3px] hover:decoration-primary hover:underline-offset-[5px]",
+    active &&
+      "font-bold underline decoration-[3px] decoration-primary underline-offset-[5px]",
+  ]}
+>
+  <Icon
+    name={icon}
+    size="28px"
+    class:list={[
+      "mx-2 text-(--color-text) transition-colors group-hover:text-primary sm:hidden",
+      active && "text-primary",
+    ]}
+  />
+  <span class="hidden sm:inline">
     {text}
   </span>
 </a>
-
-<style>
-  a {
-    display: flex;
-    gap: var(--spacing-1);
-    align-items: center;
-
-    padding: var(--spacing-2);
-
-    color: var(--color-text);
-
-    font-size: var(--font-size-4);
-
-    &:hover,
-    &.active {
-      text-decoration: underline;
-      text-underline-offset: 5px;
-      text-decoration-thickness: 3px;
-      text-decoration-color: var(--color-primary);
-    }
-
-    &.active {
-      font-weight: var(--font-weight-bold);
-    }
-  }
-
-  span {
-    display: none;
-
-    @media (min-width: 640px) {
-      display: revert;
-    }
-  }
-
-  .icon {
-    margin-inline: var(--spacing-2);
-
-    &:hover,
-    &.active {
-      color: var(--color-primary);
-    }
-
-    @media (min-width: 640px) {
-      display: none;
-    }
-  }
-</style>

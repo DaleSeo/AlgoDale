@@ -13,7 +13,7 @@ interface Props {
 const { tags, date, editUrl } = Astro.props;
 ---
 
-<footer>
+<footer class="mt-8 flex flex-col gap-4 py-16">
   <section class="flex flex-wrap items-center justify-between gap-4">
     <div>
       <Icon name="clock" inline />{" "}
@@ -29,8 +29,8 @@ const { tags, date, editUrl } = Astro.props;
       href="https://creativecommons.org/licenses/by/4.0/deed.ko"
       ><img
         alt="크리에이티브 커먼즈 라이선스"
-        style="border-width:0"
         src="https://i.creativecommons.org/l/by/4.0/88x31.png"
+        class="inline border-0"
       /></a
     >
     <div>
@@ -53,18 +53,3 @@ const { tags, date, editUrl } = Astro.props;
     }
   </section>
 </footer>
-
-<style>
-  footer {
-    margin-top: var(--spacing-8);
-    padding-block: var(--spacing-16);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-4);
-  }
-
-  a,
-  img {
-    display: inline;
-  }
-</style>
