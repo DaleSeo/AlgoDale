@@ -16,7 +16,6 @@ const config = {
         headline: "var(--color-headline)",
         paragraph: "var(--color-paragraph)",
         gray: "var(--color-gray)",
-        "gray-1000": "var(--color-gray-1000)",
         overlay: "var(--color-overlay)",
       },
       spacing: {
