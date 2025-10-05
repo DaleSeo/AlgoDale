@@ -18,7 +18,7 @@ const active = to === pathname || pathname.startsWith(to);
   href={to}
   title={title}
   class:list={[
-    "group flex items-center gap-1 p-2 text-(--color-text) text-base transition-colors hover:underline hover:decoration-[3px] hover:decoration-primary hover:underline-offset-[5px]",
+    "group flex items-center gap-1 p-2 text-text text-base transition-colors hover:underline hover:decoration-[3px] hover:decoration-primary hover:underline-offset-[5px]",
     active &&
       "font-bold underline decoration-[3px] decoration-primary underline-offset-[5px]",
   ]}
@@ -27,7 +27,7 @@ const active = to === pathname || pathname.startsWith(to);
     name={icon}
     size="28px"
     class:list={[
-      "mx-2 text-(--color-text) transition-colors group-hover:text-primary sm:hidden",
+      "mx-2 text-text transition-colors group-hover:text-primary sm:hidden",
       active && "text-primary",
     ]}
   />

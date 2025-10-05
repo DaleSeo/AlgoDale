@@ -21,16 +21,11 @@
   :root {
     --color-background: hsl(210deg, 20%, 96%);
     --color-background-secondary: hsl(60deg 100% 100%);
-    /* --color-text: hsl(214deg 100% 15%);
-    --color-headline: hsl(214deg 100% 15%);
-    --color-paragraph: hsl(214deg 44% 19%); */
     --color-text: hsl(216deg, 6%, 15%);
     --color-headline: hsl(216deg 6% 15%);
     --color-paragraph: hsl(240deg 8% 9%);
 
-    /* --color-primary: hsl(171deg 100% 46%); */
     --color-primary: hsl(255deg 83% 65%);
-    /* --color-secondary: hsl(350deg 100% 66%); */
     --color-secondary: hsl(161deg, 66%, 37%);
     --color-tertiary: hsl(51deg 98% 65%);
     --color-gray: hsl(225deg, 12%, 40%);
@@ -40,14 +35,16 @@
     --font-weight-regular: 400;
     --font-weight-bold: 700;
 
-    --font-family-sans: "Spoqa Han Sans Neo", -apple-system,
-      BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue,
-      helvetica, Ubuntu, roboto, noto, arial, sans-serif;
-    --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console,
-      monospace;
-    --font-family-serif: Iowan Old Style, Apple Garamond, Baskerville,
-      Times New Roman, Droid Serif, Times, Source Serif Pro, serif,
-      Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --font-family-sans:
+      "Spoqa Han Sans Neo", -apple-system, BlinkMacSystemFont, avenir next,
+      avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial,
+      sans-serif;
+    --font-family-mono:
+      Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+    --font-family-serif:
+      Iowan Old Style, Apple Garamond, Baskerville, Times New Roman,
+      Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji,
+      Segoe UI Emoji, Segoe UI Symbol;
 
     --radius-1: 2px;
     --radius-2: 5px;

@@ -6,11 +6,18 @@ const config = {
   theme: {
     extend: {
       colors: {
-        primary: "#815cf0",
-        secondary: "#209B74",
-        tertiary: "#9be688",
-        background: "#f3f5f7",
-        text: "#151519",
+        // Keep CSS variables as the source of truth; Tailwind utilities point to them.
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        tertiary: "var(--color-tertiary)",
+        background: "var(--color-background)",
+        "background-secondary": "var(--color-background-secondary)",
+        text: "var(--color-text)",
+        headline: "var(--color-headline)",
+        paragraph: "var(--color-paragraph)",
+        gray: "var(--color-gray)",
+        "gray-1000": "var(--color-gray-1000)",
+        overlay: "var(--color-overlay)",
       },
       spacing: {
         15: "3.75rem",
