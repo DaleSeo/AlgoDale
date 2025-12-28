@@ -48,7 +48,7 @@ Blind 75를 통해서 왠만한 코딩 시험이나 면접에서 출제되는 �
 - [Coin Change](/problems/coin-change/)
 - [Longest Increasing Subsequence](/problems/longest-increasing-subsequence/)
 - [Longest Common Subsequence](/problems/longest-common-subsequence/)
-- [Word Break Problem](/problems/word-break/)
+- [Word Break](/problems/word-break/)
 - [Combination Sum](/problems/combination-sum-iv/)
 - [House Robber](/problems/house-robber/)
 - [House Robber II](/problems/house-robber-ii/)
