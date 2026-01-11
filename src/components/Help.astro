@@ -1,12 +1,24 @@
 ---
 import Icon from "~/components/Icon.astro";
+import { INFLEARN_COURSE_URL } from "~/consts";
 ---
 
 <a
   target="_blank"
   rel="noopener noreferrer"
+  href={INFLEARN_COURSE_URL}
+  class="fixed right-5 bottom-20 block rounded-full bg-[#00C471] p-2 text-white shadow-[0_5px_15px_rgba(0,0,0,0.35)] transition-transform hover:scale-110"
+  title="인프런 강의"
+>
+  <Icon name="video" size="25px" />
+</a>
+
+<a
+  target="_blank"
+  rel="noopener noreferrer"
   href="https://discord.gg/jf9vyQQvXy"
-  class="bg-primary text-background fixed right-5 bottom-5 block rounded-full p-2 shadow-[0_5px_15px_rgba(0,0,0,0.35)]"
+  class="bg-primary text-background fixed right-5 bottom-5 block rounded-full p-2 shadow-[0_5px_15px_rgba(0,0,0,0.35)] transition-transform hover:scale-110"
+  title="디스코드"
 >
   <Icon name="chat" size="25px" />
 </a>

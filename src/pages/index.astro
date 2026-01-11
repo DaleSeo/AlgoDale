@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import CardList from "~/components/CardList.astro";
+import CourseBanner from "~/components/CourseBanner.astro";
 import Hero from "~/components/Hero.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import { shuffle } from "~/utils";
@@ -54,6 +55,7 @@ const guides = shuffle(
 
 <BaseLayout>
   <Hero />
+  <CourseBanner />
   <div class="max-width">
     <CardList icon="book" title="문제 해결" articles={problems} />
     <CardList icon="loop" title="알고리즘" articles={algorithms} />

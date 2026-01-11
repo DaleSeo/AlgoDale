@@ -1,0 +1,31 @@
+---
+import Icon from "~/components/Icon.astro";
+import { INFLEARN_COURSE_URL } from "~/consts";
+---
+
+<section class="max-width my-8">
+  <a
+    href={INFLEARN_COURSE_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="bg-background-secondary group flex items-center gap-6 rounded-2xl border-2 border-transparent p-6 transition-all hover:border-[#00C471] hover:shadow-lg"
+    title="인프런 강의"
+  >
+    <div class="rounded-full bg-[#00C471]/10 p-4 text-[#00C471]">
+      <Icon name="video" size="40px" />
+    </div>
+    <div class="flex-1">
+      <h2 class="text-xl font-bold">
+        알고리즘 강의
+        <span
+          class="ml-2 rounded-full bg-[#00C471] px-2 py-0.5 text-sm text-white"
+        >
+          NEW
+        </span>
+      </h2>
+      <p class="text-paragraph mt-1">
+        인프런에서 알고리즘을 체계적으로 배워보세요
+      </p>
+    </div>
+  </a>
+</section>
