@@ -20,6 +20,7 @@ const {
 const title = pageTitle ? `${pageTitle} | ${SITE_TITLE}` : SITE_TITLE;
 const description = pageDescription ?? SITE_DESCRIPTION;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const imageURL = new URL(image, Astro.site).href;
 ---
 
 <meta charset="utf-8" />
@@ -35,18 +36,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     basic: {
       title,
       type: "website",
-      image,
-      url: "https://www.algodale.com",
+      image: imageURL,
+      url: canonicalURL.href,
     },
     optional: {
       siteName: SITE_TITLE,
       description,
       locale: "ko",
     },
+    image: {
+      alt: title,
+      width: 1200,
+      height: 630,
+      type: "image/png",
+    },
   }}
   twitter={{
+    card: "summary_large_image",
     creator: "@DaleSeo",
-    image,
+    image: imageURL,
     imageAlt: title,
     title,
     description,
