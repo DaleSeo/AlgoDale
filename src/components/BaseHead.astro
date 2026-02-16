@@ -14,7 +14,7 @@ interface Props {
 const {
   title: pageTitle,
   description: pageDescription,
-  image = "https://res.cloudinary.com/daleseo/image/upload/v1685926367/algodale/og.png",
+  image = "/og.png",
 } = Astro.props;
 
 const title = pageTitle ? `${pageTitle} | ${SITE_TITLE}` : SITE_TITLE;
