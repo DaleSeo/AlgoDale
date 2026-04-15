@@ -309,6 +309,38 @@ function lengthOfLongestSubstring(s: string): number {
 (참고로 세트에 어떤 요소가 있는지 검사하거나, 새로운 요소를 추가, 기존 요소를 삭제하는 작업은 모두 `O(1)`의 시간을 소모합니다.)
 그리고 주어진 문자열에 반복되는 문자가 하나도 없을 경우, 세트에 최대 `n`개의 문자를 저장하게 되므로 `O(n)`의 공간 복잡도를 가지게 됩니다.
 
+## 풀이 4
+
+이전 풀이에서는 세트(set)를 사용하여 중복 문자가 발견되면 시작 포인터를 한 칸씩 옮기면서 세트에서 문자를 하나씩 제거해야 했는데요.
+해시맵(HashMap)을 사용하면 각 문자가 마지막으로 나타난 인덱스를 기억할 수 있기 때문에, 중복 문자가 발견되는 즉시 시작 포인터를 해당 문자의 이전 위치 바로 다음으로 점프시킬 수 있습니다.
+
+예를 들어, 문자열 `aabcbbeacc`에서 인덱스 `4`의 `b`를 만났을 때, 세트 방식에서는 `start`를 `1`에서 `2`, `3`, `4`로 하나씩 옮기면서 문자를 제거해야 합니다.
+반면 해시맵 방식에서는 이전에 `b`가 인덱스 `2`에 있었다는 것을 바로 알 수 있으므로, `start`를 `3`으로 단번에 이동시킬 수 있습니다.
+
+```py
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        max_len = 0
+        chars = {}
+        start = 0
+
+        for end, ch in enumerate(s):
+            if ch in chars and chars[ch] >= start:
+                start = chars[ch] + 1
+            chars[ch] = end
+            max_len = max(end - start + 1, max_len)
+
+        return max_len
+```
+
+`chars[ch] >= start` 조건이 중요한데요.
+해시맵에 문자가 존재하더라도 그 인덱스가 현재 윈도우의 시작(`start`)보다 앞에 있다면, 이미 윈도우 밖으로 밀려난 문자이므로 무시해야 합니다.
+
+이 풀이의 시간 복잡도는 `O(n)`입니다.
+이전 풀이가 시작 포인터와 끝 포인터 각각 최대 `n`번 이동하여 `O(2n)`이었던 것과 달리, 이 풀이에서는 끝 포인터만 `n`번 이동하고 시작 포인터는 필요할 때 한 번에 점프하기 때문입니다.
+공간 복잡도는 문자 집합의 크기에 의해 상한이 정해지므로 `O(1)`로 볼 수 있습니다.
+(예를 들어 ASCII 문자만 사용한다면 해시맵에는 최대 128개의 항목만 저장됩니다.)
+
 ## 마치면서
 
 이 문제가 너무 쉬우셨다면 비슷하지만 좀 더 어려운 문제인 [Longest Repeating Character Replacement](/problems/longest-repeating-character-replacement/)도 풀어보시라고 추천드립니다.
