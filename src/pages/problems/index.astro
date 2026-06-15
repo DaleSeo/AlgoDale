@@ -9,9 +9,8 @@ const problems = await getCollection(
 );
 
 const articles = shuffle(problems).map(
-  ({ collection, slug, data: { title, tags } }) => ({
-    href: `/${collection}/${slug}/`,
-    slug,
+  ({ collection, id, data: { title, tags } }) => ({
+    href: `/${collection}/${id}/`,
     title,
     tags,
   }),

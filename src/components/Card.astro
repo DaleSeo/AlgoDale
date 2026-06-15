@@ -3,13 +3,12 @@ import Tags from "~/components/Tags.astro";
 
 export interface Props {
   href: string;
-  slug: string;
   title: string;
   description?: string;
   tags?: string[];
 }
 
-const { href, slug, title, tags } = Astro.props;
+const { href, title, tags } = Astro.props;
 ---
 
 <article

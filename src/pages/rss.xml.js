@@ -2,14 +2,14 @@ import rss from "@astrojs/rss";
 import { getCollection } from "astro:content";
 import { SITE_TITLE, SITE_DESCRIPTION } from "~/consts";
 
-export async function get(context) {
+export async function GET(context) {
   const problems = (
     await getCollection("problems", (problem) => !problem.data.draft)
   ).map((post) => ({
     title: post.data.title,
     pubDate: post.data.date,
     description: post.data.description || SITE_DESCRIPTION,
-    link: `/problems/${post.slug}/`,
+    link: `/problems/${post.id}/`,
   }));
 
   const algorithms = (
@@ -18,7 +18,7 @@ export async function get(context) {
     title: post.data.title,
     pubDate: post.data.date,
     description: post.data.description || SITE_DESCRIPTION,
-    link: `/algorithms/${post.slug}/`,
+    link: `/algorithms/${post.id}/`,
   }));
 
   const dataStructures = (
@@ -30,7 +30,7 @@ export async function get(context) {
     title: post.data.title,
     pubDate: post.data.date,
     description: post.data.description || SITE_DESCRIPTION,
-    link: `/data-structures/${post.slug}/`,
+    link: `/data-structures/${post.id}/`,
   }));
 
   const guides = (
@@ -42,7 +42,7 @@ export async function get(context) {
     title: post.data.title,
     pubDate: post.data.date,
     description: post.data.description || SITE_DESCRIPTION,
-    link: `/guides/${post.slug}/`,
+    link: `/guides/${post.id}/`,
   }));
 
   return rss({

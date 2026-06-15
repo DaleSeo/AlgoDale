@@ -1,11 +1,11 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection, render } from "astro:content";
 import ArticleLayout from "~/layouts/ArticleLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("problems", (post) => !post.data.draft);
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id },
     props: post,
   }));
 }
@@ -14,12 +14,12 @@ type Props = CollectionEntry<"problems">;
 const post = Astro.props;
 const {
   collection,
-  slug,
+  id,
   data: { title, date, tags },
 } = post;
-const editUrl = `https://github.com/DaleSeo/AlgoDale/edit/main/src/content/${collection}/${slug}.md`;
+const editUrl = `https://github.com/DaleSeo/AlgoDale/edit/main/src/content/${collection}/${id}.md`;
 
-const { Content, headings } = await post.render();
+const { Content, headings } = await render(post);
 ---
 
 <ArticleLayout {title} {date} {tags} {headings} {editUrl}>

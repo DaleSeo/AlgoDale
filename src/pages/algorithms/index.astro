@@ -9,9 +9,8 @@ const algorithms = await getCollection(
 
 const articles = algorithms
   .sort((a, b) => a.data.date.valueOf() - b.data.date.valueOf())
-  .map(({ collection, slug, data: { title, description, tags } }) => ({
-    href: `/${collection}/${slug}/`,
-    slug,
+  .map(({ collection, id, data: { title, description, tags } }) => ({
+    href: `/${collection}/${id}/`,
     title,
     description,
     tags,

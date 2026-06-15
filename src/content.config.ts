@@ -1,7 +1,9 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
+import { glob } from "astro/loaders";
 
 const tags = defineCollection({
-  type: "data",
+  loader: glob({ pattern: "**/*.json", base: "./src/content/tags" }),
   schema: z.object({
     name: z.string().optional(),
     icon: z.string().optional(),
@@ -9,7 +11,10 @@ const tags = defineCollection({
 });
 
 const problems = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/problems",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
@@ -20,7 +25,10 @@ const problems = defineCollection({
 });
 
 const algorithms = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/algorithms",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
@@ -31,7 +39,10 @@ const algorithms = defineCollection({
 });
 
 const dataStructures = defineCollection({
-  type: "content",
+  loader: glob({
+    pattern: "**/[^_]*.{md,mdx}",
+    base: "./src/content/data-structures",
+  }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
@@ -42,7 +53,7 @@ const dataStructures = defineCollection({
 });
 
 const guides = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "./src/content/guides" }),
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),

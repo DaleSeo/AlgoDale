@@ -37,9 +37,8 @@ export async function getStaticPaths() {
 
       const articles = posts
         .filter(({ data: { tags } }) => tags.includes(tagId))
-        .map(({ collection, slug, data: { title, tags } }) => ({
-          href: `/${collection}/${slug}/`,
-          slug,
+        .map(({ collection, id, data: { title, tags } }) => ({
+          href: `/${collection}/${id}/`,
           title,
           tags,
         }));
