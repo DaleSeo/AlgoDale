@@ -8,7 +8,9 @@ Astro 프런트엔드는 `src/`에 있으며 라우트 컴포넌트는 `src/page
 
 ## 빌드·테스트·개발 명령
 
-작업 전 `npm install`로 의존성을 설치합니다. 로컬 개발은 `npm run dev`로 시작하며 http://localhost:4321 에서 핫 리로드를 제공합니다. 정적 사이트는 `npm run build`로 생성되고 충분한 Node 메모리를 확보하도록 설정되어 있습니다. 배포 전 출력물을 검수하려면 `npm run preview`를 실행하고, 추가 진단이 필요하면 `npm run astro <command>`로 Astro CLI 도구(`npm run astro check` 등)를 호출하세요.
+> **패키지 매니저: 이 프로젝트는 Bun을 사용합니다.** 의존성 관리와 스크립트 실행에는 반드시 `bun`/`bunx`를 쓰고 `npm`·`yarn`·`pnpm`은 사용하지 않습니다. 추적되는 lockfile은 `bun.lock` 하나뿐이므로 `package-lock.json` 등 다른 lockfile을 만들거나 커밋하지 마세요. 의존성 추가는 `bun add`, 삭제는 `bun remove`, 범위 내 최신화는 `bun update`로 수행합니다.
+
+작업 전 `bun install`로 의존성을 설치합니다. 로컬 개발은 `bun run dev`로 시작하며 http://localhost:4321 에서 핫 리로드를 제공합니다. 정적 사이트는 `bun run build`로 생성되고 충분한 Node 메모리를 확보하도록 설정되어 있습니다. 배포 전 출력물을 검수하려면 `bun run preview`를 실행하고, 추가 진단이 필요하면 `bun run astro <command>`로 Astro CLI 도구(`bun run astro check` 등)를 호출하세요.
 
 ## 코딩 스타일 및 네이밍 규칙
 
@@ -16,11 +18,11 @@ Astro 프런트엔드는 `src/`에 있으며 라우트 컴포넌트는 `src/page
 
 ## 테스트 가이드라인
 
-공식 자동화 테스트 스위트는 아직 없으므로 변경 사항은 수동 검증이 필수입니다. 기능 수정 시 `npm run dev` 상태에서 관련 페이지를 직접 확인하고, 배포 직전에는 `npm run build`가 정상 종료되는지 확인하세요. 콘텐츠를 추가하거나 개편했다면 `npm run preview`로 정적 결과를 검수하거나 `dist/` 내부 파일을 확인해 노출 상태를 점검합니다.
+공식 자동화 테스트 스위트는 아직 없으므로 변경 사항은 수동 검증이 필수입니다. 기능 수정 시 `bun run dev` 상태에서 관련 페이지를 직접 확인하고, 배포 직전에는 `bun run build`가 정상 종료되는지 확인하세요. 콘텐츠를 추가하거나 개편했다면 `bun run preview`로 정적 결과를 검수하거나 `dist/` 내부 파일을 확인해 노출 상태를 점검합니다.
 
 ## 커밋 및 PR 가이드라인
 
-커밋 메시지는 짧은 명령형으로 작성합니다(예: `update astro-icon`) 그리고 관련 변경은 하나의 커밋으로 묶습니다. PR에는 요약, 변경 동기, 영향 범위를 포함하고 UI가 바뀌면 스크린샷이나 확인 가능한 URL을 첨부하세요. 연관 이슈가 있다면 링크하고, 리뷰 요청 전에 반드시 `npm run build`가 통과했는지 확인해 배포 가능한 상태를 보장하세요.
+커밋 메시지는 짧은 명령형으로 작성합니다(예: `update astro-icon`) 그리고 관련 변경은 하나의 커밋으로 묶습니다. PR에는 요약, 변경 동기, 영향 범위를 포함하고 UI가 바뀌면 스크린샷이나 확인 가능한 URL을 첨부하세요. 연관 이슈가 있다면 링크하고, 리뷰 요청 전에 반드시 `bun run build`가 통과했는지 확인해 배포 가능한 상태를 보장하세요.
 
 ## 콘텐츠 작성 노트
 
