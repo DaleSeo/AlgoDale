@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.6.1",
-    "prettier": "^3.9.4",
+    "prettier": "^3.9.5",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.0",
     "vite": "npm:@voidzero-dev/vite-plus-core@0.2.4",
