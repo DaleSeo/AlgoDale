@@ -1,0 +1,5 @@
+[build]
+  command = "bun run build"
+
+[build.environment]
+  BUN_VERSION = "1.3.14"
